@@ -1,0 +1,41 @@
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://boua8wd5dhon6"]
+
+[ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="1_du2y2"]
+[ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="2_bkic3"]
+[ext_resource type="Texture2D" uid="uid://c43xp527uowsx" path="res://assets/Textures/tilemaps/Grass_top.png" id="3_j72fl"]
+[ext_resource type="Texture2D" uid="uid://d4i8ahsx28vhp" path="res://assets/Textures/tilemaps/Log_side.png" id="4_s3t2w"]
+[ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="5_ogpr7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48cn3"]
+texture = ExtResource("1_du2y2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov4sg"]
+texture = ExtResource("2_bkic3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua5jh"]
+texture = ExtResource("3_j72fl")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytb86"]
+texture = ExtResource("4_s3t2w")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rin3v"]
+texture = ExtResource("5_ogpr7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
+sources/0 = SubResource("TileSetAtlasSource_48cn3")
+sources/1 = SubResource("TileSetAtlasSource_ov4sg")
+sources/2 = SubResource("TileSetAtlasSource_ua5jh")
+sources/3 = SubResource("TileSetAtlasSource_ytb86")
+sources/4 = SubResource("TileSetAtlasSource_rin3v")

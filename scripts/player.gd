@@ -2,6 +2,9 @@ extends CharacterBody2D
 @onready var die_label = $die_label
 @onready var collision_shape = $CollisionShape2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var CountLabel = %count_label_Player
+@onready var timer = $Timer
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 

@@ -2,6 +2,8 @@
 extends Area2D
 
 @onready var timer = $Timer
+@onready var CountL = %count_label_Player
+var count = int(0)
 
 func _on_body_entered(body):
 	print("[DEBUG/KILLZONE] entered " + str(body))
@@ -13,8 +15,8 @@ func _on_body_entered(body):
 		Engine.time_scale = 0.5
 		print("[INFO/KILLZONE] Setting deferred monitoring to false")
 		set_deferred("monitoring", false) 
-		print("[INFO/KILLZONE] setting timer.wait_time to 2.25")
-		timer.wait_time = 2.25
+		print("[INFO/KILLZONE] setting timer.wait_time to 2.5")
+		timer.wait_time = 2.5
 		print("[INFO/KILLZONE] Starting timer")
 		timer.start() 
 	else:

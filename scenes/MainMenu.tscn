@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkygigs33emlu"]
+[gd_scene load_steps=7 format=3 uid="uid://dkygigs33emlu"]
 
 [ext_resource type="Script" uid="uid://dpqx34q616qaa" path="res://scripts/MainMenu.gd" id="1_t6dbj"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_u804d"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="3_2wh52"]
+[ext_resource type="Texture2D" uid="uid://8q7x5wh86sfw" path="res://assets/Textures/links/wiki.png" id="4_l72w3"]
+[ext_resource type="Texture2D" uid="uid://b56y8c16kknqf" path="res://assets/Textures/links/github.png" id="4_ow34m"]
+[ext_resource type="Texture2D" uid="uid://cvuuk23f4nttn" path="res://assets/Textures/links/web.png" id="6_826wr"]
 
 [node name="ControMainMenul" type="Control"]
 layout_mode = 3
@@ -59,6 +62,41 @@ text = "Exit"
 flat = true
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("3_2wh52")]
+bus = &"Master"
+
+[node name="WikiLinkButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -24.0
+offset_right = 49.0
+grow_vertical = 0
+icon = ExtResource("4_l72w3")
+
+[node name="GithubLinkButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 24.0
+grow_vertical = 0
+icon = ExtResource("4_ow34m")
+
+[node name="WebLinkButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -24.0
+offset_right = 74.0
+grow_vertical = 0
+icon = ExtResource("6_826wr")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="WikiLinkButton" to="." method="_on_wiki_link_button_pressed"]
+[connection signal="pressed" from="GithubLinkButton" to="." method="_on_github_link_button_pressed"]
