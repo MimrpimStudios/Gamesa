@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b82nr8lhymwwm"]
+
+[ext_resource type="Texture2D" uid="uid://cayxloelc5y13" path="res://assets/Textures/sprites/spike.png" id="1_asvmq"]
+[ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="2_1ldwk"]
+
+[node name="spike" type="Area2D" groups=["enemy"]]
+visibility_layer = 2
+collision_layer = 8
+
+[node name="Spike" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -8)
+texture = ExtResource("1_asvmq")
+
+[node name="Killzone" parent="." instance=ExtResource("2_1ldwk")]
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Killzone"]
+light_mask = 0
+polygon = PackedVector2Array(-8, 0, 0, -8, 8, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
