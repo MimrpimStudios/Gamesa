@@ -11,17 +11,25 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.0.4"
+config/version="0.0.0.5"
 run/main_scene="uid://bse7q6g0xhw4g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="uid://i0vuqf6f8r3x"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [display]
 
 window/size/mode=2
+
+[editor]
+
+movie_writer/movie_file="C:/Users/mimrp/Documents/godot/ta_hra/movies/movie.avi"
+movie_writer/disable_vsync=true
 
 [global_group]
 
