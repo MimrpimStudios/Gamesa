@@ -28,6 +28,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+top_level = true
 collision_mask = 3
 script = ExtResource("1_s027a")
 
@@ -47,23 +48,38 @@ position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="die_label" type="Label" parent="."]
+process_priority = 10002
 visible = false
-offset_left = -83.0
-offset_top = -52.0
-offset_right = 86.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = -51.0
+offset_right = 87.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "You died"
 label_settings = SubResource("LabelSettings_s027a")
 
 [node name="die_blur" type="ColorRect" parent="die_label"]
+process_priority = 1001
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1421.0
+offset_left = -1419.0
 offset_top = -1001.0
-offset_right = 1412.0
+offset_right = 1414.0
 offset_bottom = 1164.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.6901961)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
+position = Vector2(-2, 17)
+offset = Vector2(0, -10)
+zoom = Vector2(5, 5)

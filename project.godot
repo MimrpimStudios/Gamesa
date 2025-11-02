@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.0.5"
+config/version="0.0.0.6"
 run/main_scene="uid://bse7q6g0xhw4g"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0.82133317, 0.88, 0)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/icon="uid://4ar25i0l7nu1"
 
 [audio]
 
@@ -28,13 +30,17 @@ window/size/mode=2
 
 [editor]
 
-movie_writer/movie_file="C:/Users/mimrp/Documents/godot/ta_hra/movies/movie.avi"
+movie_writer/video_quality=1.0
+movie_writer/ogv/audio_quality=1.0
+movie_writer/ogv/encoding_speed=1
+movie_writer/movie_file="C:/Users/mimrp/Documents/godot/ta_hra/movies/movie2.avi"
 movie_writer/disable_vsync=true
 
 [global_group]
 
 player=""
 enemy=""
+count_label_Player=""
 
 [internationalization]
 
@@ -50,3 +56,4 @@ locale/locale_filter_mode=0
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.50140655, 0.5014065, 0.5014065, 1)
