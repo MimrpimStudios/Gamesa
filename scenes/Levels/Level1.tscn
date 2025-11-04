@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6182c0ee3kj5"]
+[gd_scene load_steps=29 format=3 uid="uid://b6182c0ee3kj5"]
 
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="1_8nqap"]
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_1.gd" id="1_dfih8"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_o8yur"]
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tilest_1.tres" id="1_u4ox6"]
 [ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="2_u4ox6"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bta3lsxmiuapr" path="res://scenes/platform.tscn" id="8_jng41"]
 [ext_resource type="Script" uid="uid://clb6e2ooyajkc" path="res://scripts/Level2tp.gd" id="9_dfih8"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="9_yclo3"]
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_n31k3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xplbd"]
 texture = ExtResource("1_8nqap")
@@ -92,6 +94,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_dfih8")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(1024, 0)
@@ -199,5 +202,9 @@ autoplay = "platform1"
 [node name="player" parent="." instance=ExtResource("9_yclo3")]
 process_priority = 100
 position = Vector2(2, -17)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("15_n31k3")]
+autoplay = true
+bus = &"Master"
 
 [connection signal="pressed" from="Level2tpButton" to="Level2tpButton" method="_on_pressed"]

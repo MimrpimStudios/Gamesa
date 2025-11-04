@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=4 uid="uid://cehjk7o7ryj70"]
+[gd_scene load_steps=9 format=4 uid="uid://cehjk7o7ryj70"]
 
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tilest_1.tres" id="1_04sgr"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_pyh4d"]
+[ext_resource type="Script" uid="uid://defmjcxedmas5" path="res://scripts/level_2.gd" id="1_yye74"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_3s172"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="2_pyh4d"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="3_3s172"]
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="7_v740s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yye74"]
 distance = -72.0
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_yye74")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(1024, 0)
@@ -40,3 +43,7 @@ collision_mask = 253
 shape = SubResource("WorldBoundaryShape2D_yye74")
 
 [node name="player" parent="." instance=ExtResource("3_3s172")]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("7_v740s")]
+autoplay = true
+bus = &"Master"
