@@ -1,97 +1,27 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6182c0ee3kj5"]
+[gd_scene load_steps=11 format=4 uid="uid://b6182c0ee3kj5"]
 
-[ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="1_8nqap"]
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_1.gd" id="1_dfih8"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_o8yur"]
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tilest_1.tres" id="1_u4ox6"]
-[ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="2_u4ox6"]
-[ext_resource type="Texture2D" uid="uid://c43xp527uowsx" path="res://assets/Textures/tilemaps/Grass_top.png" id="3_o8yur"]
-[ext_resource type="Texture2D" uid="uid://d4i8ahsx28vhp" path="res://assets/Textures/tilemaps/Log_side.png" id="4_nu2g1"]
-[ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="5_5mhgh"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="6_dfih8"]
-[ext_resource type="PackedScene" uid="uid://b82nr8lhymwwm" path="res://scenes/spike.tscn" id="7_n31k3"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="8_5mhgh"]
-[ext_resource type="PackedScene" uid="uid://bta3lsxmiuapr" path="res://scenes/platform.tscn" id="8_jng41"]
 [ext_resource type="Script" uid="uid://clb6e2ooyajkc" path="res://scripts/Level2tp.gd" id="9_dfih8"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="9_yclo3"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xplbd"]
-texture = ExtResource("1_8nqap")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rsl6"]
-texture = ExtResource("2_u4ox6")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5d64"]
-texture = ExtResource("3_o8yur")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahyqc"]
-texture = ExtResource("4_nu2g1")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7a27"]
-texture = ExtResource("5_5mhgh")
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ftd1h"]
-sources/0 = SubResource("TileSetAtlasSource_xplbd")
-sources/1 = SubResource("TileSetAtlasSource_6rsl6")
-sources/2 = SubResource("TileSetAtlasSource_p5d64")
-sources/3 = SubResource("TileSetAtlasSource_ahyqc")
-sources/4 = SubResource("TileSetAtlasSource_t7a27")
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_n31k3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xplbd"]
 distance = -67.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xplbd"]
-size = Vector2(80, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rsl6"]
-size = Vector2(16, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5d64"]
-size = Vector2(48, 0)
-
-[sub_resource type="Animation" id="Animation_ov4sg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-159, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_48cn3"]
-resource_name = "platform1"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.9666667),
-"transitions": PackedFloat32Array(0.659, 0.659, 1.3660402),
-"update": 0,
-"values": [Vector2(-159, 16), Vector2(-208, 16), Vector2(-159, 16)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua5jh"]
-_data = {
-&"RESET": SubResource("Animation_ov4sg"),
-&"platform1": SubResource("Animation_48cn3")
-}
+[sub_resource type="LabelSettings" id="LabelSettings_4h7ej"]
+font = ExtResource("8_5mhgh")
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_dfih8")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(1024, 0)
@@ -100,54 +30,10 @@ repeat_times = 10000
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("1_o8yur")
 
-[node name="Tooltips" type="Node" parent="."]
-
-[node name="Help3" type="Label" parent="Tooltips"]
-light_mask = 2
-visibility_layer = 2
-offset_left = -159.0
-offset_top = -56.0
-offset_right = 93.0
-offset_bottom = 3.0
-theme_override_colors/font_color = Color(1.269618, 1.269618, 1.269618, 0.5529412)
-theme_override_fonts/font = ExtResource("8_5mhgh")
-theme_override_font_sizes/font_size = 32
-text = "Moving with arrows
-Jumping with space"
-
-[node name="Help2" type="Label" parent="Tooltips"]
-light_mask = 2
-visibility_layer = 2
-offset_left = -127.0
-offset_top = 72.0
-offset_right = 125.0
-offset_bottom = 131.0
-theme_override_colors/font_color = Color(1.269618, 1.269618, 1.269618, 0.5529412)
-theme_override_fonts/font = ExtResource("8_5mhgh")
-theme_override_font_sizes/font_size = 32
-text = "Falling hurts"
-
-[node name="Help1" type="Label" parent="Tooltips"]
-light_mask = 2
-visibility_layer = 2
-offset_left = 110.0
-offset_top = -37.0
-offset_right = 362.0
-offset_bottom = 22.0
-theme_override_colors/font_color = Color(1.269618, 1.269618, 1.269618, 0.5529412)
-theme_override_fonts/font = ExtResource("8_5mhgh")
-theme_override_font_sizes/font_size = 32
-text = "Spikes hurts"
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAIAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAIAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAIAAAAAAAAAAAAXAAMAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAZAAEAAAAAAAAAAAAZAAIAAAAAAAAAAAAZAAMAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAIAAAAAAAAAAAAaAAMAAAAAAAAAAAAbAAEAAAAAAAAAAAAbAAIAAAAAAAAAAAAbAAMAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAIAAAAAAAAAAAAcAAMAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAdAAMAAAAAAAAAAAAeAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAeAAMAAAAAAAAAAAAfAAEAAAAAAAAAAAAfAAIAAAAAAAAAAAAfAAMAAAAAAAAAAAAgAAEAAAAAAAAAAAAgAAIAAAAAAAAAAAAgAAMAAAAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAZAAAAAQAAAAAAAAAaAAAAAQAAAAAAAAAbAAAAAQAAAAAAAAAcAAAAAQAAAAAAAAAdAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAAfAAAAAQAAAAAAAAAgAAAAAQAAAAAAAAD4/wAAAQAAAAAAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wMAAAAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAACAAAAAQAAAAAAAADy/wAAAQAAAAAAAAA=")
 tile_set = ExtResource("1_u4ox6")
-format = 2
-layer_0/tile_data = PackedInt32Array(65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 131072, 0, 0, 196608, 0, 0, 131073, 0, 0, 196609, 0, 0, 131074, 0, 0, 196610, 0, 0, 131075, 0, 0, 196611, 0, 0, 131076, 0, 0, 196612, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 65555, 0, 0, 131091, 0, 0, 196627, 0, 0, 65556, 0, 0, 131092, 0, 0, 196628, 0, 0, 65557, 0, 0, 131093, 0, 0, 196629, 0, 0, 65558, 0, 0, 131094, 0, 0, 196630, 0, 0, 65559, 0, 0, 131095, 0, 0, 196631, 0, 0, 65560, 0, 0, 131096, 0, 0, 196632, 0, 0, 65561, 0, 0, 131097, 0, 0, 196633, 0, 0, 65562, 0, 0, 131098, 0, 0, 196634, 0, 0, 65563, 0, 0, 131099, 0, 0, 196635, 0, 0, 65564, 0, 0, 131100, 0, 0, 196636, 0, 0, 65565, 0, 0, 131101, 0, 0, 196637, 0, 0, 65566, 0, 0, 131102, 0, 0, 196638, 0, 0, 65567, 0, 0, 131103, 0, 0, 196639, 0, 0, 65568, 0, 0, 131104, 0, 0, 196640, 0, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 65528, 1, 0, 131064, 0, 0, 196600, 0, 0, 262136, 0, 0, 65529, 1, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 65530, 1, 0, 131066, 0, 0, 196602, 0, 0, 262138, 0, 0, 2, 1, 0, 65522, 1, 0)
-
-[node name="TileMap2" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ftd1h")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65532, 3, 0, -131068, 3, 0, -196604, 3, 0, -262138, 2, 0, -262139, 2, 0, -262140, 2, 0, -262141, 2, 0, -262142, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -393212, 2, 0, -458748, 2, 0, -393213, 2, 0, -393211, 2, 0)
 
 [node name="Level2tpButton" type="Button" parent="."]
 offset_left = 512.0
@@ -167,37 +53,53 @@ position = Vector2(-2, 72)
 position = Vector2(2, -72)
 shape = SubResource("WorldBoundaryShape2D_xplbd")
 
-[node name="tree" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tree"]
-position = Vector2(72, -80)
-shape = SubResource("RectangleShape2D_xplbd")
-one_way_collision = true
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="tree"]
-position = Vector2(72, -112)
-shape = SubResource("RectangleShape2D_6rsl6")
-one_way_collision = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="tree"]
-position = Vector2(72, -96)
-shape = SubResource("RectangleShape2D_p5d64")
-one_way_collision = true
-
-[node name="spike" parent="." instance=ExtResource("7_n31k3")]
-position = Vector2(180, 0)
-
-[node name="Platform" parent="." instance=ExtResource("8_jng41")]
-position = Vector2(-159, 16)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-libraries = {
-&"": SubResource("AnimationLibrary_ua5jh")
-}
-autoplay = "platform1"
-
 [node name="player" parent="." instance=ExtResource("9_yclo3")]
 process_priority = 100
 position = Vector2(2, -17)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+z_index = 100
+position = Vector2(-4, 34)
+offset = Vector2(0, -10)
+zoom = Vector2(5, 5)
+limit_bottom = 120
+limit_smoothed = true
+
+[node name="die_label" type="Label" parent="player/Camera2D2"]
+process_priority = 10002
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -49.0
+offset_right = 89.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_4h7ej")
+metadata/_edit_use_anchors_ = true
+
+[node name="die_blur" type="ColorRect" parent="player/Camera2D2/die_label"]
+process_priority = 1001
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1419.0
+offset_top = -1001.0
+offset_right = 1414.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26, 0.26, 0.26, 0.6901961)
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("15_n31k3")]
+autoplay = true
+bus = &"Master"
 
 [connection signal="pressed" from="Level2tpButton" to="Level2tpButton" method="_on_pressed"]
