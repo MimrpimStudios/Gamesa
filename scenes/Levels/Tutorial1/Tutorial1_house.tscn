@@ -1,0 +1,141 @@
+[gd_scene load_steps=23 format=4 uid="uid://bnciudt84h5r5"]
+
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_1.gd" id="1_dfr0f"]
+[ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="3_7bc2n"]
+[ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="4_ld215"]
+[ext_resource type="Texture2D" uid="uid://c43xp527uowsx" path="res://assets/Textures/tilemaps/Grass_top.png" id="5_ebx87"]
+[ext_resource type="Texture2D" uid="uid://d4i8ahsx28vhp" path="res://assets/Textures/tilemaps/Log_side.png" id="6_4r1id"]
+[ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="7_k0kai"]
+[ext_resource type="Texture2D" uid="uid://cbcc5myi22ojy" path="res://assets/Textures/tilemaps/black.png" id="8_60aoo"]
+[ext_resource type="Texture2D" uid="uid://d1oquo3ge284m" path="res://assets/Textures/tilemaps/platform.png" id="8_823vm"]
+[ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tilest_1.tres" id="9_823vm"]
+[ext_resource type="Texture2D" uid="uid://cotkgv6tpcj2n" path="res://assets/Textures/tilemaps/door.png" id="9_akpir"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="12_6y8tq"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="13_ydyjp"]
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="14_8nbo1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0kai"]
+texture = ExtResource("8_823vm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjp17"]
+texture = ExtResource("3_7bc2n")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rdrl3"]
+texture = ExtResource("4_ld215")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ga5nr"]
+texture = ExtResource("5_ebx87")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mh3wm"]
+texture = ExtResource("6_4r1id")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8wo7y"]
+texture = ExtResource("7_k0kai")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwtxr"]
+texture = ExtResource("8_60aoo")
+
+[sub_resource type="TileSet" id="TileSet_yl46k"]
+sources/1 = SubResource("TileSetAtlasSource_gjp17")
+sources/2 = SubResource("TileSetAtlasSource_rdrl3")
+sources/3 = SubResource("TileSetAtlasSource_ga5nr")
+sources/4 = SubResource("TileSetAtlasSource_mh3wm")
+sources/5 = SubResource("TileSetAtlasSource_8wo7y")
+sources/6 = SubResource("TileSetAtlasSource_mwtxr")
+sources/0 = SubResource("TileSetAtlasSource_k0kai")
+
+[sub_resource type="LabelSettings" id="LabelSettings_w2atp"]
+font = ExtResource("13_ydyjp")
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dfr0f")
+
+[node name="Layer2" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAHAPr/AAABAAAAACAIAPr/AAABAAAAACAJAPr/AAABAAAAACAKAPr/AAABAAAAACALAPr/AAABAAAAACAMAPr/AAABAAAAACAIAPv/AAACAAAAAAAKAPz/AAACAAAAAAAMAP3/AAACAAAAAAAOAP7/AAACAAAAAAAQAP//AAACAAAAAAAIAPz/AAAAAAAAAAAKAP3/AAAAAAAAAAAMAP7/AAAAAAAAAAAOAP//AAAAAAAAAAAPAP7/AAACAAAAACANAP3/AAACAAAAACALAPz/AAACAAAAACAJAPv/AAACAAAAACA=")
+tile_set = SubResource("TileSet_yl46k")
+rendering_quadrant_size = 8
+
+[node name="Layer4" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAHAPr/AAABAAAAACAIAPr/AAABAAAAACAJAPr/AAABAAAAACAKAPr/AAABAAAAACALAPr/AAABAAAAACAMAPr/AAABAAAAACAIAPv/AAACAAAAAAAKAPz/AAACAAAAAAAMAP3/AAACAAAAAAAOAP7/AAACAAAAAAAQAP//AAACAAAAAAAIAPz/AAAAAAAAAAAKAP3/AAAAAAAAAAAMAP7/AAAAAAAAAAAOAP//AAAAAAAAAAAPAP7/AAACAAAAACANAP3/AAACAAAAACALAPz/AAACAAAAACAJAPv/AAACAAAAACAHAPv/AAAAAAAAACAJAPz/AAAAAAAAACALAP3/AAAAAAAAACANAP7/AAAAAAAAACANAPr/AAABAAAAACAOAPr/AAABAAAAACAPAPr/AAABAAAAACA=")
+tile_set = SubResource("TileSet_yl46k")
+rendering_quadrant_size = 8
+
+[node name="Layer3" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAPr/CAABAAAAADABAPr/CAABAAAAADD8//r/CAABAAAAADD9//r/CAABAAAAADD+//r/CAABAAAAADD///r/CAABAAAAADACAPr/CAABAAAAADADAPr/CAABAAAAADAEAPr/CAABAAAAADAFAPr/CAABAAAAADD7//X/CAABAAAAAFD7//b/CAABAAAAAFD7//f/CAABAAAAAFD7//j/CAABAAAAAFD7//n/CAABAAAAAFD8//T/CAABAAAAADD9//T/CAABAAAAADD+//T/CAABAAAAADD///T/CAABAAAAADAAAPT/CAABAAAAADABAPT/CAABAAAAADACAPT/CAABAAAAADADAPT/CAABAAAAADAEAPT/CAABAAAAADAFAPT/CAABAAAAADAGAPX/CAABAAAAAGAHAPT/CAABAAAAADAIAPT/CAABAAAAADAJAPT/CAABAAAAADAKAPT/CAABAAAAADALAPT/CAABAAAAADAMAPT/CAABAAAAADANAPT/CAABAAAAADAOAPT/CAABAAAAADAPAPT/CAABAAAAADAQAPT/CAABAAAAADAQAPr/CAABAAAAADARAPX/CAABAAAAAFD7//v/CAABAAAAAFD7//z/CAABAAAAAFD7//3/CAABAAAAAFD7//7/CAABAAAAAFD7////CAABAAAAAFD8/wAACAABAAAAAAD9/wAACAABAAAAAAD+/wAACAABAAAAAAD//wAACAABAAAAAAAAAAAACAABAAAAAAABAAAACAABAAAAAAACAAAACAABAAAAAAADAAAACAABAAAAAAAEAAAACAABAAAAAAAFAAAACAABAAAAAAAGAPv/CAABAAAAAFAHAAAACAABAAAAAAAIAAAACAABAAAAAAAJAAAACAABAAAAAAAKAAAACAABAAAAAAALAAAACAABAAAAAAAMAAAACAABAAAAAAANAAAACAABAAAAAAAOAAAACAABAAAAAAAPAAAACAABAAAAAAAQAAAACAABAAAAAAARAPv/CAABAAAAAFASAPT/CAABAAAAADASAPr/CAABAAAAADATAPT/CAABAAAAADATAPr/CAABAAAAADAUAPT/CAABAAAAADAUAPr/CAABAAAAADAVAPT/CAABAAAAADAVAPr/CAABAAAAADAWAPT/CAABAAAAADAWAPr/CAABAAAAADAXAPT/CAABAAAAADAXAPr/CAABAAAAADAYAPT/CAABAAAAADAYAPr/CAABAAAAADAZAPT/CAABAAAAADAZAPr/CAABAAAAADAaAPT/CAABAAAAADAaAPr/CAABAAAAADAbAPT/CAABAAAAADAbAPr/CAABAAAAADAcAPX/CAABAAAAAGAcAPb/CAABAAAAAGAcAPf/CAABAAAAAGAcAPj/CAABAAAAAGAcAPn/CAABAAAAAGASAAAACAABAAAAAAATAAAACAABAAAAAAAUAAAACAABAAAAAAAVAAAACAABAAAAAAAWAAAACAABAAAAAAAXAAAACAABAAAAAAAYAAAACAABAAAAAAAZAAAACAABAAAAAAAaAAAACAABAAAAAAAbAAAACAABAAAAAAAcAPv/CAABAAAAAGAcAPz/CAABAAAAAGAcAP3/CAABAAAAAGAcAP7/CAABAAAAAGAcAP//CAABAAAAAGAGAPr/CAABAAAAADARAPr/CAABAAAAADAGAAAACAABAAAAAAARAAAACAABAAAAAAARAPT/CAABAAAAADAGAPT/CAABAAAAADAcAPr/CAABAAAAAGD7//r/CAABAAAAAFAHAPv/BwABAAAAAAAIAPv/BwABAAAAACAJAPz/BwABAAAAAAAKAPz/BwABAAAAACALAP3/BwABAAAAAAAMAP3/BwABAAAAACANAP7/BwABAAAAAAAOAP7/BwABAAAAACAPAP//BwABAAAAAAA=")
+tile_set = ExtResource("9_823vm")
+rendering_quadrant_size = 8
+
+[node name="HouseDoorButton" type="Button" parent="."]
+offset_left = 396.0
+offset_top = -68.0
+offset_right = 452.0
+offset_bottom = 4.0
+icon = ExtResource("9_akpir")
+flat = true
+
+[node name="player" parent="." instance=ExtResource("12_6y8tq")]
+process_priority = 100
+position = Vector2(8, -86)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+z_index = 100
+position = Vector2(-2, 17)
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_bottom = 120
+limit_smoothed = true
+
+[node name="die_label" type="Label" parent="player/Camera2D2"]
+process_priority = 10002
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -269.0
+offset_right = 89.5
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_w2atp")
+metadata/_edit_use_anchors_ = true
+
+[node name="die_blur" type="ColorRect" parent="player/Camera2D2/die_label"]
+process_priority = 1001
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1419.0
+offset_top = -1001.0
+offset_right = 1414.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26, 0.26, 0.26, 0.6901961)
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("14_8nbo1")]
+autoplay = true
+bus = &"Master"
+
+[connection signal="pressed" from="HouseDoorButton" to="." method="_on_house_door_button_pressed"]

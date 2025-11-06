@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkygigs33emlu"]
+[gd_scene load_steps=7 format=3 uid="uid://dfc1cwaso0mi6"]
 
 [ext_resource type="Script" uid="uid://dpqx34q616qaa" path="res://scripts/MainMenu.gd" id="1_t6dbj"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_u804d"]

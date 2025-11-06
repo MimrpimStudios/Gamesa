@@ -1,7 +1,7 @@
 extends Control
 
 # --- KONSTANTY ---
-const START_SCENE = "res://scenes/Levels/Tutorial1.tscn"
+const START_SCENE = "res://scenes/Levels/Tutorial1/Tutorial1_house.tscn"
 const GITHUB_LINK = "https://github.com/mimrpim/Gamesa/"
 const GITHUB_WIKI_LINK = "https://github.com/mimrpim/Gamesa/wiki"
 const GITHUB_WEB_LINK = "https://mimrpim.github.io/Gamesa"

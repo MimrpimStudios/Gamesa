@@ -3,6 +3,7 @@ extends Area2D
 
 @onready var timer = $Timer
 var count = int(0)
+const tutorial_scene = "res://scenes/Levels/Tutorial1.tscn"
 
 func _on_body_entered(body):
 	print("[DEBUG/KILLZONE] entered " + str(body))
@@ -18,10 +19,11 @@ func _on_body_entered(body):
 		timer.wait_time = 0.25
 		print("[INFO/KILLZONE] Starting timer")
 		timer.start() 
-
+	else:
+		body.queue_free()
 
 func _on_timer_timeout():
 	print("[INFO/KILLZONE] Setting Engine.time_scale to 1")
 	Engine.time_scale = 1.0
 	print("[INFO/KILLZONE] Reloading current scene")
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(tutorial_scene)
