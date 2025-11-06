@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://co2yj2rfooo2m"]
+[gd_scene load_steps=5 format=3 uid="uid://co2yj2rfooo2m"]
 
 [ext_resource type="Texture2D" uid="uid://bwcfalnts8lir" path="res://assets/Textures/characters/player.png" id="1_rwm0n"]
 [ext_resource type="Script" uid="uid://cr5352gfc43qe" path="res://scripts/player.gd" id="1_s027a"]
-[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_qhqgy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s027a"]
 animations = [{
@@ -15,17 +14,8 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 5.0
-height = 20.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_s027a"]
-font = ExtResource("3_qhqgy")
-font_size = 60
-font_color = Color(1, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(20, 50)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 top_level = true
@@ -33,53 +23,11 @@ collision_mask = 3
 script = ExtResource("1_s027a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(12, -25)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_s027a")
 animation = &"idle"
 
-[node name="hitbox" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
-polygon = PackedVector2Array(-2, -20, 2, -20, 2, -19, 3, -19, 3, -16, 4, -16, 4, -15, 3, -15, 3, -13, 5, -13, 5, -12, 7, -12, 7, -11, 8, -11, 8, -8, 7, -8, 7, -7, 4, -7, 4, -6, 3, -6, 3, -4, 4, -4, 4, -2, 5, -2, 5, 0, -5, 0, -5, -3, -4, -3, -4, -4, -3, -4, -3, -6, -4, -6, -4, -7, -7, -7, -7, -8, -8, -8, -8, -12, -7, -12, -7, -13, -5, -13, -5, -15, -4, -15, -4, -18, -3, -18, -3, -19, -2, -19)
-disabled = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CapsuleShape2D_g2els")
-
-[node name="die_label" type="Label" parent="."]
-process_priority = 10002
-visible = false
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -81.5
-offset_top = -51.0
-offset_right = 87.5
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "You died"
-label_settings = SubResource("LabelSettings_s027a")
-
-[node name="die_blur" type="ColorRect" parent="die_label"]
-process_priority = 1001
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1419.0
-offset_top = -1001.0
-offset_right = 1414.0
-offset_bottom = 1164.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.26, 0.26, 0.26, 0.6901961)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-z_index = 100
-position = Vector2(-2, 17)
-offset = Vector2(0, -10)
-zoom = Vector2(5, 5)
+position = Vector2(12, -25)
+shape = SubResource("RectangleShape2D_g2els")

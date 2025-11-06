@@ -1,0 +1,388 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkygigs33emlu"]
+
+[ext_resource type="Script" uid="uid://dpqx34q616qaa" path="res://scripts/MainMenu.gd" id="1_7j8ul"]
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="2_0qq82"]
+[ext_resource type="VideoStream" uid="uid://cy5wov007me5q" path="res://assets/videos/splash.ogv" id="3_y5ja3"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="4_mqas3"]
+[ext_resource type="Texture2D" uid="uid://8q7x5wh86sfw" path="res://assets/Textures/links/wiki.png" id="5_oy0qi"]
+[ext_resource type="Texture2D" uid="uid://b56y8c16kknqf" path="res://assets/Textures/links/github.png" id="6_bfo1e"]
+[ext_resource type="Texture2D" uid="uid://cvuuk23f4nttn" path="res://assets/Textures/links/web.png" id="7_yv4eq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j8ul"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qq82"]
+bg_color = Color(1, 1, 1, 0.9882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5ja3"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="ControMainMenul" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7j8ul")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("2_0qq82")]
+bus = &"Master"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackVideo" type="VideoStreamPlayer" parent="CenterContainer"]
+layout_mode = 2
+stream = ExtResource("3_y5ja3")
+autoplay = true
+loop = true
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -130.5
+offset_right = 60.0
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "PLAY"
+flat = true
+
+[node name="AdvancementsButton" type="Button" parent="Buttons"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -66.5
+offset_right = 184.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "ADVANCEMENTS"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -1.5
+offset_right = 106.0
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Buttons"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 61.0
+offset_right = 50.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, -1)
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "EXIT"
+flat = true
+
+[node name="Links" type="Node" parent="."]
+
+[node name="WikiLinkButton" type="Button" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -24.0
+offset_right = 49.0
+grow_vertical = 0
+icon = ExtResource("5_oy0qi")
+
+[node name="GithubLinkButton" type="Button" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 24.0
+grow_vertical = 0
+icon = ExtResource("6_bfo1e")
+
+[node name="WebLinkButton" type="Button" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -24.0
+offset_right = 74.0
+grow_vertical = 0
+icon = ExtResource("7_yv4eq")
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -128.0
+offset_right = 255.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7j8ul")
+
+[node name="GeneralButton" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -130.5
+offset_right = 60.0
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "GENERAL"
+flat = true
+
+[node name="MusicButton" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -67.5
+offset_right = 200.0
+offset_bottom = -4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "MUSIC & SOUNDS"
+flat = true
+
+[node name="VideoButton" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -2.5
+offset_right = 200.0
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "VIDEO"
+flat = true
+
+[node name="BackButtonOptions" type="Button" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 61.0
+offset_right = 50.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, -1)
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+flat = true
+
+[node name="MusicPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -128.0
+offset_right = 255.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7j8ul")
+
+[node name="VolumeLabelMusic" type="Label" parent="MusicPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -126.5
+offset_right = 90.0
+offset_bottom = -71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "MASTER"
+
+[node name="VolumeSliderMaster" type="HSlider" parent="MusicPanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -75.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0qq82")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_y5ja3")
+value = 100.0
+
+[node name="BackButtonMusic" type="Button" parent="MusicPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 61.0
+offset_right = 50.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, -1)
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+flat = true
+
+[node name="VideoSettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -128.0
+offset_right = 255.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7j8ul")
+
+[node name="BackButtonVideo" type="Button" parent="VideoSettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 61.0
+offset_right = 50.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, -1)
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+flat = true
+
+[node name="ModeButtonVideo" type="OptionButton" parent="VideoSettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -130.5
+offset_right = 162.0
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+flat = true
+selected = 0
+item_count = 2
+popup/item_0/text = "MODE: FULLSCREEN"
+popup/item_0/id = 0
+popup/item_1/text = "MODE: WINDOWED"
+popup/item_1/id = 1
+
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Buttons/AdvancementsButton" to="." method="_on_advancements_button_pressed"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Links/WikiLinkButton" to="." method="_on_wiki_link_button_pressed"]
+[connection signal="pressed" from="Links/GithubLinkButton" to="." method="_on_github_link_button_pressed"]
+[connection signal="pressed" from="Links/WebLinkButton" to="." method="_on_web_link_button_pressed"]
+[connection signal="visibility_changed" from="SettingsPanel" to="." method="_on_settings_panel_visibility_changed"]
+[connection signal="pressed" from="SettingsPanel/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/VideoButton" to="." method="_on_video_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/BackButtonOptions" to="." method="_on_back_button_options_pressed"]
+[connection signal="visibility_changed" from="MusicPanel" to="." method="_on_settings_panel_visibility_changed"]
+[connection signal="value_changed" from="MusicPanel/VolumeSliderMaster" to="." method="_on_volume_slider_music_value_changed"]
+[connection signal="pressed" from="MusicPanel/BackButtonMusic" to="." method="_on_back_button_music_pressed"]
+[connection signal="visibility_changed" from="VideoSettingsPanel" to="." method="_on_settings_panel_visibility_changed"]
+[connection signal="pressed" from="VideoSettingsPanel/BackButtonVideo" to="." method="_on_back_button_video_pressed"]
