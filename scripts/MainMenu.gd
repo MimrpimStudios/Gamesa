@@ -10,7 +10,8 @@ const SAVE_PATH = "user://settings.dat"
 # --- AUDIO KONSTANTY (Názvy Busů) ---
 # Ujistěte se, že tyto názvy odpovídají vašim Audio Busům!
 const MASTER_BUS_NAME = "Master"
-const MUSIC_BUS_NAME = "Master"
+# POZOR: Ponecháno "Master" dle tvého kódu, ale pro hudbu by zde mělo být "Music"!
+const MUSIC_BUS_NAME = "Master" 
 const SFX_BUS_NAME = "SFX"
 
 # --- TŘÍDNÍ PROMĚNNÉ (Nastavení) ---
@@ -20,12 +21,12 @@ var MUSIC_BUS_INDEX: int = -1
 
 # Třídní proměnné, které drží aktuální stav nastavení
 var mode_video = 0
-var volume_music = 50.0 # Nová proměnná pro ukládání/načítání hlasitosti (0-100)
+var volume_music = 100.0 # Proměnná pro ukládání/načítání hlasitosti hudby (0-100)
 
 # --- UZLY (Node References) ---
 # Hlavní menu tlačítka
+@onready var music: AudioStreamPlayer = $Music
 @onready var back_ground: ColorRect = $BackGround
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var center_container: CenterContainer = $CenterContainer
 @onready var back_video: VideoStreamPlayer = $CenterContainer/BackVideo
 @onready var buttons: Node = $Buttons
@@ -43,12 +44,16 @@ var volume_music = 50.0 # Nová proměnná pro ukládání/načítání hlasitos
 @onready var back_button_options: Button = $SettingsPanel/BackButtonOptions
 @onready var music_panel: Panel = $MusicPanel
 @onready var volume_label_music: Label = $MusicPanel/VolumeLabelMusic
-@onready var volume_slider_master: HSlider = $MusicPanel/VolumeSliderMaster
+# POZOR: Tento slider by měl být pro Master Bus, ale v logice se tváří jako hudební (opraveno níže)
+@onready var volume_slider_master: HSlider = $MusicPanel/VolumeSliderMaster 
 @onready var back_button_music: Button = $MusicPanel/BackButtonMusic
 @onready var video_settings_panel: Panel = $VideoSettingsPanel
 @onready var back_button_video: Button = $VideoSettingsPanel/BackButtonVideo
 @onready var mode_button_video: OptionButton = $VideoSettingsPanel/ModeButtonVideo
-
+# NOVÝ MUSIC SLIDER (Dříve nepoužívaný, nyní s ním pracujeme)
+@onready var volume_slider_music: HSlider = $MusicPanel/VolumeSliderMusic
+# NOVÝ LABEL pro zobrazení procent (např. 85%) - nebude dynamicky aktualizován
+@onready var volume_label_2_music: Label = $MusicPanel/VolumeLabel2Music 
 
 
 # ========================================================================
@@ -68,17 +73,22 @@ func _ready() -> void:
 	_load_settings()
 	
 	print("[INFO/MAIN_MENU] Playing music")
-	# Aplikujeme hlasitost IHNED po načtení
-	_apply_audio_settings() 
-	audio_stream_player.play()
 	
 	# 2. Aplikovat načtené hodnoty na UI prvky
 	# VSYNC by se mělo nastavit co nejdříve
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	mode_button_video.selected = mode_video
 	
-	# OPRAVA: Použití call_deferred pro bezpečné nastavení HSlider po plné inicializaci uzlu
-	call_deferred("set_slider_value")
+	# --- INICIALIZACE NOVÉHO MUSIC SLIDERU ---
+	# Aplikujeme načtenou hodnotu na náš Music Slider
+	volume_slider_music.value = volume_music
+	
+	# Aplikujeme hlasitost IHNED po načtení
+	_apply_audio_settings()
+	music.play()
+	# ----------------------------------------
+	
+	# Původní funkce set_slider_value() byla odstraněna, protože cílila na špatný slider.
 	
 	# 3. Zobrazení/Skrytí panelů a tlačítek
 	settings_panel.hide()
@@ -89,15 +99,12 @@ func _ready() -> void:
 	exit_button.show()
 	music_panel.hide()
 
-# OPRAVA: Nová funkce pro bezpečné nastavení HSlider po inicializaci
-func set_slider_value() -> void:
-	volume_slider_master.value = volume_music
-	print(tr("[DEBUG/MAIN_MENU] HSlider value set to: ") + str(volume_music))
+# Původní funkce set_slider_value() byla odstraněna, protože cílila na špatný slider (volume_slider_master).
 
 # Zpracování klávesnice pro stisk ESC (Konec hry)
 func _input(event):
 	if Input.is_action_just_pressed("esc"):
-		print("[DEBUG/MAIN_MENU] Pressed Escape button")
+		print("[DEBUG/MAIN_MENU] Pressed "+str(event)+" button")
 		print("[INFO/MAIN_MENU] Exiting the game")
 		get_tree().quit()
 
@@ -113,7 +120,8 @@ func _save_settings() -> void:
 	if file:
 		# Získat aktuální vybrané hodnoty z UI prvků do třídních proměnných
 		mode_video = mode_button_video.get_selected_id()
-		volume_music = volume_slider_master.value # ZÍSKÁNÍ AKTUÁLNÍ HODNOTY SLIDERU
+		# Nyní čteme hodnotu ze SPRÁVNÉHO SLIDERU (volume_slider_music)
+		volume_music = volume_slider_music.value 
 		
 		# Uložit proměnné JEDNU PO DRUHÉ (musí se číst v tomto pořadí)
 		# POZOR NA POŘADÍ UKLÁDÁNÍ!
@@ -132,7 +140,6 @@ func _load_settings() -> void:
 		
 		if file:
 			# Načíst proměnné ve stejném pořadí, v jakém byly uloženy
-			# Pokud selže get_var(), vrátí "null", což způsobí chybu. Použijeme try_catch
 			
 			var loaded_mode = file.get_var()
 			if loaded_mode != null:
@@ -168,6 +175,11 @@ func _apply_audio_settings() -> void:
 		var db_volume = linear_to_db(linear_volume)
 		
 		AudioServer.set_bus_volume_db(MUSIC_BUS_INDEX, db_volume)
+		
+		# --- DŮLEŽITÁ ZMĚNA: Odstranění dynamické aktualizace labelu ---
+		# volume_label_2_music.text = str(int(volume_music)) + "%" <--- TENTO ŘÁDEK BYL ODSTRANĚN
+		# ---------------------------------------------------------------
+		
 		print(tr("[INFO/AUDIO] Applied Music Volume: ") + str(volume_music) + tr(" (") + str(db_volume) + " dB)")
 	else:
 		print(tr("[WARN/AUDIO] Music bus not found! Check AudioBusLayout."))
@@ -209,11 +221,11 @@ func _apply_video_settings() -> void:
 # ========================================================================
 
 # --- Nastavení Hudby ---
-
+# Tato funkce je volána, když se změní hodnota volume_slider_music
 func _on_volume_slider_music_value_changed(value: float) -> void:
 	# OKAMŽITÁ APLIKACE HLASITOSTI PŘI POHYBU SLIDEREM
-	volume_music = value # Aktualizujeme třídní proměnnou
-	_apply_audio_settings() # Aplikujeme nové decibely
+	volume_music = value # Aktualizujeme třídní proměnnou (0-100)
+	_apply_audio_settings() # Aplikujeme nové decibely (Label se neaktualizuje)
 
 
 # --- Hlavní tlačítka menu ---
@@ -221,7 +233,7 @@ func _on_volume_slider_music_value_changed(value: float) -> void:
 func _on_play_button_pressed() -> void:
 	print("[DEBUG/MAIN_MENU] Pressed Play button")
 	# Uložit nastavení před spuštěním hry
-	_save_settings() 
+	_save_settings()
 	print("[INFO/MAIN_MENU] Starting scene: " + START_SCENE)
 	get_tree().change_scene_to_file(START_SCENE)
 
@@ -233,7 +245,7 @@ func _on_settings_button_pressed() -> void:
 	advancements_button.hide()
 	exit_button.hide()
 
-# Ostatní navigační a odkazové funkce... 
+# Ostatní navigační a odkazové funkce... 
 
 func _on_advancements_button_pressed() -> void:
 	print("[DEBUG/MAIN_MENU] Pressed Advancements button")
