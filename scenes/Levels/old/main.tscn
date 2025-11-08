@@ -1,0 +1,177 @@
+[gd_scene load_steps=29 format=3 uid="uid://b6182c0ee3kj5"]
+
+[ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="1_icdoy"]
+[ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="2_5ejwa"]
+[ext_resource type="Texture2D" uid="uid://c43xp527uowsx" path="res://assets/Textures/tilemaps/Grass_top.png" id="3_kvgkm"]
+[ext_resource type="Texture2D" uid="uid://d4i8ahsx28vhp" path="res://assets/Textures/tilemaps/Log_side.png" id="4_n2hih"]
+[ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="5_3vdv2"]
+[ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="6_nd1ie"]
+[ext_resource type="PackedScene" uid="uid://b82nr8lhymwwm" path="res://scenes/sprites/car.tscn" id="7_70wb6"]
+[ext_resource type="PackedScene" uid="uid://bta3lsxmiuapr" path="res://scenes/sprites/platform.tscn" id="8_hqgpa"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="9_or0gr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48cn3"]
+texture = ExtResource("1_icdoy")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov4sg"]
+texture = ExtResource("2_5ejwa")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ua5jh"]
+texture = ExtResource("3_kvgkm")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytb86"]
+texture = ExtResource("4_n2hih")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rin3v"]
+texture = ExtResource("5_3vdv2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ahyqc"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
+sources/0 = SubResource("TileSetAtlasSource_48cn3")
+sources/1 = SubResource("TileSetAtlasSource_ov4sg")
+sources/2 = SubResource("TileSetAtlasSource_ua5jh")
+sources/3 = SubResource("TileSetAtlasSource_ytb86")
+sources/4 = SubResource("TileSetAtlasSource_rin3v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xplbd"]
+texture = ExtResource("1_icdoy")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rsl6"]
+texture = ExtResource("2_5ejwa")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5d64"]
+texture = ExtResource("3_kvgkm")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahyqc"]
+texture = ExtResource("4_n2hih")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7a27"]
+texture = ExtResource("5_3vdv2")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ftd1h"]
+sources/0 = SubResource("TileSetAtlasSource_xplbd")
+sources/1 = SubResource("TileSetAtlasSource_6rsl6")
+sources/2 = SubResource("TileSetAtlasSource_p5d64")
+sources/3 = SubResource("TileSetAtlasSource_ahyqc")
+sources/4 = SubResource("TileSetAtlasSource_t7a27")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xplbd"]
+distance = -67.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xplbd"]
+size = Vector2(80, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rsl6"]
+size = Vector2(16, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5d64"]
+size = Vector2(48, 0)
+
+[sub_resource type="Animation" id="Animation_ov4sg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-159, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_48cn3"]
+resource_name = "platform1"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.659754, 0.659),
+"update": 0,
+"values": [Vector2(-159, 16), Vector2(-208, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua5jh"]
+_data = {
+&"RESET": SubResource("Animation_ov4sg"),
+&"platform1": SubResource("Animation_48cn3")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ahyqc")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131067, 0, 0, 196603, 0, 0, 262139, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 131069, 0, 0, 196605, 0, 0, 262141, 0, 0, 131070, 0, 0, 196606, 0, 0, 262142, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 131072, 0, 0, 196608, 0, 0, 131073, 0, 0, 196609, 0, 0, 131074, 0, 0, 196610, 0, 0, 131075, 0, 0, 196611, 0, 0, 131076, 0, 0, 196612, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 65552, 0, 0, 131088, 0, 0, 196624, 0, 0, 65553, 0, 0, 131089, 0, 0, 196625, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 65555, 0, 0, 131091, 0, 0, 196627, 0, 0, 65556, 0, 0, 131092, 0, 0, 196628, 0, 0, 65557, 0, 0, 131093, 0, 0, 196629, 0, 0, 65558, 0, 0, 131094, 0, 0, 196630, 0, 0, 65559, 0, 0, 131095, 0, 0, 196631, 0, 0, 65560, 0, 0, 131096, 0, 0, 196632, 0, 0, 65561, 0, 0, 131097, 0, 0, 196633, 0, 0, 65562, 0, 0, 131098, 0, 0, 196634, 0, 0, 65563, 0, 0, 131099, 0, 0, 196635, 0, 0, 65564, 0, 0, 131100, 0, 0, 196636, 0, 0, 65565, 0, 0, 131101, 0, 0, 196637, 0, 0, 65566, 0, 0, 131102, 0, 0, 196638, 0, 0, 65567, 0, 0, 131103, 0, 0, 196639, 0, 0, 65568, 0, 0, 131104, 0, 0, 196640, 0, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 65528, 1, 0, 131064, 0, 0, 196600, 0, 0, 262136, 0, 0, 65529, 1, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 65530, 1, 0, 131066, 0, 0, 196602, 0, 0, 262138, 0, 0, 2, 1, 0, 65522, 1, 0)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ftd1h")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65532, 3, 0, -131068, 3, 0, -196604, 3, 0, -262138, 2, 0, -262139, 2, 0, -262140, 2, 0, -262141, 2, 0, -262142, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -393212, 2, 0, -458748, 2, 0, -393213, 2, 0, -393211, 2, 0)
+
+[node name="Killzone" parent="." instance=ExtResource("6_nd1ie")]
+position = Vector2(-2, 72)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(2, -72)
+shape = SubResource("WorldBoundaryShape2D_xplbd")
+
+[node name="tree" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree"]
+position = Vector2(72, -80)
+shape = SubResource("RectangleShape2D_xplbd")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="tree"]
+position = Vector2(72, -112)
+shape = SubResource("RectangleShape2D_6rsl6")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="tree"]
+position = Vector2(72, -96)
+shape = SubResource("RectangleShape2D_p5d64")
+one_way_collision = true
+
+[node name="spike" parent="." instance=ExtResource("7_70wb6")]
+position = Vector2(180, 0)
+
+[node name="Platform" parent="." instance=ExtResource("8_hqgpa")]
+position = Vector2(-159, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_ua5jh")
+}
+autoplay = "platform1"
+
+[node name="player" parent="." instance=ExtResource("9_or0gr")]
+position = Vector2(2, -17)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-2, 17)
+offset = Vector2(0, -10)
+zoom = Vector2(5, 5)

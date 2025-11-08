@@ -2,6 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://bo5kep0nhkm7j" path="res://assets/Sounds/Music/MainMenu.mp3" id="1_eveow"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="Music" type="AudioStreamPlayer"]
 stream = ExtResource("1_eveow")
 bus = &"Music"

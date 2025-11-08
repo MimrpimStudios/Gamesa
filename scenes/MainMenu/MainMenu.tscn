@@ -35,9 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("2_0qq82")]
-bus = &"Master"
-
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -278,6 +275,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_mqas3")
 theme_override_font_sizes/font_size = 64
 text = "MASTER"
+horizontal_alignment = 1
 
 [node name="VolumeSliderMaster" type="HSlider" parent="MusicPanel"]
 layout_mode = 1
@@ -287,6 +285,38 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_top = -75.0
 offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0qq82")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_y5ja3")
+value = 100.0
+
+[node name="VolumeLabel2Music" type="Label" parent="MusicPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -62.5
+offset_right = 90.0
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mqas3")
+theme_override_font_sizes/font_size = 64
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="VolumeSliderMusic" type="HSlider" parent="MusicPanel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0qq82")
@@ -370,6 +400,8 @@ popup/item_0/id = 0
 popup/item_1/text = "MODE: WINDOWED"
 popup/item_1/id = 1
 
+[node name="Music" parent="." instance=ExtResource("2_0qq82")]
+
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/AdvancementsButton" to="." method="_on_advancements_button_pressed"]
 [connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
@@ -383,6 +415,7 @@ popup/item_1/id = 1
 [connection signal="pressed" from="SettingsPanel/BackButtonOptions" to="." method="_on_back_button_options_pressed"]
 [connection signal="visibility_changed" from="MusicPanel" to="." method="_on_settings_panel_visibility_changed"]
 [connection signal="value_changed" from="MusicPanel/VolumeSliderMaster" to="." method="_on_volume_slider_music_value_changed"]
+[connection signal="value_changed" from="MusicPanel/VolumeSliderMusic" to="." method="_on_volume_slider_music_value_changed"]
 [connection signal="pressed" from="MusicPanel/BackButtonMusic" to="." method="_on_back_button_music_pressed"]
 [connection signal="visibility_changed" from="VideoSettingsPanel" to="." method="_on_settings_panel_visibility_changed"]
 [connection signal="pressed" from="VideoSettingsPanel/BackButtonVideo" to="." method="_on_back_button_video_pressed"]

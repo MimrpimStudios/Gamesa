@@ -1,9 +1,9 @@
 [gd_scene load_steps=29 format=4 uid="uid://yf1qipxl3odi"]
 
-[ext_resource type="Script" uid="uid://boy4ae3qijwwx" path="res://scripts/tobik_hut_1.gd" id="1_yrmga"]
+[ext_resource type="Script" uid="uid://boy4ae3qijwwx" path="res://scripts/tutorial1/tobik_hut_1.gd" id="1_yrmga"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_genpm"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="4_dseol"]
-[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="5_8vcvk"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="5_8vcvk"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="6_05qiu"]
 [ext_resource type="AudioStream" uid="uid://b7mdtuj52smgl" path="res://assets/Sounds/Music/tobik_hut.wav" id="6_h7n2g"]
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="7_yrmga"]
@@ -103,7 +103,6 @@ shape = SubResource("WorldBoundaryShape2D_h7n2g")
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("6_05qiu")]
 stream = ExtResource("6_h7n2g")
 autoplay = true
-bus = &"Master"
 
 [node name="Layer2" type="TileMapLayer" parent="."]
 use_parent_material = true

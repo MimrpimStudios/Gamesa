@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://bnciudt84h5r5"]
 
-[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_1.gd" id="1_dfr0f"]
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_dfr0f"]
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="3_7bc2n"]
 [ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="4_ld215"]
 [ext_resource type="Texture2D" uid="uid://c43xp527uowsx" path="res://assets/Textures/tilemaps/Grass_top.png" id="5_ebx87"]
@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="7_k0kai"]
 [ext_resource type="Texture2D" uid="uid://cbcc5myi22ojy" path="res://assets/Textures/tilemaps/black.png" id="8_60aoo"]
 [ext_resource type="Texture2D" uid="uid://d1oquo3ge284m" path="res://assets/Textures/tilemaps/platform.png" id="8_823vm"]
-[ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tilest_1.tres" id="9_823vm"]
+[ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tileset_1.tres" id="9_823vm"]
 [ext_resource type="Texture2D" uid="uid://cotkgv6tpcj2n" path="res://assets/Textures/tilemaps/door.png" id="9_akpir"]
-[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="12_6y8tq"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="12_6y8tq"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="13_ydyjp"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="14_8nbo1"]
 
@@ -136,6 +136,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("14_8nbo1")]
 autoplay = true
-bus = &"Master"
 
 [connection signal="pressed" from="HouseDoorButton" to="." method="_on_house_door_button_pressed"]
