@@ -127,6 +127,7 @@ flat = true
 [node name="Links" type="Node" parent="."]
 
 [node name="WikiLinkButton" type="Button" parent="Links"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -137,6 +138,7 @@ grow_vertical = 0
 icon = ExtResource("5_oy0qi")
 
 [node name="GithubLinkButton" type="Button" parent="Links"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -146,6 +148,7 @@ grow_vertical = 0
 icon = ExtResource("6_bfo1e")
 
 [node name="WebLinkButton" type="Button" parent="Links"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -401,6 +404,7 @@ popup/item_1/text = "MODE: WINDOWED"
 popup/item_1/id = 1
 
 [node name="Music" parent="." instance=ExtResource("2_0qq82")]
+bus = &"Master"
 
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/AdvancementsButton" to="." method="_on_advancements_button_pressed"]

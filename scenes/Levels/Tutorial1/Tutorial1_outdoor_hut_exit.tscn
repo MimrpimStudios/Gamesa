@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://7dlcxfgmhus6"]
+[gd_scene load_steps=36 format=4 uid="uid://7dlcxfgmhus6"]
 
 [ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_mcer8"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="2_6a4x3"]
@@ -84,6 +84,9 @@ font_color = Color(1, 0, 0, 1)
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7in0"]
+size = Vector2(47, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qdsx"]
 size = Vector2(128, 1)
@@ -194,6 +197,13 @@ metadata/_edit_use_anchors_ = true
 autoplay = true
 bus = &"Master"
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-76, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-12.5, -92)
+shape = SubResource("RectangleShape2D_d7in0")
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("16_6a4x3")
 
@@ -205,4 +215,6 @@ shape = SubResource("RectangleShape2D_3qdsx")
 [connection signal="body_entered" from="show_layer0" to="show_layer0" method="_on_body_entered"]
 [connection signal="body_exited" from="show_layer0" to="show_layer0" method="_on_body_exited"]
 [connection signal="pressed" from="HouseButton" to="." method="_on_house_button_pressed"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

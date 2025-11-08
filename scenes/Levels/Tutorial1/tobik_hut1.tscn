@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://yf1qipxl3odi"]
+[gd_scene load_steps=30 format=4 uid="uid://yf1qipxl3odi"]
 
 [ext_resource type="Script" uid="uid://boy4ae3qijwwx" path="res://scripts/tutorial1/tobik_hut_1.gd" id="1_yrmga"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_genpm"]
@@ -83,6 +83,9 @@ sources/3 = SubResource("TileSetAtlasSource_24stl")
 sources/4 = SubResource("TileSetAtlasSource_553gq")
 sources/5 = SubResource("TileSetAtlasSource_44ibi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q61b"]
+size = Vector2(47, 55)
+
 [sub_resource type="LabelSettings" id="LabelSettings_yrmga"]
 font = ExtResource("2_genpm")
 font_size = 60
@@ -103,6 +106,7 @@ shape = SubResource("WorldBoundaryShape2D_h7n2g")
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("6_05qiu")]
 stream = ExtResource("6_h7n2g")
 autoplay = true
+bus = &"Master"
 
 [node name="Layer2" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -115,6 +119,12 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD7/wAABQAAAAAAAAD8/wAABQAAAAAAAAD9/wAABQAAAAAAAAD+/wAABQAAAAAAAAD//wAABQAAAAAAAAAAAAAABQAAAAAAAAABAAAABQAAAAAAAAACAAAABQAAAAAAAAADAAAABQAAAAAAAAAEAAAABQAAAAAAAAAFAAAABQAAAAAAAAAGAAAABQAAAAAAAAAHAAAABQAAAAAAAAAIAAAABQAAAAAAAAAJAAAABQAAAAAAAAAKAAAABQAAAAAAAAD1/wAABQAAAAAAAAD2/wAABQAAAAAAAAD3/wAABQAAAAAAAAD4/wAABQAAAAAAAAD5/wAABQAAAAAAAAD6/wAABQAAAAAAAAALAPr/BQAAAAAAAAALAPv/BQAAAAAAAAALAPz/BQAAAAAAAAALAP3/BQAAAAAAAAALAP7/BQAAAAAAAAALAP//BQAAAAAAAAD1//n/BQAAAAAAAAD2//n/BQAAAAAAAAD3//n/BQAAAAAAAAD4//n/BQAAAAAAAAD5//n/BQAAAAAAAAD6//n/BQAAAAAAAAD7//n/BQAAAAAAAAD8//n/BQAAAAAAAAD9//n/BQAAAAAAAAD+//n/BQAAAAAAAAD///n/BQAAAAAAAAAAAPn/BQAAAAAAAAABAPn/BQAAAAAAAAACAPn/BQAAAAAAAAADAPn/BQAAAAAAAAAEAPn/BQAAAAAAAAAFAPn/BQAAAAAAAAAGAPn/BQAAAAAAAAAHAPn/BQAAAAAAAAAIAPn/BQAAAAAAAAAJAPn/BQAAAAAAAAAKAPn/BQAAAAAAAAD0//r/BQAAAAAAAAD0//v/BQAAAAAAAAD0//z/BQAAAAAAAAD0//3/BQAAAAAAAAD0//7/BQAAAAAAAAD0////BQAAAAAAAAA=")
 tile_set = SubResource("TileSet_vndeu")
 rendering_quadrant_size = 8
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(151.5, -27.5)
+shape = SubResource("RectangleShape2D_3q61b")
 
 [node name="TobikHutButton" type="Button" parent="."]
 offset_left = 124.0
@@ -171,4 +181,7 @@ grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.6901961)
 metadata/_edit_use_anchors_ = true
 
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="TobikHutButton" to="." method="_on_tobik_hut_button_pressed"]

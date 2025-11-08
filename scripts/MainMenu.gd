@@ -249,8 +249,7 @@ func _on_settings_button_pressed() -> void:
 
 func _on_advancements_button_pressed() -> void:
 	print("[DEBUG/MAIN_MENU] Pressed Advancements button")
-	print("[INFO/MAIN_MENU] Starting scene: " + START_SCENE)
-	get_tree().change_scene_to_file(START_SCENE)
+	
 
 func _on_exit_button_pressed() -> void:
 	print("[DEBUG/MAIN_MENU] Pressed Exit button")

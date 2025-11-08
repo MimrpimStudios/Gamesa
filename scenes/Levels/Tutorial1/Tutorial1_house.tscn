@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bnciudt84h5r5"]
+[gd_scene load_steps=24 format=4 uid="uid://bnciudt84h5r5"]
 
 [ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_dfr0f"]
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="3_7bc2n"]
@@ -52,6 +52,9 @@ sources/5 = SubResource("TileSetAtlasSource_8wo7y")
 sources/6 = SubResource("TileSetAtlasSource_mwtxr")
 sources/0 = SubResource("TileSetAtlasSource_k0kai")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_823vm"]
+size = Vector2(47, 56)
+
 [sub_resource type="LabelSettings" id="LabelSettings_w2atp"]
 font = ExtResource("13_ydyjp")
 font_size = 60
@@ -88,6 +91,13 @@ offset_right = 452.0
 offset_bottom = 4.0
 icon = ExtResource("9_akpir")
 flat = true
+
+[node name="DoorHouseArea" type="Area2D" parent="HouseDoorButton"]
+position = Vector2(-76, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoorButton/DoorHouseArea"]
+position = Vector2(104, 40)
+shape = SubResource("RectangleShape2D_823vm")
 
 [node name="player" parent="." instance=ExtResource("12_6y8tq")]
 process_priority = 100
@@ -136,5 +146,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("14_8nbo1")]
 autoplay = true
+bus = &"Master"
 
-[connection signal="pressed" from="HouseDoorButton" to="." method="_on_house_door_button_pressed"]
+[connection signal="pressed" from="HouseDoorButton" to="." method="_on_house_door_in_button_pressed"]
+[connection signal="body_entered" from="HouseDoorButton/DoorHouseArea" to="." method="_on_door_house_area_body_entered"]
+[connection signal="body_exited" from="HouseDoorButton/DoorHouseArea" to="." method="_on_door_house_area_body_exited"]
