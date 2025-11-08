@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.0.8"
+config/description="A godot game. github.com/mimrpim/Gamesa"
+config/version="0.0.0.9"
 run/main_scene="uid://bse7q6g0xhw4g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
@@ -35,7 +36,7 @@ window/size/initial_position_type=4
 movie_writer/video_quality=1.0
 movie_writer/ogv/audio_quality=1.0
 movie_writer/ogv/encoding_speed=1
-movie_writer/movie_file="C:/Users/mimrp/Documents/godot/ta_hra/movies/movie2.avi"
+movie_writer/movie_file="C:/Users/mimrp/Documents/godot/ta_hra/movies/movie3.avi"
 movie_writer/disable_vsync=true
 
 [global_group]
