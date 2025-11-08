@@ -13,12 +13,12 @@ dest_files=["res://.godot/imported/Dungeon_1.wav-97300e377a44d2fb9d15f1fa5f0b25f
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=2

@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=4 uid="uid://b6182c0ee3kj5"]
+
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_dfih8"]
+[ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_o8yur"]
+[ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tileset_1.tres" id="1_u4ox6"]
+[ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="6_dfih8"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="8_5mhgh"]
+[ext_resource type="Script" uid="uid://clb6e2ooyajkc" path="res://scripts/old/Level2tp.gd" id="9_dfih8"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="9_yclo3"]
+[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_n31k3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xplbd"]
+distance = -67.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h7ej"]
+font = ExtResource("8_5mhgh")
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dfih8")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1024, 0)
+repeat_times = 10000
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_o8yur")
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAAAAAAAAAATAAMAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAAAAAAAAAAVAAEAAAAAAAAAAAAVAAIAAAAAAAAAAAAVAAMAAAAAAAAAAAAWAAEAAAAAAAAAAAAWAAIAAAAAAAAAAAAWAAMAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAIAAAAAAAAAAAAXAAMAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAMAAAAAAAAAAAAZAAEAAAAAAAAAAAAZAAIAAAAAAAAAAAAZAAMAAAAAAAAAAAAaAAEAAAAAAAAAAAAaAAIAAAAAAAAAAAAaAAMAAAAAAAAAAAAbAAEAAAAAAAAAAAAbAAIAAAAAAAAAAAAbAAMAAAAAAAAAAAAcAAEAAAAAAAAAAAAcAAIAAAAAAAAAAAAcAAMAAAAAAAAAAAAdAAEAAAAAAAAAAAAdAAIAAAAAAAAAAAAdAAMAAAAAAAAAAAAeAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAeAAMAAAAAAAAAAAAfAAEAAAAAAAAAAAAfAAIAAAAAAAAAAAAfAAMAAAAAAAAAAAAgAAEAAAAAAAAAAAAgAAIAAAAAAAAAAAAgAAMAAAAAAAAAAAD7/wAAAQAAAAAAAAD8/wAAAQAAAAAAAAD9/wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAZAAAAAQAAAAAAAAAaAAAAAQAAAAAAAAAbAAAAAQAAAAAAAAAcAAAAAQAAAAAAAAAdAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAAfAAAAAQAAAAAAAAAgAAAAAQAAAAAAAAD4/wAAAQAAAAAAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wMAAAAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAACAAAAAQAAAAAAAADy/wAAAQAAAAAAAAA=")
+tile_set = ExtResource("1_u4ox6")
+
+[node name="Level2tpButton" type="Button" parent="."]
+offset_left = 512.0
+offset_top = -37.0
+offset_right = 666.0
+offset_bottom = -1.0
+theme_override_fonts/font = ExtResource("8_5mhgh")
+theme_override_font_sizes/font_size = 32
+text = "Go to Level 2"
+flat = true
+script = ExtResource("9_dfih8")
+
+[node name="Killzone" parent="." instance=ExtResource("6_dfih8")]
+position = Vector2(-2, 72)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(2, -72)
+shape = SubResource("WorldBoundaryShape2D_xplbd")
+
+[node name="player" parent="." instance=ExtResource("9_yclo3")]
+process_priority = 100
+position = Vector2(2, -17)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+z_index = 100
+position = Vector2(-4, 34)
+offset = Vector2(0, -10)
+zoom = Vector2(5, 5)
+limit_bottom = 120
+limit_smoothed = true
+
+[node name="die_label" type="Label" parent="player/Camera2D2"]
+process_priority = 10002
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -49.0
+offset_right = 89.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You died"
+label_settings = SubResource("LabelSettings_4h7ej")
+metadata/_edit_use_anchors_ = true
+
+[node name="die_blur" type="ColorRect" parent="player/Camera2D2/die_label"]
+process_priority = 1001
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1419.0
+offset_top = -1001.0
+offset_right = 1414.0
+offset_bottom = 1164.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26, 0.26, 0.26, 0.6901961)
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("15_n31k3")]
+autoplay = true
+bus = &"Master"
+
+[connection signal="pressed" from="Level2tpButton" to="Level2tpButton" method="_on_pressed"]

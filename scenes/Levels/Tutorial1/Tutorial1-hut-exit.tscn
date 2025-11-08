@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://c53s5rx64lyog"]
 
-[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_1.gd" id="1_oijhk"]
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_oijhk"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="2_x1edx"]
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="3_ngm3g"]
 [ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="4_6c30s"]
@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://d4i8ahsx28vhp" path="res://assets/Textures/tilemaps/Log_side.png" id="6_y0x4d"]
 [ext_resource type="Texture2D" uid="uid://2aqjqp6yqq2k" path="res://assets/Textures/tilemaps/Log_top.png" id="7_kjt3o"]
 [ext_resource type="Texture2D" uid="uid://cbcc5myi22ojy" path="res://assets/Textures/tilemaps/black.png" id="8_alb8b"]
-[ext_resource type="Script" uid="uid://b30pya7anqq56" path="res://scripts/show_layer_0_tutorial1.gd" id="9_qgklu"]
+[ext_resource type="Script" uid="uid://b30pya7anqq56" path="res://scripts/tutorial1/tobik_hut_door_show.gd" id="9_qgklu"]
 [ext_resource type="Texture2D" uid="uid://cotkgv6tpcj2n" path="res://assets/Textures/tilemaps/door.png" id="9_x1edx"]
-[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/player.tscn" id="11_0kwc4"]
-[ext_resource type="PackedScene" uid="uid://kn7ewmko13by" path="res://scenes/killzone_tutorial.tscn" id="11_ngm3g"]
+[ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="11_0kwc4"]
+[ext_resource type="PackedScene" uid="uid://kn7ewmko13by" path="res://scenes/Levels/Tutorial1/killzone_tutorial.tscn" id="11_ngm3g"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="12_1j8t4"]
-[ext_resource type="Script" uid="uid://c6n5675x4k3kt" path="res://scripts/killzone_tutorial.gd" id="12_6c30s"]
+[ext_resource type="Script" uid="uid://c6n5675x4k3kt" path="res://scripts/tutorial1/killzone_tutorial.gd" id="12_6c30s"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="13_wig0r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngm3g"]
@@ -192,7 +192,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("13_wig0r")]
 autoplay = true
-bus = &"Master"
 
 [connection signal="pressed" from="TobikHutButton" to="." method="_on_tobik_hut_button_pressed"]
 [connection signal="pressed" from="TobikHutButton" to="show_layer0" method="_on_tobik_hut_button_pressed"]

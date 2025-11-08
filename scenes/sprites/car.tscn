@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b82nr8lhymwwm"]
+
+[ext_resource type="Texture2D" uid="uid://csjqvs5j2h17w" path="res://assets/Textures/sprites/car_red.png" id="1_qt2eu"]
+[ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="2_1ldwk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50v30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qt2eu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="spike" type="Area2D" groups=["enemy"]]
+visibility_layer = 2
+collision_layer = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_50v30")
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("2_1ldwk")]
+collision_mask = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
+polygon = PackedVector2Array(-14, 0, -14, -1, -15, -1, -15, -3, -18, -3, -18, -4, -19, -4, -19, -8, -18, -8, -18, -9, -15, -9, -15, -13, -14, -13, -14, -14, -13, -14, -13, -16, -12, -16, -12, -17, -11, -17, -11, -19, -10, -19, -10, -20, 10, -20, 10, -19, 11, -19, 11, -17, 12, -17, 12, -16, 13, -16, 13, -14, 14, -14, 14, -13, 15, -13, 15, -9, 18, -9, 18, -8, 19, -8, 19, -4, 18, -4, 18, -3, 15, -3, 15, -1, 14, -1, 14, 0, 9, 0, 9, -1, 8, -1, 8, -3, -8, -3, -8, -1, -9, -1, -9, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
