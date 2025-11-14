@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=4 uid="uid://cehjk7o7ryj70"]
 
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tileset_1.tres" id="1_04sgr"]
+[ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_lhojw"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_pyh4d"]
-[ext_resource type="Script" uid="uid://defmjcxedmas5" path="res://scripts/old/level_2.gd" id="1_yye74"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_3s172"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="2_pyh4d"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="3_3s172"]
@@ -20,7 +20,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_yye74")
+script = ExtResource("1_lhojw")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(1024, 0)

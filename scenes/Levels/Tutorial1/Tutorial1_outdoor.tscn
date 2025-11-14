@@ -86,7 +86,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1v40"]
-size = Vector2(128, 1)
+size = Vector2(435, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l34al"]
 size = Vector2(47, 56)
@@ -205,7 +205,7 @@ bus = &"Master"
 script = ExtResource("16_5sflg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(752, -64.5)
+position = Vector2(857.5, -272)
 shape = SubResource("RectangleShape2D_q1v40")
 
 [node name="Area2D2" type="Area2D" parent="."]
