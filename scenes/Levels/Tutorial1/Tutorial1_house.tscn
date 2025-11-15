@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1oquo3ge284m" path="res://assets/Textures/tilemaps/platform.png" id="8_823vm"]
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tileset_1.tres" id="9_823vm"]
 [ext_resource type="Texture2D" uid="uid://cotkgv6tpcj2n" path="res://assets/Textures/tilemaps/door.png" id="9_akpir"]
-[ext_resource type="LabelSettings" uid="uid://b2gcyit7dl8s7" path="res://label_settings/Default32.tres" id="9_dfr0f"]
+[ext_resource type="LabelSettings" uid="uid://b2gcyit7dl8s7" path="res://label_settings/Default16.tres" id="9_dfr0f"]
 [ext_resource type="Script" uid="uid://d304hd24ihi1u" path="res://scripts/tutorial1/tutorial1_stairs_house.gd" id="11_10fcb"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="12_6y8tq"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="13_ydyjp"]

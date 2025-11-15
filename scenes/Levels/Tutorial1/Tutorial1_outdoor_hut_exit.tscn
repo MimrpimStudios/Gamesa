@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://7dlcxfgmhus6"]
+[gd_scene load_steps=37 format=4 uid="uid://7dlcxfgmhus6"]
 
 [ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_mcer8"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="2_6a4x3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kh84v8kbfdx" path="res://assets/Textures/tilemaps/yellow.png" id="11_736ir"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="12_qbv7l"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="13_hmb20"]
+[ext_resource type="LabelSettings" uid="uid://b2gcyit7dl8s7" path="res://label_settings/Default16.tres" id="14_0rc7i"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="14_t74kx"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_t8qqm"]
 [ext_resource type="Script" uid="uid://drtfvj7i7wmkw" path="res://scripts/tutorial1/tp_scene_out_to_town.gd.gd" id="16_6a4x3"]
@@ -125,6 +126,36 @@ script = ExtResource("10_8a20b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="show_layer0"]
 position = Vector2(418, -92)
 shape = SubResource("RectangleShape2D_rdrl3")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="HelpLabel1" type="Label" parent="Labels"]
+offset_left = 288.0
+offset_top = -144.0
+offset_right = 384.0
+offset_bottom = -96.0
+text = "You need to jump
+on theese
+platforms"
+label_settings = ExtResource("14_0rc7i")
+
+[node name="HelpLabel2" type="Label" parent="Labels"]
+offset_left = 464.0
+offset_top = -400.0
+offset_right = 560.0
+offset_bottom = -352.0
+text = "Now jump down
+and forward
+----->"
+label_settings = ExtResource("14_0rc7i")
+
+[node name="HelpLabel3" type="Label" parent="Labels"]
+offset_left = 704.0
+offset_top = -120.0
+offset_right = 800.0
+offset_bottom = -72.0
+text = "Avoid cars..."
+label_settings = ExtResource("14_0rc7i")
 
 [node name="HouseButton" type="Button" parent="."]
 offset_left = -114.0
