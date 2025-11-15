@@ -26,8 +26,7 @@ var volume_music = 100.0
 # onready
 @onready var music: AudioStreamPlayer = $Music
 @onready var back_ground: ColorRect = $BackGround
-@onready var center_container: CenterContainer = $CenterContainer
-@onready var back_video: VideoStreamPlayer = $CenterContainer/BackVideo
+@onready var back_video: VideoStreamPlayer = $BackVideo
 @onready var buttons: Node = $Buttons
 @onready var play_button: Button = $Buttons/PlayButton
 @onready var advancements_button: Button = $Buttons/AdvancementsButton
