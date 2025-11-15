@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_dfih8"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="1_o8yur"]
 [ext_resource type="TileSet" uid="uid://boua8wd5dhon6" path="res://tilesets/Tileset_1.tres" id="1_u4ox6"]
+[ext_resource type="Script" uid="uid://cfs3gy6yq0sll" path="res://scripts/old/level_2_tp_button.gd" id="5_up3u4"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="6_dfih8"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="8_5mhgh"]
-[ext_resource type="Script" uid="uid://clb6e2ooyajkc" path="res://scripts/old/Level2tp.gd" id="9_dfih8"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="9_yclo3"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_n31k3"]
 
@@ -44,7 +44,7 @@ theme_override_fonts/font = ExtResource("8_5mhgh")
 theme_override_font_sizes/font_size = 32
 text = "Go to Level 2"
 flat = true
-script = ExtResource("9_dfih8")
+script = ExtResource("5_up3u4")
 
 [node name="Killzone" parent="." instance=ExtResource("6_dfih8")]
 position = Vector2(-2, 72)

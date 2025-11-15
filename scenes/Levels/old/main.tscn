@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b6182c0ee3kj5"]
+[gd_scene load_steps=31 format=3 uid="uid://b6182c0ee3kj5"]
 
 [ext_resource type="Texture2D" uid="uid://bq22aq27copwo" path="res://assets/Textures/tilemaps/Grass_bottom.png" id="1_icdoy"]
 [ext_resource type="Texture2D" uid="uid://bmsp3cd4vi47w" path="res://assets/Textures/tilemaps/Grass_side.png" id="2_5ejwa"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b82nr8lhymwwm" path="res://scenes/sprites/car.tscn" id="7_70wb6"]
 [ext_resource type="PackedScene" uid="uid://bta3lsxmiuapr" path="res://scenes/sprites/platform.tscn" id="8_hqgpa"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="9_or0gr"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="10_kvgkm"]
+[ext_resource type="Script" uid="uid://cfs3gy6yq0sll" path="res://scripts/old/level_2_tp_button.gd" id="11_n2hih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48cn3"]
 texture = ExtResource("1_icdoy")
@@ -175,3 +177,16 @@ position = Vector2(2, -17)
 position = Vector2(-2, 17)
 offset = Vector2(0, -10)
 zoom = Vector2(5, 5)
+
+[node name="Level2tpButton" type="Button" parent="."]
+offset_left = 512.0
+offset_top = -37.0
+offset_right = 666.0
+offset_bottom = -1.0
+theme_override_fonts/font = ExtResource("10_kvgkm")
+theme_override_font_sizes/font_size = 32
+text = "Go to Level 2"
+flat = true
+script = ExtResource("11_n2hih")
+
+[connection signal="pressed" from="Level2tpButton" to="Level2tpButton" method="_on_pressed"]

@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dpqx34q616qaa" path="res://scripts/MainMenu.gd" id="1_7j8ul"]
 [ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="2_0qq82"]
-[ext_resource type="VideoStream" uid="uid://cy5wov007me5q" path="res://assets/videos/splash.ogv" id="3_y5ja3"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="4_mqas3"]
 [ext_resource type="Texture2D" uid="uid://8q7x5wh86sfw" path="res://assets/Textures/links/wiki.png" id="5_oy0qi"]
 [ext_resource type="Texture2D" uid="uid://b56y8c16kknqf" path="res://assets/Textures/links/github.png" id="6_bfo1e"]
 [ext_resource type="Texture2D" uid="uid://cvuuk23f4nttn" path="res://assets/Textures/links/web.png" id="7_yv4eq"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_r8q81"]
+file = "res://assets/videos/mainmenu.ogv"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j8ul"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -35,19 +37,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="BackVideo" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BackVideo" type="VideoStreamPlayer" parent="CenterContainer"]
-layout_mode = 2
-stream = ExtResource("3_y5ja3")
+stream = SubResource("VideoStreamTheora_r8q81")
+volume_db = -80.0
 autoplay = true
 loop = true
+bus = &"SFX"
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -401,6 +402,7 @@ popup/item_1/text = "MODE: WINDOWED"
 popup/item_1/id = 1
 
 [node name="Music" parent="." instance=ExtResource("2_0qq82")]
+bus = &"Master"
 
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/AdvancementsButton" to="." method="_on_advancements_button_pressed"]

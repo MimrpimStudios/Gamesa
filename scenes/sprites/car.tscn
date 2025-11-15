@@ -1,26 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://b82nr8lhymwwm"]
+[gd_scene load_steps=5 format=3 uid="uid://b82nr8lhymwwm"]
 
 [ext_resource type="Texture2D" uid="uid://csjqvs5j2h17w" path="res://assets/Textures/sprites/car_red.png" id="1_qt2eu"]
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="2_1ldwk"]
+[ext_resource type="Texture2D" uid="uid://vbhl5tnvjb3o" path="res://assets/Textures/sprites/car_red2.png" id="2_ipqrm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_50v30"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_qt2eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ipqrm")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="spike" type="Area2D" groups=["enemy"]]
-visibility_layer = 2
+[node name="car_red" type="Area2D" groups=["enemy"]]
 collision_layer = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -10.500001)
 sprite_frames = SubResource("SpriteFrames_50v30")
+autoplay = "default"
+frame_progress = 0.113018095
 flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_1ldwk")]

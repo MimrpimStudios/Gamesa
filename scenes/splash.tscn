@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdwji2r4k6hcw" path="res://scripts/splash.gd" id="1_jihg4"]
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_50ldt"]
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_86pdq"]
 file = "res://assets/videos/splash.ogv"
 
 [sub_resource type="Animation" id="Animation_jihg4"]
@@ -109,9 +109,8 @@ grow_vertical = 2
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer"]
 layout_mode = 2
-stream = SubResource("VideoStreamTheora_50ldt")
+stream = SubResource("VideoStreamTheora_86pdq")
 autoplay = true
-paused = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
