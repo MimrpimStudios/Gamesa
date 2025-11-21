@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bse7q6g0xhw4g"]
+[gd_scene load_steps=7 format=3 uid="uid://bse7q6g0xhw4g"]
 
 [ext_resource type="Script" uid="uid://cdwji2r4k6hcw" path="res://scripts/splash.gd" id="1_jihg4"]
+[ext_resource type="AudioStream" uid="uid://buix7fbwhwr2t" path="res://assets/Sounds/Intro - mimrpim studios.wav" id="2_10vqf"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_86pdq"]
-file = "res://assets/videos/splash.ogv"
+file = "res://assets/videos/intro_mimrpim_studio.ogv"
 
 [sub_resource type="Animation" id="Animation_jihg4"]
 tracks/0/type = "value"
@@ -21,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/VideoStreamPlayer:paused")
+tracks/1/path = NodePath("VideoStreamPlayer:paused")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer/VideoStreamPlayer:autoplay")
+tracks/2/path = NodePath("VideoStreamPlayer:autoplay")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -41,6 +42,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VideoStreamPlayer/AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_50ldt"]
@@ -61,7 +74,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer/VideoStreamPlayer:paused")
+tracks/1/path = NodePath("VideoStreamPlayer:paused")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -69,6 +82,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VideoStreamPlayer/AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_amcwf"]
@@ -95,22 +120,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -42.0
-offset_top = -5.0
-offset_right = 42.0
-offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer"]
-layout_mode = 2
 stream = SubResource("VideoStreamTheora_86pdq")
+volume_db = -80.0
 autoplay = true
+expand = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VideoStreamPlayer"]
+stream = ExtResource("2_10vqf")
+volume_db = 10.0
+mix_target = 2
+bus = &"Music"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -121,7 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.5
+wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -130,4 +157,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_amcwf")
 }
 
+[connection signal="ready" from="VideoStreamPlayer" to="." method="_on_video_stream_player_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

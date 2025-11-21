@@ -3,6 +3,7 @@ extends Control
 # --- UZLY (SPLASH SCREEN) ---
 @onready var timer = $Timer
 @onready var animationplayer = $AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $VideoStreamPlayer/AudioStreamPlayer
 
 # --- KONSTANTY (UNIFIKOVANÉ) ---
 const MainMenu_scene = "res://scenes/MainMenu/MainMenu.tscn"
@@ -60,7 +61,6 @@ func _input(ev):
 		# BEZPEČNOSTNÍ KONTROLA: Zabrání chybě 'null instance'
 		if is_instance_valid(timer):
 			timer.stop()
-		
 		get_tree().change_scene_to_file(MainMenu_scene)
 
 

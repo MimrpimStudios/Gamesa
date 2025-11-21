@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b85skryt8vmds"]
+[gd_scene load_steps=19 format=4 uid="uid://b85skryt8vmds"]
 
 [ext_resource type="Script" uid="uid://ddllskycy03ju" path="res://scripts/level_mains.gd" id="1_wu1n7"]
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="2_51x0n"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="13_6p1wp"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="14_in3wv"]
 [ext_resource type="Script" uid="uid://4ooosfuile3a" path="res://scripts/tutorial1/Cars_moving.gd" id="15_51x0n"]
-[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="15_mqd7k"]
 
 [sub_resource type="Animation" id="Animation_qaans"]
 length = 0.001
@@ -366,10 +365,10 @@ grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.6901961)
 metadata/_edit_use_anchors_ = true
 
-[node name="Music" parent="." instance=ExtResource("15_mqd7k")]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_v0bsq")
 autoplay = true
-bus = &"Master"
+bus = &"Music"
 
 [connection signal="timeout" from="Cars/CarMoving/AnimationPlayer/Timer" to="Cars/CarMoving/AnimationPlayer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Cars/CarMoving/AnimationPlayer/Timer2" to="Cars/CarMoving/AnimationPlayer" method="_on_timer_2_timeout"]

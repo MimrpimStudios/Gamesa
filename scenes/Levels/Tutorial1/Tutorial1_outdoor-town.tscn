@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bcxitxmrcu2b1"]
+[gd_scene load_steps=32 format=4 uid="uid://bcxitxmrcu2b1"]
 
 [ext_resource type="Texture2D" uid="uid://bucbo56r0tl1a" path="res://assets/Textures/Sky/SkyBox.png" id="2_granf"]
 [ext_resource type="Texture2D" uid="uid://cbcc5myi22ojy" path="res://assets/Textures/tilemaps/black.png" id="3_itsex"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://rut2r6f7l7dl" path="res://scripts/tutorial1/tp_town.gd" id="16_08o7m"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="16_bqg7l"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="17_hwyul"]
+[ext_resource type="AudioStream" uid="uid://bo5kep0nhkm7j" path="res://assets/Sounds/Music/MainMenu.mp3" id="17_y3i5u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkhhc"]
 texture = ExtResource("3_itsex")
@@ -200,6 +201,11 @@ script = ExtResource("16_08o7m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TP_town"]
 position = Vector2(1038, -64.5)
 shape = SubResource("RectangleShape2D_r8c0y")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_y3i5u")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="KillzoneOutdoorToTown" to="KillzoneOutdoorToTown" method="_on_body_entered"]
 [connection signal="timeout" from="KillzoneOutdoorToTown/Timer" to="KillzoneOutdoorToTown" method="_on_timer_timeout"]
