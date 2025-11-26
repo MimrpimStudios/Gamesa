@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://d304hd24ihi1u" path="res://scripts/tutorial1/tutorial1_stairs_house.gd" id="11_10fcb"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="12_6y8tq"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="13_ydyjp"]
-[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="14_8nbo1"]
+[ext_resource type="AudioStream" uid="uid://bo5kep0nhkm7j" path="res://assets/Sounds/Music/MainMenu.mp3" id="15_10fcb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0kai"]
 texture = ExtResource("8_823vm")
@@ -183,9 +183,10 @@ grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.6901961)
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("14_8nbo1")]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_10fcb")
 autoplay = true
-bus = &"Master"
+bus = &"Music"
 
 [connection signal="body_entered" from="DoorHouseArea" to="." method="_on_door_house_area_body_entered"]
 [connection signal="body_exited" from="DoorHouseArea" to="." method="_on_door_house_area_body_exited"]

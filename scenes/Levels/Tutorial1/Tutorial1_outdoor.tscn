@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://ceu82e7wlgqss" path="res://scenes/killzone.tscn" id="11_mj7gg"]
 [ext_resource type="PackedScene" uid="uid://co2yj2rfooo2m" path="res://scenes/sprites/player.tscn" id="12_ldg7n"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="13_3eclc"]
-[ext_resource type="PackedScene" uid="uid://mkc2k07wj2sw" path="res://scenes/MainMenuMusic.tscn" id="14_5ytpo"]
 [ext_resource type="Script" uid="uid://drtfvj7i7wmkw" path="res://scripts/tutorial1/tp_scene_out_to_town.gd.gd" id="16_5sflg"]
 [ext_resource type="LabelSettings" uid="uid://b2gcyit7dl8s7" path="res://label_settings/Default16.tres" id="16_db1c0"]
+[ext_resource type="AudioStream" uid="uid://bo5kep0nhkm7j" path="res://assets/Sounds/Music/MainMenu.mp3" id="20_db1c0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkhhc"]
 texture = ExtResource("8_8c1q2")
@@ -228,10 +228,6 @@ grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.6901961)
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("14_5ytpo")]
-autoplay = true
-bus = &"Master"
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("16_5sflg")
 
@@ -245,6 +241,11 @@ position = Vector2(-74, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-12.5, -92)
 shape = SubResource("RectangleShape2D_l34al")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_db1c0")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="TobikHutButton" to="show_layer0" method="_on_tobik_hut_button_pressed"]
 [connection signal="body_entered" from="show_layer0" to="show_layer0" method="_on_body_entered"]

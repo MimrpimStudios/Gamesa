@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Gamesa"
+config/name="Gamesa t1.5.1 fix bug"
 config/description="A godot game. github.com/mimrpim/Gamesa"
-config/version="0.0.0.10"
+config/version="0.0.0.11"
 run/main_scene="uid://bse7q6g0xhw4g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
