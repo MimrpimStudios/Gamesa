@@ -6,7 +6,7 @@
     <title>Gamesa - Home page</title>
     <!-- Načtení Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
- <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <style>
         /* Aplikace gradientu na pozadí celé stránky */
         .full-gradient {
@@ -18,9 +18,7 @@
            Nastavuje průhlednost, rozostření a definuje přechody pro animaci.
         */
         .content-block {
-            /* Custom tmavě modrá/šedá s 50% průhledností (alpha) */
-            background-color: rgba(15, 23, 42, 0.5); 
-            /* Efekt rozostření pozadí (Frosted Glass) */
+            /* Efekt rozostření pozadí (Frosted Glass) - ZACHOVÁN pro lištu a hlavní text */
             backdrop-filter: blur(4px); 
             /* Definice animace: plynulý přechod průhlednosti (1s) a pozice (0.8s) */
             transition: opacity 1s ease-out, transform 0.8s ease-out; 
@@ -34,30 +32,101 @@
             opacity: 0;
             transform: translateY(20px);
         }
+        
+        /* Styl pro patičku, aby se přizpůsobila gradientnímu pozadí */
+        .footer-style {
+             /* Lehce tmavší, částečně průhledné pozadí pro odlišení od body */
+        }
+
+        /* CUSTOM CSS PRO ANIMOVANÉ PODTRŽENÍ */
+        .animated-underline {
+            position: relative;
+            /* Důležité: 'currentColor' zajistí, že barva animace je stejná jako barva textu. */
+            /* Přechod pro změnu barvy textu (rychlejší) */
+            transition: color 300ms ease-in-out; 
+            /* Důležité: odebereme standardní podtržení, aby se vykreslovalo jen to animované */
+            text-decoration: none;
+        }
+
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            /* Změna: Nastavuji šířku na 100%, aby se celá věta podtrhla */
+            width: 0; 
+            height: 2px;
+            bottom: -5px; /* Pozice podtržení pod textem */
+            left: 0;
+            background-color: currentColor; /* Barva podtržení odpovídá barvě textu (zděděná barva) */
+            /* Delší a viditelnější animace */
+            transition: width 600ms ease-out 200ms; 
+        }
+
+        .animated-underline:hover::after {
+            width: 100%; /* Na hoveru se podtržení vykreslí */
+        }
+        /* KONEC CUSTOM CSS */
     </style>
 </head>
-<body class="full-gradient min-h-screen">
+<body class="full-gradient min-h-screen flex flex-col">
+
+    <!-- Navigační lišta: Průhledná (bg-transparent), ale s mírným rozostřením (backdrop-blur-sm) -->
+    <header class="w-full bg-transparent p-4 sticky top-0 z-10 backdrop-blur-sm">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Název stránky/aplikace -->
+            <div class="text-2xl font-bold text-white tracking-widest">
+                Gamesa
+            </div>
+            <!-- Navigační odkazy -->
+            <div class="flex space-x-6 text-white">
+                <a href="#" class="animated-underline hover:text-white/80">
+                    Home
+                </a>
+                <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest" class="animated-underline hover:text-white">
+                    Download
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- 
+        Hlavní obsah (Main)
+        Používá 'flex-grow' pro vyplnění dostupného prostoru a centrování obsahu.
+    -->
+    <main class="flex-grow flex items-center justify-center p-8">
+        <!-- Kontextový blok - centrální prvek s animací. -->
+        <div class="max-w-4xl w-full text-white text-center content-block initial-state p-10" id="contentBlock">
+            
+            <h1 class="text-6xl font-extrabold mb-6 tracking-tight sm:text-7xl">
+                You did it!!!
+            </h1>
+            
+            <div class="w-24 h-1.5 bg-white/70 mx-auto rounded-full mb-8"></div>
+            
+            <p class="text-2xl text-gray-200 sm:text-3xl">
+                You founded the home page. 
+                <!-- OPRAVA CHYBY: Celý text odkazu je v jednom bloku. -->
+                <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest" class="animated-underline">
+                    If you want to download the game, click here
+                </a>
+            </p>
+
+        </div>
+    </main>
 
     <!-- 
-        Kontextový blok - pokrývá celou plochu.
-        
-        Používá:
-        - content-block: Vlastní CSS pro průhledné pozadí a nastavení přechodů.
-        - initial-state: Vlastní CSS pro počáteční stav (neviditelný, posunutý).
+        ========================================
+        SEKCE PATIČKA (FOOTER)
+        ========================================
     -->
-    <div class="w-full min-h-screen flex flex-col items-center justify-center p-8 text-white text-center content-block initial-state" id="contentBlock">
-        
-        <h1 class="text-6xl font-extrabold mb-6 tracking-tight sm:text-7xl">
-            You did it!!!
-        </h1>
-        
-        <div class="w-24 h-1.5 bg-white/70 mx-auto rounded-full mb-8"></div>
-        
-        <p class="text-2xl text-gray-200 sm:text-3xl">
-            You founded the home page. <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest">If you want to download the game, click here</a>
-        </p>
+    <footer class="w-full p-4 text-center text-gray-400 text-sm footer-style">
+        <div class="max-w-6xl mx-auto">
+            &copy; 2025 
+            <a href="https://github.com/mimrpim/" class="animated-underline hover:text-gray-300">
+                MimrpimStudios
+            </a>. Všechna práva vyhrazena.
+        </div>
+    </footer>
 
-    </div>
 
     <script>
         // Počkáme, dokud není celý DOM načten a připraven
@@ -67,14 +136,11 @@
             
             if (block) {
                 // Použijeme krátké zpoždění (např. 100ms)
-                // To zajistí, že se stránka stihne vykreslit s "initial-state" třídou
                 setTimeout(() => {
-                    // Odebráním třídy 'initial-state' se prvek animuje
-                    // do svého konečného stavu (transform: translateY(0), opacity: 1)
+                    // Spuštění animace odstraněním počátečního stavu
                     block.classList.remove('initial-state');
                     
-                    // Pro Tailwind/CSS: zajistíme, že prvek je plně viditelný
-                    // I když to zajistí odebrání initial-state, je dobré to potvrdit.
+                    // Nastavení konečného stavu
                     block.classList.add('opacity-100', 'translate-y-0'); 
                 }, 100);
             }
