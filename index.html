@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="cs" class="focus-outline-visible" lazy-loaded="true">
+<html dir="ltr" lang="en" class="focus-outline-visible" lazy-loaded="true">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,28 +41,27 @@
         /* CUSTOM CSS PRO ANIMOVANÉ PODTRŽENÍ */
         .animated-underline {
             position: relative;
+            /* Změní chování na inline-block, aby podtržení fungovalo i přes zalomení. */
+            display: inline-block; 
             /* Důležité: 'currentColor' zajistí, že barva animace je stejná jako barva textu. */
-            /* Přechod pro změnu barvy textu (rychlejší) */
             transition: color 300ms ease-in-out; 
-            /* Důležité: odebereme standardní podtržení, aby se vykreslovalo jen to animované */
             text-decoration: none;
         }
 
         .animated-underline::after {
             content: '';
             position: absolute;
-            /* Změna: Nastavuji šířku na 100%, aby se celá věta podtrhla */
             width: 0; 
             height: 2px;
-            bottom: -5px; /* Pozice podtržení pod textem */
+            bottom: -5px; /* Position of the underline below the text */
             left: 0;
-            background-color: currentColor; /* Barva podtržení odpovídá barvě textu (zděděná barva) */
-            /* Delší a viditelnější animace */
+            background-color: currentColor; /* Underline color matches text color (inherited color) */
+            /* Longer and more visible animation */
             transition: width 600ms ease-out 200ms; 
         }
 
         .animated-underline:hover::after {
-            width: 100%; /* Na hoveru se podtržení vykreslí */
+            width: 100%; /* The underline is drawn on hover */
         }
         /* KONEC CUSTOM CSS */
     </style>
@@ -99,14 +98,35 @@
             <h1 class="text-6xl font-extrabold mb-6 tracking-tight sm:text-7xl">
                 You did it!!!
             </h1>
-            
             <div class="w-24 h-1.5 bg-white/70 mx-auto rounded-full mb-8"></div>
             
-            <p class="text-2xl text-gray-200 sm:text-3xl">
-                You founded the home page. 
-                <!-- OPRAVA CHYBY: Celý text odkazu je v jednom bloku. -->
+            <!-- PRVNÍ VĚTA: Centrováno -->
+            <p class="text-2xl text-gray-200 sm:text-3xl mb-8">
+                You found our website!!!
+            </p>
+
+            <!-- POPIS HRY (ZAROVNÁN VLEVO) -->
+            <p class="text-xl text-gray-300 sm:text-2xl text-left mb-10 mx-auto max-w-2xl">
+                This game is about your mother getting sick with a new disease called Lobster Disease and you have to help her. So what? Are you up for it? The game is only in early access, but things are being added to it at least once every two weeks...
+            </p>
+            
+            <!-- VIDEO ELEMENT s autoplay, muted a loop (NOVĚ PŘIDANÉ ATRIBUTY) -->
+            <div class="mb-10 mx-auto w-full max-w-2xl">
+                <!-- Video player with controls, autoplay, and muted sound -->
+                <video controls class="w-full rounded-lg shadow-xl" 
+                       poster="https://placehold.co/600x337/1e293b/f8fafc?text=Gamesa+Trailer" 
+                       src="/assets/videos/trailer01.mp4"
+                       autoplay muted loop>
+                    Your browser does not support HTML5 video.
+                </video>
+                <p class="text-sm text-gray-500 mt-2 text-center">
+                    (This is in-game footage...)
+                </p>
+            </div>
+
+            <!-- ODKAZ KE STAŽENÍ (CTA) - CENTROVÁNO -->
+            <p class="text-2xl text-gray-200 sm:text-3xl text-center mt-2">
                 <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest" class="animated-underline">
-                    If you want to download the game, click here
                 </a>
             </p>
 
@@ -115,7 +135,7 @@
 
     <!-- 
         ========================================
-        SEKCE PATIČKA (FOOTER)
+        FOOTER SECTION
         ========================================
     -->
     <footer class="w-full p-4 text-center text-gray-400 text-sm footer-style">
@@ -123,24 +143,24 @@
             &copy; 2025 
             <a href="https://github.com/mimrpim/" class="animated-underline hover:text-gray-300">
                 MimrpimStudios
-            </a>. Všechna práva vyhrazena.
+            </a>. All rights reserved.
         </div>
     </footer>
 
 
     <script>
-        // Počkáme, dokud není celý DOM načten a připraven
+        // Wait until the entire DOM is loaded and ready
         document.addEventListener('DOMContentLoaded', () => {
-            // Najdeme centrální blok pomocí ID
+            // Find the central block by ID
             const block = document.getElementById('contentBlock');
             
             if (block) {
-                // Použijeme krátké zpoždění (např. 100ms)
+                // Use a short delay (e.g., 100ms)
                 setTimeout(() => {
-                    // Spuštění animace odstraněním počátečního stavu
+                    // Start the animation by removing the initial state
                     block.classList.remove('initial-state');
                     
-                    // Nastavení konečného stavu
+                    // Set the final state
                     block.classList.add('opacity-100', 'translate-y-0'); 
                 }, 100);
             }
