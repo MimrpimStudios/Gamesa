@@ -77,10 +77,10 @@
             </div>
             <!-- Navigační odkazy -->
             <div class="flex space-x-6 text-white">
-                <a href="#" class="animated-underline hover:text-white/80">
+                <a href="index.html" class="animated-underline hover:text-white/80">
                     Home
                 </a>
-                <a href="Download.html" class="animated-underline hover:text-white">
+                <a href="#" class="animated-underline hover:text-white">
                     Download
                 </a>
             </div>
@@ -96,40 +96,19 @@
         <div class="max-w-4xl w-full text-white text-center content-block initial-state p-10" id="contentBlock">
             
             <h1 class="text-6xl font-extrabold mb-6 tracking-tight sm:text-7xl">
-                You did it!!!
+                Download the game here!
             </h1>
             <div class="w-24 h-1.5 bg-white/70 mx-auto rounded-full mb-8"></div>
             
             <!-- PRVNÍ VĚTA: Centrováno -->
             <p class="text-2xl text-gray-200 sm:text-3xl mb-8">
-                You found our website!!!
-            </p>
-
-            <!-- POPIS HRY (ZAROVNÁN VLEVO) -->
-            <p class="text-xl text-gray-300 sm:text-2xl text-left mb-10 mx-auto max-w-2xl">
-                This game is about your mother getting sick with a new disease called Lobster Disease and you have to help her. So what? Are you up for it? The game is only in early access, but things are being added to it at least once every two weeks...
-            </p>
-            
-            <!-- VIDEO ELEMENT s autoplay, muted a loop (NOVĚ PŘIDANÉ ATRIBUTY) -->
-            <div class="mb-10 mx-auto w-full max-w-2xl">
-                <!-- Video player with controls, autoplay, and muted sound -->
-                <video controls class="w-full rounded-lg shadow-xl" 
-                       poster="https://placehold.co/600x337/1e293b/f8fafc?text=Gamesa+Trailer" 
-                       src="https://github.com/mimrpim/Gamesa/raw/refs/heads/web/assets/videos/trailer01.mp4"
-                       autoplay muted loop>
-                    Your browser does not support HTML5 video.
-                </video>
-                <p class="text-sm text-gray-500 mt-2 text-center">
-                    (This is in-game footage...)
-                </p>
-            </div>
-
-            <!-- ODKAZ KE STAŽENÍ (CTA) - CENTROVÁNO -->
-            <p class="text-2xl text-gray-200 sm:text-3xl text-center mt-2">
-                <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest" class="animated-underline">
+                Gamesa launcher:
+                <a href="https://github.com/mimrpim/Gamesa_launcher/releases/latest" class="animated-underline" id="downloadLinkText">
+                    Loading version...
                 </a>
             </p>
 
+            <!-- POPIS HRY (ZAROVNÁN VLEVO) -->
         </div>
     </main>
 
@@ -149,6 +128,43 @@
 
 
     <script>
+        // Funkce pro načtení nejnovější verze z GitHub API
+        async function fetchLatestVersion() {
+            const url = 'https://api.github.com/repos/mimrpim/Gamesa_launcher/releases/latest';
+            const linkElement = document.getElementById('downloadLinkText');
+            // Zde by mělo být volání Gemini API pro získání verze, ale jelikož je to GitHub API, 
+            // použijeme přímý fetch a zajistíme exponenciální backoff.
+            
+            const maxRetries = 5;
+            let delay = 1000; // 1 second
+
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        // Přeskočíme standardní chybové stavy
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    const latestTag = data.tag_name || 'unknown version';
+                    
+                    // Sestavení textu odkazu
+                    linkElement.textContent = `click here to download newest version ${latestTag}`;
+                    return; // Úspěch
+                } catch (error) {
+                    console.error(`Attempt ${attempt + 1} failed to fetch GitHub release:`, error);
+                    if (attempt < maxRetries - 1) {
+                        // Exponenciální backoff
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2; 
+                    } else {
+                        // Po všech neúspěšných pokusech nastavíme chybovou zprávu
+                        linkElement.textContent = 'click here to download newest version (version check failed)';
+                    }
+                }
+            }
+        }
+
         // Wait until the entire DOM is loaded and ready
         document.addEventListener('DOMContentLoaded', () => {
             // Find the central block by ID
@@ -164,6 +180,9 @@
                     block.classList.add('opacity-100', 'translate-y-0'); 
                 }, 100);
             }
+
+            // Nové: Načtení nejnovější verze
+            fetchLatestVersion();
         });
     </script>
 </body>
