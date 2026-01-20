@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://g8ih83bl2c2w"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_erqjc"]
+[ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scenes/screen.gd" id="1_gakxr"]
+[ext_resource type="Script" uid="uid://c55nt4wgcwr8l" path="res://scenes/screen_die.gd" id="2_vhdk8"]
+[ext_resource type="Script" uid="uid://d2cofyqljwmc5" path="res://scenes/healthbar.gd" id="3_nexl8"]
+[ext_resource type="Texture2D" uid="uid://bvpxoq3wdaydj" path="res://assets/textures/sprites/healthbar.png" id="3_qc0hx"]
+[ext_resource type="Script" uid="uid://v3lbk1oydhka" path="res://scenes/overaly.gd" id="4_b7nko"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gakxr"]
+font = ExtResource("1_erqjc")
+font_size = 256
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qc0hx"]
+font = ExtResource("1_erqjc")
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhdk8"]
+font = ExtResource("1_erqjc")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 0)
+
+[node name="Screen" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_gakxr")
+
+[node name="Die" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_vhdk8")
+
+[node name="BG" type="ColorRect" parent="Die"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 0.7176471)
+
+[node name="Label" type="Label" parent="Die"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -55.0
+offset_right = 188.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+label_settings = SubResource("LabelSettings_gakxr")
+
+[node name="LabelCount" type="Label" parent="Die"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -314.0
+offset_top = 84.0
+offset_right = 314.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You will be respawned in X seconds..."
+label_settings = SubResource("LabelSettings_qc0hx")
+
+[node name="Overaly" type="Node" parent="."]
+script = ExtResource("4_b7nko")
+
+[node name="Healthbar" type="Control" parent="Overaly"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+script = ExtResource("3_nexl8")
+
+[node name="Fill" type="ColorRect" parent="Overaly/Healthbar"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 128.0
+offset_bottom = 51.0
+color = Color(1, 0, 0, 1)
+
+[node name="HealthLabel" type="Label" parent="Overaly/Healthbar"]
+layout_mode = 0
+offset_left = 33.5
+offset_top = 12.5
+offset_right = 121.5
+offset_bottom = 40.5
+text = "HEALTH"
+label_settings = SubResource("LabelSettings_vhdk8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Overaly/Healthbar"]
+layout_mode = 1
+offset_right = 132.5
+offset_bottom = 56.0
+
+[node name="HealthBarSprite" type="Sprite2D" parent="Overaly/Healthbar/CenterContainer"]
+position = Vector2(78, 8)
+texture = ExtResource("3_qc0hx")

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dpl3g0hx1vl3q"
-path="res://.godot/imported/Kingdom.wav-620846a59c57ae59bddd464a1d6278f7.sample"
+path="res://.godot/imported/Kingdom.wav-e247c27adb1f854fd8f561ebd0536de8.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/Music/Kingdom.wav"
-dest_files=["res://.godot/imported/Kingdom.wav-620846a59c57ae59bddd464a1d6278f7.sample"]
+source_file="res://assets/sounds/Music/Kingdom.wav"
+dest_files=["res://.godot/imported/Kingdom.wav-e247c27adb1f854fd8f561ebd0536de8.sample"]
 
 [params]
 

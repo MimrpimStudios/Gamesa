@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://buix7fbwhwr2t"
-path="res://.godot/imported/Intro - mimrpim studios.wav-76bc74b93119a3f8bb1ebbe3b7534ef6.sample"
+path="res://.godot/imported/Intro - mimrpim studios.wav-5198ca933a7995711c2940046eb9fd51.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/Intro - mimrpim studios.wav"
-dest_files=["res://.godot/imported/Intro - mimrpim studios.wav-76bc74b93119a3f8bb1ebbe3b7534ef6.sample"]
+source_file="res://assets/sounds/Intro - mimrpim studios.wav"
+dest_files=["res://.godot/imported/Intro - mimrpim studios.wav-5198ca933a7995711c2940046eb9fd51.sample"]
 
 [params]
 
