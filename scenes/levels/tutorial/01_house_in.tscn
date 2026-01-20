@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=4 uid="uid://chr48v8vqmyrr"]
+[gd_scene load_steps=9 format=4 uid="uid://chr48v8vqmyrr"]
 
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_n35vt"]
-[ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scenes/levels/examples/door_house_out.gd" id="12_g5jg7"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_sc41j"]
+[ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scripts/levels/tutorial/door_house_out.gd" id="12_g5jg7"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="12_y28yd"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="13_vxbwt"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="15_0qekk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1osbf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -46,6 +49,12 @@ texture = ExtResource("13_vxbwt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
 position = Vector2(489.625, 348.5)
 shape = SubResource("RectangleShape2D_u00iu")
+
+[node name="Killzone" parent="." instance=ExtResource("6_sc41j")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_1osbf")
 
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]

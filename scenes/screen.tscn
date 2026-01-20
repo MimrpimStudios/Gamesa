@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://g8ih83bl2c2w"]
 
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_erqjc"]
-[ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scenes/screen.gd" id="1_gakxr"]
-[ext_resource type="Script" uid="uid://c55nt4wgcwr8l" path="res://scenes/screen_die.gd" id="2_vhdk8"]
-[ext_resource type="Script" uid="uid://d2cofyqljwmc5" path="res://scenes/healthbar.gd" id="3_nexl8"]
+[ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scripts/screen.gd" id="1_gakxr"]
+[ext_resource type="Script" uid="uid://c55nt4wgcwr8l" path="res://scripts/screen_die.gd" id="2_vhdk8"]
+[ext_resource type="Script" uid="uid://d2cofyqljwmc5" path="res://scripts/healthbar.gd" id="3_nexl8"]
 [ext_resource type="Texture2D" uid="uid://bvpxoq3wdaydj" path="res://assets/textures/sprites/healthbar.png" id="3_qc0hx"]
-[ext_resource type="Script" uid="uid://v3lbk1oydhka" path="res://scenes/overaly.gd" id="4_b7nko"]
+[ext_resource type="Script" uid="uid://v3lbk1oydhka" path="res://scripts/overaly.gd" id="4_b7nko"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gakxr"]
 font = ExtResource("1_erqjc")
@@ -38,6 +38,7 @@ follow_viewport_enabled = true
 script = ExtResource("1_gakxr")
 
 [node name="Die" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -4,8 +4,9 @@ var player_movement = true
 var is_player_dead = false
 var player_health = 3
 var player_max_health = 3
-const house_01_scene_in = "res://scenes/levels/examples/01_house_in.tscn"
-const out_01 = "res://scenes/levels/examples/01.tscn"
+const house_01_scene = "res://scenes/levels/tutorial/01_house.tscn"
+const house_01_scene_in = "res://scenes/levels/tutorial/01_house_in.tscn"
+const out_01 = "res://scenes/levels/tutorial/01_out.tscn"
 var hide_overaly = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
