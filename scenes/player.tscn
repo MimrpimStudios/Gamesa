@@ -1,43 +1,56 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdmijiqu81d1q"]
+[gd_scene load_steps=15 format=3 uid="uid://cdmijiqu81d1q"]
 
 [ext_resource type="Script" uid="uid://cia6u3d1l3ic3" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cu550vlpy52yw" path="res://assets/textures/sprites/01-generic.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://cf42xnx2s5itd" path="res://scenes/player_healthbar.gd" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bvpxoq3wdaydj" path="res://assets/Textures/sprites/healthbar.png" id="4_qlg0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(128, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(144, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(64, 16, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(160, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(80, 16, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(48, 32, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(80, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(64, 32, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(96, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(80, 32, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(16, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("2_qhqgy")
-region = Rect2(64, 0, 16, 16)
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 16, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tuyoq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlg0r")
+"texture": SubResource("AtlasTexture_dqkch")
 }],
 "loop": true,
 "name": &"left",
@@ -45,22 +58,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fjrip")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ur7pv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_smehm")
+"texture": SubResource("AtlasTexture_fjrip")
 }],
 "loop": true,
 "name": &"right",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y4r1p")
 }],
@@ -80,9 +105,43 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"left"
+animation = &"stand"
 autoplay = "stand"
+frame_progress = 0.8948172
+
+[node name="Healthbar" type="Control" parent="AnimatedSprite2D"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.5
+offset_top = -8.5
+offset_right = 62.5
+offset_bottom = 56.5
+grow_horizontal = 2
+scale = Vector2(2, 2)
+script = ExtResource("3_dqkch")
+
+[node name="Fill" type="ColorRect" parent="AnimatedSprite2D/Healthbar"]
+layout_mode = 0
+offset_left = 29.25
+offset_top = -2.25
+offset_right = 129.25
+offset_bottom = 9.75
+scale = Vector2(0.125, 0.125)
+color = Color(1, 0, 0, 1)
+
+[node name="Healthbar" type="Sprite2D" parent="AnimatedSprite2D/Healthbar"]
+position = Vector2(35.25, -5.625)
+scale = Vector2(0.125, 0.1125)
+texture = ExtResource("4_qlg0r")
+
+[node name="Timer" type="Timer" parent="AnimatedSprite2D/Healthbar/Healthbar"]
+one_shot = true
+autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -7.5)
+position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_d2wvv")
+
+[connection signal="timeout" from="AnimatedSprite2D/Healthbar/Healthbar/Timer" to="AnimatedSprite2D/Healthbar" method="_on_timer_timeout"]

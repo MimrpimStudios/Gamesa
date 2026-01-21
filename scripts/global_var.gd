@@ -19,7 +19,3 @@ func _process(_delta: float) -> void:
 		is_player_dead = true
 	else:
 		is_player_dead = false
-	if is_player_dead:
-		player_movement = false
-	else:
-		player_movement = true
