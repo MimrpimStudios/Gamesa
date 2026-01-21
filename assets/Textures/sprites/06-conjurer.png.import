@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayxloelc5y13"
-path="res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"
+uid="uid://dtx0rejcoqqa5"
+path="res://.godot/imported/06-conjurer.png-b67da3e81f3990f6f6c2d055f0abf99b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/sprites/spike.png"
-dest_files=["res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"]
+source_file="res://assets/Textures/sprites/06-conjurer.png"
+dest_files=["res://.godot/imported/06-conjurer.png-b67da3e81f3990f6f6c2d055f0abf99b.ctex"]
 
 [params]
 

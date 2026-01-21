@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayxloelc5y13"
-path="res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"
+uid="uid://cmeo2j124jyhm"
+path="res://.godot/imported/door.png-616ae66f9631554f222dd321ae6067fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/sprites/spike.png"
-dest_files=["res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"]
+source_file="res://assets/Textures/sprites/door.png"
+dest_files=["res://.godot/imported/door.png-616ae66f9631554f222dd321ae6067fa.ctex"]
 
 [params]
 

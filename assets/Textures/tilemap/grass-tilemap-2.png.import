@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayxloelc5y13"
-path="res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"
+uid="uid://b871jfj1ptd3l"
+path="res://.godot/imported/grass-tilemap-2.png-4df6c1b1392fe734306beed9480232de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/sprites/spike.png"
-dest_files=["res://.godot/imported/spike.png-d53630b46fe26f4df2d0d34fd37da4e6.ctex"]
+source_file="res://assets/Textures/tilemap/grass-tilemap-2.png"
+dest_files=["res://.godot/imported/grass-tilemap-2.png-4df6c1b1392fe734306beed9480232de.ctex"]
 
 [params]
 
