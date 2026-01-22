@@ -15,7 +15,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if player_health == 0:
+	if player_health <= 0:
 		is_player_dead = true
+		player_movement = false
 	else:
 		is_player_dead = false
+		player_movement = true
