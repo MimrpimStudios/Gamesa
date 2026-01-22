@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtx0rejcoqqa5"
-path="res://.godot/imported/06-conjurer.png-b67da3e81f3990f6f6c2d055f0abf99b.ctex"
+path="res://.godot/imported/06-conjurer.png-f1557ec863d0d9ca69ff88de7d39a633.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/sprites/06-conjurer.png"
-dest_files=["res://.godot/imported/06-conjurer.png-b67da3e81f3990f6f6c2d055f0abf99b.ctex"]
+source_file="res://assets/textures/sprites/06-conjurer.png"
+dest_files=["res://.godot/imported/06-conjurer.png-f1557ec863d0d9ca69ff88de7d39a633.ctex"]
 
 [params]
 
