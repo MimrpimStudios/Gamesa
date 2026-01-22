@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtoph7ogfn8wa"]
+
+[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_cawnd"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_1sedj"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="3_hx65k"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_wccw5"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="5_ho0je"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tccha"]
+
+[node name="Example" type="Node2D"]
+script = ExtResource("1_cawnd")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_set = ExtResource("2_1sedj")
+
+[node name="Player" parent="." instance=ExtResource("3_hx65k")]
+position = Vector2(545, 359)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="Screen" parent="." instance=ExtResource("4_wccw5")]
+follow_viewport_enabled = false
+
+[node name="Killzone" parent="." instance=ExtResource("5_ho0je")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_tccha")
