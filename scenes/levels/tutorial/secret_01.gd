@@ -9,11 +9,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	timer.wait_time = 0.5
 	timer.start()
 	global_var.player_movement = false
@@ -25,5 +25,6 @@ func _on_timer_timeout() -> void:
 		timer.start()
 		audio_stream_player.play()
 		$"../TileMapLayer/TileMapLayer2".hide()
+		get_tree().change_scene_to_file(global_var.secret_01_scene)
 	else:
 		audio_stream_player.stop()
