@@ -12,8 +12,10 @@ func _on_body_entered(body):
 
 func _process(_delta: float) -> void:
 	if global_var.is_player_dead and timer.is_stopped():
+		global_var.player_movement = false
 		timer.start()
 
 func _on_timer_timeout():
 	get_tree().reload_current_scene()
 	global_var.player_health = global_var.player_max_health
+	global_var.player_movement = true
