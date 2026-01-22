@@ -1,13 +1,21 @@
 extends CharacterBody2D
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-var SPEED = 80.0
-var JUMP_VELOCITY = -450.0
+@export_range(0, 100, 0.1, "or_greater", "or_less") var SPEED: float = 80.0
+@export_range(0, 1000, 1.0, "or_greater", "or_less") var JUMP_VELOCITY_kladna = 450.0
+var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+
+func _process(_delta: float) -> void:
+	if global_var.is_player_dead:
+		if is_instance_valid(collision_shape_2d):
+			collision_shape_2d.queue_free()
+		global_var.player_health = 0
 
 func _physics_process(delta):
 	if not is_on_floor():
