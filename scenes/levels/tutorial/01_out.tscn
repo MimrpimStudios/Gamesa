@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=25 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://0vuvescheh" path="res://scripts/levels/tutorial/camera_zoom_out.gd" id="13_sga0p"]
 [ext_resource type="Script" uid="uid://juijq318g3o1" path="res://scripts/levels/tutorial/door_house.gd" id="14_btxvf"]
 [ext_resource type="Script" uid="uid://ctaku2hdwn1kc" path="res://scripts/levels/tutorial/camera_zoom_in.gd" id="14_fgspu"]
+[ext_resource type="Script" uid="uid://b1avnqgfs30du" path="res://scenes/levels/tutorial/secret_01.gd" id="15_o1k8i"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="15_wwbin"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="16_gg1hg"]
+[ext_resource type="AudioStream" uid="uid://btjc4np2454p4" path="res://assets/sounds/siren.mp3" id="16_je17w"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/textures/sprites/window.png" id="17_btxvf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
@@ -192,10 +194,18 @@ shape = SubResource("RectangleShape2D_cur3p")
 
 [node name="Secret01" type="Area2D" parent="."]
 position = Vector2(1319, 158.25)
+script = ExtResource("15_o1k8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Secret01"]
-position = Vector2(0, -51.25)
+position = Vector2(0, -62.25)
 shape = SubResource("RectangleShape2D_nw1gm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Secret01"]
+stream = ExtResource("16_je17w")
+
+[node name="Timer" type="Timer" parent="Secret01/AudioStreamPlayer"]
+wait_time = 2.1999999999999997
+one_shot = true
 
 [connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
@@ -206,5 +216,7 @@ shape = SubResource("RectangleShape2D_nw1gm")
 [connection signal="timeout" from="CameraZoomIn/Timer" to="CameraZoomIn" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CameraZoomInEnable" to="CameraZoomInEnable" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraZoomOutEnable" to="CameraZoomOutEnable" method="_on_body_entered"]
+[connection signal="body_entered" from="Secret01" to="Secret01" method="_on_body_entered"]
+[connection signal="timeout" from="Secret01/AudioStreamPlayer/Timer" to="Secret01" method="_on_timer_timeout"]
 
 [editable path="Killzone"]
