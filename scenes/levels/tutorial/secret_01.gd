@@ -25,6 +25,6 @@ func _on_timer_timeout() -> void:
 		timer.start()
 		audio_stream_player.play()
 		$"../TileMapLayer/TileMapLayer2".hide()
-		get_tree().change_scene_to_file(global_var.secret_01_scene)
 	else:
 		audio_stream_player.stop()
+		get_tree().change_scene_to_file(global_var.secret_01_scene)
