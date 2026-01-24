@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddduyugtall4a"
-path="res://.godot/imported/grass-tilemap-3.png-a2a3baed78975b55fa63f47ae7855487.ctex"
+path="res://.godot/imported/grass-tilemap-3.png-c10de9779a9dd7050e5b740ecfc2e26c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tilemap/grass-tilemap-3.png"
-dest_files=["res://.godot/imported/grass-tilemap-3.png-a2a3baed78975b55fa63f47ae7855487.ctex"]
+source_file="res://assets/Textures/tilemap/grass-tilemap-3.png"
+dest_files=["res://.godot/imported/grass-tilemap-3.png-c10de9779a9dd7050e5b740ecfc2e26c.ctex"]
 
 [params]
 
