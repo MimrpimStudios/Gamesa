@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/tobik_hut.wav-909bb94f0d9a3f3fa42e52c39a2f665
 [params]
 
 force/8_bit=false
-force/mono=true
+force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
