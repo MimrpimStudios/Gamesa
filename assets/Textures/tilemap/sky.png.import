@@ -5,7 +5,11 @@ type="CompressedTexture2D"
 uid="uid://cl5brtvo6fxfm"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 path="res://.godot/imported/sky.png-1f4e39849c38f2dbcc69fa7912612d8f.ctex"
+=======
+path="res://.godot/imported/sky.png-15a1fac839fd1e035f65e9505abdd618.ctex"
+>>>>>>> Stashed changes
 =======
 path="res://.godot/imported/sky.png-15a1fac839fd1e035f65e9505abdd618.ctex"
 >>>>>>> Stashed changes
@@ -20,8 +24,13 @@ metadata={
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 source_file="res://assets/Textures/tilemap/sky.png"
 dest_files=["res://.godot/imported/sky.png-1f4e39849c38f2dbcc69fa7912612d8f.ctex"]
+=======
+source_file="res://assets/textures/tilemap/sky.png"
+dest_files=["res://.godot/imported/sky.png-15a1fac839fd1e035f65e9505abdd618.ctex"]
+>>>>>>> Stashed changes
 =======
 source_file="res://assets/textures/tilemap/sky.png"
 dest_files=["res://.godot/imported/sky.png-15a1fac839fd1e035f65e9505abdd618.ctex"]
