@@ -3,60 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d24xaav02ac1j"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-path="res://.godot/imported/player.old.png-b215f7c3e7af0c1bf9a7028aee5846a5.ctex"
-=======
 path="res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"
->>>>>>> Stashed changes
-=======
-path="res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"
->>>>>>> Stashed changes
-=======
-path="res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"
->>>>>>> Stashed changes
-=======
-path="res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"
->>>>>>> Stashed changes
-=======
-path="res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"
->>>>>>> Stashed changes
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-source_file="res://assets/Textures/sprites/player.old.png"
-dest_files=["res://.godot/imported/player.old.png-b215f7c3e7af0c1bf9a7028aee5846a5.ctex"]
-=======
 source_file="res://assets/textures/sprites/player.old.png"
 dest_files=["res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"]
->>>>>>> Stashed changes
-=======
-source_file="res://assets/textures/sprites/player.old.png"
-dest_files=["res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"]
->>>>>>> Stashed changes
-=======
-source_file="res://assets/textures/sprites/player.old.png"
-dest_files=["res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"]
->>>>>>> Stashed changes
-=======
-source_file="res://assets/textures/sprites/player.old.png"
-dest_files=["res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"]
->>>>>>> Stashed changes
-=======
-source_file="res://assets/textures/sprites/player.old.png"
-dest_files=["res://.godot/imported/player.old.png-2e2fa8a72481254ef79972d61cc91337.ctex"]
->>>>>>> Stashed changes
 
 [params]
 

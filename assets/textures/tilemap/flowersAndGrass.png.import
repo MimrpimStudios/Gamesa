@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5lhc0cnhbwkg"
-path="res://.godot/imported/flowersAndGrass.png-a0c9d6c394cb7619cb96b10df1755f5c.ctex"
+path="res://.godot/imported/flowersAndGrass.png-a13145e0ce2d6188d7b207b79760a0c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/tilemap/flowersAndGrass.png"
-dest_files=["res://.godot/imported/flowersAndGrass.png-a0c9d6c394cb7619cb96b10df1755f5c.ctex"]
+source_file="res://assets/textures/tilemap/flowersAndGrass.png"
+dest_files=["res://.godot/imported/flowersAndGrass.png-a13145e0ce2d6188d7b207b79760a0c1.ctex"]
 
 [params]
 
