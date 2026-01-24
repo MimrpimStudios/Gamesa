@@ -2,10 +2,4 @@
   "version": "0.0.2.2",
   "windows_url": "https://github.com/MimrpimStudios/Gamesa/releases/download/t1.5.1/gamesa-win.zip",
   "windows_exe": "Gamesa.exe",
-  "linux_url": "https://example.com/download/linux.zip",
-  "linux_exe": "Game.x86_64",
-  "macos_url": "https://example.com/download/macos.zip",
-  "macos_exe": "Game.app",
-  "android_url": "https://example.com/download/android.zip",
-  "android_exe": "Game.apk"
 }
