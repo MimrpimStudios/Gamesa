@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ben0jhfj62lce"
-path="res://.godot/imported/04-scout.png-49695eb8fa2db4a161b826fe6b3c6358.ctex"
+path="res://.godot/imported/04-scout.png-ccb227bc54e482e889fcfad3280cccf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/sprites/04-scout.png"
-dest_files=["res://.godot/imported/04-scout.png-49695eb8fa2db4a161b826fe6b3c6358.ctex"]
+source_file="res://assets/Textures/sprites/04-scout.png"
+dest_files=["res://.godot/imported/04-scout.png-ccb227bc54e482e889fcfad3280cccf1.ctex"]
 
 [params]
 

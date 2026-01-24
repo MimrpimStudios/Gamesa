@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cpvoca5d0vjrk"
-path="res://.godot/imported/tobik_hut_hall.wav-223197f2590bf1b786cb9a9a24a0d9aa.sample"
+path="res://.godot/imported/tobik_hut_hall.wav-d676a20d85b1301177686e4f06f2bc19.sample"
 
 [deps]
 
-source_file="res://assets/sounds/Music/tobik_hut_hall.wav"
-dest_files=["res://.godot/imported/tobik_hut_hall.wav-223197f2590bf1b786cb9a9a24a0d9aa.sample"]
+source_file="res://assets/Sounds/Music/tobik_hut_hall.wav"
+dest_files=["res://.godot/imported/tobik_hut_hall.wav-d676a20d85b1301177686e4f06f2bc19.sample"]
 
 [params]
 
