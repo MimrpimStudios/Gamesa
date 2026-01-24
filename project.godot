@@ -31,7 +31,8 @@ window/size/initial_position_type=5
 
 [editor]
 
-movie_writer/movie_file="C:/Users/mimrp/Documents/godot/Gamesa/movies/04.avi"
+movie_writer/movie_file="C:/Users/mimrp/Documents/godot/Gamesa/movies/05.avi"
+movie_writer/disable_vsync=true
 
 [input]
 
