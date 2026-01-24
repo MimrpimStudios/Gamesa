@@ -7,7 +7,11 @@ uid="uid://qn0jckkk3rbk"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 path="res://.godot/imported/ufo.png-f6a7baa7a2296a50944f6867c1a2ec2a.ctex"
+=======
+path="res://.godot/imported/ufo.png-885a40e062244394b42b46d9b8404b68.ctex"
+>>>>>>> Stashed changes
 =======
 path="res://.godot/imported/ufo.png-885a40e062244394b42b46d9b8404b68.ctex"
 >>>>>>> Stashed changes
@@ -30,8 +34,13 @@ metadata={
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 source_file="res://assets/Textures/sprites/ufo.png"
 dest_files=["res://.godot/imported/ufo.png-f6a7baa7a2296a50944f6867c1a2ec2a.ctex"]
+=======
+source_file="res://assets/textures/sprites/ufo.png"
+dest_files=["res://.godot/imported/ufo.png-885a40e062244394b42b46d9b8404b68.ctex"]
+>>>>>>> Stashed changes
 =======
 source_file="res://assets/textures/sprites/ufo.png"
 dest_files=["res://.godot/imported/ufo.png-885a40e062244394b42b46d9b8404b68.ctex"]

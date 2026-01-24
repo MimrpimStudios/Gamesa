@@ -49,6 +49,7 @@ size = Vector2(36, 20)
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_2mrnh"]
 length = 0.001
 tracks/0/type = "value"
@@ -76,6 +77,8 @@ tracks/1/keys = {
 "values": [false]
 }
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -120,7 +123,10 @@ tracks/1/keys = {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -160,6 +166,9 @@ tracks/1/keys = {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
