@@ -1,0 +1,196 @@
+[gd_scene load_steps=28 format=3 uid="uid://b0s4ckgv8lwax"]
+
+[ext_resource type="Script" uid="uid://dd2t4kbref8sd" path="res://ufo.gd" id="1_xf4xf"]
+[ext_resource type="Texture2D" uid="uid://qn0jckkk3rbk" path="res://assets/textures/sprites/ufo.png" id="2_gp6nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aa4c"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvsiw"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_linyg"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkk3j"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai8vk"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w6k5"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lan7f"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rfrm"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujrry"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1yb4"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l4ni"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwq4s"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekti7"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q04n"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84ote"]
+atlas = ExtResource("2_gp6nc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yyjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aa4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvsiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_linyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkk3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai8vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w6k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lan7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rfrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujrry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1yb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l4ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwq4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekti7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q04n")
+}],
+"loop": false,
+"name": &"beam",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84ote")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf4xf"]
+size = Vector2(21, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp6nc"]
+size = Vector2(9, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvsiw"]
+size = Vector2(7, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_linyg"]
+size = Vector2(5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkk3j"]
+size = Vector2(3, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aa4c"]
+size = Vector2(13, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai8vk"]
+size = Vector2(5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w6k5"]
+size = Vector2(9, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lan7f"]
+size = Vector2(11, 4)
+
+[node name="ufo" type="CharacterBody2D"]
+script = ExtResource("1_xf4xf")
+
+[node name="ufo" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_4yyjk")
+animation = &"beam"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -20)
+shape = SubResource("RectangleShape2D_xf4xf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -23.5)
+shape = SubResource("RectangleShape2D_gp6nc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -24.5)
+shape = SubResource("RectangleShape2D_vvsiw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -25.5)
+shape = SubResource("RectangleShape2D_linyg")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -26.5)
+shape = SubResource("RectangleShape2D_tkk3j")
+
+[node name="Beam" type="Area2D" parent="."]
+
+[node name="CollisionShape2DBeam" type="CollisionShape2D" parent="Beam"]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_1aa4c")
+
+[node name="CollisionShape2DBeam2" type="CollisionShape2D" parent="Beam"]
+position = Vector2(0.5, -4.5)
+shape = SubResource("RectangleShape2D_ai8vk")
+
+[node name="CollisionShape2DBeam3" type="CollisionShape2D" parent="Beam"]
+position = Vector2(0.5, -16)
+shape = SubResource("RectangleShape2D_5w6k5")
+
+[node name="CollisionShape2DBeam4" type="CollisionShape2D" parent="Beam"]
+position = Vector2(0.5, -13)
+shape = SubResource("RectangleShape2D_lan7f")
