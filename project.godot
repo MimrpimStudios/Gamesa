@@ -18,7 +18,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="uid://badwdoo0tuei7"
 
 [autoload]
 
