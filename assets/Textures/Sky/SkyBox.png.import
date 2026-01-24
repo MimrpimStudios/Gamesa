@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bucbo56r0tl1a"
-path="res://.godot/imported/SkyBox.png-ac8128a34f7792a7733522ebf85429c0.ctex"
+path="res://.godot/imported/SkyBox.png-ca11d7221c0619183208fcb6b4962e44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/Sky/SkyBox.png"
-dest_files=["res://.godot/imported/SkyBox.png-ac8128a34f7792a7733522ebf85429c0.ctex"]
+source_file="res://assets/textures/Sky/SkyBox.png"
+dest_files=["res://.godot/imported/SkyBox.png-ca11d7221c0619183208fcb6b4962e44.ctex"]
 
 [params]
 

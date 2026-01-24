@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_vu4qm"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_v3jdr"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="3_parmh"]
-[ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scenes/levels/examples/door_house_out.gd" id="4_liqfr"]
+[ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scripts/levels/tutorial/door_house_out.gd" id="4_liqfr"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="5_v8u20"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_vu4qm"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/sounds/Music/at-home.wav" id="8_parmh"]
