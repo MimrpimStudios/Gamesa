@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=4 uid="uid://chr48v8vqmyrr"]
 
-[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_1osbf"]
+[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_1osbf"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_n35vt"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_sc41j"]
-[ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/sounds/Music/at-home.wav" id="8_ieei7"]
+[ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="8_ieei7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_lable.tres" id="9_xg56r"]
 [ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scripts/levels/tutorial/door_house_out.gd" id="12_g5jg7"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="12_y28yd"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="13_vxbwt"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="13_vxbwt"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="15_0qekk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
