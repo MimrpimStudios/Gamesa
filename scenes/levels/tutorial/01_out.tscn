@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=30 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://btjc4np2454p4" path="res://assets/sounds/siren.mp3" id="16_je17w"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/textures/sprites/window.png" id="17_btxvf"]
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
+[ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/sounds/ufo.wav" id="18_w2o16"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -57,6 +58,18 @@ tracks/0/keys = {
 "update": 2,
 "values": [Vector2(0, 0), Vector2(1320, 140)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_2mrnh"]
 length = 0.001
@@ -71,6 +84,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aax5y"]
@@ -254,6 +279,9 @@ libraries = {
 
 [node name="ufo" parent="." instance=ExtResource("17_je17w")]
 scale = Vector2(4, 4)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="ufo"]
+stream = ExtResource("18_w2o16")
 
 [connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
