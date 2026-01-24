@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgqyegbqpg2y5"]
+[gd_scene load_steps=5 format=3 uid="uid://cgqyegbqpg2y5"]
 
 [ext_resource type="Script" uid="uid://bptk7eew16qfi" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b3lwf7ywkbe0y" path="res://splash.png" id="3_sugp2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sugp2"]
 font = ExtResource("2_0wfyh")
@@ -24,6 +25,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -188.5
+offset_right = 384.0
+offset_bottom = 188.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sugp2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
