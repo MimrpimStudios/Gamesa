@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=29 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="16_gg1hg"]
 [ext_resource type="AudioStream" uid="uid://btjc4np2454p4" path="res://assets/sounds/siren.mp3" id="16_je17w"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/textures/sprites/window.png" id="17_btxvf"]
+[ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -39,6 +40,44 @@ size = Vector2(35, 48.5)
 size = Vector2(35, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1gm"]
+
+[sub_resource type="Animation" id="Animation_w2o16"]
+resource_name = "secret_01"
+length = 5.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(0, 0), Vector2(1320, 140)]
+}
+
+[sub_resource type="Animation" id="Animation_2mrnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aax5y"]
+_data = {
+&"RESET": SubResource("Animation_2mrnh"),
+&"secret_01": SubResource("Animation_w2o16")
+}
 
 [node name="01Out" type="Node2D"]
 script = ExtResource("1_k6rpo")
@@ -207,6 +246,15 @@ stream = ExtResource("16_je17w")
 wait_time = 2.1999999999999997
 one_shot = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Secret01"]
+root_node = NodePath("../../ufo")
+libraries = {
+&"": SubResource("AnimationLibrary_aax5y")
+}
+
+[node name="ufo" parent="." instance=ExtResource("17_je17w")]
+scale = Vector2(4, 4)
+
 [connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_entered"]
@@ -218,5 +266,7 @@ one_shot = true
 [connection signal="body_entered" from="CameraZoomOutEnable" to="CameraZoomOutEnable" method="_on_body_entered"]
 [connection signal="body_entered" from="Secret01" to="Secret01" method="_on_body_entered"]
 [connection signal="timeout" from="Secret01/AudioStreamPlayer/Timer" to="Secret01" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="Secret01/AnimationPlayer" to="Secret01" method="_on_animation_player_animation_finished"]
 
 [editable path="Killzone"]
+[editable path="ufo"]
