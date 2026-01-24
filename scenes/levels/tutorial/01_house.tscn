@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=4 uid="uid://b4chrjqbpmsl8"]
+
+[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/level_manager.gd" id="1_v3jdr"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_vu4qm"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_v3jdr"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="3_parmh"]
+[ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scripts/levels/tutorial/door_house_out.gd" id="4_liqfr"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/textures/sprites/door.png" id="5_v8u20"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_vu4qm"]
+[ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/sounds/Music/at-home.wav" id="8_parmh"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_lable.tres" id="9_liqfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
+size = Vector2(15.25, 21)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
+
+[node name="01House" type="Node2D"]
+script = ExtResource("1_v3jdr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAAdAAYABAACAAAAAAAcAAYABAACAAAAAAAbAAYABAACAAAAAAAeAAYABAABAAAAAAAeAAUABAABAAAAAAAeAAQABAABAAAAAAAeAAMABAABAAAAAAAdAAMABAACAAAAAAAcAAMABAACAAAAAAAbAAMABAACAAAAAAAaAAYABAACAAAAAAAZAAYABAACAAAAAAAYAAYABAACAAAAAAAXAAYABAACAAAAAAAWAAYABAACAAAAAAAVAAYABAACAAAAAAAUAAYABAACAAAAAAATAAYABAACAAAAAAASAAYABAABAAAAAAASAAUABAABAAAAAAASAAQABAABAAAAAAASAAMABAABAAAAAAATAAMABAAAAAAAAAAUAAMABAAAAAAAAAAVAAMABAAAAAAAAAAaAAMABAAAAAAAAAAeAAIABAABAAAAAAAeAAEABAABAAAAAAAeAAAABAABAAAAAAASAAIABAABAAAAAAASAAEABAABAAAAAAASAAAABAABAAAAAAAYAAUABAABAAAAAAATAAAABAACAAAAAAAUAAAABAACAAAAAAAVAAAABAACAAAAAAAWAAAABAACAAAAAAAXAAAABAACAAAAAAAYAAAABAACAAAAAAAZAAAABAACAAAAAAAaAAAABAACAAAAAAAbAAAABAACAAAAAAAcAAAABAACAAAAAAAdAAAABAACAAAAAAA=")
+tile_set = ExtResource("1_vu4qm")
+
+[node name="Player" parent="." instance=ExtResource("2_v3jdr")]
+position = Vector2(391, 311)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="Screen" parent="." instance=ExtResource("3_parmh")]
+follow_viewport_enabled = false
+
+[node name="DoorHouseOut" type="Area2D" parent="."]
+position = Vector2(56, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_liqfr")
+
+[node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
+position = Vector2(490, 349)
+texture = ExtResource("5_v8u20")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
+position = Vector2(489.625, 348.5)
+shape = SubResource("RectangleShape2D_u00iu")
+
+[node name="Killzone" parent="." instance=ExtResource("6_vu4qm")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_v3jdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_parmh")
+autoplay = true
+
+[node name="Hints" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Hints"]
+offset_left = 400.0
+offset_top = 278.0
+offset_right = 509.0
+offset_bottom = 309.0
+text = "YOU ARE MOVING BY
+\"A\" \"D\" OR  BY ARROWS"
+label_settings = ExtResource("9_liqfr")
+
+[node name="Label2" type="Label" parent="Hints"]
+offset_left = 452.0
+offset_top = 326.0
+offset_right = 559.0
+offset_bottom = 357.0
+text = "OPENING DOOR BY 
+      \"E\" OR \"I\""
+label_settings = ExtResource("9_liqfr")
+
+[connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
