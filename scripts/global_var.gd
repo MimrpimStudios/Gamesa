@@ -4,11 +4,13 @@ var player_movement = true
 var is_player_dead = false
 var player_health = 3
 var player_max_health = 3
+var hide_overaly = false
 const house_01_scene = "res://scenes/levels/tutorial/01_house.tscn"
 const house_01_scene_in = "res://scenes/levels/tutorial/01_house_in.tscn"
 const out_01_scene = "res://scenes/levels/tutorial/01_out.tscn"
 const secret_01_scene = "res://scenes/levels/tutorial/01_secret.tscn"
-var hide_overaly = false
+const mainmenu_scene = "res://scenes/main_menu.tscn"
+const start_scene = house_01_scene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

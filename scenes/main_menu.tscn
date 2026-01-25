@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=12 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://b3lwf7ywkbe0y" path="res://splash.png" id="2_ekxnf"]
-[ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c7ur1guja3ix4" path="res://assets/Textures/exit.png" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="6_oa1go"]
+[ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="7_tbmy8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekxnf"]
 atlas = ExtResource("1_l6cm7")
@@ -12,6 +16,14 @@ region = Rect2(2, 2, 90, 27)
 atlas = ExtResource("1_l6cm7")
 region = Rect2(99, 3, 90, 25)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("3_bqqt6")
+region = Rect2(99, 3, 90, 25)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -19,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wu84c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -30,23 +43,75 @@ grow_vertical = 2
 texture = ExtResource("2_ekxnf")
 expand_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Debug" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_oa1go")
+version = "1.0-t2.4"
+
+[node name="LabelVersion" type="Label" parent="Debug"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 93.0
+grow_vertical = 0
+text = "Version: X.X.X.X"
+label_settings = ExtResource("7_tbmy8")
+uppercase = true
+
+[node name="LabelFPS" type="Label" parent="Debug"]
+visible = false
+layout_mode = 0
+offset_top = 22.0
+offset_right = 80.0
+offset_bottom = 45.0
+text = "FPS: XX.XX"
+label_settings = ExtResource("7_tbmy8")
+uppercase = true
+
+[node name="TextureButtonPlay" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.66663
-offset_top = -39.5
-offset_right = 131.66663
-offset_bottom = 39.5
+offset_left = -150.0
+offset_top = -140.0
+offset_right = 150.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_ekxnf")
 texture_pressed = SubResource("AtlasTexture_l6cm7")
 stretch_mode = 0
 
+[node name="TextureButtonExit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -45.0
+offset_right = 150.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_wu84c")
+texture_pressed = SubResource("AtlasTexture_8ln24")
+stretch_mode = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_bqqt6")
+stream = ExtResource("5_8ln24")
 autoplay = true
+
+[connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
+[connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]

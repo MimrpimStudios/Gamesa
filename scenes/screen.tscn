@@ -136,7 +136,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_r04ab")
-version = "1.0-t2.3"
+version = "1.0-t2.4"
 
 [node name="LabelVersion" type="Label" parent="Overaly/Debug"]
 layout_mode = 0
