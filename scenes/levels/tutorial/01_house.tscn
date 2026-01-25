@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="5_v8u20"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_vu4qm"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="8_parmh"]
-[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_lable.tres" id="9_liqfr"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="9_liqfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
