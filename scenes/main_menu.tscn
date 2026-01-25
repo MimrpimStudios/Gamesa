@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba3rh4lpjn6uy"]
+
+[ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://b3lwf7ywkbe0y" path="res://splash.png" id="2_ekxnf"]
+[ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="3_bqqt6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxnf"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6cm7"]
+atlas = ExtResource("1_l6cm7")
+region = Rect2(99, 3, 90, 25)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.66663
+offset_top = -39.5
+offset_right = 131.66663
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_ekxnf")
+texture_pressed = SubResource("AtlasTexture_l6cm7")
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bqqt6")
+autoplay = true
