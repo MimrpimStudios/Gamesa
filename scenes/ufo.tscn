@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://b0s4ckgv8lwax"]
 
-[ext_resource type="Script" uid="uid://dd2t4kbref8sd" path="res://ufo.gd" id="1_xf4xf"]
-[ext_resource type="Texture2D" uid="uid://qn0jckkk3rbk" path="res://assets/textures/sprites/ufo.png" id="2_gp6nc"]
+[ext_resource type="Script" uid="uid://dd2t4kbref8sd" path="res://scripts/ufo.gd" id="1_xf4xf"]
+[ext_resource type="Texture2D" uid="uid://qn0jckkk3rbk" path="res://assets/Textures/sprites/ufo.png" id="2_gp6nc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1aa4c"]
 atlas = ExtResource("2_gp6nc")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.2.2"
+config/version="0.0.2.3"
 run/main_scene="uid://cgqyegbqpg2y5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -23,6 +23,11 @@ config/icon="uid://badwdoo0tuei7"
 [autoload]
 
 global_var="*res://scripts/global_var.gd"
+
+[debug]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/latest.log"
 
 [display]
 
@@ -80,4 +85,6 @@ hide_overaly={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.mobile="gl_compatibility"
 textures/lossless_compression/force_png=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
