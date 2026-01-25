@@ -196,8 +196,7 @@ rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="DoorHouse" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("14_btxvf")
 
 [node name="Texture" type="Sprite2D" parent="DoorHouse"]
