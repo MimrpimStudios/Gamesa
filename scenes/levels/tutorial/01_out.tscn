@@ -116,6 +116,7 @@ tile_map_data = PackedByteArray("AAAXAOX/CQAAAAEAAAAXAOb/CQAAAAIAAAAXAOf/CQAAAAM
 tile_set = ExtResource("4_nw1gm")
 
 [node name="trees" type="Node2D" parent="."]
+position = Vector2(0, 343)
 
 [node name="Tree" type="Sprite2D" parent="trees"]
 position = Vector2(1017, -153)
