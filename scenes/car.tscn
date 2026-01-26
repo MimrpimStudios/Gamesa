@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbcrqqtuhxedo"]
+
+[ext_resource type="Texture2D" uid="uid://cp4y2pinibsae" path="res://assets/Textures/sprites/car_red.png" id="1_c35m8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt2eu"]
+atlas = ExtResource("1_c35m8")
+region = Rect2(0, 21, 38, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50v30"]
+atlas = ExtResource("1_c35m8")
+region = Rect2(0, 0, 38, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtldb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt2eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50v30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
+size = Vector2(36, 19)
+
+[node name="Car" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_jtldb")
+autoplay = "default"
+frame_progress = 0.9523939
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_3mrxu")

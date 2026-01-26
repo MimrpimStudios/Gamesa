@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_k2fsc"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_sc41j"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="8_ieei7"]
-[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_lable.tres" id="9_xg56r"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="9_xg56r"]
 [ext_resource type="Script" uid="uid://c1b10ki1sjgyk" path="res://scripts/levels/tutorial/door_house_out.gd" id="12_g5jg7"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="12_y28yd"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="13_vxbwt"]
@@ -48,8 +48,7 @@ follow_viewport_enabled = false
 
 [node name="DoorHouseOut" type="Area2D" parent="."]
 position = Vector2(56, 0)
-collision_layer = 0
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("12_g5jg7")
 
 [node name="Texture" type="Sprite2D" parent="DoorHouseOut"]

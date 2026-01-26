@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d2cofyqljwmc5" path="res://scripts/healthbar.gd" id="3_nexl8"]
 [ext_resource type="Texture2D" uid="uid://bvpxoq3wdaydj" path="res://assets/Textures/sprites/healthbar.png" id="3_qc0hx"]
 [ext_resource type="Script" uid="uid://v3lbk1oydhka" path="res://scripts/overaly.gd" id="4_b7nko"]
-[ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scenes/debug.gd" id="7_r04ab"]
+[ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="7_r04ab"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="8_2oog4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gakxr"]
@@ -136,7 +136,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_r04ab")
-version = "1.0-t2.3"
+version = "1.0-t2.4"
 
 [node name="LabelVersion" type="Label" parent="Overaly/Debug"]
 layout_mode = 0

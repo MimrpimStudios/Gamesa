@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="17_btxvf"]
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
 [ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/Sounds/ufo.wav" id="18_w2o16"]
-[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_lable.tres" id="19_2mrnh"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_2mrnh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -116,6 +116,7 @@ tile_map_data = PackedByteArray("AAAXAOX/CQAAAAEAAAAXAOb/CQAAAAIAAAAXAOf/CQAAAAM
 tile_set = ExtResource("4_nw1gm")
 
 [node name="trees" type="Node2D" parent="."]
+position = Vector2(0, 343)
 
 [node name="Tree" type="Sprite2D" parent="trees"]
 position = Vector2(1017, -153)
@@ -195,8 +196,7 @@ rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="DoorHouse" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("14_btxvf")
 
 [node name="Texture" type="Sprite2D" parent="DoorHouse"]

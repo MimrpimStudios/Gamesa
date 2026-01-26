@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bucbo56r0tl1a"
-path="res://.godot/imported/SkyBox.png-ac8128a34f7792a7733522ebf85429c0.ctex"
+uid="uid://bl8ubvai1nb5m"
+path="res://.godot/imported/buttons.png-567ff83775e0a9cfeeb08743175b147c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/Sky/SkyBox.png"
-dest_files=["res://.godot/imported/SkyBox.png-ac8128a34f7792a7733522ebf85429c0.ctex"]
+source_file="res://assets/Textures/buttons.png"
+dest_files=["res://.godot/imported/buttons.png-567ff83775e0a9cfeeb08743175b147c.ctex"]
 
 [params]
 
