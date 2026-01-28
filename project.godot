@@ -31,8 +31,11 @@ file_logging/log_path="user://logs/latest.log"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=2
 window/size/initial_position_type=5
+window/stretch/mode="viewport"
 
 [editor]
 
