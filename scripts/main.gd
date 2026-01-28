@@ -11,5 +11,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("changing scene to: " + global_var.mainmenu_scene)
-	get_tree().change_scene_to_file(global_var.mainmenu_scene)
+	print("changing scene to: " + global_var.start_scene)
+	get_tree().change_scene_to_file(global_var.start_scene)

@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_texture_button_play_pressed() -> void:
-	get_tree().change_scene_to_file(global_var.start_scene)
+	get_tree().change_scene_to_file(global_var.start_scene_story)
 
 
 func _on_texture_button_exit_pressed() -> void:
