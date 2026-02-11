@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bsxpjf5638ak"]
+[gd_scene load_steps=15 format=4 uid="uid://bsxpjf5638ak"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_ud6jg"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_5s6bi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="6_jf2b0"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_ln4gv"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="10_sq6xi"]
+[ext_resource type="PackedScene" uid="uid://cbcrqqtuhxedo" path="res://scenes/car.tscn" id="11_2et60"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="12_6ioip"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_usm4b"]
 
@@ -16,6 +17,9 @@ distance = -130.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq6xi"]
 size = Vector2(143, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
+size = Vector2(36, 19)
 
 [node name="01Town" type="Node2D"]
 script = ExtResource("1_ud6jg")
@@ -159,5 +163,15 @@ shape = SubResource("RectangleShape2D_sq6xi")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_sq6xi")
 autoplay = true
+
+[node name="Car" parent="." instance=ExtResource("11_2et60")]
+position = Vector2(2209, 359)
+
+[node name="Killzone" parent="Car" instance=ExtResource("4_x875n")]
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car/Killzone"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_3mrxu")
 
 [editable path="Killzone"]

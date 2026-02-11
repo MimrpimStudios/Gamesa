@@ -107,9 +107,8 @@ _data = {
 &"secret_01": SubResource("Animation_w2o16")
 }
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dbi5j"]
-a = Vector2(126, -1000)
-b = Vector2(126, 59)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aax5y"]
+size = Vector2(1326, 928)
 
 [node name="01Out" type="Node2D"]
 script = ExtResource("1_k6rpo")
@@ -350,8 +349,8 @@ position = Vector2(-12, 0)
 script = ExtResource("20_aax5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1862, 300)
-shape = SubResource("SegmentShape2D_dbi5j")
+position = Vector2(2649, 163)
+shape = SubResource("RectangleShape2D_aax5y")
 
 [connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
