@@ -42,3 +42,4 @@ shape = SubResource("RectangleShape2D_3mrxu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_qt2eu")
+autoplay = true
