@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
 [ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/Sounds/ufo.wav" id="18_w2o16"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_2mrnh"]
-[ext_resource type="Script" uid="uid://cpt5ey7hh3yyw" path="res://scenes/levels/tutorial/area_2d.gd" id="20_aax5y"]
+[ext_resource type="Script" uid="uid://cpt5ey7hh3yyw" path="res://scripts/levels/tutorial/town_changer.gd" id="20_aax5y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -344,11 +344,19 @@ offset_bottom = 185.0
 text = "THERE IS NO FALL DAMAGE"
 label_settings = ExtResource("19_2mrnh")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Label6" type="Label" parent="Hints"]
+offset_left = 1961.0
+offset_top = 324.0
+offset_right = 2119.0
+offset_bottom = 372.0
+text = "AVOID CARS"
+label_settings = ExtResource("19_2mrnh")
+
+[node name="TownChanger" type="Area2D" parent="."]
 position = Vector2(-12, 0)
 script = ExtResource("20_aax5y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TownChanger"]
 position = Vector2(2649, 163)
 shape = SubResource("RectangleShape2D_aax5y")
 
@@ -364,7 +372,7 @@ shape = SubResource("RectangleShape2D_aax5y")
 [connection signal="body_entered" from="Secret01" to="Secret01" method="_on_body_entered"]
 [connection signal="timeout" from="Secret01/AudioStreamPlayer/Timer" to="Secret01" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Secret01/AnimationPlayer" to="Secret01" method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="TownChanger" to="TownChanger" method="_on_body_entered"]
 
 [editable path="Killzone"]
 [editable path="ufo"]
