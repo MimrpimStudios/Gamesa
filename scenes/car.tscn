@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbcrqqtuhxedo"]
+[gd_scene load_steps=7 format=3 uid="uid://cbcrqqtuhxedo"]
 
 [ext_resource type="Texture2D" uid="uid://cp4y2pinibsae" path="res://assets/Textures/sprites/car_red.png" id="1_c35m8"]
+[ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="2_qt2eu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qt2eu"]
 atlas = ExtResource("1_c35m8")
@@ -38,3 +39,8 @@ frame_progress = 0.9523939
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_3mrxu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qt2eu")
+autoplay = true
+max_distance = 400.0
