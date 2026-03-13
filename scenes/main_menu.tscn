@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=16 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="6_oa1go"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="7_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://os3fw7f12hwc" path="res://assets/Textures/yard-red-alert-openra-pink.png" id="9_jk1qb"]
+[ext_resource type="Script" uid="uid://b1fm3i4y5yey6" path="res://scripts/yard_red_alert_openra_pink.gd" id="10_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -136,15 +137,16 @@ stretch_mode = 0
 stream = ExtResource("5_8ln24")
 autoplay = true
 
-[node name="YardRedAlertOpenraPink" type="TextureRect" parent="."]
+[node name="YardRedAlertOpenraPink" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 642.0
-offset_right = 72.758865
-offset_bottom = 703.0
-texture = ExtResource("9_jk1qb")
-expand_mode = 1
+offset_left = 17.0
+offset_top = 420.0
+offset_right = 321.0
+offset_bottom = 702.0
+texture_normal = ExtResource("9_jk1qb")
 flip_h = true
+script = ExtResource("10_5dd4i")
 
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="pressed" from="YardRedAlertOpenraPink" to="YardRedAlertOpenraPink" method="_on_pressed"]
