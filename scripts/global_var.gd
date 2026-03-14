@@ -14,7 +14,7 @@ const main_menu_scene = "res://scenes/main_menu.tscn"
 const fall_scene = "res://scenes/levels/tutorial/01_fall.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
-const version = "1.0-t2.5"
+const version = "1.0-t2.6"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
