@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmo6702squx55"
-path="res://.godot/imported/splash.png-3af3cbd4323e1bd6273beb2562ed7d68.ctex"
+uid="uid://os3fw7f12hwc"
+path="res://.godot/imported/yard-red-alert-openra-pink.png-d15ec7cc0f05abba1d10413fc9f12797.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/splash.png"
-dest_files=["res://.godot/imported/splash.png-3af3cbd4323e1bd6273beb2562ed7d68.ctex"]
+source_file="res://assets/Textures/yard-red-alert-openra-pink.png"
+dest_files=["res://.godot/imported/yard-red-alert-openra-pink.png-d15ec7cc0f05abba1d10413fc9f12797.ctex"]
 
 [params]
 

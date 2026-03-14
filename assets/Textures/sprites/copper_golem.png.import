@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmo6702squx55"
-path="res://.godot/imported/splash.png-3af3cbd4323e1bd6273beb2562ed7d68.ctex"
+uid="uid://bmfs0y7k6sna"
+path="res://.godot/imported/copper_golem.png-c31bafc290dc5b51c38fbbbb74d69e63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/splash.png"
-dest_files=["res://.godot/imported/splash.png-3af3cbd4323e1bd6273beb2562ed7d68.ctex"]
+source_file="res://assets/Textures/sprites/copper_golem.png"
+dest_files=["res://.godot/imported/copper_golem.png-c31bafc290dc5b51c38fbbbb74d69e63.ctex"]
 
 [params]
 

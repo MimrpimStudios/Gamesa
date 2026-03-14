@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://drus5x6rx3d4r"]
+[gd_scene load_steps=10 format=4 uid="uid://drus5x6rx3d4r"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_78ac6"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_74l5l"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="6_7f8w7"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="7_yqey7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="8_pcv87"]
+[ext_resource type="AudioStream" uid="uid://cyx7mr1jcl2mp" path="res://assets/Sounds/Music/kalirna.mp3" id="8_vlwi2"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="9_mj7ro"]
+[ext_resource type="Texture2D" uid="uid://bmfs0y7k6sna" path="res://assets/Textures/sprites/copper_golem.png" id="9_vwdls"]
 
 [node name="01Town" type="Node2D"]
 script = ExtResource("1_78ac6")
@@ -62,5 +64,240 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vlwi2")
+autoplay = true
+
+[node name="CopperGolem" type="Sprite2D" parent="."]
+position = Vector2(3387, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem3" type="Sprite2D" parent="."]
+position = Vector2(3417, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem4" type="Sprite2D" parent="."]
+position = Vector2(3434, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem5" type="Sprite2D" parent="."]
+position = Vector2(3451, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem6" type="Sprite2D" parent="."]
+position = Vector2(3467, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem7" type="Sprite2D" parent="."]
+position = Vector2(3484, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem8" type="Sprite2D" parent="."]
+position = Vector2(3501, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem9" type="Sprite2D" parent="."]
+position = Vector2(3517, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem10" type="Sprite2D" parent="."]
+position = Vector2(3534, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem11" type="Sprite2D" parent="."]
+position = Vector2(3551, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem12" type="Sprite2D" parent="."]
+position = Vector2(3567, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem13" type="Sprite2D" parent="."]
+position = Vector2(3584, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem14" type="Sprite2D" parent="."]
+position = Vector2(3601, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem15" type="Sprite2D" parent="."]
+position = Vector2(3617, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem16" type="Sprite2D" parent="."]
+position = Vector2(3634, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem17" type="Sprite2D" parent="."]
+position = Vector2(3651, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem18" type="Sprite2D" parent="."]
+position = Vector2(3667, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem19" type="Sprite2D" parent="."]
+position = Vector2(3684, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem20" type="Sprite2D" parent="."]
+position = Vector2(3701, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem21" type="Sprite2D" parent="."]
+position = Vector2(3717, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem22" type="Sprite2D" parent="."]
+position = Vector2(3734, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem23" type="Sprite2D" parent="."]
+position = Vector2(3751, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem24" type="Sprite2D" parent="."]
+position = Vector2(3767, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem25" type="Sprite2D" parent="."]
+position = Vector2(3784, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem26" type="Sprite2D" parent="."]
+position = Vector2(3801, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem27" type="Sprite2D" parent="."]
+position = Vector2(3817, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem28" type="Sprite2D" parent="."]
+position = Vector2(3834, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem29" type="Sprite2D" parent="."]
+position = Vector2(3851, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem30" type="Sprite2D" parent="."]
+position = Vector2(3867, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem31" type="Sprite2D" parent="."]
+position = Vector2(3884, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem32" type="Sprite2D" parent="."]
+position = Vector2(3901, 2796.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem33" type="Sprite2D" parent="."]
+position = Vector2(3922, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem34" type="Sprite2D" parent="."]
+position = Vector2(3939, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem35" type="Sprite2D" parent="."]
+position = Vector2(3956, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem36" type="Sprite2D" parent="."]
+position = Vector2(3972, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem37" type="Sprite2D" parent="."]
+position = Vector2(3989, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem38" type="Sprite2D" parent="."]
+position = Vector2(4006, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem39" type="Sprite2D" parent="."]
+position = Vector2(4022, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem40" type="Sprite2D" parent="."]
+position = Vector2(4039, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem41" type="Sprite2D" parent="."]
+position = Vector2(4056, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem42" type="Sprite2D" parent="."]
+position = Vector2(4072, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem43" type="Sprite2D" parent="."]
+position = Vector2(4089, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem44" type="Sprite2D" parent="."]
+position = Vector2(4106, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem45" type="Sprite2D" parent="."]
+position = Vector2(4122, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem46" type="Sprite2D" parent="."]
+position = Vector2(4139, 2907.25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+
+[node name="CopperGolem2" type="Sprite2D" parent="."]
+position = Vector2(3209, 2796.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_vwdls")
+flip_h = true
 
 [editable path="Killzone"]

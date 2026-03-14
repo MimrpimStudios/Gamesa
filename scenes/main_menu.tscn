@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=17 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="5_tbmy8"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="6_oa1go"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://os3fw7f12hwc" path="res://assets/Textures/yard-red-alert-openra-pink.png" id="9_jk1qb"]
+[ext_resource type="Script" uid="uid://b1fm3i4y5yey6" path="res://scripts/yard_red_alert_openra_pink.gd" id="10_5dd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -29,6 +31,12 @@ region = Rect2(2, 2, 90, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
 atlas = ExtResource("3_bqqt6")
 region = Rect2(99, 3, 90, 25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
+font = ExtResource("5_tbmy8")
+font_size = 32
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -58,17 +66,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_oa1go")
 
-[node name="LabelVersion" type="Label" parent="Debug"]
+[node name="Copiright02" type="Label" parent="Debug"]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
+offset_left = -227.0
 offset_top = -23.0
-offset_right = 98.0
+offset_right = -5.0
+grow_horizontal = 0
 grow_vertical = 0
-text = "Version: X.X.X.X"
-label_settings = ExtResource("7_tbmy8")
+text = "SOME SPRITES (COPPER GOLEMS) ARE USED FROM OTHER GAMES (MINECRAFT) ALL CREDISTS BELONGS TO THE GAME CREATORS (MOJANG) AND CREATORS OF THE PIXEL ART (MOJANG ON MINECRAFT LIVE)"
+label_settings = SubResource("LabelSettings_jk1qb")
+uppercase = true
+
+[node name="Copiright01" type="Label" parent="Debug"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -851.0
+offset_top = -46.0
+offset_right = -5.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "SOME SPRITES (LOGO ON LEFT) ARE USED FROM OTHER GAMES (OPENRA - RED ALERT) ALL CREDISTS BELONGS TO THE GAME CREATORS (OPENRA)"
+label_settings = SubResource("LabelSettings_jk1qb")
 uppercase = true
 
 [node name="LabelEarlyAccess" type="Label" parent="Debug"]
@@ -79,8 +107,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -227.0
-offset_top = -23.0
+offset_top = -69.0
 offset_right = -5.0
+offset_bottom = -46.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "WARNING: THIS IS EARLY ACCESS ONLY"
@@ -94,6 +123,18 @@ offset_top = 22.0
 offset_right = 80.0
 offset_bottom = 45.0
 text = "FPS: XX.XX"
+label_settings = ExtResource("7_tbmy8")
+uppercase = true
+
+[node name="LabelVersion" type="Label" parent="Debug"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 489.0
+grow_vertical = 0
+text = "Gamesa version: 0.0.2.510 or version: RUZOVA-ARMADA-UPDATE-KALIRNA-1.0-T2.510"
 label_settings = ExtResource("7_tbmy8")
 uppercase = true
 
@@ -135,5 +176,31 @@ stretch_mode = 0
 stream = ExtResource("5_8ln24")
 autoplay = true
 
+[node name="YardRedAlertOpenraPink" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 420.0
+offset_right = 321.0
+offset_bottom = 702.0
+texture_normal = ExtResource("9_jk1qb")
+flip_h = true
+script = ExtResource("10_5dd4i")
+
+[node name="Label" type="Label" parent="YardRedAlertOpenraPink"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_right = 133.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "CLICK ME AND
+ LISTEN FOR 2 MINUTES"
+label_settings = SubResource("LabelSettings_5dd4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="pressed" from="YardRedAlertOpenraPink" to="YardRedAlertOpenraPink" method="_on_pressed"]
