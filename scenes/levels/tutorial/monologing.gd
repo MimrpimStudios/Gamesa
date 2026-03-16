@@ -20,4 +20,4 @@ func _on_timer_timeout() -> void:
 	else:
 		$Label.text = ""
 		$Label.hide()
-		global_var.player_movement = true
+		get_tree().change_scene_to_file(global_var.stoky_no_monolog_scene)

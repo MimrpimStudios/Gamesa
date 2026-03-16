@@ -16,6 +16,7 @@ const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
 const version = "1.0-t2.6"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
+const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
