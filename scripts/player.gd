@@ -63,3 +63,4 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("stand")
 		SPEED = 0
+		velocity.x = 0
