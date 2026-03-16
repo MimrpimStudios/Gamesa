@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3iwi6jnnt3gt"
-path="res://.godot/imported/player.png-b07093ca1e3b5a5a5d2fb493ae4fc8aa.ctex"
+uid="uid://bpyvydgi42ksd"
+path="res://.godot/imported/kyselina.png-3ccb45be58b005599191a2b1c9d762f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/sprites/player.png"
-dest_files=["res://.godot/imported/player.png-b07093ca1e3b5a5a5d2fb493ae4fc8aa.ctex"]
+source_file="res://assets/Textures/tilemap/kyselina.png"
+dest_files=["res://.godot/imported/kyselina.png-3ccb45be58b005599191a2b1c9d762f9.ctex"]
 
 [params]
 

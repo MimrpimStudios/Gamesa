@@ -18,8 +18,10 @@ func _process(_delta: float) -> void:
 		global_var.player_health = 0
 
 func _physics_process(delta):
-	if not is_on_floor():
+	if not is_on_floor() and global_var.is_player_dead == false:
 		velocity.y += gravity * delta
+		if global_var.player_movement == false:
+			move_and_slide()
 	if global_var.player_movement == true:
 		# Add the gravity.
 		# Handle jump.
@@ -60,3 +62,5 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		animated_sprite.play("stand")
+		SPEED = 0
+		velocity.x = 0
