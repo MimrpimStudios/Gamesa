@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://y8l6d3jkqlf3"]
 
 [ext_resource type="Texture2D" uid="uid://ftlsiaigqujt" path="res://assets/Textures/sprites/rat.png" id="1_mk1lo"]
-[ext_resource type="Script" uid="uid://d0bimauaf8fn3" path="res://scenes/smash_jump.gd" id="2_exe6b"]
+[ext_resource type="Script" uid="uid://d0bimauaf8fn3" path="res://scripts/levels/tutorial/smash_jump.gd" id="2_exe6b"]
 [ext_resource type="Texture2D" uid="uid://e62m2i7b1xxs" path="res://assets/Textures/sprites/rat_head.png" id="2_pflx0"]
 [ext_resource type="Texture2D" uid="uid://c1xobib77t4po" path="res://assets/Textures/sprites/rat_tail.png" id="3_d3qfa"]
 
@@ -245,7 +245,7 @@ position = Vector2(0, 1)
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_e3ywk")
 autoplay = "default"
-frame_progress = 0.77918607
+frame_progress = 0.67486
 
 [node name="AnimatedSprite2DHead" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
