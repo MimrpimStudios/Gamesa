@@ -3,6 +3,7 @@ extends Node
 var player_movement = true
 var is_player_dead = false
 var is_player_smashing = false
+var is_player_smashing_disabled = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
