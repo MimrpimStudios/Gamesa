@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://cqqi8mo4huwag"]
+[gd_scene load_steps=12 format=4 uid="uid://cqqi8mo4huwag"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_12o0e"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_04g3x"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_eeys6"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_4c1h8"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_hk6ub"]
 [ext_resource type="Texture2D" uid="uid://b871jfj1ptd3l" path="res://assets/Textures/tilemap/grass-tilemap-2.png" id="9_aftbq"]
@@ -157,5 +158,17 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(986, 420)
 shape = SubResource("RectangleShape2D_aftbq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1237.0
+offset_top = 331.0
+offset_right = 1316.0
+offset_bottom = 464.0
+text = "You finished the game
+There is working on boss fight. Thx for playing"
+label_settings = ExtResource("5_eeys6")
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
 
 [editable path="Killzone"]
