@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_doph4"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_omsuc"]
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="8_xkiqu"]
-[ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scenes/levels/tutorial/to_boss.gd" id="9_uam42"]
+[ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="9_uam42"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
