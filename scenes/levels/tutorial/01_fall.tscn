@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=4 uid="uid://drus5x6rx3d4r"]
 
-[ext_resource type="Script" uid="uid://dev12ffa6oxqv" path="res://scenes/levels/tutorial/01_fall.gd" id="1_vlwi2"]
+[ext_resource type="Script" uid="uid://dev12ffa6oxqv" path="res://scripts/levels/tutorial/01_fall.gd" id="1_vlwi2"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_74l5l"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_xleod"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="6_7f8w7"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="7_yqey7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="8_pcv87"]
-[ext_resource type="Script" uid="uid://cuvek10rvh30s" path="res://scenes/levels/tutorial/to_stoky.gd" id="8_vlwi2"]
+[ext_resource type="Script" uid="uid://cuvek10rvh30s" path="res://scripts/levels/tutorial/to_stoky.gd" id="8_vlwi2"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="9_mj7ro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
