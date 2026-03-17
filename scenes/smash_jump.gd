@@ -16,6 +16,8 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if global_var.is_player_smashing:
 		global_var.is_player_smashing_disabled = true
-		body.velocity.y  = body.JUMP_VELOCITY 
+		body.velocity.y  = body.JUMP_VELOCITY
+		for n in get_children():
+			n.queue_free()
 		await get_tree().create_timer(0.5).timeout
 		global_var.is_player_smashing_disabled = false
