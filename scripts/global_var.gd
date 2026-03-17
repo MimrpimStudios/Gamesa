@@ -14,6 +14,7 @@ const out_01_scene = "res://scenes/levels/tutorial/01_out.tscn"
 const secret_01_scene = "res://scenes/levels/tutorial/01_secret.tscn"
 const main_menu_scene = "res://scenes/main_menu.tscn"
 const fall_scene = "res://scenes/levels/tutorial/01_fall.tscn"
+const boss_01_scene = "res://scenes/levels/tutorial/01_boss1.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
 const version = "1.0-t2.6"
