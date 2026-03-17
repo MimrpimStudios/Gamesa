@@ -8,6 +8,7 @@ var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -40,6 +41,14 @@ func _physics_process(delta):
 				SPEED = 150.0
 		else:
 			SPEED = 80.0
+
+		# handle smash
+		if Input.is_action_just_pressed("down"):
+			gravity = default_gravity + 2000
+			global_var.is_player_smashing = true
+		elif Input.is_action_just_released("down"):
+			gravity = default_gravity
+			global_var.is_player_smashing = false
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
 		
