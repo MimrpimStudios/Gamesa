@@ -78,19 +78,6 @@ shape = SubResource("RectangleShape2D_kf7op")
 position = Vector2(5526, 2616.75)
 shape = SubResource("RectangleShape2D_kf7op")
 
-[node name="Player" parent="." instance=ExtResource("7_omsuc")]
-position = Vector2(5065, 2652)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-zoom = Vector2(5, 5)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-editor_draw_limits = true
-
 [node name="RatSmashPlatform2" parent="." instance=ExtResource("8_xkiqu")]
 position = Vector2(4476, 2839)
 
@@ -115,6 +102,19 @@ script = ExtResource("9_uam42")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToBoss"]
 position = Vector2(7134, 2604)
 shape = SubResource("SegmentShape2D_uam42")
+
+[node name="Player" parent="." instance=ExtResource("7_omsuc")]
+position = Vector2(3269, 2807)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
 
 [connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
 
