@@ -52,7 +52,7 @@ offset_top = 2758.0
 offset_right = 4377.0
 offset_bottom = 2806.0
 text = "TRY SMASHING THE RATS
-USE \"S\" OR DOWN ARROW
+HOLD \"S\" OR DOWN ARROW
 WHEN FALLING"
 label_settings = ExtResource("5_l4q1r")
 
