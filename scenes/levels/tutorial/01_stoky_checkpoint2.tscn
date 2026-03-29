@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="7_hyhba"]
 [ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="8_hvo27"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="9_0jo1e"]
-[ext_resource type="Script" uid="uid://knbkgls38jpq" path="res://scenes/levels/tutorial/to_stoky_3.gd" id="9_64qov"]
+[ext_resource type="Script" uid="uid://knbkgls38jpq" path="res://scripts/levels/tutorial/to_stoky_3.gd" id="9_64qov"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
