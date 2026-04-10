@@ -17,7 +17,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var camera2d = body.get_node_or_null("Camera2D")
 		if camera2d:
 			var tween = get_tree().create_tween()
-			print("player is now can not move")
 			global_var.player_movement = false
 			timer.start()
 			tween.tween_property(camera2d, "zoom", Vector2(2.0, 2.0), 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -25,5 +24,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("player is now can move")
 	global_var.player_movement = true
