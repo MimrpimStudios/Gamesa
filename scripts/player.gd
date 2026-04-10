@@ -61,5 +61,6 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("stand")
 		SPEED = 0
+		var direction = 0
 		velocity.x = 0
 		print("player is can not move...")
