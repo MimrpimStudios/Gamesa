@@ -43,8 +43,6 @@ func _physics_process(delta):
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
 		
-
-		
 		# Play animations
 		if is_on_floor():
 			if direction == 0:
@@ -64,3 +62,4 @@ func _physics_process(delta):
 		animated_sprite.play("stand")
 		SPEED = 0
 		velocity.x = 0
+		print("player is can not move...")
