@@ -28,6 +28,9 @@ tile_set = ExtResource("3_dflak")
 position = Vector2(3439, 2807)
 script = null
 
+[node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
+visible = false
+
 [node name="Rat" parent="." instance=ExtResource("11_dflak")]
 position = Vector2(3484, 2807)
 
@@ -46,4 +49,5 @@ flip_h = true
 [node name="AnimatedSprite2Dtail" parent="Rat2" index="3"]
 flip_h = true
 
+[editable path="Player"]
 [editable path="Rat2"]
