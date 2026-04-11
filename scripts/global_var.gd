@@ -2,6 +2,8 @@ extends Node
 
 var player_movement = true
 var is_player_dead = false
+var is_player_smashing = false
+var is_player_smashing_disabled = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
@@ -12,6 +14,9 @@ const out_01_scene = "res://scenes/levels/tutorial/01_out.tscn"
 const secret_01_scene = "res://scenes/levels/tutorial/01_secret.tscn"
 const main_menu_scene = "res://scenes/main_menu.tscn"
 const fall_scene = "res://scenes/levels/tutorial/01_fall.tscn"
+const boss_01_scene = "res://scenes/levels/tutorial/01_boss1.tscn"
+const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
+const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
 const version = "1.0-t2.6"

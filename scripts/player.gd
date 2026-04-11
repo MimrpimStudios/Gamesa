@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-@export_range(0, 100, 0.1, "or_greater", "or_less") var SPEED: float = 80.0
+@export_range(0, 100, 0.1, "or_greater", "or_less") var SPEED: float = 150.0
 @export_range(0, 1000, 1.0, "or_greater", "or_less") var JUMP_VELOCITY_kladna = 450.0
 var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -26,20 +27,19 @@ func _physics_process(delta):
 		# Add the gravity.
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-			if Input.is_action_pressed("sprint"):
-				SPEED = 150.0
-				JUMP_VELOCITY = -450.0
 			velocity.y = JUMP_VELOCITY
 			
 		if Input.is_action_just_released("jump"):
 			if velocity.y < -100:
 				velocity.y = -100
 
-		if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
-			if Input.is_action_pressed("sprint"):
-				SPEED = 150.0
-		else:
-			SPEED = 80.0
+		# handle smash
+		if Input.is_action_just_pressed("down") and global_var.is_player_smashing_disabled == false:
+			gravity = default_gravity + 2000
+			global_var.is_player_smashing = true
+		elif Input.is_action_just_released("down") or global_var.is_player_smashing_disabled:
+			gravity = default_gravity
+			global_var.is_player_smashing = false
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
 		
@@ -62,5 +62,6 @@ func _physics_process(delta):
 		move_and_slide()
 	else:
 		animated_sprite.play("stand")
-		SPEED = 0
 		velocity.x = 0
+		if not global_var.is_player_dead:
+			move_and_slide()
