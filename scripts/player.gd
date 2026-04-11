@@ -63,4 +63,5 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("stand")
 		velocity.x = 0
-		move_and_slide()
+		if not global_var.is_player_dead:
+			move_and_slide()
