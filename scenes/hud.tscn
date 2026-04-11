@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsbs1cbuxuvrg"]
+[gd_scene load_steps=6 format=3 uid="uid://bsbs1cbuxuvrg"]
 
+[ext_resource type="Script" uid="uid://dku6ajwsk4v24" path="res://scenes/hud.gd" id="1_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick/virtual_joystick.tscn" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="2_oo0fn"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_5ysmq"]
@@ -10,6 +11,7 @@ font_size = 128
 font_color = Color(0, 0, 0, 1)
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_6fi6k")
 
 [node name="RightVirtualJoystick" parent="." instance=ExtResource("1_37p78")]
 anchors_preset = 3
