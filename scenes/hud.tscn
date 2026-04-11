@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsbs1cbuxuvrg"]
+
+[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick/virtual_joystick.tscn" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="2_oo0fn"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_5ysmq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
+font = ExtResource("3_5ysmq")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="RightVirtualJoystick" parent="." instance=ExtResource("1_37p78")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -254.0
+offset_right = -265.0
+offset_bottom = -254.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+direction_mode = 0
+dynamic_area_left_margin = 0.509
+dynamic_area_top_margin = 0.377
+joystick_scale = 1.1680000000000001
+action_left = &"left"
+action_right = &"right"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(3, 589)
+scale = Vector2(17.625002, 19.6875)
+texture_normal = ExtResource("2_oo0fn")
+action = "jump"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(18, 952.00006)
+scale = Vector2(18.25, 7.249998)
+texture_normal = ExtResource("2_oo0fn")
+action = "integrate"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(332, 955.00006)
+scale = Vector2(18.25, 7.249998)
+texture_normal = ExtResource("2_oo0fn")
+action = "down"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(1622, 11)
+scale = Vector2(18.25, 7.249998)
+texture_normal = ExtResource("2_oo0fn")
+action = "esc"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 667.0
+offset_right = 245.0
+offset_bottom = 777.0
+text = "JUMP"
+label_settings = SubResource("LabelSettings_6fi6k")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 950.0
+offset_right = 323.0
+offset_bottom = 1060.0
+text = "E/I KEY"
+label_settings = SubResource("LabelSettings_6fi6k")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 322.0
+offset_top = 950.0
+offset_right = 642.0
+offset_bottom = 1060.0
+text = "SMASH"
+label_settings = SubResource("LabelSettings_6fi6k")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1673.0
+offset_top = 16.0
+offset_right = 1993.0
+offset_bottom = 126.0
+text = "EXIT"
+label_settings = SubResource("LabelSettings_6fi6k")
