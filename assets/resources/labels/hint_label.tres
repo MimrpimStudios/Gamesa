@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b0u12c8tr0l8p"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_jxr80"]
+
+[resource]
+font = ExtResource("1_jxr80")
+font_color = Color(0.5729883, 0.5729883, 0.57298815, 0.49411765)
