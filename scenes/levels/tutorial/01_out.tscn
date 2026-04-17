@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=33 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -44,6 +44,43 @@ size = Vector2(35, 73.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1gm"]
 size = Vector2(36, 20)
+
+[sub_resource type="Animation" id="Animation_aax5y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ufo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dbi5j"]
+resource_name = "secret_01"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ufo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0333333),
+"transitions": PackedFloat32Array(0.4061259, 3.7321322),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1319, 134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfrl7"]
+_data = {
+&"RESET": SubResource("Animation_aax5y"),
+&"secret_01": SubResource("Animation_dbi5j")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aax5y"]
 size = Vector2(1326, 928)
@@ -223,7 +260,9 @@ wait_time = 2.1999999999999997
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Secret01"]
-root_node = NodePath("../../ufo")
+libraries = {
+&"": SubResource("AnimationLibrary_xfrl7")
+}
 
 [node name="ufo" parent="." instance=ExtResource("17_je17w")]
 scale = Vector2(4, 4)
