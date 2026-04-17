@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfjvo5mm7dug8"
-path="res://.godot/imported/JoystickNodeIcon.png-d2cf410c0026a46999d11a25cd04e83c.ctex"
+uid="uid://d4mje40jjoe3u"
+path="res://.godot/imported/pause_buttons.png-961c397e2337becfff192dfc99357819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/versatile-mobile-joystick/JoystickNodeIcon.png"
-dest_files=["res://.godot/imported/JoystickNodeIcon.png-d2cf410c0026a46999d11a25cd04e83c.ctex"]
+source_file="res://assets/Textures/pause_buttons.png"
+dest_files=["res://.godot/imported/pause_buttons.png-961c397e2337becfff192dfc99357819.ctex"]
 
 [params]
 

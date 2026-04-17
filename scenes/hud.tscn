@@ -1,9 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsbs1cbuxuvrg"]
+[gd_scene load_steps=12 format=3 uid="uid://bsbs1cbuxuvrg"]
 
 [ext_resource type="Script" uid="uid://dku6ajwsk4v24" path="res://scenes/hud.gd" id="1_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick/virtual_joystick.tscn" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="2_oo0fn"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://d2vwu5kuv6hvs" path="res://assets/Textures/jump_buttons.png" id="3_047uy"]
+[ext_resource type="Texture2D" uid="uid://d4mje40jjoe3u" path="res://assets/Textures/pause_buttons.png" id="4_uo2fv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd3ao"]
+atlas = ExtResource("3_047uy")
+region = Rect2(12, 12, 540, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1j5"]
+atlas = ExtResource("3_047uy")
+region = Rect2(594, 12, 540, 366)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_047uy"]
+atlas = ExtResource("4_uo2fv")
+region = Rect2(20, 10, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pdws"]
+atlas = ExtResource("4_uo2fv")
+region = Rect2(180, 10, 140, 140)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6fi6k"]
 font = ExtResource("3_5ysmq")
@@ -31,14 +49,14 @@ mouse_filter = 2
 direction_mode = 0
 dynamic_area_left_margin = 0.509
 dynamic_area_top_margin = 0.377
-joystick_scale = 1.1680000000000001
+joystick_scale = 1.168
 action_left = &"left"
 action_right = &"right"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(3, 589)
-scale = Vector2(17.625002, 19.6875)
-texture_normal = ExtResource("2_oo0fn")
+position = Vector2(27, 547)
+texture_normal = SubResource("AtlasTexture_hd3ao")
+texture_pressed = SubResource("AtlasTexture_0i1j5")
 action = "jump"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
@@ -54,12 +72,13 @@ texture_normal = ExtResource("2_oo0fn")
 action = "down"
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
-position = Vector2(1622, 11)
-scale = Vector2(18.25, 7.249998)
-texture_normal = ExtResource("2_oo0fn")
+position = Vector2(1769.0001, 11.000001)
+texture_normal = SubResource("AtlasTexture_047uy")
+texture_pressed = SubResource("AtlasTexture_5pdws")
 action = "esc"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 13.0
 offset_top = 667.0
 offset_right = 245.0
@@ -84,6 +103,7 @@ text = "SMASH"
 label_settings = SubResource("LabelSettings_6fi6k")
 
 [node name="Label4" type="Label" parent="."]
+visible = false
 offset_left = 1673.0
 offset_top = 16.0
 offset_right = 1993.0

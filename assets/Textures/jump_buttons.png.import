@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3rjj1bmqtiok"
-path="res://.godot/imported/BaseJoystickTest.png-fc582f10beae3c1d91a960c1c7d0bfd4.ctex"
+uid="uid://d2vwu5kuv6hvs"
+path="res://.godot/imported/jump_buttons.png-04b179ce562eeaea91123d0666e267e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png"
-dest_files=["res://.godot/imported/BaseJoystickTest.png-fc582f10beae3c1d91a960c1c7d0bfd4.ctex"]
+source_file="res://assets/Textures/jump_buttons.png"
+dest_files=["res://.godot/imported/jump_buttons.png-04b179ce562eeaea91123d0666e267e7.ctex"]
 
 [params]
 
