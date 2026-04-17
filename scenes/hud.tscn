@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsbs1cbuxuvrg"]
+[gd_scene load_steps=15 format=3 uid="uid://bsbs1cbuxuvrg"]
 
 [ext_resource type="Script" uid="uid://dku6ajwsk4v24" path="res://scenes/hud.gd" id="1_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick/virtual_joystick.tscn" id="1_37p78"]
-[ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="2_oo0fn"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://d2vwu5kuv6hvs" path="res://assets/Textures/jump_buttons.png" id="3_047uy"]
+[ext_resource type="Texture2D" uid="uid://c3lhkyfsy8m0y" path="res://assets/Textures/interact_button1.png" id="4_0i1j5"]
 [ext_resource type="Texture2D" uid="uid://d4mje40jjoe3u" path="res://assets/Textures/pause_buttons.png" id="4_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://c65r5gguosarj" path="res://assets/Textures/interact_button2.png" id="5_mphia"]
+[ext_resource type="Texture2D" uid="uid://b1f3pg1hrhdhk" path="res://assets/Textures/smash_button1.png" id="6_0m4u7"]
+[ext_resource type="Texture2D" uid="uid://bkksur8hsmv0u" path="res://assets/Textures/smash_button2.png" id="7_apjy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd3ao"]
 atlas = ExtResource("3_047uy")
@@ -61,14 +64,14 @@ action = "jump"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
 position = Vector2(18, 952.00006)
-scale = Vector2(18.25, 7.249998)
-texture_normal = ExtResource("2_oo0fn")
+texture_normal = ExtResource("4_0i1j5")
+texture_pressed = ExtResource("5_mphia")
 action = "integrate"
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
-position = Vector2(332, 955.00006)
-scale = Vector2(18.25, 7.249998)
-texture_normal = ExtResource("2_oo0fn")
+position = Vector2(298, 955.00006)
+texture_normal = ExtResource("6_0m4u7")
+texture_pressed = ExtResource("7_apjy4")
 action = "down"
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
@@ -87,6 +90,7 @@ text = "JUMP"
 label_settings = SubResource("LabelSettings_6fi6k")
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_left = 3.0
 offset_top = 950.0
 offset_right = 323.0
@@ -95,6 +99,7 @@ text = "E/I KEY"
 label_settings = SubResource("LabelSettings_6fi6k")
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 offset_left = 322.0
 offset_top = 950.0
 offset_right = 642.0
