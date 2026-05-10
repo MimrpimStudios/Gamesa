@@ -44,3 +44,4 @@ shape = SubResource("RectangleShape2D_3mrxu")
 stream = ExtResource("2_qt2eu")
 autoplay = true
 max_distance = 400.0
+bus = &"SFX"

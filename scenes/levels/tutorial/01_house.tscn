@@ -68,6 +68,7 @@ shape = SubResource("WorldBoundaryShape2D_v3jdr")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_parmh")
 autoplay = true
+bus = &"Music"
 
 [node name="Hints" type="Node" parent="."]
 
