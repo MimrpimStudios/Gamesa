@@ -16,6 +16,9 @@ func _process(_delta: float) -> void:
 		timer.start()
 
 func _on_timer_timeout():
+	if SewersMusic.playing:
+		SewersMusic.stop()
+		SewersMusic.play()
 	get_tree().reload_current_scene()
 	global_var.player_health = global_var.player_max_health
 	global_var.player_movement = true
