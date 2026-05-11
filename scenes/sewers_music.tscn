@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://y63c44s13lh0"]
+
+[ext_resource type="AudioStream" uid="uid://dluyyx0kkx54q" path="res://assets/Sounds/Music/sewers_loop.wav" id="1_6au30"]
+
+[node name="AudioStreamPlayerSewersMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_6au30")
+bus = &"Music"

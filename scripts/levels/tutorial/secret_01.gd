@@ -4,7 +4,7 @@ extends Area2D
 @onready var timer: Timer = $AudioStreamPlayer/Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var ufo: AnimatedSprite2D = $"../ufo/ufo"
-
+@onready var audio_stream_player_2: AudioStreamPlayer = $AudioStreamPlayer2
 var count = false
 
 # Called when the node enters the scene tree for the first time.
@@ -28,7 +28,8 @@ func _on_timer_timeout() -> void:
 		timer.start()
 		audio_stream_player.play()
 		$"../TileMapLayer/TileMapLayer2".hide()
-		animation_player.play("secret_01")
+		animation_player.play("secret_1")
+		audio_stream_player_2.play()
 	else:
 		audio_stream_player.stop()
 		get_tree().change_scene_to_file(global_var.secret_01_scene)
@@ -37,5 +38,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "secret_01":
+	if anim_name == "secret_1":
 		ufo.play("beam")
+		

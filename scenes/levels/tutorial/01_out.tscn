@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=34 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/Sounds/ufo.wav" id="18_w2o16"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_2mrnh"]
 [ext_resource type="Script" uid="uid://cpt5ey7hh3yyw" path="res://scripts/levels/tutorial/town_changer.gd" id="20_aax5y"]
+[ext_resource type="AudioStream" uid="uid://bnhhhjyjmnron" path="res://assets/Sounds/Music/bird_singing.mp3" id="21_dbi5j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -44,6 +45,43 @@ size = Vector2(35, 73.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw1gm"]
 size = Vector2(36, 20)
+
+[sub_resource type="Animation" id="Animation_dbi5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aax5y"]
+resource_name = "secret_1"
+length = 4.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.8),
+"transitions": PackedFloat32Array(0.31864056, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1318, 134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfrl7"]
+_data = {
+&"RESET": SubResource("Animation_dbi5j"),
+&"secret_1": SubResource("Animation_aax5y")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aax5y"]
 size = Vector2(1326, 928)
@@ -217,13 +255,21 @@ shape = SubResource("RectangleShape2D_nw1gm")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Secret01"]
 stream = ExtResource("16_je17w")
 volume_db = -15.0
+bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="Secret01/AudioStreamPlayer"]
 wait_time = 2.1999999999999997
 one_shot = true
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Secret01"]
+stream = ExtResource("18_w2o16")
+bus = &"SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Secret01"]
 root_node = NodePath("../../ufo")
+libraries = {
+&"": SubResource("AnimationLibrary_xfrl7")
+}
 
 [node name="ufo" parent="." instance=ExtResource("17_je17w")]
 scale = Vector2(4, 4)
@@ -285,6 +331,160 @@ script = ExtResource("20_aax5y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TownChanger"]
 position = Vector2(2649, 163)
 shape = SubResource("RectangleShape2D_aax5y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(493, -2)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(590, -37)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(495, 97)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(612, 42)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(667, 120)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(727, 26)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(667, -32)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(747, 102)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(979, -40)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1067, 15)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D11" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(989, 70)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D12" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1063, 101)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D13" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1141, -39)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D14" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1227, 43)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D15" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1143, 76)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D16" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1262, -37)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D17" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1352, -12)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D18" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1713, -33)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D19" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1793, 14)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D20" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1696, 43)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D21" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1778, 84)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D22" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1778, 84)
+stream = ExtResource("21_dbi5j")
+autoplay = true
+max_distance = 300.0
+bus = &"Music"
 
 [connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]

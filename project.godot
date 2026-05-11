@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.2.6"
+config/version="0.0.2.620"
 run/main_scene="uid://cgqyegbqpg2y5"
 config/custom_user_dir_name="gamesa"
 config/features=PackedStringArray("4.5", "Forward Plus")
@@ -25,6 +25,7 @@ config/icon="uid://c6pts5y3gy1i3"
 [autoload]
 
 global_var="*res://scripts/global_var.gd"
+SewersMusic="*res://scenes/sewers_music.tscn"
 
 [debug]
 
