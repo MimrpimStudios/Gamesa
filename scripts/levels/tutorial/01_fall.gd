@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	global_var.player_movement = false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	global_var.level = get_tree().current_scene.scene_file_path
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,4 +14,5 @@ func _process(_delta: float) -> void:
 	
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("esc"):
+		global_var.save_level()
 		get_tree().change_scene_to_file(global_var.main_menu_scene)

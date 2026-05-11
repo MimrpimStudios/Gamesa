@@ -42,6 +42,7 @@ script = ExtResource("1_wu84c")
 [node name="01_stoky" parent="." instance=ExtResource("2_tbmy8")]
 position = Vector2(-16240, -13307.001)
 scale = Vector2(5, 5)
+script = null
 
 [node name="Debug" type="Control" parent="."]
 layout_mode = 1

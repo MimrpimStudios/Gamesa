@@ -7,6 +7,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	if not SewersMusic.playing:
 		SewersMusic.play()
+	global_var.level = get_tree().current_scene.scene_file_path
 
 
 

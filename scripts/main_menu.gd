@@ -11,8 +11,13 @@ func _process(_delta: float) -> void:
 
 
 func _on_texture_button_play_pressed() -> void:
-	get_tree().change_scene_to_file(global_var.start_scene_story)
+	global_var.level = global_var.load_level()
+	print(global_var.level)
+	get_tree().change_scene_to_file(global_var.level)
 
 
 func _on_texture_button_exit_pressed() -> void:
+	if not global_var.load_level() == null:
+		print(global_var.level)
+		global_var.save_level()
 	get_tree().quit(0)

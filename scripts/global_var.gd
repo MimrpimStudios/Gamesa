@@ -22,10 +22,10 @@ const start_scene = main_menu_scene
 const version = "1.0-t2.610"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
+var level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -33,3 +33,20 @@ func _process(_delta: float) -> void:
 		is_player_dead = true
 	else:
 		is_player_dead = false
+		
+
+func load_level():
+	print("Loading...")
+	if not FileAccess.file_exists("user://savefile.save"):
+		print("Aborting, no savefile")
+		return start_scene_story
+	var save_file = FileAccess.open("user://savefile.save", FileAccess.READ)
+	level = save_file.get_line()
+	save_file.close()
+	return level
+
+func save_level():
+	print("Saving...")
+	var save_file = FileAccess.open("user://savefile.save", FileAccess.WRITE)
+	save_file.store_line(level)
+	save_file.close()
