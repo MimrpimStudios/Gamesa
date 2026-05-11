@@ -19,7 +19,7 @@ const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
 const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
-const version = "1.0-t2.610"
+const version = "1.0-t2.621"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 var level
