@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=26 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -8,6 +8,10 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="5_tbmy8"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="6_oa1go"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="7_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://cvmijwj11au16" path="res://assets/Textures/load.png" id="9_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="9_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="10_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://crtdw180vcd5l" path="res://assets/Textures/back.png" id="12_flqon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -28,6 +32,37 @@ region = Rect2(2, 2, 90, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
 atlas = ExtResource("3_bqqt6")
+region = Rect2(99, 3, 90, 25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("9_lgwnu")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("9_lgwnu")
+region = Rect2(99, 3, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("9_5dd4i")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("9_5dd4i")
+region = Rect2(99, 3, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("10_lgwnu")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("12_flqon")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("12_flqon")
 region = Rect2(99, 3, 90, 25)
 
 [node name="MainMenu" type="Control"]
@@ -110,6 +145,7 @@ texture_pressed = SubResource("AtlasTexture_l6cm7")
 stretch_mode = 0
 
 [node name="TextureButtonExit" type="TextureButton" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,5 +167,69 @@ stream = ExtResource("5_8ln24")
 autoplay = true
 bus = &"Music"
 
+[node name="GameChoosePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbmy8")
+
+[node name="NewGameButton" type="TextureButton" parent="GameChoosePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -183.0
+offset_right = 150.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_flqon")
+texture_pressed = SubResource("AtlasTexture_rcqid")
+stretch_mode = 0
+
+[node name="ContinueGameButton" type="TextureButton" parent="GameChoosePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -88.0
+offset_right = 150.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_1ajci")
+texture_pressed = SubResource("AtlasTexture_7b55j")
+texture_disabled = SubResource("AtlasTexture_5pajh")
+stretch_mode = 0
+
+[node name="BackButton" type="TextureButton" parent="GameChoosePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 8.0
+offset_right = 150.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_j7ex8")
+texture_pressed = SubResource("AtlasTexture_a8gd2")
+stretch_mode = 0
+
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="pressed" from="GameChoosePanel/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="GameChoosePanel/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
+[connection signal="pressed" from="GameChoosePanel/BackButton" to="." method="_on_back_button_pressed"]

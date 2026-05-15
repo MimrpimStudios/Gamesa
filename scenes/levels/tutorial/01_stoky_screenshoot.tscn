@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://b7xpwofy5nujb"]
+[gd_scene load_steps=5 format=4 uid="uid://b7xpwofy5nujb"]
 
-[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_jc4m8"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_jc4m8"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_dflak"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_wemm2"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="11_dflak"]
 
 [node name="01_stoky" type="Node2D"]
-script = ExtResource("1_jc4m8")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
