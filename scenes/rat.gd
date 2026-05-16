@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2_dtail: AnimatedSprite2D = $AnimatedSprite2Dtail
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
-const SPEED = 250 # 300 je na krysu docela dost, ale záleží na tobě
+const SPEED = 100 # 300 je na krysu docela dost, ale záleží na tobě
 var direction = 1 # Začneme doprava (1)
 
 func _ready() -> void:
