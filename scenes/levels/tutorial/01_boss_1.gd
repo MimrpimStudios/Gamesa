@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var rat: CharacterBody2D = $Rat
 @onready var rat_2: CharacterBody2D = $Rat2
-@onready var camera_2d: Camera2D = $Player/Camera2D
 
 var boss_phase = 1
 var rat_template: CharacterBody2D
@@ -19,7 +18,6 @@ func _ready() -> void:
 	SewersMusic.stop()
 	global_var.level = get_tree().current_scene.scene_file_path
 	global_var.save_level()
-	camera_2d.change_cam()
 
 func _process(_delta: float) -> void:
 	# FÁZE 1: Čekáme, až zemřou první dvě krysy
