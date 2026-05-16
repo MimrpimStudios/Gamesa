@@ -26,7 +26,6 @@ config/icon="uid://c6pts5y3gy1i3"
 
 global_var="*res://scripts/global_var.gd"
 SewersMusic="*res://scenes/sewers_music.tscn"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
