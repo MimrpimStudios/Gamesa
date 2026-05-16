@@ -94,14 +94,6 @@ label_settings = SubResource("LabelSettings_qc0hx")
 [node name="Overaly" type="Node" parent="."]
 script = ExtResource("4_b7nko")
 
-[node name="LabelSmashing" type="Label" parent="Overaly"]
-offset_top = 114.0
-offset_right = 93.0
-offset_bottom = 137.0
-text = "Smashing: DISABLED"
-label_settings = ExtResource("8_2oog4")
-uppercase = true
-
 [node name="Healthbar" type="Control" parent="Overaly"]
 layout_mode = 3
 anchors_preset = 0
@@ -144,6 +136,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_r04ab")
+version = "1.0-t2.4"
 
 [node name="LabelVersion" type="Label" parent="Overaly/Debug"]
 layout_mode = 0

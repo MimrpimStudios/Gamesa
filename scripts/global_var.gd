@@ -33,9 +33,7 @@ func _process(_delta: float) -> void:
 		is_player_dead = true
 	else:
 		is_player_dead = false
-	if global_var.is_player_smashing_disabled:
-		global_var.is_player_smashing = false
-
+		
 
 func load_level():
 	print("Loading...")

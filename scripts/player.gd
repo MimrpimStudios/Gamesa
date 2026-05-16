@@ -34,15 +34,12 @@ func _physics_process(delta):
 				velocity.y = -100
 
 		# handle smash
-		if global_var.is_player_smashing == true:
+		if Input.is_action_just_pressed("down") and global_var.is_player_smashing_disabled == false:
 			gravity = default_gravity + 2000
-		else:
+			global_var.is_player_smashing = true
+		elif Input.is_action_just_released("down") or global_var.is_player_smashing_disabled:
 			gravity = default_gravity
-		if Input.is_action_just_pressed("smash"):
-			if global_var.is_player_smashing:
-				global_var.is_player_smashing = false
-			else:
-				global_var.is_player_smashing = true
+			global_var.is_player_smashing = false
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
 		

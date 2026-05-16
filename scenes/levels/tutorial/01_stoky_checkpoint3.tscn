@@ -113,17 +113,6 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 7172.0
-offset_top = 2673.0
-offset_right = 7251.0
-offset_bottom = 2704.0
-text = "SMASH THEESE RATS"
-label_settings = ExtResource("5_6pepg")
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
 [connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
 
 [editable path="Killzone"]
