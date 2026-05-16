@@ -1,12 +1,11 @@
-[gd_scene load_steps=18 format=4 uid="uid://cqqi8mo4huwag"]
+[gd_scene load_steps=21 format=4 uid="uid://cqqi8mo4huwag"]
 
 [ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scenes/levels/tutorial/01_boss_1.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_12o0e"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_04g3x"]
-[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_eeys6"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_4c1h8"]
-[ext_resource type="Script" uid="uid://dpxjpx5xaruno" path="res://scenes/levels/tutorial/camera_2d.gd" id="6_eeys6"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="7_04g3x"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_hk6ub"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="9_12o0e"]
 [ext_resource type="Texture2D" uid="uid://b871jfj1ptd3l" path="res://assets/Textures/tilemap/grass-tilemap-2.png" id="9_aftbq"]
@@ -19,6 +18,11 @@ size = Vector2(32, 62)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aftbq"]
 size = Vector2(344, 20)
 
+[sub_resource type="LabelSettings" id="LabelSettings_eeys6"]
+font = ExtResource("7_04g3x")
+font_size = 128
+font_color = Color(0.5729883, 0.5729883, 0.57298815, 0.49411765)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
 
@@ -27,6 +31,90 @@ size = Vector2(17, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeys6"]
 size = Vector2(44, 6)
+
+[sub_resource type="Animation" id="Animation_04g3x"]
+resource_name = "change_cam"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(2.3, 2.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1016, 402), Vector2(1365, 354)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eeys6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1016, 402)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c1h8"]
+_data = {
+&"RESET": SubResource("Animation_eeys6"),
+&"change_cam": SubResource("Animation_04g3x")
+}
 
 [node name="01_stoky" type="Node2D"]
 script = ExtResource("1_a032t")
@@ -51,18 +139,6 @@ follow_viewport_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("7_hk6ub")]
 position = Vector2(1016, 402)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-enabled = false
-zoom = Vector2(5, 5)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-editor_draw_limits = true
-script = ExtResource("6_eeys6")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(1014, 343)
@@ -164,11 +240,11 @@ shape = SubResource("RectangleShape2D_aftbq")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1038.0
-offset_top = 352.0
-offset_right = 1117.0
+offset_top = 185.0
+offset_right = 1738.0
 offset_bottom = 383.0
 text = "SMASH THEESE RATS"
-label_settings = ExtResource("5_eeys6")
+label_settings = SubResource("LabelSettings_eeys6")
 horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
@@ -233,9 +309,23 @@ script = ExtResource("11_04g3x")
 position = Vector2(-2, -11)
 shape = SubResource("RectangleShape2D_eeys6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1365, 354)
-zoom = Vector2(2.3, 2.3)
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(1016, 402)
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera2D2")
+libraries = {
+&"": SubResource("AnimationLibrary_4c1h8")
+}
+autoplay = "change_cam"
 
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
