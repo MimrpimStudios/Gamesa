@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cqqi8mo4huwag"]
+[gd_scene load_steps=18 format=4 uid="uid://cqqi8mo4huwag"]
 
 [ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scenes/levels/tutorial/01_boss_1.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_04g3x"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_eeys6"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_4c1h8"]
+[ext_resource type="Script" uid="uid://dpxjpx5xaruno" path="res://scenes/levels/tutorial/camera_2d.gd" id="6_eeys6"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_hk6ub"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="9_12o0e"]
 [ext_resource type="Texture2D" uid="uid://b871jfj1ptd3l" path="res://assets/Textures/tilemap/grass-tilemap-2.png" id="9_aftbq"]
@@ -61,6 +62,7 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+script = ExtResource("6_eeys6")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(1014, 343)
@@ -234,6 +236,8 @@ shape = SubResource("RectangleShape2D_eeys6")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1365, 354)
 zoom = Vector2(2.3, 2.3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
