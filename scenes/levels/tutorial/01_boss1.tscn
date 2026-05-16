@@ -235,8 +235,6 @@ shape = SubResource("RectangleShape2D_eeys6")
 position = Vector2(1365, 354)
 zoom = Vector2(2.3, 2.3)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
 
