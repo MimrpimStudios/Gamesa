@@ -29,6 +29,7 @@ SewersMusic="*res://scenes/sewers_music.tscn"
 
 [debug]
 
+settings/stdout/print_fps=true
 file_logging/enable_file_logging=true
 file_logging/log_path="user://logs/latest.log"
 
@@ -47,7 +48,7 @@ movie_writer/disable_vsync=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
