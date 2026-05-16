@@ -53,6 +53,7 @@ position = Vector2(1016, 402)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
+enabled = false
 zoom = Vector2(5, 5)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -229,6 +230,10 @@ script = ExtResource("11_04g3x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rat2/Smash"]
 position = Vector2(-2, -11)
 shape = SubResource("RectangleShape2D_eeys6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1365, 354)
+zoom = Vector2(2.3, 2.3)
 
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
