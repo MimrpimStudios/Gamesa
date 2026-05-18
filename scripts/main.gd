@@ -9,10 +9,13 @@ func _ready() -> void:
 	if launcher_type != "":
 		if launcher_type == "GUI":
 			print("you using gui")
+			print(launcher_version)
 		elif launcher_type == "CLI":
 			print("you using cli")
+			print(launcher_version)
 		else:
 			print("you liar")
+			timer.wait_time = 10
 
 	timer.start()
 
@@ -37,20 +40,23 @@ func get_launcher_info():
 	if args.has("-launcherCLI"):
 		print("-".repeat(30))
 		print("Spusteno pres CLI launcher.")
+		launcher_type = "CLI"
 		
 		var version_value = get_arg_value(args, "-versionCLI")
 		
 		if version_value != "":
 			print("CLI version: " + version_value)
+			launcher_version = version_value
 		print("-".repeat(30))
 	if args.has("-launcherGUI"):
 		print("-".repeat(30))
 		print("Spusteno pres GUI launcher.")
-		
+		launcher_type = "GUI"
 		var version_value_gui = get_arg_value(args, "-versionGUI")
 		
 		if version_value_gui != "":
 			print("GUI version: " + version_value_gui)
+			launcher_version = version_value_gui
 		
 		print("-".repeat(30))
 		
