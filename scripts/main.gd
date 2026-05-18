@@ -1,9 +1,20 @@
 extends Control
 
-
+@onready var timer: Timer = $Timer
+var launcher_type = ""
+var launcher_version = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_launcher_info()
+	if launcher_type != "":
+		if launcher_type == "GUI":
+			print("you using gui")
+		elif launcher_type == "CLI":
+			print("you using cli")
+		else:
+			print("you liar")
+
+	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
