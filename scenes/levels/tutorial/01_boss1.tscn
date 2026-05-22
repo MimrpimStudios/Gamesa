@@ -33,45 +33,6 @@ size = Vector2(17, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eeys6"]
 size = Vector2(44, 6)
 
-[sub_resource type="Animation" id="Animation_04g3x"]
-resource_name = "change_cam"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5, 5), Vector2(2.3, 2.3)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1016, 402), Vector2(1365, 354)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -30), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_eeys6"]
 length = 0.001
 tracks/0/type = "value"
@@ -499,6 +460,45 @@ tracks/15/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_04g3x"]
+resource_name = "change_cam"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(2.3, 2.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1016, 402), Vector2(1365, 354)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -30), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_hk6ub"]
 resource_name = "reset_cam"
 length = 1.5
@@ -727,7 +727,7 @@ offset_left = 1038.0
 offset_top = 185.0
 offset_right = 1738.0
 offset_bottom = 383.0
-text = "SMASH THEESE RATS"
+text = "KILL THEESE RATS!"
 label_settings = SubResource("LabelSettings_eeys6")
 horizontal_alignment = 1
 autowrap_mode = 2

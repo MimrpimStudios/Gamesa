@@ -52,9 +52,9 @@ offset_left = 4214.0
 offset_top = 2758.0
 offset_right = 4377.0
 offset_bottom = 2806.0
-text = "TRY SMASHING THE RATS
-HOLD \"S\" OR DOWN ARROW
-WHEN FALLING"
+text = "TRY KILLING THE RATS BY
+JUMPING ON IT (LIKE IN 
+SOME NINTENDO GAME...)"
 label_settings = ExtResource("5_6fd6j")
 
 [node name="Killzone" parent="." instance=ExtResource("6_xd4k2")]
