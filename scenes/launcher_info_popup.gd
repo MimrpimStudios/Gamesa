@@ -16,4 +16,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_confirmed() -> void:
-	pass
+	OS.shell_open("https://github.com/MimrpimStudios/gamesa-launcher/releases/tag/1.0.0.0-GUI")

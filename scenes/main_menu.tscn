@@ -232,13 +232,13 @@ stretch_mode = 0
 oversampling_override = 1.0
 title = "Info!"
 initial_position = 2
-size = Vector2i(342, 99)
+size = Vector2i(370, 138)
 visible = true
 unresizable = true
 always_on_top = true
 popup_window = true
 ok_button_text = "Open website for downloading launcher"
-dialog_text = "You are not using our launcher!"
+dialog_text = "            You are not using our launcher!"
 dialog_close_on_escape = false
 script = ExtResource("13_rcqid")
 
