@@ -24,6 +24,8 @@ const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
 var level
+var launcher_type = ""
+var launcher_version = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

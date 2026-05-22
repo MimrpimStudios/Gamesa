@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=27 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://crtdw180vcd5l" path="res://assets/Textures/back.png" id="12_flqon"]
+[ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scenes/launcher_info_popup.gd" id="13_rcqid"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -77,7 +78,6 @@ script = ExtResource("1_wu84c")
 [node name="01_stoky" parent="." instance=ExtResource("2_tbmy8")]
 position = Vector2(-16240, -13307.001)
 scale = Vector2(5, 5)
-script = null
 
 [node name="Debug" type="Control" parent="."]
 layout_mode = 1
@@ -228,8 +228,23 @@ texture_normal = SubResource("AtlasTexture_j7ex8")
 texture_pressed = SubResource("AtlasTexture_a8gd2")
 stretch_mode = 0
 
+[node name="LauncherInfoDialog" type="AcceptDialog" parent="."]
+oversampling_override = 1.0
+title = "Info!"
+initial_position = 2
+size = Vector2i(370, 138)
+visible = true
+unresizable = true
+always_on_top = true
+popup_window = true
+ok_button_text = "Open website for downloading launcher"
+dialog_text = "            You are not using our launcher!"
+dialog_close_on_escape = false
+script = ExtResource("13_rcqid")
+
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
 [connection signal="pressed" from="GameChoosePanel/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="confirmed" from="LauncherInfoDialog" to="LauncherInfoDialog" method="_on_confirmed"]

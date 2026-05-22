@@ -1,9 +1,21 @@
 extends Control
 
-
+@onready var timer: Timer = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_launcher_info()
+	if global_var.launcher_type != "":
+		if global_var.launcher_type == "GUI":
+			print("you using gui")
+			print(global_var.launcher_version)
+		elif global_var.launcher_type == "CLI":
+			print("you using cli")
+			print(global_var.launcher_version)
+		else:
+			print("you liar")
+			timer.wait_time = 10
+
+	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,20 +38,23 @@ func get_launcher_info():
 	if args.has("-launcherCLI"):
 		print("-".repeat(30))
 		print("Spusteno pres CLI launcher.")
+		global_var.launcher_type = "CLI"
 		
 		var version_value = get_arg_value(args, "-versionCLI")
 		
 		if version_value != "":
 			print("CLI version: " + version_value)
+			global_var.launcher_version = version_value
 		print("-".repeat(30))
 	if args.has("-launcherGUI"):
 		print("-".repeat(30))
 		print("Spusteno pres GUI launcher.")
-		
+		global_var.launcher_type = "GUI"
 		var version_value_gui = get_arg_value(args, "-versionGUI")
 		
 		if version_value_gui != "":
 			print("GUI version: " + version_value_gui)
+			global_var.launcher_version = version_value_gui
 		
 		print("-".repeat(30))
 		
