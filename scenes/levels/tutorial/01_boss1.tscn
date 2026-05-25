@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cqqi8mo4huwag"]
+[gd_scene load_steps=28 format=4 uid="uid://cqqi8mo4huwag"]
 
 [ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scenes/levels/tutorial/01_boss_1.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://ccw3yxn8wbhor" path="res://scenes/rat.gd" id="10_12o0e"]
 [ext_resource type="Script" uid="uid://cui3vijgf2biq" path="res://scenes/levels/tutorial/smash.gd" id="11_04g3x"]
 [ext_resource type="Script" uid="uid://bkglxjavt5a8l" path="res://scenes/levels/tutorial/area_2d.gd" id="12_eeys6"]
+[ext_resource type="AudioStream" uid="uid://d80n6jy4dbjv" path="res://assets/Sounds/Music/boss-1.wav" id="13_4c1h8"]
+[ext_resource type="AudioStream" uid="uid://cmfy8w1shpocw" path="res://assets/Sounds/plosina_spawn.wav" id="14_hk6ub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12o0e"]
 size = Vector2(32, 62)
@@ -275,10 +277,46 @@ tracks/19/keys = {
 "update": 0,
 "values": [Vector2(1016, 402)]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../AudioStreamPlayer:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../AudioStreamPlayer2:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_4c1h8"]
 resource_name = "aftermatch"
-length = 7.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -471,6 +509,18 @@ tracks/15/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../AudioStreamPlayer2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true]
+}
 
 [sub_resource type="Animation" id="Animation_04g3x"]
 resource_name = "change_cam"
@@ -563,11 +613,40 @@ tracks/3/keys = {
 "values": [Vector2(1716, 130)]
 }
 
+[sub_resource type="Animation" id="Animation_wh036"]
+resource_name = "music-off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -60.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-2.4666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4c1h8"]
 _data = {
 &"RESET": SubResource("Animation_eeys6"),
 &"aftermatch": SubResource("Animation_4c1h8"),
 &"change_cam": SubResource("Animation_04g3x"),
+&"music-off": SubResource("Animation_wh036"),
 &"reset_cam": SubResource("Animation_hk6ub")
 }
 
@@ -842,8 +921,18 @@ script = ExtResource("12_eeys6")
 position = Vector2(1716, 114.5)
 shape = SubResource("RectangleShape2D_4c1h8")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_4c1h8")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_hk6ub")
+bus = &"SFX"
+
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Area2D" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 

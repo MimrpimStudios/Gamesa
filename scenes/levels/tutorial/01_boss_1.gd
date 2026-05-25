@@ -3,6 +3,7 @@ extends Node2D
 @onready var rat: CharacterBody2D = $Rat
 @onready var rat_2: CharacterBody2D = $Rat2
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 var boss_phase = 1
 var rat_template: CharacterBody2D
@@ -48,8 +49,13 @@ func _process(_delta: float) -> void:
 	if not is_instance_valid(rat) and not is_instance_valid(rat_2) and not boss_phase == 4:
 		print("Boss poražen!")
 		boss_phase = 4 # Konec boje
-		animation_player.play("aftermatch")
+		animation_player.play("music-off")
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("esc"):
 		get_tree().change_scene_to_file(global_var.main_menu_scene)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "music-off":
+		animation_player.play("aftermatch")
