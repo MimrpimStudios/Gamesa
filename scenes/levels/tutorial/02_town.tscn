@@ -9,8 +9,8 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="7_hx58t"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_beqle"]
 [ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="9_ohsxu"]
-[ext_resource type="Script" uid="uid://cc0isf0w4avvh" path="res://scenes/levels/tutorial/music_change.gd" id="10_0vppa"]
-[ext_resource type="Script" uid="uid://xawy0y5teq7s" path="res://scenes/levels/tutorial/music_stop.gd" id="11_8nugk"]
+[ext_resource type="Script" uid="uid://cc0isf0w4avvh" path="res://scripts/levels/tutorial/music_change.gd" id="10_0vppa"]
+[ext_resource type="Script" uid="uid://xawy0y5teq7s" path="res://scripts/levels/tutorial/music_stop.gd" id="11_8nugk"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_8nugk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]

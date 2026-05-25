@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://cqqi8mo4huwag"]
 
-[ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scenes/levels/tutorial/01_boss_1.gd" id="1_a032t"]
+[ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scripts/levels/tutorial/01_boss_1.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_12o0e"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_04g3x"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_hk6ub"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="9_12o0e"]
 [ext_resource type="Texture2D" uid="uid://b871jfj1ptd3l" path="res://assets/Textures/tilemap/grass-tilemap-2.png" id="9_aftbq"]
-[ext_resource type="Script" uid="uid://ccw3yxn8wbhor" path="res://scenes/rat.gd" id="10_12o0e"]
-[ext_resource type="Script" uid="uid://cui3vijgf2biq" path="res://scenes/levels/tutorial/smash.gd" id="11_04g3x"]
-[ext_resource type="Script" uid="uid://bkglxjavt5a8l" path="res://scenes/levels/tutorial/area_2d.gd" id="12_eeys6"]
+[ext_resource type="Script" uid="uid://ccw3yxn8wbhor" path="res://scripts/rat.gd" id="10_12o0e"]
+[ext_resource type="Script" uid="uid://cui3vijgf2biq" path="res://scripts/levels/tutorial/smash.gd" id="11_04g3x"]
+[ext_resource type="Script" uid="uid://bkglxjavt5a8l" path="res://scripts/levels/tutorial/area_2d.gd" id="12_eeys6"]
 [ext_resource type="AudioStream" uid="uid://d80n6jy4dbjv" path="res://assets/Sounds/Music/boss-1.wav" id="13_4c1h8"]
 [ext_resource type="AudioStream" uid="uid://cmfy8w1shpocw" path="res://assets/Sounds/plosina_spawn.wav" id="14_hk6ub"]
 
@@ -561,6 +561,34 @@ tracks/2/keys = {
 "values": [Vector2(0, -30), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wh036"]
+resource_name = "music-off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -60.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-2.4666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_hk6ub"]
 resource_name = "reset_cam"
 length = 1.5
@@ -611,34 +639,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1716, 130)]
-}
-
-[sub_resource type="Animation" id="Animation_wh036"]
-resource_name = "music-off"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AudioStreamPlayer:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -60.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-2.4666667, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4c1h8"]

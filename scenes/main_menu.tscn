@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://crtdw180vcd5l" path="res://assets/Textures/back.png" id="12_flqon"]
-[ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scenes/launcher_info_popup.gd" id="13_rcqid"]
+[ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scripts/launcher_info_popup.gd" id="13_rcqid"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
