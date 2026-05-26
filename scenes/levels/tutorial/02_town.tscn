@@ -189,5 +189,6 @@ shape = SubResource("RectangleShape2D_ltjrc")
 [connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
 [connection signal="body_entered" from="MusicChange" to="MusicChange" method="_on_body_entered"]
 [connection signal="body_entered" from="MusicStop" to="MusicStop" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 
 [editable path="Killzone"]

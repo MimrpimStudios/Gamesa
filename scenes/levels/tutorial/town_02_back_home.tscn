@@ -147,6 +147,7 @@ script = ExtResource("11_bccqr")
 position = Vector2(2649, 163)
 shape = SubResource("RectangleShape2D_wetuf")
 
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
 
 [editable path="Killzone"]
