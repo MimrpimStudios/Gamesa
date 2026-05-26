@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccmnnrjxayf77"]
+[gd_scene load_steps=14 format=3 uid="uid://ccmnnrjxayf77"]
 
 [ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
+[ext_resource type="Script" uid="uid://dd8hl5xau0c0n" path="res://scenes/pharmacy_male.gd" id="1_wk4nt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk4nt"]
 atlas = ExtResource("1_nwfln")
@@ -101,6 +102,7 @@ size = Vector2(7, 15)
 [node name="PharmacyMale" type="CharacterBody2D"]
 z_index = 1000
 collision_mask = 3
+script = ExtResource("1_wk4nt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -8)

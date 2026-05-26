@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://82akh1krpmrw"]
+[gd_scene load_steps=13 format=4 uid="uid://82akh1krpmrw"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_2uaej"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_aib6l"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_bgfp5"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_ar3tw"]
 [ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_2uaej"]
+[ext_resource type="PackedScene" uid="uid://ccmnnrjxayf77" path="res://scenes/pharmacy_male.tscn" id="10_2uaej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
@@ -83,6 +84,9 @@ autoplay = true
 bus = &"Music"
 
 [node name="Hints" type="Node" parent="."]
+
+[node name="PharmacyMale" parent="." instance=ExtResource("10_2uaej")]
+position = Vector2(776, 357)
 
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]
