@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccmnnrjxayf77"]
+
+[ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk4nt"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chupo"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(32, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bb6l"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qatf1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk4nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chupo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chupo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bb6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bb6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
+size = Vector2(7, 15)
+
+[node name="PharmacyMale" type="CharacterBody2D"]
+z_index = 1000
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -8)
+sprite_frames = SubResource("SpriteFrames_qatf1")
+autoplay = "default"
+frame_progress = 0.06158279
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_d2wvv")

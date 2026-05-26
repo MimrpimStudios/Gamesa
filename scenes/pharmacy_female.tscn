@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8tj2b6d5p7ol"]
+
+[ext_resource type="Texture2D" uid="uid://b0el83s8jjbql" path="res://assets/Textures/sprites/npc/pharmacy-female.png" id="1_xgo5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4m15"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgo5g"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kutji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4m15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgo5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgo5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
+size = Vector2(7, 15)
+
+[node name="PharmacyFemale" type="CharacterBody2D"]
+z_index = 1000
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -8)
+sprite_frames = SubResource("SpriteFrames_kutji")
+autoplay = "default"
+frame_progress = 0.83896303
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_d2wvv")
