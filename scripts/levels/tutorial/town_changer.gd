@@ -1,5 +1,5 @@
 extends Area2D
-
+var tp = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +10,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func _physics_process(_delta: float) -> void:
+	if tp:
+		get_tree().change_scene_to_file(global_var.town_01_scene)
 
 func _on_body_entered(_body: Node2D) -> void:
-	get_tree().change_scene_to_file(global_var.town_01_scene)
+	tp = true
