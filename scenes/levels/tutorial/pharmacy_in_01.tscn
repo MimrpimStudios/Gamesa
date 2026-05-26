@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://82akh1krpmrw"]
+[gd_scene load_steps=15 format=4 uid="uid://82akh1krpmrw"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_2uaej"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_aib6l"]
@@ -10,11 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_ar3tw"]
 [ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_2uaej"]
 [ext_resource type="PackedScene" uid="uid://ccmnnrjxayf77" path="res://scenes/pharmacy_male.tscn" id="10_2uaej"]
+[ext_resource type="Script" uid="uid://bpq87g0tvvdyy" path="res://scenes/levels/tutorial/npc_speak.gd" id="11_aib6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1osbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv45f"]
+size = Vector2(10, 115)
 
 [node name="01HouseIn" type="Node2D"]
 script = ExtResource("1_2uaej")
@@ -88,5 +92,14 @@ bus = &"Music"
 [node name="PharmacyMale" parent="." instance=ExtResource("10_2uaej")]
 position = Vector2(776, 357)
 
+[node name="NPCSpeak" type="Area2D" parent="."]
+script = ExtResource("11_aib6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCSpeak"]
+position = Vector2(750, 317.5)
+shape = SubResource("RectangleShape2D_tv45f")
+
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCSpeak" to="NPCSpeak" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCSpeak" to="NPCSpeak" method="_on_body_exited"]
