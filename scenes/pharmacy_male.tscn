@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://ccmnnrjxayf77"]
+[gd_scene load_steps=16 format=3 uid="uid://ccmnnrjxayf77"]
 
 [ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
 [ext_resource type="Script" uid="uid://dd8hl5xau0c0n" path="res://scenes/pharmacy_male.gd" id="1_wk4nt"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_chupo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk4nt"]
 atlas = ExtResource("1_nwfln")
@@ -99,6 +100,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(7, 15)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3bb6l"]
+font = ExtResource("3_chupo")
+font_color = Color(0, 0, 0, 0.5882353)
+
 [node name="PharmacyMale" type="CharacterBody2D"]
 z_index = 1000
 collision_mask = 3
@@ -113,3 +118,25 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_d2wvv")
+
+[node name="Dialog" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 64.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "SPEAKING..."
+label_settings = SubResource("LabelSettings_3bb6l")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
