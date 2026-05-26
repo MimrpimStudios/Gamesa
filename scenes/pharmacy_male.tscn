@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccmnnrjxayf77"]
+[gd_scene load_steps=13 format=3 uid="uid://ccmnnrjxayf77"]
 
 [ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
 
@@ -13,6 +13,30 @@ region = Rect2(32, 0, 16, 17)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bb6l"]
 atlas = ExtResource("1_nwfln")
 region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwfln"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(0, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snywk"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(16, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0w8n"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(32, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjgdx"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(32, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpeiy"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(16, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnqp1"]
+atlas = ExtResource("1_nwfln")
+region = Rect2(0, 34, 16, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qatf1"]
 animations = [{
@@ -36,14 +60,38 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwfln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snywk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0w8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snywk")
+}],
 "loop": true,
-"name": &"walk_left",
+"name": &"left",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjgdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpeiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnqp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpeiy")
+}],
 "loop": true,
-"name": &"walk_right",
+"name": &"right",
 "speed": 5.0
 }]
 
@@ -57,8 +105,8 @@ collision_mask = 3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_qatf1")
+animation = &"right"
 autoplay = "default"
-frame_progress = 0.06158279
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -7.5)

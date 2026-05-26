@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8tj2b6d5p7ol"]
+[gd_scene load_steps=12 format=3 uid="uid://c8tj2b6d5p7ol"]
 
 [ext_resource type="Texture2D" uid="uid://b0el83s8jjbql" path="res://assets/Textures/sprites/npc/pharmacy-female.png" id="1_xgo5g"]
 
@@ -9,6 +9,30 @@ region = Rect2(0, 0, 16, 17)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgo5g"]
 atlas = ExtResource("1_xgo5g")
 region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idihr"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(0, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kutji"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(16, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox6b1"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(32, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqukc"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(32, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gawf"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(16, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfsx"]
+atlas = ExtResource("1_xgo5g")
+region = Rect2(0, 34, 16, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kutji"]
 animations = [{
@@ -32,14 +56,38 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idihr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kutji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox6b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kutji")
+}],
 "loop": true,
-"name": &"walk_left",
+"name": &"left",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqukc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gawf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gawf")
+}],
 "loop": true,
-"name": &"walk_right",
+"name": &"right",
 "speed": 5.0
 }]
 
@@ -54,7 +102,7 @@ collision_mask = 3
 position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_kutji")
 autoplay = "default"
-frame_progress = 0.83896303
+frame_progress = 0.3516129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -7.5)
