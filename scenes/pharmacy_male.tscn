@@ -140,4 +140,3 @@ vertical_alignment = 2
 one_shot = true
 
 [connection signal="integrade_pressed" from="." to="." method="_on_integrade_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
