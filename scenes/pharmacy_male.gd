@@ -50,10 +50,6 @@ func dialog_01(number: int):
 			dialog.text = "" # Text zmizí
 
 
-func _on_timer_timeout():
-	dialog.text = ""
-
-
 func _on_integrade_pressed() -> void:
 	# Tlačítko má smysl mačkat jen v případě, že se na obrazovce něco děje (timer běží)
 	if timer.time_left > 0:
