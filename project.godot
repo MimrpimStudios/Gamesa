@@ -15,6 +15,7 @@ config/version="0.0.2.7"
 run/main_scene="uid://cgqyegbqpg2y5"
 config/custom_user_dir_name="gamesa"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -39,6 +40,7 @@ window/size/initial_position_type=5
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cruhxaisj0yhn"
 
 [editor]
 
