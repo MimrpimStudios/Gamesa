@@ -2,6 +2,7 @@ extends Area2D
 
 
 @onready var npc: CharacterBody2D = $"../PharmacyMale"
+@onready var animation: AnimationPlayer = $"../AnimationPlayer"
 var speak = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +11,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if speak and Input.is_action_just_pressed("integrate"):
-		npc.dialog_01(1)
+	if speak and Input.is_action_just_pressed("integrate") and not animation.is_playing():
+		global_var.player_movement = false
+		animation.play("Dialog01")
 
 
 func _on_body_entered(_body: Node2D) -> void:

@@ -103,7 +103,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["SPEAKING..."]
+"values": [""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -232,6 +232,9 @@ SPEED = 50.0
 [node name="AnimatedSprite2D" parent="PharmacyMale" index="0"]
 animation = &"default"
 
+[node name="Dialog" parent="PharmacyMale" index="2"]
+text = ""
+
 [node name="NPCSpeak" type="Area2D" parent="."]
 script = ExtResource("11_aib6l")
 
@@ -243,12 +246,12 @@ shape = SubResource("RectangleShape2D_tv45f")
 libraries = {
 &"": SubResource("AnimationLibrary_gvo23")
 }
-autoplay = "Dialog01"
 
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]
 [connection signal="body_entered" from="NPCSpeak" to="NPCSpeak" method="_on_body_entered"]
 [connection signal="body_exited" from="NPCSpeak" to="NPCSpeak" method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="NPCSpeak" method="_on_animation_player_animation_finished"]
 
 [editable path="Player"]
 [editable path="PharmacyMale"]

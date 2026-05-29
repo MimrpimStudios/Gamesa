@@ -36,7 +36,7 @@ func _on_walking_01():
 	npc.hide()
 	await get_tree().create_timer(5.0).timeout
 	npc.show()
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.8).timeout
 	direction = -1
 	await get_tree().create_timer(1.2).timeout
 	direction = 0
