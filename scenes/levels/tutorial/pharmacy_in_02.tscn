@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=4 uid="uid://b77hgii3ajtba"]
+[gd_scene load_steps=13 format=4 uid="uid://b77hgii3ajtba"]
 
-[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_nrtv8"]
-[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_hld2v"]
-[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_ulqc1"]
-[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_bw8qp"]
-[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_r2o2n"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="6_wa2xj"]
-[ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scenes/levels/tutorial/door_pharmacy_out.gd" id="7_svk47"]
-[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_puue0"]
-[ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_est8g"]
+[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_ulqc1"]
+[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_bw8qp"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_r2o2n"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_wa2xj"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_svk47"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="6_puue0"]
+[ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scenes/levels/tutorial/door_pharmacy_out.gd" id="7_est8g"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_3i3fq"]
+[ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_56oxo"]
+[ext_resource type="PackedScene" uid="uid://ccmnnrjxayf77" path="res://scenes/pharmacy_male.tscn" id="10_1oafv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
@@ -16,25 +17,31 @@ size = Vector2(15.25, 21)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1osbf"]
 
 [node name="01HouseIn" type="Node2D"]
-script = ExtResource("1_nrtv8")
+script = ExtResource("1_ulqc1")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
 tile_map_data = PackedByteArray("AAAVAAAADAAGAAEAAAAVAAEADAAGAAEAAAAVAAIADAAGAAEAAAAVAAMADAAGAAEAAAAVAAQADAAGAAEAAAAVAAUADAAGAAEAAAAVAAYADAAGAAEAAAAWAAAADAAGAAEAAAAWAAEADAAGAAEAAAAWAAIADAAGAAEAAAAWAAMADAAGAAEAAAAWAAQADAAGAAEAAAAWAAUADAAGAAEAAAAWAAYADAAGAAEAAAAXAAAADAAGAAEAAAAXAAEADAAGAAEAAAAXAAIADAAGAAEAAAAXAAMADAAGAAEAAAAXAAQADAAGAAEAAAAXAAUADAAGAAEAAAAXAAYADAAGAAEAAAAYAAAADAAGAAEAAAAYAAEADAAGAAEAAAAYAAIADAAGAAEAAAAYAAMADAAGAAEAAAAYAAQADAAGAAEAAAAYAAUADAAGAAEAAAAYAAYADAAGAAEAAAAZAAAADAAGAAEAAAAZAAEADAAGAAEAAAAZAAIADAAGAAEAAAAZAAMADAAGAAEAAAAZAAQADAAGAAEAAAAZAAUADAAGAAEAAAAZAAYADAAGAAEAAAAaAAAADAAGAAEAAAAaAAEADAAGAAEAAAAaAAIADAAGAAEAAAAaAAMADAAGAAEAAAAaAAQADAAGAAEAAAAaAAUADAAGAAEAAAAaAAYADAAGAAEAAAAbAAAADAAGAAEAAAAbAAEADAAGAAEAAAAbAAIADAAGAAEAAAAbAAMADAAGAAEAAAAbAAQADAAGAAEAAAAbAAUADAAGAAEAAAAbAAYADAAGAAEAAAAcAAAADAAGAAEAAAAcAAEADAAGAAEAAAAcAAIADAAGAAEAAAAcAAMADAAGAAEAAAAcAAQADAAGAAEAAAAcAAUADAAGAAEAAAAcAAYADAAGAAEAAAAdAAAADAAGAAEAAAAdAAEADAAGAAEAAAAdAAIADAAGAAEAAAAdAAMADAAGAAEAAAAdAAQADAAGAAEAAAAdAAUADAAGAAEAAAAdAAYADAAGAAEAAAAeAAAADAAGAAEAAAAeAAEADAAGAAEAAAAeAAIADAAGAAEAAAAeAAMADAAGAAEAAAAeAAQADAAGAAEAAAAeAAUADAAGAAEAAAAeAAYADAAGAAEAAAAfAAAADAAGAAEAAAAfAAEADAAGAAEAAAAfAAIADAAGAAEAAAAfAAMADAAGAAEAAAAfAAQADAAGAAEAAAAfAAUADAAGAAEAAAAfAAYADAAGAAEAAAAgAAAADAAGAAEAAAAgAAEADAAGAAEAAAAgAAIADAAGAAEAAAAgAAMADAAGAAEAAAAgAAQADAAGAAEAAAAgAAUADAAGAAEAAAAgAAYADAAGAAEAAAAhAAAADAAGAAEAAAAhAAEADAAGAAEAAAAhAAIADAAGAAEAAAAhAAMADAAGAAEAAAAhAAQADAAGAAEAAAAhAAUADAAGAAEAAAAhAAYADAAGAAEAAAAiAAAADAAGAAEAAAAiAAEADAAGAAEAAAAiAAIADAAGAAEAAAAiAAMADAAGAAEAAAAiAAQADAAGAAEAAAAiAAUADAAGAAEAAAAiAAYADAAGAAEAAAAjAAAADAAGAAEAAAAjAAEADAAGAAEAAAAjAAIADAAGAAEAAAAjAAMADAAGAAEAAAAjAAQADAAGAAEAAAAjAAUADAAGAAEAAAAjAAYADAAGAAEAAAAkAAAADAAGAAEAAAAkAAEADAAGAAEAAAAkAAIADAAGAAEAAAAkAAMADAAGAAEAAAAkAAQADAAGAAEAAAAkAAUADAAGAAEAAAAkAAYADAAGAAEAAAAlAAAADAAGAAEAAAAlAAEADAAGAAEAAAAlAAIADAAGAAEAAAAlAAMADAAGAAEAAAAlAAQADAAGAAEAAAAlAAUADAAGAAEAAAAlAAYADAAGAAEAAAAmAAAADAAGAAEAAAAmAAEADAAGAAEAAAAmAAIADAAGAAEAAAAmAAMADAAGAAEAAAAmAAQADAAGAAEAAAAmAAUADAAGAAEAAAAmAAYADAAGAAEAAAAnAAAADAAGAAEAAAAnAAEADAAGAAEAAAAnAAIADAAGAAEAAAAnAAMADAAGAAEAAAAnAAQADAAGAAEAAAAnAAUADAAGAAEAAAAnAAYADAAGAAEAAAAoAAAADAAGAAEAAAAoAAEADAAGAAEAAAAoAAIADAAGAAEAAAAoAAMADAAGAAEAAAAoAAQADAAGAAEAAAAoAAUADAAGAAEAAAAoAAYADAAGAAEAAAApAAAADAAGAAEAAAApAAEADAAGAAEAAAApAAIADAAGAAEAAAApAAMADAAGAAEAAAApAAQADAAGAAEAAAApAAUADAAGAAEAAAApAAYADAAGAAEAAAAqAAAADAAGAAEAAAAqAAEADAAGAAEAAAAqAAIADAAGAAEAAAAqAAMADAAGAAEAAAAqAAQADAAGAAEAAAAqAAUADAAGAAEAAAAqAAYADAAGAAEAAAArAAAADAAGAAEAAAArAAEADAAGAAEAAAArAAIADAAGAAEAAAArAAMADAAGAAEAAAArAAQADAAGAAEAAAArAAUADAAGAAEAAAArAAYADAAGAAEAAAAsAAAADAAGAAEAAAAsAAEADAAGAAEAAAAsAAIADAAGAAEAAAAsAAMADAAGAAEAAAAsAAQADAAGAAEAAAAsAAUADAAGAAEAAAAsAAYADAAGAAEAAAAtAAAADAAGAAEAAAAtAAEADAAGAAEAAAAtAAIADAAGAAEAAAAtAAMADAAGAAEAAAAtAAQADAAGAAEAAAAtAAUADAAGAAEAAAAtAAYADAAGAAEAAAAuAAAADAAGAAEAAAAuAAEADAAGAAEAAAAuAAIADAAGAAEAAAAuAAMADAAGAAEAAAAuAAQADAAGAAEAAAAuAAUADAAGAAEAAAAuAAYADAAGAAEAAAAvAAAADAAGAAEAAAAvAAEADAAGAAEAAAAvAAIADAAGAAEAAAAvAAMADAAGAAEAAAAvAAQADAAGAAEAAAAvAAUADAAGAAEAAAAvAAYADAAGAAEAAAAUAAAADAAGAAEAAAAUAAEADAAGAAEAAAAUAAIADAAGAAEAAAAUAAMADAAGAAEAAAAUAAQADAAGAAEAAAAUAAUADAAGAAEAAAAUAAYADAAGAAEAAAAwAAAADAAGAAEAAAAwAAEADAAGAAEAAAAwAAIADAAGAAEAAAAwAAMADAAGAAEAAAAwAAQADAAGAAEAAAAwAAUADAAGAAEAAAAwAAYADAAGAAEAAAA=")
-tile_set = ExtResource("2_hld2v")
+tile_set = ExtResource("2_bw8qp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
-tile_map_data = PackedByteArray("AAAeAAYACgAUAAEAAAAdAAYACgAUAAEAAAAcAAYACgAUAAEAAAAbAAYACgAUAAEAAAAbAAQACgAJAAAAAAAbAAUACgAJAAEAAAAcAAQACgAKAAAAAAAcAAUACgAKAAEAAAAZAAQACgAJAAAAAAAZAAUACgAJAAEAAAAaAAQACgAKAAAAAAAaAAUACgAKAAEAAAAXAAQACgAJAAAAAAAXAAUACgAJAAEAAAAYAAQACgAKAAAAAAAYAAUACgAKAAEAAAAfAAQACgAcAAEAAAAfAAUACgAcAAIAAAAgAAQACgAcAAEAAAAgAAUACgAcAAIAAAAhAAQACgAcAAEAAAAhAAUACgAcAAIAAAAiAAQACgAcAAEAAAAiAAUACgAcAAIAAAAjAAQACgAcAAEAAAAjAAUACgAcAAIAAAAeAAQACgAcAAEAAAAeAAUACgAcAAIAAAAVAAYACgAUAAEAAAAWAAYACgAUAAEAAAAXAAYACgAUAAEAAAAYAAYACgAUAAEAAAAZAAYACgAUAAEAAAAaAAYACgAUAAEAAAAfAAYACgAUAAEAAAAgAAYACgAUAAEAAAAhAAYACgAUAAEAAAAiAAYACgAUAAEAAAAjAAYACgAUAAEAAAAkAAYACgAUAAEAAAAlAAYACgAUAAEAAAAmAAYACgAUAAEAAAAnAAYACgAUAAEAAAAoAAYACgAUAAEAAAApAAYACgAUAAEAAAAqAAYACgAUAAEAAAArAAYACgAUAAEAAAAsAAYACgAUAAEAAAAtAAYACgAUAAEAAAAuAAYACgAUAAEAAAAvAAYACgAUAAEAAAAUAAYACgAUAAEAAAAUAAUACgAUAAEAAAAUAAQACgAUAAEAAAAUAAMACgAUAAEAAAAUAAIACgAUAAEAAAAUAAEACgAUAAEAAAAUAAAACgAUAAEAAAAwAAYACgAUAAEAAAAwAAUACgAUAAEAAAAwAAQACgAUAAEAAAAwAAMACgAUAAEAAAAwAAIACgAUAAEAAAAwAAEACgAUAAEAAAAwAAAACgAUAAEAAAA=")
-tile_set = ExtResource("3_ulqc1")
+tile_map_data = PackedByteArray("AAAeAAYACgAUAAEAAAAdAAYACgAUAAEAAAAcAAYACgAUAAEAAAAbAAYACgAUAAEAAAAbAAQACgAJAAAAAAAbAAUACgAJAAEAAAAcAAQACgAKAAAAAAAcAAUACgAKAAEAAAAZAAQACgAJAAAAAAAZAAUACgAJAAEAAAAaAAQACgAKAAAAAAAaAAUACgAKAAEAAAAXAAQACgAJAAAAAAAXAAUACgAJAAEAAAAYAAQACgAKAAAAAAAYAAUACgAKAAEAAAAfAAQACgAcAAEAAAAfAAUACgAcAAIAAAAgAAQACgAcAAEAAAAgAAUACgAcAAIAAAAhAAQACgAcAAEAAAAhAAUACgAcAAIAAAAiAAQACgAcAAEAAAAiAAUACgAcAAIAAAAjAAQACgAcAAEAAAAjAAUACgAcAAIAAAAeAAQACgAcAAEAAAAeAAUACgAcAAIAAAAVAAYACgAUAAEAAAAWAAYACgAUAAEAAAAXAAYACgAUAAEAAAAYAAYACgAUAAEAAAAZAAYACgAUAAEAAAAaAAYACgAUAAEAAAAfAAYACgAUAAEAAAAgAAYACgAUAAEAAAAhAAYACgAUAAEAAAAiAAYACgAUAAEAAAAjAAYACgAUAAEAAAAkAAYACgAUAAEAAAAlAAYACgAUAAEAAAAmAAYACgAUAAEAAAAnAAYACgAUAAEAAAAoAAYACgAUAAEAAAApAAYACgAUAAEAAAAqAAYACgAUAAEAAAArAAYACgAUAAEAAAAsAAYACgAUAAEAAAAtAAYACgAUAAEAAAAuAAYACgAUAAEAAAAvAAYACgAUAAEAAAAUAAYACgAUAAEAAAAUAAUACgAUAAEAAAAUAAQACgAUAAEAAAAUAAMACgAUAAEAAAAUAAIACgAUAAEAAAAUAAEACgAUAAEAAAAUAAAACgAUAAEAAAAwAAYACgAUAAEAAAAwAAUACgAUAAEAAAAwAAQACgAUAAEAAAAwAAMACgAUAAEAAAAwAAIACgAUAAEAAAAwAAEACgAUAAEAAAAwAAAACgAUAAEAAAArAAQACwAGAAEAAAArAAMACwAGAAEAAAArAAIACwAGAAEAAAArAAEACwAGAAEAAAArAAAACwAGAAEAAAA=")
+tile_set = ExtResource("3_r2o2n")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
 tile_map_data = PackedByteArray("AAAqAAUACgAOAAQAAAAqAAYACgAOAAUAAAArAAUACgANAAQAAAArAAYACgANAAUAAAA=")
-tile_set = ExtResource("3_ulqc1")
+tile_set = ExtResource("3_r2o2n")
 
-[node name="Player" parent="." instance=ExtResource("4_bw8qp")]
+[node name="Player" parent="." instance=ExtResource("4_wa2xj")]
 position = Vector2(545, 359)
+
+[node name="SpeakNPC" parent="Player/Hint" index="0"]
+uppercase = true
+
+[node name="DialogPlayer" parent="Player" index="3"]
+text = ""
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
@@ -47,42 +54,55 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="Screen" parent="." instance=ExtResource("5_r2o2n")]
+[node name="Screen" parent="." instance=ExtResource("5_svk47")]
 follow_viewport_enabled = false
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(418, 349)
-texture = ExtResource("6_wa2xj")
+texture = ExtResource("6_puue0")
 
 [node name="Door2" type="Sprite2D" parent="."]
 position = Vector2(834, 349)
-texture = ExtResource("6_wa2xj")
+texture = ExtResource("6_puue0")
 
 [node name="DoorPharmacyOut" type="Area2D" parent="."]
 position = Vector2(56, 0)
 collision_mask = 3
-script = ExtResource("7_svk47")
+script = ExtResource("7_est8g")
 
 [node name="Texture" type="Sprite2D" parent="DoorPharmacyOut"]
 position = Vector2(490, 349)
-texture = ExtResource("6_wa2xj")
+texture = ExtResource("6_puue0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorPharmacyOut"]
 position = Vector2(489.625, 348.5)
 shape = SubResource("RectangleShape2D_u00iu")
 
-[node name="Killzone" parent="." instance=ExtResource("8_puue0")]
+[node name="Killzone" parent="." instance=ExtResource("8_3i3fq")]
 position = Vector2(462, 379)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_1osbf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_est8g")
+stream = ExtResource("9_56oxo")
 autoplay = true
 bus = &"Music"
 
 [node name="Hints" type="Node" parent="."]
 
+[node name="PharmacyMale" parent="." instance=ExtResource("10_1oafv")]
+position = Vector2(776, 357)
+SPEED = 50.0
+
+[node name="AnimatedSprite2D" parent="PharmacyMale" index="0"]
+animation = &"default"
+
+[node name="Dialog" parent="PharmacyMale" index="2"]
+text = ""
+
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]
+
+[editable path="Player"]
+[editable path="PharmacyMale"]

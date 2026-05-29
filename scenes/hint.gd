@@ -11,5 +11,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if global_var.player_show_speakNPC:
 		speak_npc.show()
+		print("showed")
 	else:
 		speak_npc.hide()
+		print("hided")

@@ -22,7 +22,7 @@ size = Vector2(0, 31)
 
 [sub_resource type="Animation" id="Animation_aib6l"]
 resource_name = "Dialog01"
-length = 60.0
+length = 66.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,13 +30,15 @@ tracks/0/path = NodePath("PharmacyMale/Dialog:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 13, 20, 21, 26, 37, 40),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5, 13, 20, 21, 26, 37, 40, 47, 58, 59, 63, 64, 66),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["WHAT DO YOU NEED?", "", "I HAVE SOME 
 ANTIBIOTICS I CAN
 OFFER YOU", "", "WAIT A MINUTE, I WILL
-COME FOR THEM", "", "HERE IT IS", ""]
+COME FOR THEM", "", "HERE IT IS", "", "NORMALLY IT COST
+999,99 EURO,
+BUT FOR YOU...", "", "IT IS FOR FREE!", "", "NOW GO HOME!", ""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -57,32 +59,21 @@ tracks/2/path = NodePath("Player/DialogPlayer:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 6, 12),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 6, 12, 41, 46),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": ["", "MY MOTHER IS SICK
 AND I NEED SOME
-PILLS FOR HER", ""]
+PILLS FOR HER", "", "HOW MUCH IT 
+COST ME?", ""]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Player/Hint/SpeakNPC:text")
+tracks/3/path = NodePath("PharmacyMale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PharmacyMale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(27),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -131,19 +122,6 @@ tracks/2/keys = {
 AND I NEED SOME
 PILLS FOR HER"]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Player/Hint/SpeakNPC:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Press \"E\" or \"I\"
-for speaking with NPC"]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvo23"]
 _data = {
@@ -171,6 +149,9 @@ tile_set = ExtResource("3_tv45f")
 
 [node name="Player" parent="." instance=ExtResource("4_gvo23")]
 position = Vector2(545, 359)
+
+[node name="SpeakNPC" parent="Player/Hint" index="0"]
+uppercase = true
 
 [node name="DialogPlayer" parent="Player" index="3"]
 text = "MY MOTHER IS SICK

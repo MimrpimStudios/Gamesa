@@ -25,6 +25,7 @@ const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
 const pharmacy_in_01_scene = "res://scenes/levels/tutorial/pharmacy_in_01.tscn"
+const pharmacy_in_02_scene = "res://scenes/levels/tutorial/pharmacy_in_02.tscn"
 const town_02_back_home_scene = "res://scenes/levels/tutorial/town_02_back_home.tscn"
 const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
 var level
