@@ -1,5 +1,6 @@
 extends Node
 
+var player_show_speakNPC = false
 var player_movement = true
 var is_player_dead = false
 var is_player_smashing = false

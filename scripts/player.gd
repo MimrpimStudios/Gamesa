@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var dialog_player: Label = $DialogPlayer
 
 @export_range(0, 100, 0.1, "or_greater", "or_less") var SPEED: float = 150.0
 @export_range(0, 1000, 1.0, "or_greater", "or_less") var JUMP_VELOCITY_kladna = 450.0
@@ -41,7 +42,6 @@ func _physics_process(delta):
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
 		
-
 		
 		# Play animations
 		if is_on_floor():
@@ -63,3 +63,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		if not global_var.is_player_dead:
 			move_and_slide()
+func say(text: String):
+	dialog_player.text = text
+	print(text)
+	

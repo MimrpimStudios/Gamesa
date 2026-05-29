@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccmnnrjxayf77"]
+[gd_scene load_steps=15 format=3 uid="uid://ccmnnrjxayf77"]
 
 [ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
 [ext_resource type="Script" uid="uid://dd8hl5xau0c0n" path="res://scenes/pharmacy_male.gd" id="1_wk4nt"]
-[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="3_chupo"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="3_chupo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk4nt"]
 atlas = ExtResource("1_nwfln")
@@ -100,10 +100,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(7, 15)
 
-[sub_resource type="LabelSettings" id="LabelSettings_3bb6l"]
-font = ExtResource("3_chupo")
-font_color = Color(0, 0, 0, 0.5882353)
-
 [node name="PharmacyMale" type="CharacterBody2D"]
 z_index = 1000
 collision_mask = 3
@@ -132,7 +128,7 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "SPEAKING..."
-label_settings = SubResource("LabelSettings_3bb6l")
+label_settings = ExtResource("3_chupo")
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -140,3 +136,4 @@ vertical_alignment = 2
 one_shot = true
 
 [connection signal="integrade_pressed" from="." to="." method="_on_integrade_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

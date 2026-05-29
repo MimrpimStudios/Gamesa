@@ -16,7 +16,9 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	speak = true
+	global_var.player_show_speakNPC = true
 
 
 func _on_body_exited(_body: Node2D) -> void:
 	speak = false
+	global_var.player_show_speakNPC = false
