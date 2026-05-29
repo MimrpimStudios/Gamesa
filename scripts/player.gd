@@ -10,6 +10,7 @@ var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var player_movement = global_var.player_movement
 
 @onready var animated_sprite = $AnimatedSprite2D
 

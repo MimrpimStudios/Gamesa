@@ -27,7 +27,6 @@ SewersMusic="*res://scenes/sewers_music.tscn"
 
 [debug]
 
-settings/stdout/print_fps=true
 file_logging/enable_file_logging=true
 file_logging/log_path="user://logs/latest.log"
 
