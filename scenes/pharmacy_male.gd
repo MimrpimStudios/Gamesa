@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_walking_01():
 	direction = 1
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.2).timeout
 	direction = 0
 	await get_tree().create_timer(0.5).timeout
 	npc.hide()
@@ -38,5 +38,5 @@ func _on_walking_01():
 	npc.show()
 	await get_tree().create_timer(0.5).timeout
 	direction = -1
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.2).timeout
 	direction = 0

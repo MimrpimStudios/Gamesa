@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": ["WHAT DO YOU NEED?", "", "I HAVE SOME 
 ANTIBIOTICS I CAN
 OFFER YOU", "", "WAIT A MINUTE, I WILL
-COME FOR THEM", "", "HERE IT IS", "HERE IT IS"]
+COME FOR THEM", "", "HERE IT IS", ""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
