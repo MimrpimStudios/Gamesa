@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=20 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -11,9 +11,13 @@
 [ext_resource type="Script" uid="uid://bikijxrbwo2we" path="res://scenes/levels/tutorial/area_2d2.gd" id="9_bccqr"]
 [ext_resource type="Script" uid="uid://dhp7pbmu7jp6l" path="res://scenes/levels/tutorial/out_changer.gd" id="11_bccqr"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_qsgy2"]
+[ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="12_wetuf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bccqr"]
+size = Vector2(64, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nne4h"]
 font = ExtResource("8_8aks5")
@@ -29,6 +33,9 @@ size = Vector2(112, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wetuf"]
 size = Vector2(1326, 928)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_412yd"]
+size = Vector2(152, 140)
 
 [node name="02_town" type="Node2D"]
 script = ExtResource("1_aqflf")
@@ -87,6 +94,10 @@ ignore_time_scale = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1112, 327)
 shape = SubResource("WorldBoundaryShape2D_qrwr5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1192, -622)
+shape = SubResource("RectangleShape2D_bccqr")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 3266.0
@@ -147,7 +158,16 @@ script = ExtResource("11_bccqr")
 position = Vector2(2649, 163)
 shape = SubResource("RectangleShape2D_wetuf")
 
+[node name="ToFall" type="Area2D" parent="."]
+position = Vector2(-5948, -318)
+script = ExtResource("12_wetuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToFall"]
+position = Vector2(3199, 42)
+shape = SubResource("RectangleShape2D_412yd")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
+[connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
 
 [editable path="Killzone"]

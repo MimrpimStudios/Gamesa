@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="5_k6fsb"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_fatr5"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_oyi2o"]
-[ext_resource type="Script" uid="uid://juijq318g3o1" path="res://scripts/levels/tutorial/door_house.gd" id="8_4ecdu"]
+[ext_resource type="Script" uid="uid://bgpj3k08mb6ql" path="res://scenes/levels/tutorial/door_house2.gd" id="8_q4lk0"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="9_a5op5"]
 [ext_resource type="Script" uid="uid://0vuvescheh" path="res://scripts/levels/tutorial/camera_zoom_out.gd" id="10_mvnh7"]
 [ext_resource type="Script" uid="uid://ctaku2hdwn1kc" path="res://scripts/levels/tutorial/camera_zoom_in.gd" id="11_h3mpg"]
@@ -183,7 +183,7 @@ editor_draw_limits = true
 
 [node name="DoorHouse" type="Area2D" parent="."]
 collision_mask = 3
-script = ExtResource("8_4ecdu")
+script = ExtResource("8_q4lk0")
 
 [node name="Texture" type="Sprite2D" parent="DoorHouse"]
 position = Vector2(489, 349)
