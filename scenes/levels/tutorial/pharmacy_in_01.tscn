@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://82akh1krpmrw"]
+[gd_scene load_steps=19 format=4 uid="uid://82akh1krpmrw"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_2uaej"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_aib6l"]
@@ -22,7 +22,7 @@ size = Vector2(0, 31)
 
 [sub_resource type="Animation" id="Animation_aib6l"]
 resource_name = "Dialog01"
-length = 66.0
+length = 66.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,6 +81,18 @@ tracks/3/keys = {
 "method": &"_on_walking_01"
 }]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/Camera2D:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(66, 66.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(5, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_tv45f"]
 length = 0.001
@@ -122,11 +134,40 @@ tracks/2/keys = {
 AND I NEED SOME
 PILLS FOR HER"]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/Camera2D:zoom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_gvo23"]
+resource_name = "zoom-in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(6, 6)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvo23"]
 _data = {
 &"Dialog01": SubResource("Animation_aib6l"),
-&"RESET": SubResource("Animation_tv45f")
+&"RESET": SubResource("Animation_tv45f"),
+&"zoom-in": SubResource("Animation_gvo23")
 }
 
 [node name="01HouseIn" type="Node2D"]

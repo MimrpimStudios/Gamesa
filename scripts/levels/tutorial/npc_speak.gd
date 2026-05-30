@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 		global_var.player_movement = false
 		played = true
 		global_var.player_show_speakNPC = false
-		animation.play("Dialog01")
+		animation.play("zoom-in")
 
 
 func _on_body_entered(_body: Node2D) -> void:
@@ -34,3 +34,6 @@ func _on_body_exited(_body: Node2D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Dialog01":
 		global_var.player_movement = true
+	elif anim_name == "zoom-in":
+		await get_tree().create_timer(0.5).timeout
+		animation.play("Dialog01")
