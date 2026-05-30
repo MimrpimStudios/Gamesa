@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ccmnnrjxayf77"]
 
 [ext_resource type="Texture2D" uid="uid://cl8rkrhn0f2pv" path="res://assets/Textures/sprites/npc/pharmacy-male.png" id="1_nwfln"]
-[ext_resource type="Script" uid="uid://dd8hl5xau0c0n" path="res://scenes/pharmacy_male.gd" id="1_wk4nt"]
+[ext_resource type="Script" uid="uid://dd8hl5xau0c0n" path="res://scripts/pharmacy_male.gd" id="1_wk4nt"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="3_chupo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk4nt"]

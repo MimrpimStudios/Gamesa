@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c8tj2b6d5p7ol"]
 
-[ext_resource type="Script" uid="uid://b70ef1kifgwag" path="res://scenes/pharmacy_female.gd" id="1_j4m15"]
+[ext_resource type="Script" uid="uid://b70ef1kifgwag" path="res://scripts/levels/tutorial/pharmacy_female.gd" id="1_j4m15"]
 [ext_resource type="Texture2D" uid="uid://b0el83s8jjbql" path="res://assets/Textures/sprites/npc/pharmacy-female.png" id="1_xgo5g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4m15"]

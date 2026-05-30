@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://cf42xnx2s5itd" path="res://scripts/player_healthbar.gd" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bvpxoq3wdaydj" path="res://assets/Textures/sprites/healthbar.png" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://b2qicj5tcg1iv" path="res://scenes/hint.gd" id="5_tuyoq"]
+[ext_resource type="Script" uid="uid://b2qicj5tcg1iv" path="res://scripts/hint.gd" id="5_tuyoq"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="7_smehm"]
-[ext_resource type="Script" uid="uid://cfgu3s3178iye" path="res://scenes/player_dialog.gd" id="8_ur7pv"]
+[ext_resource type="Script" uid="uid://cfgu3s3178iye" path="res://scripts/player_dialog.gd" id="8_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
