@@ -52,7 +52,7 @@ run/main_run_args="-launcherCLI -versionCLI=0.1 -launcherGUI -versionGUI=1.0"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/CodeEditorBackground/plugin.cfg", "res://addons/GDQuest_GDScript_formatter/plugin.cfg")
 
 [input]
 
