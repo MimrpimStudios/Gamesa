@@ -42,6 +42,7 @@ window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://cruhxaisj0yhn"
+mouse_cursor/tooltip_position_offset=Vector2(16, 16)
 
 [editor]
 
