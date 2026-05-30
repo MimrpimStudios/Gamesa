@@ -8,18 +8,19 @@ extends CharacterBody2D
 var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 var direction = 0
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	if direction == 0:
 		animated_sprite.play("default")
 	if direction < 0:
 		animated_sprite.play("left")
 	elif direction > 0:
 		animated_sprite.play("right")
-	
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:

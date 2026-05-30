@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var timer: Timer = $Timer
 var animation = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if animation:
@@ -20,7 +23,6 @@ func _on_body_entered(body: Node2D) -> void:
 			global_var.player_movement = false
 			timer.start()
 			tween.tween_property(camera2d, "zoom", Vector2(2.0, 2.0), 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-			
 
 
 func _on_timer_timeout() -> void:

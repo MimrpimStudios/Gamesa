@@ -13,11 +13,13 @@ var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+
 func _process(_delta: float) -> void:
 	if global_var.is_player_dead:
 		if is_instance_valid(collision_shape_2d):
 			collision_shape_2d.queue_free()
 		global_var.player_health = 0
+
 
 func _physics_process(delta):
 	if not is_on_floor() and global_var.is_player_dead == false:
@@ -29,7 +31,7 @@ func _physics_process(delta):
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			
+
 		if Input.is_action_just_released("jump"):
 			if velocity.y < -100:
 				velocity.y = -100
@@ -41,8 +43,7 @@ func _physics_process(delta):
 			global_var.is_player_smashing = false
 		# Get the input direction: -1, 0, 1
 		var direction = Input.get_axis("left", "right")
-		
-		
+
 		# Play animations
 		if is_on_floor():
 			if direction == 0:
@@ -51,7 +52,7 @@ func _physics_process(delta):
 			animated_sprite.play("left")
 		elif direction < 0:
 			animated_sprite.play("right")
-			
+
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -63,7 +64,8 @@ func _physics_process(delta):
 		velocity.x = 0
 		if not global_var.is_player_dead:
 			move_and_slide()
+
+
 func say(text: String):
 	dialog_player.text = text
 	print(text)
-	

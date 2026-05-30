@@ -32,9 +32,12 @@ const house_02_scene_in = "res://scenes/levels/tutorial/02_house_in.tscn"
 var level
 var launcher_type = ""
 var launcher_version = ""
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -42,7 +45,7 @@ func _process(_delta: float) -> void:
 		is_player_dead = true
 	else:
 		is_player_dead = false
-		
+
 
 func load_level():
 	print("Loading...")
@@ -53,6 +56,7 @@ func load_level():
 	level = save_file.get_line()
 	save_file.close()
 	return level
+
 
 func save_level():
 	print("Saving...")
