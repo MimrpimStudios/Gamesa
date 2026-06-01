@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://82akh1krpmrw"]
+[gd_scene load_steps=20 format=4 uid="uid://82akh1krpmrw"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_2uaej"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_aib6l"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_tv45f"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_gvo23"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_lqqio"]
+[ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="6_tv45f"]
 [ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scripts/levels/tutorial/door_pharmacy_out.gd" id="7_2b7o4"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_bgfp5"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_ar3tw"]
@@ -239,7 +240,7 @@ follow_viewport_enabled = false
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(418, 349)
-texture = ExtResource("7_bgfp5")
+texture = ExtResource("6_tv45f")
 
 [node name="Door2" type="Sprite2D" parent="."]
 position = Vector2(834, 349)
