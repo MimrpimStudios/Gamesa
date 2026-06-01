@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export_range(0, 100, 0.1, "or_greater", "or_less") var SPEED: float = 300
 @export_range(0, 1000, 1.0, "or_greater", "or_less") var JUMP_VELOCITY_kladna = 450.0
 var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
-var direction = 1
+var direction = 0
 
 
 func _physics_process(delta: float) -> void:
