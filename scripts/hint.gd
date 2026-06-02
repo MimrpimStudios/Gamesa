@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	speak_npc.add_theme_color_override("font_color", global_var.player_show_speakNPC_color)
 	if global_var.player_show_speakNPC:
 		speak_npc.show()
 	else:

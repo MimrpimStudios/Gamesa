@@ -1,6 +1,7 @@
 extends Node
 
 var player_show_speakNPC = false
+var player_show_speakNPC_color:Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
 var is_player_dead = false
 var is_player_smashing = false

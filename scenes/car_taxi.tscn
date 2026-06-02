@@ -30,6 +30,8 @@ animations = [{
 size = Vector2(36, 19)
 
 [node name="CarTaxi" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_lrgrn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

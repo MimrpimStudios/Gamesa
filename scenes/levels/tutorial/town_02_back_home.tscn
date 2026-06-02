@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=31 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://dhp7pbmu7jp6l" path="res://scripts/levels/tutorial/out_changer.gd" id="11_bccqr"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_qsgy2"]
 [ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="12_wetuf"]
+[ext_resource type="PackedScene" uid="uid://ddknrr0c0g61u" path="res://scenes/car_taxi.tscn" id="13_412yd"]
+[ext_resource type="Script" uid="uid://ba5b6har3t4hj" path="res://scenes/levels/tutorial/taxi_driver.gd" id="14_q4sk1"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="15_57qb2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -41,6 +44,216 @@ size = Vector2(152, 140)
 font = ExtResource("8_8aks5")
 font_size = 32
 font_color = Color(1, 0.9882353, 0.2509804, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4i4c"]
+size = Vector2(36, 19)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qb2"]
+font = ExtResource("8_8aks5")
+
+[sub_resource type="Animation" id="Animation_stanj"]
+resource_name = "taxi_speak"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Player/DialogPlayer:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Can you take me home?", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Yes. Just sit 
+here my friend...", ""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Player/DialogPlayer:label_settings")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("15_57qb2"), SubResource("LabelSettings_57qb2")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Player/DialogPlayer:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.46),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1000, -1]
+}
+
+[sub_resource type="Animation" id="Animation_si4wd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Player/DialogPlayer:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Player/DialogPlayer:label_settings")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_57qb2")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Player/DialogPlayer:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1000]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%Player/Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_w4i4c"]
+resource_name = "taxi_post"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Dialog:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["So it will be 
+for free...", "", "because you are 
+my friend", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Player/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(12, 12.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(5, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2n4xm"]
+_data = {
+&"RESET": SubResource("Animation_si4wd"),
+&"taxi_post": SubResource("Animation_w4i4c"),
+&"taxi_speak": SubResource("Animation_stanj")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4i4c"]
+font = ExtResource("8_8aks5")
 
 [node name="02_town" type="Node2D"]
 script = ExtResource("1_aqflf")
@@ -73,7 +286,8 @@ texture = ExtResource("4_8yi7h")
 follow_viewport_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("6_tsiip")]
-position = Vector2(3324, -367)
+unique_name_in_owner = true
+position = Vector2(1588, -461)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
@@ -175,8 +389,44 @@ text = "PHARMACY
 "
 label_settings = SubResource("LabelSettings_wetuf")
 
+[node name="CarTaxi" parent="." instance=ExtResource("13_412yd")]
+position = Vector2(1503, -365)
+
+[node name="TaxiDriver" type="Area2D" parent="CarTaxi"]
+script = ExtResource("14_q4sk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarTaxi/TaxiDriver"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_w4i4c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CarTaxi/TaxiDriver"]
+libraries = {
+&"": SubResource("AnimationLibrary_2n4xm")
+}
+
+[node name="Dialog" type="Label" parent="CarTaxi"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -30.0
+offset_right = -18.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_w4i4c")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
 [connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
+[connection signal="body_entered" from="CarTaxi/TaxiDriver" to="CarTaxi/TaxiDriver" method="_on_body_entered"]
+[connection signal="body_exited" from="CarTaxi/TaxiDriver" to="CarTaxi/TaxiDriver" method="_on_body_exited"]
+[connection signal="animation_finished" from="CarTaxi/TaxiDriver/AnimationPlayer" to="CarTaxi/TaxiDriver" method="_on_animation_player_animation_finished"]
 
+[editable path="Player"]
 [editable path="Killzone"]
