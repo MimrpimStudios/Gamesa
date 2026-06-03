@@ -6,7 +6,7 @@ extends Area2D
 @onready var player: CharacterBody2D = %Player
 @onready var root: Node2D = $"../.."
 @onready var camera_2d: Camera2D = $"../../Player/Camera2D"
-var repeat: bool = false
+var repeat55: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_var.player_show_speakNPC_color = Color(1.0, 1.0, 1.0, 1.0)
@@ -14,22 +14,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	global_var.player_show_speakNPC = repeat
-	if repeat and Input.is_action_just_pressed("integrate"):
+	global_var.player_show_speakNPC = repeat55
+	if repeat55 and Input.is_action_just_pressed("integrate"):
 		collision_shape_2d.queue_free()
-		repeat = false
+		repeat55 = false
 		global_var.player_movement = false
 		animation.play("taxi_speak")
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		repeat = true
+		repeat55 = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		repeat = false
+		repeat55 = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

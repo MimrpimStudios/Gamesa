@@ -48,86 +48,6 @@ font_color = Color(1, 0.9882353, 0.2509804, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4i4c"]
 size = Vector2(36, 19)
 
-[sub_resource type="LabelSettings" id="LabelSettings_57qb2"]
-font = ExtResource("8_8aks5")
-
-[sub_resource type="Animation" id="Animation_stanj"]
-resource_name = "taxi_speak"
-length = 14.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Player/Camera2D:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5, 5), Vector2(6, 6)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../Player/DialogPlayer:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["", "Can you take me home?", ""]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Dialog:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 7, 12),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["", "Yes. Just sit 
-here my friend...", ""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Player/DialogPlayer:label_settings")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.46),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("15_57qb2"), SubResource("LabelSettings_57qb2")]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Player/DialogPlayer:label_settings:font_color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.46),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../Player:z_index")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 13),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1000, -1]
-}
-
 [sub_resource type="Animation" id="Animation_si4wd"]
 length = 0.001
 tracks/0/type = "value"
@@ -245,6 +165,86 @@ tracks/1/keys = {
 "values": [Vector2(6, 6), Vector2(5, 5)]
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_57qb2"]
+font = ExtResource("8_8aks5")
+
+[sub_resource type="Animation" id="Animation_stanj"]
+resource_name = "taxi_speak"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Player/DialogPlayer:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Can you take me home?", ""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Dialog:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "Yes. Just sit 
+here my friend...", ""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Player/DialogPlayer:label_settings")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("15_57qb2"), SubResource("LabelSettings_57qb2")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Player/DialogPlayer:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.46),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Player:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1000, -1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2n4xm"]
 _data = {
 &"RESET": SubResource("Animation_si4wd"),
@@ -287,7 +287,7 @@ follow_viewport_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("6_tsiip")]
 unique_name_in_owner = true
-position = Vector2(1588, -461)
+position = Vector2(3325, -366)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
@@ -422,6 +422,7 @@ vertical_alignment = 2
 uppercase = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
 [connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
 [connection signal="body_entered" from="CarTaxi/TaxiDriver" to="CarTaxi/TaxiDriver" method="_on_body_entered"]

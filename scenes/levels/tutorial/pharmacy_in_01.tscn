@@ -216,9 +216,6 @@ tile_set = ExtResource("3_tv45f")
 [node name="Player" parent="." instance=ExtResource("4_gvo23")]
 position = Vector2(545, 359)
 
-[node name="SpeakNPC" parent="Player/Hint" index="0"]
-uppercase = true
-
 [node name="DialogPlayer" parent="Player" index="3"]
 text = "MY MOTHER IS SICK
 AND I NEED SOME
