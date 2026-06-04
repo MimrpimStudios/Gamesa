@@ -16,6 +16,7 @@ config/tags=PackedStringArray("gamesa")
 run/main_scene="uid://cgqyegbqpg2y5"
 config/custom_user_dir_name="gamesa"
 config/features=PackedStringArray("4.5", "Forward Plus")
+run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
