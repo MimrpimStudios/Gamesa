@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cvt0j85wf4tu4"]
+[gd_scene load_steps=16 format=4 uid="uid://cvt0j85wf4tu4"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_24yq5"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_05tvc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_804a8"]
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="7_7gl1d"]
 [ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="8_mqlpy"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="10_24yq5"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="10_i4egj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
@@ -22,6 +23,11 @@ size = Vector2(1584, 63.5)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uam42"]
 a = Vector2(20, 44)
 b = Vector2(20, 123)
+
+[sub_resource type="LabelSettings" id="LabelSettings_05tvc"]
+font = ExtResource("10_24yq5")
+font_size = 128
+font_color = Color(0.5729883, 0.5729883, 0.57298815, 0.49411765)
 
 [node name="01_stoky" type="Node2D"]
 script = ExtResource("1_24yq5")
@@ -112,6 +118,17 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 7172.0
+offset_top = 2510.0
+offset_right = 7872.0
+offset_bottom = 2733.0
+text = "KILL THEESE RATS!"
+label_settings = SubResource("LabelSettings_05tvc")
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
 
 [connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
 

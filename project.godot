@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.2.620"
+config/version="0.0.2.7"
+config/tags=PackedStringArray("gamesa")
 run/main_scene="uid://cgqyegbqpg2y5"
 config/custom_user_dir_name="gamesa"
 config/features=PackedStringArray("4.5", "Forward Plus")
@@ -36,14 +37,23 @@ file_logging/log_path="user://logs/latest.log"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/size/initial_position_type=5
+window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cruhxaisj0yhn"
+mouse_cursor/tooltip_position_offset=Vector2(16, 16)
 
 [editor]
 
-movie_writer/movie_file="C:/Users/mimrp/Documents/godot/Gamesa/movies/05.avi"
+movie_writer/movie_file="C:/Users/mimrp/Documents/godot/Gamesa/movies/07.avi"
 movie_writer/disable_vsync=true
+run/main_run_args="-launcherCLI -versionCLI=0.1 -launcherGUI -versionGUI=1.0"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
 
 [input]
 
@@ -104,4 +114,3 @@ down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method.mobile="gl_compatibility"
 textures/lossless_compression/force_png=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
