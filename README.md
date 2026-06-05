@@ -3,7 +3,7 @@ This project is game with no name (for now)
 if you want to install, here is it: [https://github.com/mimrpimstudios/Gamesa/releases/latest](https://github.com/mimrpimstudios/Gamesa/releases/latest)
 
 # How to install?
-Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for more
+Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher) for more
 
 # Q&A
 ## Multiplayer support?
@@ -12,10 +12,10 @@ Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for m
 > No need and when I tried on backup from 4.5.1 -> 4.5.2 some things was broken and I do not want to repair it. I do not know how it works, but it works
 ## Why are you do not update on Godoz 4.6/4.5.2?
 > [Godot 4.5.1 stable](https://godotengine.org/download/archive/4.5.1-stable/)
-## Linux/MacOS/Web support?
-> see [issue #10](https://github.com/MimrpimStudios/Gamesa/issues/10) for linux, [issue #11](https://github.com/MimrpimStudios/Gamesa/issues/11) for MacOS or for web [issue #9](https://github.com/MimrpimStudios/Gamesa/issues/9)
+## MacOS/Web support?
+> see [issue #11](https://github.com/MimrpimStudios/Gamesa/issues/11) for MacOS or for web [issue #9](https://github.com/MimrpimStudios/Gamesa/issues/9)
 ## Can I help?
-> Sure. Fork it and work on the branch (for example if is out 1.0-t2.5 branch for it is 0.0.2.5 and working branch for 1.0-t2.6 is 0.0.2.6 and for 1.0-t2.501 is 0.0.2.501) or sent me a message on [mimrpim@gmail.com](mailto:mimrpim@gmail.com) (now I am working on [0.0.2.8](https://github.com/MimrpimStudios/Gamesa/tree/0.0.2.8))
+> Sure. Fork it and work on the branch (for example if is out 1.0-t2.5 branch for it is 0.0.2.5 and working branch for 1.0-t2.6 is 0.0.2.6 and for 1.0-t2.501 is 0.0.2.501) or sent me a message on [mimrpim@gmail.com](mailto:mimrpim@gmail.com) (now I am working on [0.0.2.7](https://github.com/MimrpimStudios/Gamesa/tree/0.0.2.7))
 ## I found a bug
 > add it on [issue tracker](https://github.com/MimrpimStudios/Gamesa/issues/new/choose) as a bug
 # I want/don't want this in game
