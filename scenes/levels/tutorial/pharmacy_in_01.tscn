@@ -222,9 +222,11 @@ AND I NEED SOME
 PILLS FOR HER"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
 zoom = Vector2(5, 5)
-limit_bottom = 500
+limit_left = 394
+limit_top = 100
+limit_right = 858
+limit_bottom = 430
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
