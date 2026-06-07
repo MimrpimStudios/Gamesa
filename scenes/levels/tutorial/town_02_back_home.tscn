@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_qsgy2"]
 [ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="12_wetuf"]
 [ext_resource type="PackedScene" uid="uid://ddknrr0c0g61u" path="res://scenes/car_taxi.tscn" id="13_412yd"]
-[ext_resource type="Script" uid="uid://ba5b6har3t4hj" path="res://scenes/levels/tutorial/taxi_driver.gd" id="14_q4sk1"]
+[ext_resource type="Script" uid="uid://ba5b6har3t4hj" path="res://scripts/levels/tutorial/taxi_driver.gd" id="14_q4sk1"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="15_57qb2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]

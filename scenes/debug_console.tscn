@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dedp3guwfmtim"]
 
-[ext_resource type="Script" uid="uid://da5fbg8kmm5ao" path="res://scenes/debug_console.gd" id="1_hpx2j"]
+[ext_resource type="Script" uid="uid://da5fbg8kmm5ao" path="res://scripts/debug_console.gd" id="1_hpx2j"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_2j26c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_whr0r"]

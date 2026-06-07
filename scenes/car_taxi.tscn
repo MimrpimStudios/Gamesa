@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddknrr0c0g61u"]
 
-[ext_resource type="Script" uid="uid://bpa11yxkpjmn0" path="res://car_taxi.gd" id="1_lrgrn"]
+[ext_resource type="Script" uid="uid://bpa11yxkpjmn0" path="res://scripts/car_taxi.gd" id="1_lrgrn"]
 [ext_resource type="Texture2D" uid="uid://cochxabhq0cun" path="res://assets/Textures/sprites/car_taxi.png" id="2_67p5f"]
 [ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="3_4ivyw"]
 
