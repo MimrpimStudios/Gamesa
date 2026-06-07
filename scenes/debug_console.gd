@@ -22,6 +22,7 @@ var syntax = [
 
 var player = null
 var mouse_visible: bool = false
+var showed: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -34,10 +35,14 @@ func _process(_delta: float) -> void:
 		mouse_visible = false
 	if shown:
 		root.show()
-		line_edit.grab_focus()
+		if not showed:
+			showed = true
+			line_edit.grab_focus()
+			line_edit.clear()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		global_var.player_movement = false
 	else:
+		showed = false
 		root.hide()
 		if mouse_visible == false:
 			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
