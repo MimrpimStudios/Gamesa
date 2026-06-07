@@ -115,6 +115,10 @@ console={
 ]
 }
 
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+
 [physics]
 
 2d/default_gravity=1500.0
@@ -122,5 +126,5 @@ console={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method.mobile="forward_plus"
 textures/lossless_compression/force_png=true
