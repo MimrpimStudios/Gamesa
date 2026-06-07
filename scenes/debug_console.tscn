@@ -56,14 +56,17 @@ uppercase = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI_Container/Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.93425924
 offset_top = 71.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme = SubResource("Theme_2j26c")
+scroll_following = true
+selection_enabled = true
 
 [node name="LineEdit" type="LineEdit" parent="UI_Container/Panel"]
 layout_mode = 1

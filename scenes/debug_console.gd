@@ -34,6 +34,7 @@ func _process(_delta: float) -> void:
 		mouse_visible = false
 	if shown:
 		root.show()
+		line_edit.grab_focus()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		global_var.player_movement = false
 	else:
@@ -51,26 +52,24 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_line_edit_text_submitted(text: String) -> void:
+	line_edit.grab_focus()
+	line_edit.clear()
 	var command = text.get_slice(" ", 0)
 	var arg1 = text.get_slice(" ", 1)
 	var arg2 = text.get_slice(" ", 2)
 
 	if not command in commands:
-		line_edit.text = ""
 		rich_text_label.append_text("Invalid command " + command + "\n")
 		rich_text_label.append_text("Type help for list of commands" + "\n")
 	elif command == "help":
-		line_edit.text = ""
 		rich_text_label.append_text("Avalable commands: \n\n")
 		var counter_commands: int = 0
 		for item in commands:
 			rich_text_label.append_text(item + syntax[counter_commands] + "\n")
 			counter_commands += 1
 	elif command == "clear":
-		line_edit.text = ""
-		rich_text_label.text = ""
+		rich_text_label.clear()
 	elif command == "speed":
-		line_edit.text = ""
 		player = get_tree().get_first_node_in_group("player") as CharacterBody2D
 		if arg1 == "reset":
 			if player:
@@ -93,7 +92,9 @@ func _on_line_edit_text_submitted(text: String) -> void:
 		else:
 			rich_text_label.append_text("Syntax: " + commands[2] + syntax[2] + "\n")
 	elif command == "god":
-		line_edit.text = ""
+
 		global_var.player_max_health = 999
 		global_var.player_health = 999
 		rich_text_label.append_text("Godmode on "+ "\n")
+	
+	line_edit.call_deferred("grab_focus")
