@@ -20,10 +20,10 @@ func _process(_delta: float) -> void:
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	timer.wait_time = 0.5
-	timer.start()
 	global_var.player_movement = false
 	$"../Player".set_position(Vector2(1321, 119))
+	await get_tree().create_timer(1).timeout
+	animation_player.play("zoom in")
 
 
 func _on_timer_timeout() -> void:
@@ -40,5 +40,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "secret_1":
+	if anim_name == "zoom in":
+		timer.wait_time = 0.5
+		timer.start()
+	elif anim_name == "secret_1":
 		ufo.play("beam")

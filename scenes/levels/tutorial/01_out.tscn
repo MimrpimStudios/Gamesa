@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=35 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -38,7 +38,7 @@ size = Vector2(40, 82)
 size = Vector2(35, 69.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwbin"]
-size = Vector2(35, 48.5)
+size = Vector2(35, 97.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cur3p"]
 size = Vector2(35, 73.5)
@@ -60,6 +60,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_aax5y"]
 resource_name = "secret_1"
@@ -77,10 +89,27 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(1318, 134)]
 }
 
+[sub_resource type="Animation" id="Animation_xfrl7"]
+resource_name = "zoom in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(6, 6)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xfrl7"]
 _data = {
 &"RESET": SubResource("Animation_dbi5j"),
-&"secret_1": SubResource("Animation_aax5y")
+&"secret_1": SubResource("Animation_aax5y"),
+&"zoom in": SubResource("Animation_xfrl7")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aax5y"]
@@ -212,7 +241,7 @@ position = Vector2(1722.5, 148.125)
 shape = SubResource("RectangleShape2D_amdrx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraZoomIn"]
-position = Vector2(1319, 158.25)
+position = Vector2(1319, 133.75)
 shape = SubResource("RectangleShape2D_wwbin")
 
 [node name="Timer" type="Timer" parent="CameraZoomIn"]
