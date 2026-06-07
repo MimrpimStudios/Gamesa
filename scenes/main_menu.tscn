@@ -230,15 +230,16 @@ stretch_mode = 0
 
 [node name="LauncherInfoDialog" type="AcceptDialog" parent="."]
 oversampling_override = 1.0
-title = "Info!"
+title = "Warning!"
 initial_position = 2
-size = Vector2i(370, 138)
+size = Vector2i(450, 138)
 visible = true
 unresizable = true
 always_on_top = true
 popup_window = true
-ok_button_text = "Open website for downloading launcher"
-dialog_text = "            You are not using our launcher!"
+ok_button_text = "Open website for downloading latest launcher version"
+dialog_text = "                       You are not using our launcher
+                           or using outdated version!"
 dialog_close_on_escape = false
 script = ExtResource("13_rcqid")
 
