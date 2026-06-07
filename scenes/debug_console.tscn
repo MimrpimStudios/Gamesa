@@ -21,17 +21,25 @@ RichTextLabel/fonts/normal_font = ExtResource("2_2j26c")
 
 [node name="DebugConsole" type="CanvasLayer"]
 layer = 999
-follow_viewport_enabled = true
 script = ExtResource("1_hpx2j")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="UI_Container" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Panel" type="Panel" parent="UI_Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI_Container/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -46,18 +54,18 @@ label_settings = SubResource("LabelSettings_whr0r")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_Container/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 71.0
-offset_bottom = -37.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_2j26c")
 
-[node name="LineEdit" type="LineEdit" parent="Panel"]
+[node name="LineEdit" type="LineEdit" parent="UI_Container/Panel"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -72,4 +80,4 @@ placeholder_text = "Enter command..."
 context_menu_enabled = false
 emoji_menu_enabled = false
 
-[connection signal="text_submitted" from="Panel/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="UI_Container/Panel/LineEdit" to="." method="_on_line_edit_text_submitted"]
