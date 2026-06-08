@@ -3,7 +3,7 @@ This project is game with no name (for now)
 if you want to install, here is it: [https://github.com/mimrpimstudios/Gamesa/releases/latest](https://github.com/mimrpimstudios/Gamesa/releases/latest)
 
 # How to install?
-Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher) for more
+Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher)
 
 # Q&A
 ## Multiplayer support?
