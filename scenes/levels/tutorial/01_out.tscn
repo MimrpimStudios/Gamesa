@@ -229,10 +229,6 @@ position = Vector2(1670, 141)
 shape = SubResource("RectangleShape2D_fgspu")
 debug_color = Color(0.5764706, 0.17254902, 0.5176471, 1)
 
-[node name="Timer" type="Timer" parent="CameraZoomOut"]
-wait_time = 1.5
-one_shot = true
-
 [node name="CameraZoomIn" type="Area2D" parent="."]
 script = ExtResource("14_fgspu")
 
@@ -243,10 +239,6 @@ shape = SubResource("RectangleShape2D_amdrx")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraZoomIn"]
 position = Vector2(1319, 133.75)
 shape = SubResource("RectangleShape2D_wwbin")
-
-[node name="Timer" type="Timer" parent="CameraZoomIn"]
-wait_time = 1.5
-one_shot = true
 
 [node name="Screen" parent="." instance=ExtResource("15_wwbin")]
 follow_viewport_enabled = false
@@ -519,9 +511,7 @@ bus = &"Music"
 [connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_exited"]
-[connection signal="timeout" from="CameraZoomOut/Timer" to="CameraZoomOut" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CameraZoomIn" to="CameraZoomIn" method="_on_body_entered"]
-[connection signal="timeout" from="CameraZoomIn/Timer" to="CameraZoomIn" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CameraZoomInEnable" to="CameraZoomInEnable" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraZoomOutEnable" to="CameraZoomOutEnable" method="_on_body_entered"]
 [connection signal="body_entered" from="Secret01" to="Secret01" method="_on_body_entered"]
