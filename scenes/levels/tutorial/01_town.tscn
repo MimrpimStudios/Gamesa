@@ -475,12 +475,8 @@ position = Vector2(497, 271)
 ignore_time_scale = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-7, 72)
+position = Vector2(-7, 51)
 shape = SubResource("WorldBoundaryShape2D_uugbn")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(361, 181)
-shape = SubResource("RectangleShape2D_sq6xi")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1025.5, 181)
