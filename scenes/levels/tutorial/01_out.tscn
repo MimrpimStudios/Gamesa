@@ -311,6 +311,16 @@ text = "YOU CAN JUMP BY
 BY ARROW UP"
 label_settings = ExtResource("19_2mrnh")
 
+[node name="Label7" type="Label" parent="Hints"]
+offset_left = 543.0
+offset_top = 308.0
+offset_right = 764.0
+offset_bottom = 356.0
+text = "YOU CAN PRESS \"ESC\" FOR 
+RETURNING INTO MAIN MENU 
+(IT IS SAVING AUTOMATICALY)"
+label_settings = ExtResource("19_2mrnh")
+
 [node name="Label3" type="Label" parent="Hints"]
 offset_left = 832.0
 offset_top = 402.0
