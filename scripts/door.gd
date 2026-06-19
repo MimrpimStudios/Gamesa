@@ -14,10 +14,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("integrate") and entered:
 		get_tree().change_scene_to_packed(scene)
-	
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		entered = true
