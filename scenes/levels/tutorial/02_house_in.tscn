@@ -60,13 +60,14 @@ bus = &"Music"
 [node name="Hints" type="Node" parent="."]
 
 [node name="Label2" type="Label" parent="Hints"]
-offset_left = 392.0
-offset_top = 326.0
-offset_right = 532.0
-offset_bottom = 357.0
-text = "CONGRATULATTIONS!
-YOU FINISHED THE GAME"
+offset_left = 378.0
+offset_top = 280.0
+offset_right = 554.0
+offset_bottom = 311.0
+text = "CONGRATULATTIONS! YOU
+FINISHED THE GAME"
 label_settings = ExtResource("10_o160g")
+horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(458, 319)
