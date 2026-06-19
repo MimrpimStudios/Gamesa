@@ -26,7 +26,7 @@
 distance = -130.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qinkk"]
-size = Vector2(143, 6)
+size = Vector2(159, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c4gm"]
 size = Vector2(15.25, 21)
@@ -187,7 +187,7 @@ position = Vector2(361, 181)
 shape = SubResource("RectangleShape2D_qinkk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1025.5, 181)
+position = Vector2(1017.5, 181)
 shape = SubResource("RectangleShape2D_qinkk")
 
 [node name="Player" parent="." instance=ExtResource("2_uc4g0")]
