@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cqqi8mo4huwag"]
+[gd_scene load_steps=30 format=4 uid="uid://cqqi8mo4huwag"]
 
 [ext_resource type="Script" uid="uid://dijx4d0yecwvt" path="res://scripts/levels/tutorial/01_boss_1.gd" id="1_a032t"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_aftbq"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bkglxjavt5a8l" path="res://scripts/levels/tutorial/area_2d.gd" id="12_eeys6"]
 [ext_resource type="AudioStream" uid="uid://d80n6jy4dbjv" path="res://assets/Sounds/Music/boss-1.wav" id="13_4c1h8"]
 [ext_resource type="AudioStream" uid="uid://cmfy8w1shpocw" path="res://assets/Sounds/plosina_spawn.wav" id="14_hk6ub"]
+[ext_resource type="Script" uid="uid://dgq36ahskbhxo" path="res://scenes/levels/tutorial/area_2d_2.gd" id="15_wh036"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12o0e"]
 size = Vector2(32, 62)
@@ -653,6 +654,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c1h8"]
 size = Vector2(36, 29)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh036"]
+size = Vector2(138, 139)
+
 [node name="01_stoky" type="Node2D"]
 script = ExtResource("1_a032t")
 
@@ -930,11 +934,19 @@ bus = &"Music"
 stream = ExtResource("14_hk6ub")
 bus = &"SFX"
 
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("15_wh036")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(906, 326.5)
+shape = SubResource("RectangleShape2D_wh036")
+
 [connection signal="body_entered" from="Rat/Smash" to="Rat/Smash" method="_on_body_entered"]
 [connection signal="body_entered" from="Rat2/Smash" to="Rat2/Smash" method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Area2D" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 
 [editable path="Killzone"]
 [editable path="Rat"]

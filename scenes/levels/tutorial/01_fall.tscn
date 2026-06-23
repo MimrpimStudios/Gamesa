@@ -92,6 +92,7 @@ position = Vector2(3436, 2542)
 shape = SubResource("RectangleShape2D_vwdls")
 
 [node name="Timer" type="Timer" parent="ToStoky"]
+wait_time = 0.3
 one_shot = true
 
 [connection signal="body_entered" from="ToStoky" to="ToStoky" method="_on_body_entered"]
