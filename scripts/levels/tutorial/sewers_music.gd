@@ -7,6 +7,7 @@ func _ready() -> void:
 	if not SewersMusic.playing:
 		SewersMusic.play()
 	global_var.level = get_tree().current_scene.scene_file_path
+	global_var.save_level()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
