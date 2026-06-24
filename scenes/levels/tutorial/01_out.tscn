@@ -322,14 +322,15 @@ RETURNING INTO MAIN MENU
 label_settings = ExtResource("19_2mrnh")
 
 [node name="Label3" type="Label" parent="Hints"]
-offset_left = 832.0
-offset_top = 402.0
-offset_right = 876.0
+offset_left = 824.0
+offset_top = 419.0
+offset_right = 896.0
 offset_bottom = 450.0
-text = "SPIKES 
-ARE 
+text = "SPIKES ARE 
 DEADLY"
 label_settings = ExtResource("19_2mrnh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Hints"]
 offset_left = 1310.0

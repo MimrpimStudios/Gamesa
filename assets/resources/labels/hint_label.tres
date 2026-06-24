@@ -4,4 +4,4 @@
 
 [resource]
 font = ExtResource("1_jxr80")
-font_color = Color(0.5729883, 0.5729883, 0.57298815, 0.49411765)
+shadow_color = Color(0, 0, 0, 1)
