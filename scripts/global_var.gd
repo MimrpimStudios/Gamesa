@@ -1,7 +1,7 @@
 extends Node
 
 var player_show_speakNPC = false
-var player_show_speakNPC_color:Color = Color(0.0, 0.0, 0.0, 1.0)
+var player_show_speakNPC_color: Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
 var is_player_dead = false
 var is_player_smashing = false
@@ -56,11 +56,12 @@ func load_level():
 	var save_file = FileAccess.open("user://savefile.save", FileAccess.READ)
 	level = save_file.get_line()
 	save_file.close()
+	print("Loading " + str(level) + "...")
 	return level
 
 
 func save_level():
-	print("Saving...")
+	print("Saving" + str(level) + "...")
 	var save_file = FileAccess.open("user://savefile.save", FileAccess.WRITE)
 	save_file.store_line(level)
 	save_file.close()
