@@ -16,7 +16,7 @@ func _ready() -> void:
 		else:
 			print("you liar")
 			timer.wait_time = 10
-
+	load_patches()
 	timer.start()
 
 
@@ -69,3 +69,44 @@ func get_arg_value(argument_list: PackedStringArray, prefix: String) -> String:
 		if arg.begins_with(prefix + "="):
 			return arg.split("=")[1]
 	return ""
+
+func load_patches():
+	print("loading patches...")
+	load_all_patches()
+
+func load_all_patches():
+	# Určíme cestu ke složce "patches" vedle spustitelného souboru
+	var patches_dir_path
+	if OS.has_feature("editor"):
+		patches_dir_path = "res://patches" # V editoru čte z projektu
+	else:
+		patches_dir_path = OS.get_executable_path().get_base_dir().path_join("patches")
+	
+	# Otevřeme adresář
+	var dir = DirAccess.open(patches_dir_path)
+	
+	if dir:
+		# Začneme číst obsah složky
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		
+		while file_name != "":
+			# Ignorujeme samotný adresář a skryté soubory
+			if !dir.current_is_dir():
+				# Kontrola, zda soubor končí na .pck
+				if file_name.get_extension().to_lower() == "pck" or file_name.get_extension().to_lower() == "zip":
+					var full_path = patches_dir_path.path_join(file_name)
+					
+					# Načtení balíčku
+					var success = ProjectSettings.load_resource_pack(full_path)
+					
+					if success:
+						print("Úspěšně načten patch: ", file_name)
+					else:
+						push_error("Chyba při načítání patche: " + file_name)
+						
+			file_name = dir.get_next()
+		
+		dir.list_dir_end()
+	else:
+		print("Složka 'patches' nebyla nalezena na cestě: ", patches_dir_path)
