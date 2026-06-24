@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=30 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -191,6 +191,7 @@ tracks/2/keys = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_57qb2"]
 font = ExtResource("8_8aks5")
+shadow_color = Color(0, 0, 0, 0.27058825)
 
 [sub_resource type="Animation" id="Animation_stanj"]
 resource_name = "taxi_speak"
@@ -276,9 +277,6 @@ _data = {
 &"taxi_speak": SubResource("Animation_stanj")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_w4i4c"]
-font = ExtResource("8_8aks5")
-
 [node name="02_town" type="Node2D"]
 script = ExtResource("1_aqflf")
 
@@ -312,6 +310,9 @@ follow_viewport_enabled = false
 [node name="Player" parent="." instance=ExtResource("6_tsiip")]
 unique_name_in_owner = true
 position = Vector2(3325, -366)
+
+[node name="DialogPlayer" parent="Player" index="3"]
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
@@ -440,7 +441,8 @@ offset_right = -18.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-label_settings = SubResource("LabelSettings_w4i4c")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
+label_settings = ExtResource("15_57qb2")
 horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true

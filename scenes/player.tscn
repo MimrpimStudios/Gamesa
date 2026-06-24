@@ -165,6 +165,7 @@ offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
 theme_override_fonts/font = ExtResource("6_smehm")
 theme_override_font_sizes/font_size = 16
 text = "Press \"E\" or \"I\"
