@@ -1,13 +1,19 @@
 extends Node
 
+@onready var animation: AnimationPlayer = $"../../AnimationPlayer"
+
 var showed = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
 
 func _on_timer_timeout() -> void:
 	if showed:
@@ -20,4 +26,6 @@ func _on_timer_timeout() -> void:
 	else:
 		$Label.text = ""
 		$Label.hide()
+		animation.play("camera-zoom-out")
+		await get_tree().create_timer(0.6).timeout
 		get_tree().change_scene_to_file(global_var.stoky_no_monolog_scene)
