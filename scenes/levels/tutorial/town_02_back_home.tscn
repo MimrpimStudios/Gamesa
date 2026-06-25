@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=32 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -277,6 +277,14 @@ _data = {
 &"taxi_speak": SubResource("Animation_stanj")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_w4i4c"]
+font = ExtResource("8_8aks5")
+font_color = Color(1, 0.9882353, 0.2509804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ioyx7"]
+font = ExtResource("8_8aks5")
+font_color = Color(1, 0.9882353, 0.2509804, 1)
+
 [node name="02_town" type="Node2D"]
 script = ExtResource("1_aqflf")
 
@@ -446,6 +454,26 @@ label_settings = ExtResource("15_57qb2")
 horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 1685.0
+offset_top = -478.0
+offset_right = 1747.0
+offset_bottom = -464.0
+text = "PHARMACY"
+label_settings = SubResource("LabelSettings_w4i4c")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 1751.0
+offset_top = -464.0
+offset_right = 1764.0
+offset_bottom = -399.0
+rotation = -1.5707964
+text = " |
+ |
+\\ /
+"
+label_settings = SubResource("LabelSettings_ioyx7")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

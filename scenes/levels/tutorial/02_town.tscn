@@ -19,7 +19,6 @@ distance = 114.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_nne4h"]
 font = ExtResource("7_hx58t")
-font_size = 32
 font_color = Color(1, 0.9882353, 0.2509804, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ohsxu"]
@@ -120,6 +119,26 @@ offset_top = -452.0
 offset_right = 3285.0
 offset_bottom = -404.0
 text = " |
+\\ /
+"
+label_settings = SubResource("LabelSettings_ohsxu")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1685.0
+offset_top = -478.0
+offset_right = 1747.0
+offset_bottom = -464.0
+text = "PHARMACY"
+label_settings = SubResource("LabelSettings_nne4h")
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 1751.0
+offset_top = -464.0
+offset_right = 1764.0
+offset_bottom = -399.0
+rotation = -1.5707964
+text = " |
+ |
 \\ /
 "
 label_settings = SubResource("LabelSettings_ohsxu")
