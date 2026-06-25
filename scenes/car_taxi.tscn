@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddknrr0c0g61u"]
+
+[ext_resource type="Script" uid="uid://bpa11yxkpjmn0" path="res://scripts/car_taxi.gd" id="1_lrgrn"]
+[ext_resource type="Texture2D" uid="uid://cochxabhq0cun" path="res://assets/Textures/sprites/car_taxi.png" id="2_67p5f"]
+[ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="3_4ivyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ci0"]
+atlas = ExtResource("2_67p5f")
+region = Rect2(38, 0, 38, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llphe"]
+atlas = ExtResource("2_67p5f")
+region = Rect2(0, 0, 38, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klfnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54ci0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llphe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
+size = Vector2(36, 19)
+
+[node name="CarTaxi" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_lrgrn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_klfnr")
+autoplay = "default"
+frame_progress = 0.59646696
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_3mrxu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4ivyw")
+autoplay = true
+max_distance = 400.0
+bus = &"SFX"

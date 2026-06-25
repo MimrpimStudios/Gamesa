@@ -32,17 +32,6 @@ tile_set = ExtResource("1_n35vt")
 [node name="Player" parent="." instance=ExtResource("12_y28yd")]
 position = Vector2(545, 359)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-zoom = Vector2(5, 5)
-limit_bottom = 500
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-editor_draw_limits = true
-
 [node name="Screen" parent="." instance=ExtResource("15_0qekk")]
 follow_viewport_enabled = false
 
@@ -89,6 +78,18 @@ offset_bottom = 357.0
 text = "OPENING DOOR BY 
       \"E\" OR \"I\""
 label_settings = ExtResource("9_xg56r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(458, 319)
+zoom = Vector2(5, 5)
+limit_enabled = false
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
 
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]

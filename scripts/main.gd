@@ -1,9 +1,24 @@
 extends Control
 
+@onready var timer: Timer = $Timer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	get_launcher_info()
+	if global_var.launcher_type != "":
+		if global_var.launcher_type == "GUI":
+			print("you using gui")
+			print(global_var.launcher_version)
+		elif global_var.launcher_type == "CLI":
+			print("you using cli")
+			print(global_var.launcher_version)
+		else:
+			print("you liar")
+			timer.wait_time = 10
+	load_patches()
+	timer.start()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -13,3 +28,85 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	print("changing scene to: " + global_var.start_scene)
 	get_tree().change_scene_to_file(global_var.start_scene)
+
+
+func get_launcher_info():
+	print("=".repeat(30))
+	var args = OS.get_cmdline_args()
+	var args_user = OS.get_cmdline_user_args()
+
+	print("arguments: " + str(args))
+	print("user arguments: " + str(args_user))
+
+	if args.has("-launcherCLI"):
+		print("-".repeat(30))
+		print("Spusteno pres CLI launcher.")
+		global_var.launcher_type = "CLI"
+
+		var version_value = get_arg_value(args, "-versionCLI")
+
+		if version_value != "":
+			print("CLI version: " + version_value)
+			global_var.launcher_version = version_value
+		print("-".repeat(30))
+	if args.has("-launcherGUI"):
+		print("-".repeat(30))
+		print("Spusteno pres GUI launcher.")
+		global_var.launcher_type = "GUI"
+		var version_value_gui = get_arg_value(args, "-versionGUI")
+
+		if version_value_gui != "":
+			print("GUI version: " + version_value_gui)
+			global_var.launcher_version = version_value_gui
+
+		print("-".repeat(30))
+
+	print("=".repeat(30))
+
+
+func get_arg_value(argument_list: PackedStringArray, prefix: String) -> String:
+	for arg in argument_list:
+		if arg.begins_with(prefix + "="):
+			return arg.split("=")[1]
+	return ""
+
+func load_patches():
+	print("loading patches...")
+	load_all_patches()
+
+func load_all_patches():
+	# Určíme cestu ke složce "patches" vedle spustitelného souboru
+	var patches_dir_path
+	if OS.has_feature("editor"):
+		patches_dir_path = "res://patches" # V editoru čte z projektu
+	else:
+		patches_dir_path = OS.get_executable_path().get_base_dir().path_join("patches")
+	
+	# Otevřeme adresář
+	var dir = DirAccess.open(patches_dir_path)
+	
+	if dir:
+		# Začneme číst obsah složky
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		
+		while file_name != "":
+			# Ignorujeme samotný adresář a skryté soubory
+			if !dir.current_is_dir():
+				# Kontrola, zda soubor končí na .pck
+				if file_name.get_extension().to_lower() == "pck" or file_name.get_extension().to_lower() == "zip":
+					var full_path = patches_dir_path.path_join(file_name)
+					
+					# Načtení balíčku
+					var success = ProjectSettings.load_resource_pack(full_path)
+					
+					if success:
+						print("Úspěšně načten patch: ", file_name)
+					else:
+						push_error("Chyba při načítání patche: " + file_name)
+						
+			file_name = dir.get_next()
+		
+		dir.list_dir_end()
+	else:
+		print("Složka 'patches' nebyla nalezena na cestě: ", patches_dir_path)

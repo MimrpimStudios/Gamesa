@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ckpb64qv8t6d"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_4lg07"]
+
+[resource]
+font = ExtResource("1_4lg07")
+shadow_color = Color(0, 0, 0, 0.27058825)

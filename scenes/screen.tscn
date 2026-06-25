@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://g8ih83bl2c2w"]
+[gd_scene load_steps=16 format=3 uid="uid://g8ih83bl2c2w"]
 
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_erqjc"]
 [ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scripts/screen.gd" id="1_gakxr"]
@@ -34,6 +34,71 @@ font_color = Color(1, 0, 0, 1)
 shadow_size = 8
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2oog4"]
+font = ExtResource("1_erqjc")
+font_size = 64
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xr627"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SavingLabel:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SavingLabel:label_settings:shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2oog4"]
+resource_name = "saving"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SavingLabel:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 0.21022396, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SavingLabel:label_settings:shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 0.21022396, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr627"]
+_data = {
+&"RESET": SubResource("Animation_xr627"),
+&"saving": SubResource("Animation_2oog4")
+}
 
 [node name="Screen" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -136,7 +201,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_r04ab")
-version = "1.0-t2.4"
 
 [node name="LabelVersion" type="Label" parent="Overaly/Debug"]
 layout_mode = 0
@@ -154,3 +218,24 @@ offset_bottom = 45.0
 text = "FPS: XX.XX"
 label_settings = ExtResource("8_2oog4")
 uppercase = true
+
+[node name="SavingLabel" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -44.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Saving..."
+label_settings = SubResource("LabelSettings_2oog4")
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xr627")
+}

@@ -2,12 +2,14 @@ extends Area2D
 
 var repeat3 = false
 
+
 func _on_body_exited(_body: Node2D) -> void:
 	repeat3 = false
 
 
 func _on_body_entered(_body: Node2D) -> void:
 	repeat3 = true
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("integrate") and repeat3:
