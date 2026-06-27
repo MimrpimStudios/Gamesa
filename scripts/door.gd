@@ -1,8 +1,10 @@
 extends Area2D
+## An object in editor, that is used for changing scenes, if player interacts with them
 
+## A scene when the door is used. Leave <empty> for disabling them.
 @export var scene: PackedScene
-@export var work: bool = true
-var entered: bool
+
+var entered: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
