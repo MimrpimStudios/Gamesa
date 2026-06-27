@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://2i712m02262f"]
+[gd_scene load_steps=22 format=4 uid="uid://2i712m02262f"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_8wyfh"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_8nugk"]
@@ -17,11 +17,16 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_nne4h"]
+[sub_resource type="LabelSettings" id="LabelSettings_si4af"]
 font = ExtResource("7_hx58t")
+font_size = 32
 font_color = Color(1, 0.9882353, 0.2509804, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ohsxu"]
+font = ExtResource("7_hx58t")
+font_color = Color(1, 0.9882353, 0.2509804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nne4h"]
 font = ExtResource("7_hx58t")
 font_color = Color(1, 0.9882353, 0.2509804, 1)
 
@@ -111,7 +116,7 @@ offset_right = 3390.0
 offset_bottom = -357.0
 text = "PHARMACY
 "
-label_settings = SubResource("LabelSettings_nne4h")
+label_settings = SubResource("LabelSettings_si4af")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 3272.0
