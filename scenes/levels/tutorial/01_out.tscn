@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=34 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -9,27 +9,24 @@
 [ext_resource type="Script" uid="uid://bwplwlnhtlh8m" path="res://scripts/levels/tutorial/camera_zoom_in_enable.gd" id="12_mtumq"]
 [ext_resource type="Script" uid="uid://dpqonlqhm4fab" path="res://scripts/levels/tutorial/camera_zoom_out_enable.gd" id="13_cur3p"]
 [ext_resource type="Script" uid="uid://0vuvescheh" path="res://scripts/levels/tutorial/camera_zoom_out.gd" id="13_sga0p"]
-[ext_resource type="Script" uid="uid://juijq318g3o1" path="res://scripts/levels/tutorial/door_house.gd" id="14_btxvf"]
 [ext_resource type="Script" uid="uid://ctaku2hdwn1kc" path="res://scripts/levels/tutorial/camera_zoom_in.gd" id="14_fgspu"]
 [ext_resource type="Script" uid="uid://b1avnqgfs30du" path="res://scripts/levels/tutorial/secret_01.gd" id="15_o1k8i"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="15_wwbin"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="16_gg1hg"]
 [ext_resource type="AudioStream" uid="uid://btjc4np2454p4" path="res://assets/Sounds/siren.mp3" id="16_je17w"]
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="17_btxvf"]
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
 [ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/Sounds/ufo.wav" id="18_w2o16"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_2mrnh"]
 [ext_resource type="Script" uid="uid://cpt5ey7hh3yyw" path="res://scripts/levels/tutorial/town_changer.gd" id="20_aax5y"]
+[ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="20_dbi5j"]
 [ext_resource type="AudioStream" uid="uid://bnhhhjyjmnron" path="res://assets/Sounds/Music/bird_singing.mp3" id="21_dbi5j"]
+[ext_resource type="PackedScene" uid="uid://chr48v8vqmyrr" path="res://scenes/levels/tutorial/01_house_in.tscn" id="21_xfrl7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qinkk"]
 size = Vector2(159, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c4gm"]
-size = Vector2(15.25, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgspu"]
 size = Vector2(40, 82)
@@ -203,18 +200,6 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
-
-[node name="DoorHouse" type="Area2D" parent="."]
-collision_mask = 3
-script = ExtResource("14_btxvf")
-
-[node name="Texture" type="Sprite2D" parent="DoorHouse"]
-position = Vector2(489, 349)
-texture = ExtResource("16_gg1hg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouse"]
-position = Vector2(488.625, 348.5)
-shape = SubResource("RectangleShape2D_0c4gm")
 
 [node name="CameraZoomOut" type="Area2D" parent="."]
 script = ExtResource("13_sga0p")
@@ -518,8 +503,10 @@ autoplay = true
 max_distance = 300.0
 bus = &"Music"
 
-[connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
-[connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
+[node name="Door" parent="." instance=ExtResource("20_dbi5j")]
+position = Vector2(488, 360)
+scene = ExtResource("21_xfrl7")
+
 [connection signal="body_entered" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraZoomIn" to="CameraZoomIn" method="_on_body_entered"]

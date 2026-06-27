@@ -5,13 +5,11 @@
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_yscle"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_sa7tc"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_33iay"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_m0awn"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_qs2bc"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="9_jrfrc"]
+[ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="9_lajg7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="10_o160g"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
-size = Vector2(15.25, 21)
+[ext_resource type="PackedScene" uid="uid://d11dod1pvfqw3" path="res://scenes/levels/tutorial/02_out.tscn" id="10_okn7e"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1osbf"]
 
@@ -33,18 +31,6 @@ position = Vector2(545, 359)
 
 [node name="Screen" parent="." instance=ExtResource("5_33iay")]
 follow_viewport_enabled = false
-
-[node name="DoorHouseOut" type="Area2D" parent="."]
-position = Vector2(56, 0)
-collision_mask = 3
-
-[node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
-position = Vector2(490, 349)
-texture = ExtResource("7_m0awn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
-position = Vector2(489.625, 348.5)
-shape = SubResource("RectangleShape2D_u00iu")
 
 [node name="Killzone" parent="." instance=ExtResource("8_qs2bc")]
 position = Vector2(462, 379)
@@ -81,5 +67,6 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
-[connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
+[node name="Door" parent="." instance=ExtResource("9_lajg7")]
+position = Vector2(547, 360)
+scene = ExtResource("10_okn7e")

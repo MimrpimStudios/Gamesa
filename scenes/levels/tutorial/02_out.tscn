@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://d11dod1pvfqw3"]
+[gd_scene load_steps=37 format=4 uid="uid://d11dod1pvfqw3"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_pj7dy"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_vcnoi"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://biocv1a14cdin" path="res://assets/Textures/sprites/window.png" id="5_k6fsb"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_fatr5"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_oyi2o"]
-[ext_resource type="Script" uid="uid://bgpj3k08mb6ql" path="res://scripts/levels/tutorial/door_house2.gd" id="8_q4lk0"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="9_a5op5"]
 [ext_resource type="Script" uid="uid://0vuvescheh" path="res://scripts/levels/tutorial/camera_zoom_out.gd" id="10_mvnh7"]
 [ext_resource type="Script" uid="uid://ctaku2hdwn1kc" path="res://scripts/levels/tutorial/camera_zoom_in.gd" id="11_h3mpg"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="12_c056u"]
@@ -20,7 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="18_ns47y"]
 [ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="21_pj7dy"]
 [ext_resource type="AudioStream" uid="uid://bnhhhjyjmnron" path="res://assets/Sounds/Music/bird_singing.mp3" id="21_rr27c"]
+[ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="22_q4lk0"]
 [ext_resource type="Script" uid="uid://j6i7nbej7kuq" path="res://scripts/levels/tutorial/town_music_on.gd" id="22_u6xk5"]
+[ext_resource type="PackedScene" uid="uid://dwdqh7xd1pqj1" path="res://scenes/levels/tutorial/02_house_in.tscn" id="23_k6fsb"]
 [ext_resource type="Script" uid="uid://o2fd6n46dm1v" path="res://scripts/levels/tutorial/town_music_off.gd" id="23_q4lk0"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="24_q4lk0"]
 
@@ -29,9 +29,6 @@ distance = -130.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qinkk"]
 size = Vector2(143, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c4gm"]
-size = Vector2(15.25, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgspu"]
 size = Vector2(40, 82)
@@ -208,18 +205,6 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
-
-[node name="DoorHouse" type="Area2D" parent="."]
-collision_mask = 3
-script = ExtResource("8_q4lk0")
-
-[node name="Texture" type="Sprite2D" parent="DoorHouse"]
-position = Vector2(489, 349)
-texture = ExtResource("9_a5op5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouse"]
-position = Vector2(488.625, 348.5)
-shape = SubResource("RectangleShape2D_0c4gm")
 
 [node name="CameraZoomOut" type="Area2D" parent="."]
 script = ExtResource("10_mvnh7")
@@ -503,8 +488,10 @@ texture = ExtResource("5_k6fsb")
 position = Vector2(441, 56)
 texture = ExtResource("5_k6fsb")
 
-[connection signal="body_entered" from="DoorHouse" to="DoorHouse" method="_on_body_entered"]
-[connection signal="body_exited" from="DoorHouse" to="DoorHouse" method="_on_body_exited"]
+[node name="Door" parent="." instance=ExtResource("22_q4lk0")]
+position = Vector2(488, 360)
+scene = ExtResource("23_k6fsb")
+
 [connection signal="body_entered" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraZoomIn" to="CameraZoomIn" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraZoomInEnable" to="CameraZoomInEnable" method="_on_body_entered"]

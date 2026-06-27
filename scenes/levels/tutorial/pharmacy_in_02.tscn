@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_wa2xj"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_svk47"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="6_puue0"]
-[ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="6_ulqc1"]
 [ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scripts/levels/tutorial/door_pharmacy_out.gd" id="7_est8g"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_3i3fq"]
 [ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_56oxo"]
 [ext_resource type="PackedScene" uid="uid://ccmnnrjxayf77" path="res://scenes/pharmacy_male.tscn" id="10_1oafv"]
+[ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="11_ulqc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
@@ -52,14 +52,6 @@ editor_draw_limits = true
 [node name="Screen" parent="." instance=ExtResource("5_svk47")]
 follow_viewport_enabled = false
 
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(418, 349)
-texture = ExtResource("6_ulqc1")
-
-[node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(834, 349)
-texture = ExtResource("6_puue0")
-
 [node name="DoorPharmacyOut" type="Area2D" parent="."]
 position = Vector2(56, 0)
 collision_mask = 3
@@ -96,6 +88,13 @@ animation = &"default"
 
 [node name="Dialog" parent="PharmacyMale" index="2"]
 text = ""
+
+[node name="Door" parent="." instance=ExtResource("11_ulqc1")]
+position = Vector2(834, 359)
+door_texture_disabled = ExtResource("6_puue0")
+
+[node name="Door2" parent="." instance=ExtResource("11_ulqc1")]
+position = Vector2(418, 359)
 
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]

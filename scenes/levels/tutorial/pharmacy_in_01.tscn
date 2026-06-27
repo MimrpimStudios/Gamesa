@@ -5,13 +5,13 @@
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_tv45f"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_gvo23"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_lqqio"]
-[ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="6_tv45f"]
 [ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scripts/levels/tutorial/door_pharmacy_out.gd" id="7_2b7o4"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_bgfp5"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_ar3tw"]
 [ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="9_2uaej"]
 [ext_resource type="PackedScene" uid="uid://ccmnnrjxayf77" path="res://scenes/pharmacy_male.tscn" id="10_2uaej"]
 [ext_resource type="Script" uid="uid://bpq87g0tvvdyy" path="res://scripts/levels/tutorial/npc_speak.gd" id="11_aib6l"]
+[ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="12_tv45f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
@@ -103,7 +103,7 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 66.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true]
 }
 
@@ -168,7 +168,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
@@ -235,14 +235,6 @@ editor_draw_limits = true
 [node name="Screen" parent="." instance=ExtResource("5_lqqio")]
 follow_viewport_enabled = false
 
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(418, 349)
-texture = ExtResource("6_tv45f")
-
-[node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(834, 349)
-texture = ExtResource("7_bgfp5")
-
 [node name="DoorPharmacyOut" type="Area2D" parent="."]
 position = Vector2(56, 0)
 collision_mask = 3
@@ -290,6 +282,13 @@ shape = SubResource("RectangleShape2D_tv45f")
 libraries = {
 &"": SubResource("AnimationLibrary_gvo23")
 }
+
+[node name="Door" parent="." instance=ExtResource("12_tv45f")]
+position = Vector2(834, 359)
+door_texture_disabled = ExtResource("7_bgfp5")
+
+[node name="Door2" parent="." instance=ExtResource("12_tv45f")]
+position = Vector2(418, 359)
 
 [connection signal="body_entered" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorPharmacyOut" to="DoorPharmacyOut" method="_on_body_exited"]
