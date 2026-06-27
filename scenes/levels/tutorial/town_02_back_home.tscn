@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=31 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -39,11 +39,6 @@ size = Vector2(1326, 928)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_412yd"]
 size = Vector2(152, 140)
-
-[sub_resource type="LabelSettings" id="LabelSettings_wetuf"]
-font = ExtResource("8_8aks5")
-font_size = 32
-font_color = Color(1, 0.9882353, 0.2509804, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4i4c"]
 size = Vector2(36, 19)
@@ -412,15 +407,6 @@ script = ExtResource("12_wetuf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToFall"]
 position = Vector2(3199, 42)
 shape = SubResource("RectangleShape2D_412yd")
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 3266.0
-offset_top = -478.0
-offset_right = 3390.0
-offset_bottom = -357.0
-text = "PHARMACY
-"
-label_settings = SubResource("LabelSettings_wetuf")
 
 [node name="CarTaxi" parent="." instance=ExtResource("13_412yd")]
 position = Vector2(1503, -365)
