@@ -7,9 +7,9 @@
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_6fd6j"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_xd4k2"]
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="7_hyhba"]
-[ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="8_hvo27"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="9_0jo1e"]
-[ext_resource type="Script" uid="uid://knbkgls38jpq" path="res://scripts/levels/tutorial/to_stoky_3.gd" id="9_64qov"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="9_64qov"]
+[ext_resource type="PackedScene" uid="uid://cvt0j85wf4tu4" path="res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn" id="10_2tc7j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -21,7 +21,7 @@ size = Vector2(336, 79)
 size = Vector2(1584, 63.5)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uam42"]
-a = Vector2(20, 44)
+a = Vector2(20, -83)
 b = Vector2(20, 123)
 
 [node name="01_stoky" type="Node2D"]
@@ -97,21 +97,6 @@ position = Vector2(6157, 2839)
 [node name="RatSmashPlatform8" parent="." instance=ExtResource("7_hyhba")]
 position = Vector2(6280, 2839)
 
-[node name="ToBoss" type="Area2D" parent="."]
-script = ExtResource("8_hvo27")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToBoss"]
-position = Vector2(7134, 2604)
-shape = SubResource("SegmentShape2D_uam42")
-
-[node name="To_stoky_3" type="Area2D" parent="."]
-position = Vector2(-2175, 0)
-script = ExtResource("9_64qov")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="To_stoky_3"]
-position = Vector2(7134, 2604)
-shape = SubResource("SegmentShape2D_uam42")
-
 [node name="Player" parent="." instance=ExtResource("9_0jo1e")]
 position = Vector2(4083, 2807)
 
@@ -125,7 +110,11 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
-[connection signal="body_entered" from="To_stoky_3" to="To_stoky_3" method="_on_body_entered"]
+[node name="SceneChange" parent="." instance=ExtResource("9_64qov")]
+scene = ExtResource("10_2tc7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(4927, 2604)
+shape = SubResource("SegmentShape2D_uam42")
 
 [editable path="Killzone"]

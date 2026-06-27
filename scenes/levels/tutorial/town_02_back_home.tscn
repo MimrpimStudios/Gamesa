@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=33 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -11,10 +11,11 @@
 [ext_resource type="Script" uid="uid://bikijxrbwo2we" path="res://scripts/levels/tutorial/area_2d2.gd" id="9_bccqr"]
 [ext_resource type="Script" uid="uid://dhp7pbmu7jp6l" path="res://scripts/levels/tutorial/out_changer.gd" id="11_bccqr"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_qsgy2"]
-[ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="12_wetuf"]
 [ext_resource type="PackedScene" uid="uid://ddknrr0c0g61u" path="res://scenes/car_taxi.tscn" id="13_412yd"]
 [ext_resource type="Script" uid="uid://ba5b6har3t4hj" path="res://scripts/levels/tutorial/taxi_driver.gd" id="14_q4sk1"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="15_57qb2"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="15_ioyx7"]
+[ext_resource type="PackedScene" uid="uid://drus5x6rx3d4r" path="res://scenes/levels/tutorial/01_fall.tscn" id="16_stanj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -36,9 +37,6 @@ size = Vector2(112, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wetuf"]
 size = Vector2(1326, 928)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_412yd"]
-size = Vector2(152, 140)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wetuf"]
 font = ExtResource("8_8aks5")
@@ -285,6 +283,9 @@ font_color = Color(1, 0.9882353, 0.2509804, 1)
 font = ExtResource("8_8aks5")
 font_color = Color(1, 0.9882353, 0.2509804, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si4wd"]
+size = Vector2(152, 140)
+
 [node name="02_town" type="Node2D"]
 script = ExtResource("1_aqflf")
 
@@ -405,14 +406,6 @@ script = ExtResource("11_bccqr")
 position = Vector2(2649, 163)
 shape = SubResource("RectangleShape2D_wetuf")
 
-[node name="ToFall" type="Area2D" parent="."]
-position = Vector2(-5948, -318)
-script = ExtResource("12_wetuf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToFall"]
-position = Vector2(3199, 42)
-shape = SubResource("RectangleShape2D_412yd")
-
 [node name="Label5" type="Label" parent="."]
 offset_left = 3266.0
 offset_top = -478.0
@@ -475,10 +468,17 @@ text = " |
 "
 label_settings = SubResource("LabelSettings_ioyx7")
 
+[node name="SceneChange" parent="." instance=ExtResource("15_ioyx7")]
+position = Vector2(-6022, -580)
+scene = ExtResource("16_stanj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(3274, 302)
+shape = SubResource("RectangleShape2D_si4wd")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
-[connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
 [connection signal="body_entered" from="CarTaxi/TaxiDriver" to="CarTaxi/TaxiDriver" method="_on_body_entered"]
 [connection signal="body_exited" from="CarTaxi/TaxiDriver" to="CarTaxi/TaxiDriver" method="_on_body_exited"]
 [connection signal="animation_finished" from="CarTaxi/TaxiDriver/AnimationPlayer" to="CarTaxi/TaxiDriver" method="_on_animation_player_animation_finished"]

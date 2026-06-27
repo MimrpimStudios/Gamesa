@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cad6rx7xyc7ve"]
+[gd_scene load_steps=16 format=4 uid="uid://cad6rx7xyc7ve"]
 
 [ext_resource type="Script" uid="uid://csnfutcj5lo7y" path="res://scripts/levels/tutorial/sewers_music.gd" id="1_s2utp"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_s2utp"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_doph4"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_omsuc"]
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="8_xkiqu"]
-[ext_resource type="Script" uid="uid://bafutib6h7seb" path="res://scripts/levels/tutorial/to_stoky_2.gd" id="9_s2utp"]
 [ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="9_uam42"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="10_xgd2d"]
+[ext_resource type="PackedScene" uid="uid://b76pppo3qwq2x" path="res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn" id="11_05ikd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -104,14 +105,6 @@ script = ExtResource("9_uam42")
 position = Vector2(7134, 2604)
 shape = SubResource("SegmentShape2D_uam42")
 
-[node name="To_stoky_2" type="Area2D" parent="."]
-position = Vector2(-3068, 80)
-script = ExtResource("9_s2utp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="To_stoky_2"]
-position = Vector2(7134, 2604)
-shape = SubResource("SegmentShape2D_uam42")
-
 [node name="Player" parent="." instance=ExtResource("7_omsuc")]
 position = Vector2(3269, 2807)
 
@@ -125,7 +118,13 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
+[node name="SceneChange" parent="." instance=ExtResource("10_xgd2d")]
+scene = ExtResource("11_05ikd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(4066, 2684)
+shape = SubResource("SegmentShape2D_uam42")
+
 [connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
-[connection signal="body_entered" from="To_stoky_2" to="To_stoky_2" method="_on_body_entered"]
 
 [editable path="Killzone"]

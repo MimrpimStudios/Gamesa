@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bsxpjf5638ak"]
+[gd_scene load_steps=28 format=4 uid="uid://bsxpjf5638ak"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_ud6jg"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_5s6bi"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cbcrqqtuhxedo" path="res://scenes/car.tscn" id="11_2et60"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="12_6ioip"]
 [ext_resource type="Script" uid="uid://chvcevrp8rub2" path="res://scripts/levels/tutorial/car_animation.gd" id="12_6t27d"]
-[ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="13_ysrfm"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="13_ysrfm"]
+[ext_resource type="PackedScene" uid="uid://drus5x6rx3d4r" path="res://scenes/levels/tutorial/01_fall.tscn" id="14_b7715"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_usm4b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uugbn"]
@@ -608,14 +609,11 @@ damage = 2
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_3mrxu")
 
-[node name="ToFall" type="Area2D" parent="."]
-position = Vector2(74, 263)
-script = ExtResource("13_ysrfm")
+[node name="SceneChange" parent="." instance=ExtResource("13_ysrfm")]
+scene = ExtResource("14_b7715")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToFall"]
-position = Vector2(3199, 42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(3274, 302)
 shape = SubResource("RectangleShape2D_6t27d")
-
-[connection signal="body_entered" from="ToFall" to="ToFall" method="_on_body_entered"]
 
 [editable path="Killzone"]

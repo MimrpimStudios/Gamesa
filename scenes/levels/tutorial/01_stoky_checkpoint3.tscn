@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cvt0j85wf4tu4"]
+[gd_scene load_steps=17 format=4 uid="uid://cvt0j85wf4tu4"]
 
 [ext_resource type="Script" uid="uid://csnfutcj5lo7y" path="res://scripts/levels/tutorial/sewers_music.gd" id="1_24yq5"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_05tvc"]
@@ -7,9 +7,10 @@
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_6pepg"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_804a8"]
 [ext_resource type="PackedScene" uid="uid://y8l6d3jkqlf3" path="res://scenes/rat_smash_platform.tscn" id="7_7gl1d"]
-[ext_resource type="Script" uid="uid://csiv83boaj1yr" path="res://scripts/levels/tutorial/to_boss.gd" id="8_mqlpy"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="10_05tvc"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="10_24yq5"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="10_i4egj"]
+[ext_resource type="PackedScene" uid="uid://cqqi8mo4huwag" path="res://scenes/levels/tutorial/01_boss1.tscn" id="11_gf7sa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -20,14 +21,14 @@ size = Vector2(336, 79)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kf7op"]
 size = Vector2(1584, 63.5)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_uam42"]
-a = Vector2(20, 44)
-b = Vector2(20, 123)
-
 [sub_resource type="LabelSettings" id="LabelSettings_05tvc"]
 font = ExtResource("10_24yq5")
 font_size = 128
 font_color = Color(0.5729883, 0.5729883, 0.57298815, 0.49411765)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uam42"]
+a = Vector2(20, 44)
+b = Vector2(20, 123)
 
 [node name="01_stoky" type="Node2D"]
 script = ExtResource("1_24yq5")
@@ -99,15 +100,8 @@ position = Vector2(5752, 2839)
 [node name="RatSmashPlatform8" parent="." instance=ExtResource("7_7gl1d")]
 position = Vector2(5906, 2839)
 
-[node name="ToBoss" type="Area2D" parent="."]
-script = ExtResource("8_mqlpy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToBoss"]
-position = Vector2(7134, 2604)
-shape = SubResource("SegmentShape2D_uam42")
-
 [node name="Player" parent="." instance=ExtResource("10_i4egj")]
-position = Vector2(4976, 2727)
+position = Vector2(4944, 2727)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
@@ -130,6 +124,11 @@ horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[connection signal="body_entered" from="ToBoss" to="ToBoss" method="_on_body_entered"]
+[node name="SceneChange" parent="." instance=ExtResource("10_05tvc")]
+scene = ExtResource("11_gf7sa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(7134, 2604)
+shape = SubResource("SegmentShape2D_uam42")
 
 [editable path="Killzone"]

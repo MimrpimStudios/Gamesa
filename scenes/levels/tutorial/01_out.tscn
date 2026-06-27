@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://earg25rronqg"]
+[gd_scene load_steps=35 format=4 uid="uid://earg25rronqg"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_k6rpo"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_uc4g0"]
@@ -17,10 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://b0s4ckgv8lwax" path="res://scenes/ufo.tscn" id="17_je17w"]
 [ext_resource type="AudioStream" uid="uid://41o6h3kxd7uy" path="res://assets/Sounds/ufo.wav" id="18_w2o16"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="19_2mrnh"]
-[ext_resource type="Script" uid="uid://cpt5ey7hh3yyw" path="res://scripts/levels/tutorial/town_changer.gd" id="20_aax5y"]
 [ext_resource type="PackedScene" uid="uid://d0y8nblkvks8v" path="res://scenes/objects/door.tscn" id="20_dbi5j"]
+[ext_resource type="PackedScene" uid="uid://rm5bf1y4ee8g" path="res://scenes/objects/scene_change.tscn" id="21_1q0pb"]
 [ext_resource type="AudioStream" uid="uid://bnhhhjyjmnron" path="res://assets/Sounds/Music/bird_singing.mp3" id="21_dbi5j"]
 [ext_resource type="PackedScene" uid="uid://chr48v8vqmyrr" path="res://scenes/levels/tutorial/01_house_in.tscn" id="21_xfrl7"]
+[ext_resource type="PackedScene" uid="uid://bsxpjf5638ak" path="res://scenes/levels/tutorial/01_town.tscn" id="22_xfrl7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qinkk"]
 distance = -130.0
@@ -109,8 +110,8 @@ _data = {
 &"zoom in": SubResource("Animation_xfrl7")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aax5y"]
-size = Vector2(1326, 928)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfrl7"]
+size = Vector2(423, 529)
 
 [node name="01Out" type="Node2D"]
 script = ExtResource("1_k6rpo")
@@ -341,14 +342,6 @@ offset_bottom = 372.0
 text = "AVOID CARS"
 label_settings = ExtResource("19_2mrnh")
 
-[node name="TownChanger" type="Area2D" parent="."]
-position = Vector2(-12, 0)
-script = ExtResource("20_aax5y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TownChanger"]
-position = Vector2(2649, 163)
-shape = SubResource("RectangleShape2D_aax5y")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(493, -2)
 stream = ExtResource("21_dbi5j")
@@ -507,6 +500,14 @@ bus = &"Music"
 position = Vector2(488, 360)
 scene = ExtResource("21_xfrl7")
 
+[node name="SceneChange" parent="." instance=ExtResource("21_1q0pb")]
+position = Vector2(30, 70)
+scene = ExtResource("22_xfrl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange"]
+position = Vector2(2159.5, 23.5)
+shape = SubResource("RectangleShape2D_xfrl7")
+
 [connection signal="body_entered" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraZoomOut" to="CameraZoomOut" method="_on_body_exited"]
 [connection signal="body_entered" from="CameraZoomIn" to="CameraZoomIn" method="_on_body_entered"]
@@ -515,7 +516,6 @@ scene = ExtResource("21_xfrl7")
 [connection signal="body_entered" from="Secret01" to="Secret01" method="_on_body_entered"]
 [connection signal="timeout" from="Secret01/AudioStreamPlayer/Timer" to="Secret01" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="Secret01/AnimationPlayer" to="Secret01" method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="TownChanger" to="TownChanger" method="_on_body_entered"]
 
 [editable path="Killzone"]
 [editable path="ufo"]
