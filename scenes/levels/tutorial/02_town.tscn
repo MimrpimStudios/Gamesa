@@ -101,10 +101,14 @@ rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="Label" type="Label" parent="Player"]
-offset_left = 1549.0
-offset_top = -547.0
-offset_right = 1670.0
-offset_bottom = -499.0
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.5
+offset_top = -48.0
+offset_right = 60.5
+grow_horizontal = 2
 text = "PRESS \"E\" OR \"I\" FOR
 ENTERING..."
 label_settings = ExtResource("14_nem7t")
