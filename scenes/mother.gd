@@ -19,6 +19,7 @@ const JUMP_VELOCITY = -400.0
 
 
 func _ready() -> void:
+	print("mother is ready")
 	animated_sprite_2d.play(anim)
 	animated_sprite_2d.flip_h = flip_h
 	animated_sprite_2d.flip_v = flip_v
