@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b4chrjqbpmsl8"]
+[gd_scene load_steps=14 format=4 uid="uid://b4chrjqbpmsl8"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_v3jdr"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_vu4qm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_vu4qm"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="8_parmh"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="9_liqfr"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="11_7r4d6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
@@ -29,7 +30,7 @@ position = Vector2(74, 263)
 tile_map_data = PackedByteArray("AAAdAAYABAACAAAAAAAcAAYABAACAAAAAAAbAAYABAACAAAAAAAeAAYABAABAAAAAAAeAAUABAABAAAAAAAeAAQABAABAAAAAAAeAAMABAABAAAAAAAdAAMABAACAAAAAAAcAAMABAACAAAAAAAbAAMABAACAAAAAAAaAAYABAACAAAAAAAZAAYABAACAAAAAAAYAAYABAACAAAAAAAXAAYABAACAAAAAAAWAAYABAACAAAAAAAVAAYABAACAAAAAAAUAAYABAACAAAAAAATAAYABAACAAAAAAASAAYABAABAAAAAAASAAUABAABAAAAAAASAAQABAABAAAAAAASAAMABAABAAAAAAATAAMABAAAAAAAAAAUAAMABAAAAAAAAAAVAAMABAAAAAAAAAAaAAMABAAAAAAAAAAeAAIABAABAAAAAAAeAAEABAABAAAAAAAeAAAABAABAAAAAAASAAIABAABAAAAAAASAAEABAABAAAAAAASAAAABAABAAAAAAATAAAABAACAAAAAAAUAAAABAACAAAAAAAVAAAABAACAAAAAAAWAAAABAACAAAAAAAXAAAABAACAAAAAAAYAAAABAACAAAAAAAZAAAABAACAAAAAAAaAAAABAACAAAAAAAbAAAABAACAAAAAAAcAAAABAACAAAAAAAdAAAABAACAAAAAAATAAIACgAGAAAAAAAUAAIACgAHAAAAAAAcAAIACgAVAAUAAAAdAAIACgAWAAUAAAATAAUACgAGAAIAAAAUAAUACgAHAAIAAAAXAAUACgARAAoAAAAYAAUACgATAAoAAAA=")
 tile_set = ExtResource("1_vu4qm")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_v3jdr")]
+[node name="Player" parent="." instance=ExtResource("2_v3jdr")]
 position = Vector2(391, 311)
 
 [node name="Screen" parent="." instance=ExtResource("3_parmh")]
@@ -90,6 +91,11 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="Mother" parent="." instance=ExtResource("11_7r4d6")]
+position = Vector2(389, 355)
+anim = "sleeping"
+flip_h = true
 
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]

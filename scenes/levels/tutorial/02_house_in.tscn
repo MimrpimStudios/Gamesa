@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dwdqh7xd1pqj1"]
+[gd_scene load_steps=13 format=4 uid="uid://dwdqh7xd1pqj1"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_lajg7"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_okn7e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_m0awn"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_qs2bc"]
 [ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="9_jrfrc"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="10_lajg7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="10_o160g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
@@ -80,6 +81,11 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="Mother" parent="." instance=ExtResource("10_lajg7")]
+position = Vector2(389, 355)
+anim = "sleeping"
+flip_h = true
 
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
