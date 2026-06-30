@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=32 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="7_opiuy"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="8_8aks5"]
 [ext_resource type="Script" uid="uid://bikijxrbwo2we" path="res://scripts/levels/tutorial/area_2d2.gd" id="9_bccqr"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="10_57qb2"]
 [ext_resource type="Script" uid="uid://dhp7pbmu7jp6l" path="res://scripts/levels/tutorial/out_changer.gd" id="11_bccqr"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_qsgy2"]
 [ext_resource type="Script" uid="uid://b2k32mfblscjh" path="res://scripts/levels/tutorial/to_fall.gd" id="12_wetuf"]
@@ -326,6 +327,17 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="Label" type="Label" parent="Player"]
+unique_name_in_owner = true
+offset_left = -60.0
+offset_top = -51.0
+offset_right = 61.0
+offset_bottom = -3.0
+text = "PRESS \"E\" OR \"I\" FOR
+ENTERING..."
+label_settings = ExtResource("10_57qb2")
+horizontal_alignment = 1
 
 [node name="Killzone" parent="." instance=ExtResource("7_opiuy")]
 position = Vector2(524, 271)

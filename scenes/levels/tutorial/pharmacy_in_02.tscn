@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://b77hgii3ajtba"]
+[gd_scene load_steps=15 format=4 uid="uid://b77hgii3ajtba"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_ulqc1"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_bw8qp"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_r2o2n"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_wa2xj"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="5_bw8qp"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="5_svk47"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="6_puue0"]
 [ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="6_ulqc1"]
@@ -48,6 +49,17 @@ position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
+
+[node name="Label" type="Label" parent="Player"]
+unique_name_in_owner = true
+offset_left = -60.0
+offset_top = -51.0
+offset_right = 61.0
+offset_bottom = -3.0
+text = "PRESS \"E\" OR \"I\" FOR
+EXITING..."
+label_settings = ExtResource("5_bw8qp")
+horizontal_alignment = 1
 
 [node name="Screen" parent="." instance=ExtResource("5_svk47")]
 follow_viewport_enabled = false
