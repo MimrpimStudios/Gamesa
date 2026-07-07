@@ -164,10 +164,9 @@ script = ExtResource("1_joi0l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8.25)
 sprite_frames = SubResource("SpriteFrames_rhne5")
-animation = &"sleeping"
+animation = &"stand"
 autoplay = "stand"
-frame = 2
-frame_progress = 0.8760147
+frame_progress = 0.4166667
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -7.5)

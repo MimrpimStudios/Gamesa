@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0y8nblkvks8v"]
+[gd_scene load_steps=4 format=3 uid="uid://djpmmtdfiuurp"]
 
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="1_hpvv5"]
 [ext_resource type="Script" uid="uid://d3fitqe0cildq" path="res://scripts/door.gd" id="1_uvdjg"]
