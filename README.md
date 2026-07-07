@@ -21,3 +21,7 @@ Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for m
 > add it on [issue tracker](https://github.com/MimrpimStudios/Gamesa/issues/new/choose) as a bug
 # I want/don't want this in game
 > add it on [issue tracker](https://github.com/MimrpimStudios/Gamesa/issues/new/choose) as a feature request
+
+# Thanks
+Thanks to icon links on main menu. Icons by Yūki (for more info look on the [Licence](https://github.com/MimrpimStudios/Gamesa/blob/main/LICENSE_ICONS.txt))
+Thanks to the Github (icon Icons from Pixel Icon Library by HackerNoon)
