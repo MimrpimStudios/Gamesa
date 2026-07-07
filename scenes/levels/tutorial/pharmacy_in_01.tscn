@@ -218,6 +218,7 @@ tile_set = ExtResource("3_tv45f")
 position = Vector2(545, 359)
 
 [node name="DialogPlayer" parent="Player" index="3"]
+offset_bottom = -23.0
 text = "MY MOTHER IS SICK
 AND I NEED SOME
 PILLS FOR HER"
