@@ -29,7 +29,8 @@ const pharmacy_in_01_scene = "res://scenes/levels/tutorial/pharmacy_in_01.tscn"
 const pharmacy_in_02_scene = "res://scenes/levels/tutorial/pharmacy_in_02.tscn"
 const town_02_back_home_scene = "res://scenes/levels/tutorial/town_02_back_home.tscn"
 const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
-const house_02_scene_in = "res://scenes/levels/tutorial/02_house_in.tscn"
+const house_02_in_scene = "res://scenes/levels/tutorial/02_house_in.tscn"
+
 var level
 var launcher_type = ""
 var launcher_version = ""

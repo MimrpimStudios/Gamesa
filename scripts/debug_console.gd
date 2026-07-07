@@ -6,13 +6,15 @@ var commands = [
 	"help",
 	"clear",
 	"speed",
-	"god"
+	"god",
+	"level"
 ]
 var syntax = [
 	" - Shows all available commands",
 	" - Clears console",
 	" <set|reset> <float> - Sets the player speed",
-	" - Enable god mode (can not turn off, only by killing itself)"
+	" - Enable god mode (can not turn off, only by killing itself in instakill like spikes etc.)",
+	"<level name|help> - changes level"
 ]
 
 @onready var root: CanvasLayer = $"."
@@ -38,6 +40,7 @@ func _input(_event: InputEvent) -> void:
 			PREVIOUS_MOUSE_MODE = Input.mouse_mode # Uložíme si, jak to měl hráč předtím
 			root.show()
 			line_edit.clear()
+			await get_tree().create_timer(0.1).timeout
 			line_edit.grab_focus()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			global_var.player_movement = false
@@ -86,7 +89,31 @@ func _on_line_edit_text_submitted(text: String) -> void:
 		global_var.player_max_health = 999
 		global_var.player_health = 999
 		rich_text_label.append_text("Godmode on\n")
-	
-	# Vyčistíme text box a necháme v něm kurzor pro další psaní
+	elif command == "level":
+		# KONTROLA: arg1 nesmí být null a zároveň nesmí být prázdný string
+		if arg1 and arg1 != "":
+			var konstanty = global_var.get_script().get_script_constant_map()
+			
+			if arg1 == "help":
+				rich_text_label.append_text("Available levels:" + "\n")
+				for klic in konstanty.keys():
+					var nazev_konstanty : String = str(klic)
+					
+					if nazev_konstanty.ends_with("_scene") and not "main_menu" in nazev_konstanty:
+						var cisty_nazev = nazev_konstanty.replace("_scene", "")
+						rich_text_label.append_text("- " + cisty_nazev + "\n")
+			else:
+				var hledana_konstanta = (arg1 + "_scene").to_lower()
+				
+				if hledana_konstanta in konstanty:
+					var scene = konstanty[hledana_konstanta]
+					rich_text_label.append_text("Changing level into " + str(scene) + "\n")
+					get_tree().change_scene_to_file(scene)
+				else:
+					rich_text_label.append_text("Error: This level does not exist\n")
+
+
 	line_edit.clear()
-	line_edit.call_deferred("grab_focus")
+	line_edit.release_focus()
+	await get_tree().create_timer(0.1).timeout
+	line_edit.grab_focus()
