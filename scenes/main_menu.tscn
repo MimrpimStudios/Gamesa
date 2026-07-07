@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=32 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://crtdw180vcd5l" path="res://assets/Textures/back.png" id="12_flqon"]
 [ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scripts/launcher_info_popup.gd" id="13_rcqid"]
+[ext_resource type="Script" uid="uid://dok148vk8kg6c" path="res://scenes/links.gd" id="14_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://cnitwi75la8tb" path="res://assets/Textures/links/28pxl/round square/aseprite-28a.png" id="15_hstxw"]
+[ext_resource type="Texture2D" uid="uid://cyr63ut51kjck" path="res://assets/Textures/links/28pxl/round square/godot28a.png" id="16_8egab"]
+[ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
+[ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -79,6 +84,11 @@ script = ExtResource("1_wu84c")
 position = Vector2(-16240, -13307.001)
 scale = Vector2(5, 5)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8ln24")
+autoplay = true
+bus = &"Music"
+
 [node name="Debug" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -90,12 +100,15 @@ script = ExtResource("6_oa1go")
 
 [node name="LabelVersion" type="Label" parent="Debug"]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
+offset_left = -245.0
 offset_top = -23.0
-offset_right = 98.0
+offset_right = -20.0
+grow_horizontal = 0
 grow_vertical = 0
 text = "Version: X.X.X.X"
 label_settings = ExtResource("7_tbmy8")
@@ -109,8 +122,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -227.0
-offset_top = -23.0
+offset_top = -47.0
 offset_right = -5.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "WARNING: THIS IS EARLY ACCESS ONLY"
@@ -145,7 +159,6 @@ texture_pressed = SubResource("AtlasTexture_l6cm7")
 stretch_mode = 0
 
 [node name="TextureButtonExit" type="TextureButton" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -162,12 +175,22 @@ texture_normal = SubResource("AtlasTexture_wu84c")
 texture_pressed = SubResource("AtlasTexture_8ln24")
 stretch_mode = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_8ln24")
-autoplay = true
-bus = &"Music"
+[node name="LauncherInfoDialog" type="AcceptDialog" parent="."]
+oversampling_override = 1.0
+title = "Warning!"
+initial_position = 2
+size = Vector2i(450, 138)
+unresizable = true
+always_on_top = true
+popup_window = true
+ok_button_text = "Open website for downloading latest launcher version"
+dialog_text = "                       You are not using our launcher
+                           or using outdated version!"
+dialog_close_on_escape = false
+script = ExtResource("13_rcqid")
 
 [node name="GameChoosePanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,24 +251,60 @@ texture_normal = SubResource("AtlasTexture_j7ex8")
 texture_pressed = SubResource("AtlasTexture_a8gd2")
 stretch_mode = 0
 
-[node name="LauncherInfoDialog" type="AcceptDialog" parent="."]
-oversampling_override = 1.0
-title = "Warning!"
-initial_position = 2
-size = Vector2i(450, 138)
-visible = true
-unresizable = true
-always_on_top = true
-popup_window = true
-ok_button_text = "Open website for downloading latest launcher version"
-dialog_text = "                       You are not using our launcher
-                           or using outdated version!"
-dialog_close_on_escape = false
-script = ExtResource("13_rcqid")
+[node name="Links" type="Node" parent="."]
+script = ExtResource("14_a8gd2")
+
+[node name="TextureButton" type="TextureButton" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -31.0
+offset_right = 124.0
+offset_bottom = -3.0
+grow_vertical = 0
+texture_normal = ExtResource("15_hstxw")
+
+[node name="TextureButton2" type="TextureButton" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -32.0
+offset_right = 92.0
+offset_bottom = -4.0
+grow_vertical = 0
+texture_normal = ExtResource("16_8egab")
+
+[node name="TextureButton3" type="TextureButton" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 29.0
+offset_bottom = -3.0
+grow_vertical = 0
+texture_normal = ExtResource("17_gw5y6")
+
+[node name="TextureButton4" type="TextureButton" parent="Links"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -31.0
+offset_right = 144.0
+offset_bottom = 81.0
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("17_8egab")
 
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
+[connection signal="confirmed" from="LauncherInfoDialog" to="LauncherInfoDialog" method="_on_confirmed"]
 [connection signal="pressed" from="GameChoosePanel/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="confirmed" from="LauncherInfoDialog" to="LauncherInfoDialog" method="_on_confirmed"]
+[connection signal="pressed" from="Links/TextureButton" to="Links" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Links/TextureButton2" to="Links" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Links/TextureButton3" to="Links" method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Links/TextureButton4" to="Links" method="_on_texture_button_4_pressed"]
