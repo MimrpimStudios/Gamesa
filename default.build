@@ -323,7 +323,6 @@
 		"TileData",
 		"TileMap",
 		"TileMapPattern",
-		"TileSet",
 		"TileSetScenesCollectionSource",
 		"TouchScreenButton",
 		"Translation",
