@@ -105,13 +105,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -245.0
-offset_top = -23.0
-offset_right = -20.0
+offset_left = -282.0
+offset_top = -26.0
+offset_right = -5.0
+offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Version: X.X.X.X"
+text = "Gamesa version: 0.0.2.7 or version: 1.0-t2.XXX"
 label_settings = ExtResource("7_tbmy8")
+horizontal_alignment = 2
 uppercase = true
 
 [node name="LabelEarlyAccess" type="Label" parent="Debug"]
