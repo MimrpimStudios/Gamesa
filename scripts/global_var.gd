@@ -31,6 +31,12 @@ const town_02_back_home_scene = "res://scenes/levels/tutorial/town_02_back_home.
 const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
 const house_02_in_scene = "res://scenes/levels/tutorial/02_house_in.tscn"
 
+const menus = [
+	"res://scenes/main_menu.tscn",
+	"res://scenes/main.tscn",
+	
+]
+
 var level
 var launcher_type = ""
 var launcher_version = ""

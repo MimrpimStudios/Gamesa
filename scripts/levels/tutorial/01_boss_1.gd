@@ -54,9 +54,6 @@ func _process(_delta: float) -> void:
 		animation_player.play("music-off")
 
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_released("esc"):
-		get_tree().change_scene_to_file(global_var.main_menu_scene)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

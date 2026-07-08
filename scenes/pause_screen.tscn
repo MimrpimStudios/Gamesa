@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3lv6c4tk3kww"]
+
+[ext_resource type="Script" uid="uid://bjfd5x2ck5oh8" path="res://scenes/pause_screen.gd" id="1_gchx3"]
+[ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="2_hr2n2"]
+[ext_resource type="Texture2D" uid="uid://c7ur1guja3ix4" path="res://assets/Textures/exit.png" id="3_27awe"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="4_27awe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duq8p"]
+atlas = ExtResource("2_hr2n2")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k26m1"]
+load_path = "res://.godot/imported/buttons.png-567ff83775e0a9cfeeb08743175b147c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o31j6"]
+atlas = SubResource("CompressedTexture2D_k26m1")
+region = Rect2(99, 2, 90, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_213y4"]
+atlas = ExtResource("3_27awe")
+region = Rect2(2, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lubob"]
+atlas = ExtResource("3_27awe")
+region = Rect2(99, 2, 90, 26)
+
+[sub_resource type="Theme" id="Theme_duq8p"]
+Label/fonts/font = ExtResource("4_27awe")
+
+[sub_resource type="LabelSettings" id="LabelSettings_k26m1"]
+font_size = 128
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(7, 7)
+
+[node name="PauseScreen" type="CanvasLayer"]
+process_mode = 3
+layer = 1000
+script = ExtResource("1_gchx3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="Continue" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -93.0
+offset_right = 150.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_duq8p")
+texture_pressed = SubResource("AtlasTexture_o31j6")
+stretch_mode = 4
+
+[node name="Main menu" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 3.0
+offset_right = 150.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_213y4")
+texture_pressed = SubResource("AtlasTexture_lubob")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -215.0
+offset_right = 184.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_duq8p")
+text = "Paused..."
+label_settings = SubResource("LabelSettings_k26m1")
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Main menu" to="." method="_on_main_menu_pressed"]

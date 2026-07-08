@@ -302,9 +302,9 @@ volume_db = 10.0
 [node name="Hints" type="Node" parent="."]
 
 [node name="Label2" type="Label" parent="Hints"]
-offset_left = 808.0
+offset_left = 809.0
 offset_top = 308.0
-offset_right = 915.0
+offset_right = 916.0
 offset_bottom = 356.0
 text = "YOU CAN JUMP BY 
 \"W\" \"SPACE\" OR 
@@ -312,13 +312,13 @@ BY ARROW UP"
 label_settings = ExtResource("19_2mrnh")
 
 [node name="Label7" type="Label" parent="Hints"]
-offset_left = 543.0
-offset_top = 308.0
-offset_right = 764.0
-offset_bottom = 356.0
-text = "YOU CAN PRESS \"ESC\" FOR 
-RETURNING INTO MAIN MENU 
-(IT IS SAVING AUTOMATICALY)"
+offset_left = 538.0
+offset_top = 307.0
+offset_right = 775.0
+offset_bottom = 355.0
+text = "YOU CAN PRESS \"ESC\" FOR PAUSING
+(SAVING IS AUTOMATIC, YOU CAN
+SEE SAVING... TEXT IN THE RIGHT CORNER"
 label_settings = ExtResource("19_2mrnh")
 
 [node name="Label3" type="Label" parent="Hints"]
