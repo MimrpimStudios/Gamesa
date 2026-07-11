@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=39 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="5_8ln24"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="5_tbmy8"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="6_oa1go"]
+[ext_resource type="Script" uid="uid://dofvb0j6jocw0" path="res://scenes/label_credits.gd" id="7_hstxw"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="7_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cvmijwj11au16" path="res://assets/Textures/load.png" id="9_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="9_lgwnu"]
@@ -18,6 +19,52 @@
 [ext_resource type="Texture2D" uid="uid://cyr63ut51kjck" path="res://assets/Textures/links/28pxl/round square/godot28a.png" id="16_8egab"]
 [ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
 [ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hstxw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw5y6"]
+
+[sub_resource type="Theme" id="Theme_1dfpl"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("5_tbmy8")
+Button/styles/disabled = SubResource("StyleBoxEmpty_a8gd2")
+Button/styles/focus = SubResource("StyleBoxLine_hstxw")
+Button/styles/hover = SubResource("StyleBoxFlat_8egab")
+Button/styles/normal = SubResource("StyleBoxEmpty_8egab")
+Button/styles/pressed = SubResource("StyleBoxEmpty_gw5y6")
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("5_tbmy8")
@@ -106,15 +153,61 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -281.0
-offset_top = -26.0
+offset_top = -47.0
 offset_right = -4.0
-offset_bottom = -3.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Gamesa version: 0.0.2.7 or version: 1.0-t2.XXX"
 label_settings = ExtResource("7_tbmy8")
 horizontal_alignment = 2
 uppercase = true
+
+[node name="LabelCredits" type="Label" parent="Debug"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -26.0
+offset_right = -4.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_1dfpl")
+text = "By MimrpimStudios (Click here for Credits)..."
+label_settings = ExtResource("7_tbmy8")
+script = ExtResource("7_hstxw")
+
+[node name="ColorRect" type="ColorRect" parent="Debug/LabelCredits"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -11.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="Debug/LabelCredits/ColorRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.45882353)
 
 [node name="LabelEarlyAccess" type="Label" parent="Debug"]
 layout_mode = 1
@@ -123,10 +216,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -227.0
-offset_top = -47.0
-offset_right = -5.0
-offset_bottom = -24.0
+offset_left = -226.0
+offset_top = -68.0
+offset_right = -4.0
+offset_bottom = -45.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "WARNING: THIS IS EARLY ACCESS ONLY"
@@ -300,6 +393,8 @@ grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("17_8egab")
 
+[connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
 [connection signal="confirmed" from="LauncherInfoDialog" to="LauncherInfoDialog" method="_on_confirmed"]
