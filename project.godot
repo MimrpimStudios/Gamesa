@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Gamesa"
-config/version="0.0.2.710"
+config/version="0.0.2.720"
 config/tags=PackedStringArray("gamesa")
-run/main_scene="uid://cgqyegbqpg2y5"
+run/main_scene="uid://c8oxdwwot3st"
 config/custom_user_dir_name="gamesa"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60

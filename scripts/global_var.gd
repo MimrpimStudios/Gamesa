@@ -1,5 +1,6 @@
 extends Node
 
+var intro_play = true
 var player_show_speakNPC = false
 var player_show_speakNPC_color: Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
@@ -9,6 +10,7 @@ var is_player_smashing_disabled = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
+const main_scene = "res://scenes/main.tscn"
 const town_01_scene = "res://scenes/levels/tutorial/01_town.tscn"
 const house_01_scene = "res://scenes/levels/tutorial/01_house.tscn"
 const house_01_in_scene = "res://scenes/levels/tutorial/01_house_in.tscn"
@@ -21,7 +23,7 @@ const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
 const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
-const version = "1.0-t2.710"
+const version = "1.0-t2.720"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
