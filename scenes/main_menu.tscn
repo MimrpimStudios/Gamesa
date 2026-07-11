@@ -181,6 +181,7 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_1dfpl")
 text = "By MimrpimStudios (Click here for Credits)..."
 label_settings = ExtResource("7_tbmy8")
+uppercase = true
 script = ExtResource("7_hstxw")
 
 [node name="ColorRect" type="ColorRect" parent="Debug/LabelCredits"]
