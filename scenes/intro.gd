@@ -12,6 +12,7 @@ const DRUM_LOOP = preload("uid://bhwbubaca3864")
 var camera = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	mimrpim_studios.hide()
 	label.hide()
 	if global_var.intro_play:
