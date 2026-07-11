@@ -51,6 +51,13 @@ func _ready() -> void:
 		await get_tree().create_timer(3).timeout
 		label.hide()
 		await get_tree().create_timer(1.5).timeout
+		
+		label.set_text("Playtested by Mikz")
+		label.show()
+		await get_tree().create_timer(3).timeout
+		label.hide()
+		await get_tree().create_timer(1.5).timeout
+
 		collision_shape_2d.queue_free()
 		camera = false
 		await get_tree().create_timer(1.5).timeout

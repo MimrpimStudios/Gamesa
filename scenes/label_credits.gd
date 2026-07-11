@@ -21,4 +21,4 @@ func _on_mouse_exited() -> void:
 func _input(_event: InputEvent) -> void:
 	if color_rect.visible and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		global_var.intro_play = true
-		get_tree().change_scene_to_file(global_var.intro_scene)
+		get_tree().change_scene_to_file(global_var.credits_scene)

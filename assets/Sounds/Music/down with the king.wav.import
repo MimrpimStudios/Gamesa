@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dqod3qrgtl1e2"
+uid="uid://2u7bapbegjun"
 path="res://.godot/imported/down with the king.wav-fcd73935179bd53745c96bb7d1dc057f.sample"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/down with the king.wav-fcd73935179bd53745c96b
 [params]
 
 force/8_bit=false
-force/mono=true
+force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false

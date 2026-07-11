@@ -23,7 +23,7 @@ const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
 const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
-const version = "1.0-t2.720"
+const version = "1.0-t2.720-pre2"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -33,6 +33,7 @@ const town_02_back_home_scene = "res://scenes/levels/tutorial/town_02_back_home.
 const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
 const house_02_in_scene = "res://scenes/levels/tutorial/02_house_in.tscn"
 const intro_scene = "res://scenes/intro.tscn"
+const credits_scene = "res://scenes/credits.tscn"
 
 const menus = [
 	"res://scenes/main_menu.tscn",
