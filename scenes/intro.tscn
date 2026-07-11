@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c8oxdwwot3st"]
+[gd_scene load_steps=15 format=4 uid="uid://c8oxdwwot3st"]
 
 [ext_resource type="Script" uid="uid://dkowjvfiewjuf" path="res://scenes/intro.gd" id="1_es01l"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="1_yjqpq"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbcrqqtuhxedo" path="res://scenes/car.tscn" id="9_t1qkj"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="10_272cy"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="11_37iue"]
+[ext_resource type="AudioStream" uid="uid://dqod3qrgtl1e2" path="res://assets/Sounds/Music/down with the king.wav" id="12_n6p8m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t1qkj"]
 font = ExtResource("8_bu1yb")
@@ -46,6 +47,7 @@ position = Vector2(-1, -8)
 flip_h = true
 
 [node name="AnimatedSprite2Dtail" parent="Rat" index="3"]
+position = Vector2(-1, -8)
 flip_h = true
 
 [node name="Rat2" parent="." instance=ExtResource("1_yjqpq")]
@@ -114,6 +116,14 @@ zoom = Vector2(5, 5)
 limit_enabled = false
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_n6p8m")
+autoplay = true
+mix_target = 1
+bus = &"Music"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Rat"]
 [editable path="Player"]

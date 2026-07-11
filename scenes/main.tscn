@@ -7,6 +7,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_sugp2"]
 font = ExtResource("2_0wfyh")
 font_size = 128
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
 
 [node name="Main" type="Control"]
 layout_mode = 3

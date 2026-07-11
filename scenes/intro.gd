@@ -5,6 +5,9 @@ extends Node2D
 @onready var camera_2d: Camera2D = %Camera2D
 @onready var label: Label = $Player/Label
 @onready var collision_shape_2d: CollisionShape2D = $Player/CollisionShape2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
+const DRUM_LOOP = preload("uid://bhwbubaca3864")
 
 var camera = true
 # Called when the node enters the scene tree for the first time.
@@ -53,9 +56,15 @@ func _ready() -> void:
 		global_var.player_health = 0
 		global_var.intro_play = false
 	else:
+		audio_stream_player.stop()
 		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file(global_var.main_scene)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if camera:
 		camera_2d.global_position = player.global_position
+
+
+func _on_audio_stream_player_finished() -> void:
+	audio_stream_player.stream = DRUM_LOOP
+	audio_stream_player.play()
