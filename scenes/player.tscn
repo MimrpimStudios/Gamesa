@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdmijiqu81d1q"]
+[gd_scene load_steps=20 format=3 uid="uid://cdmijiqu81d1q"]
 
 [ext_resource type="Script" uid="uid://cia6u3d1l3ic3" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
@@ -32,6 +32,10 @@ region = Rect2(80, 0, 16, 17)
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_g2els")
 region = Rect2(96, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("2_g2els")
@@ -79,6 +83,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}],
+"loop": true,
+"name": &"sitting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ur7pv")
 }, {
 "duration": 1.0,
@@ -111,7 +123,6 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
 animation = &"stand"
 autoplay = "stand"
-frame_progress = 0.8948172
 
 [node name="Healthbar" type="Control" parent="AnimatedSprite2D"]
 layout_mode = 3

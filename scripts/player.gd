@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var animation = animated_sprite.animation
 
 
 func _process(_delta: float) -> void:
@@ -47,7 +48,8 @@ func _physics_process(delta):
 		# Play animations
 		if is_on_floor():
 			if direction == 0:
-				animated_sprite.play("stand")
+				if animation != "sitting":
+					animated_sprite.play("stand")
 		if direction > 0:
 			animated_sprite.play("left")
 		elif direction < 0:
@@ -57,10 +59,12 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			animated_sprite.play("stand")
+			if animation != "sitting":
+				animated_sprite.play("stand")
 		move_and_slide()
 	else:
-		animated_sprite.play("stand")
+		if animation != "sitting":
+			animated_sprite.play("stand")
 		velocity.x = 0
 		if not global_var.is_player_dead:
 			move_and_slide()

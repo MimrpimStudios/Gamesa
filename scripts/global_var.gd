@@ -1,6 +1,7 @@
 extends Node
 
 var intro_play = true
+var credits_true = false
 var player_show_speakNPC = false
 var player_show_speakNPC_color: Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
@@ -23,7 +24,7 @@ const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
 const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_01_scene
 const start_scene = main_menu_scene
-const version = "1.0-t2.720-pre2"
+const version = "1.0-t2.720-pre3"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -34,6 +35,7 @@ const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
 const house_02_in_scene = "res://scenes/levels/tutorial/02_house_in.tscn"
 const intro_scene = "res://scenes/intro.tscn"
 const credits_scene = "res://scenes/credits.tscn"
+const cicada_scene = "res://scenes/cidada.tscn"
 
 const menus = [
 	"res://scenes/main_menu.tscn",

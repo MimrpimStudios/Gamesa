@@ -17,4 +17,7 @@ func _process(_delta: float) -> void:
 
 func _on_video_stream_player_finished() -> void:
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file(global_var.main_menu_scene)
+	if global_var.credits_true:
+		get_tree().change_scene_to_file(global_var.cicada_scene)
+	else:
+		get_tree().change_scene_to_file(global_var.main_menu_scene)
