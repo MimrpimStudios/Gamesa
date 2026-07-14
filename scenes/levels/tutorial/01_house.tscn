@@ -31,7 +31,7 @@ tile_map_data = PackedByteArray("AAAdAAYABAACAAAAAAAcAAYABAACAAAAAAAbAAYABAACAAA
 tile_set = ExtResource("1_vu4qm")
 
 [node name="Player" parent="." instance=ExtResource("2_v3jdr")]
-position = Vector2(391, 311)
+position = Vector2(405, 358.925)
 
 [node name="Screen" parent="." instance=ExtResource("3_parmh")]
 follow_viewport_enabled = false

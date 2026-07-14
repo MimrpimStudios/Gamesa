@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ypw316n78fbr" path="res://assets/Textures/sprites/mother.png" id="1_t7ftk"]
 [ext_resource type="Texture2D" uid="uid://bskey76emcjmg" path="res://assets/Textures/sprites/mother_sleep.png" id="2_joi0l"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlo1k"]
+atlas = ExtResource("2_joi0l")
+region = Rect2(0, 0, 18, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbrus"]
 atlas = ExtResource("1_t7ftk")
 region = Rect2(0, 17, 16, 17)
@@ -28,10 +32,6 @@ region = Rect2(16, 34, 16, 17)
 atlas = ExtResource("1_t7ftk")
 region = Rect2(32, 34, 16, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlo1k"]
-atlas = ExtResource("2_joi0l")
-region = Rect2(0, 0, 18, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xu8l2"]
 atlas = ExtResource("2_joi0l")
 region = Rect2(0, 16, 18, 16)
@@ -54,6 +54,14 @@ region = Rect2(0, 0, 16, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rhne5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlo1k")
+}],
+"loop": true,
+"name": &"fake_sleep",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kbrus")
@@ -164,9 +172,8 @@ script = ExtResource("1_joi0l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8.25)
 sprite_frames = SubResource("SpriteFrames_rhne5")
-animation = &"stand"
+animation = &"fake_sleep"
 autoplay = "stand"
-frame_progress = 0.4166667
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -7.5)

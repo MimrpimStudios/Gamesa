@@ -8,7 +8,7 @@ func preview():
 	animated_sprite_2d.flip_h = flip_h
 	animated_sprite_2d.flip_v = flip_v
 
-@export_enum("stand", "left", "right", "sleep_start", "sleeping") var anim: String = "stand"
+@export_enum("stand", "left", "right", "fake_sleep", "sleep_start", "sleeping") var anim: String = "stand"
 @export var flip_h: bool
 @export var flip_v: bool
 @export_tool_button("Preview", "GuiVisibilityVisible") var preview_action = Callable(self, "preview")
