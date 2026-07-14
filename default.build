@@ -337,7 +337,6 @@
 		"UndoRedo",
 		"UniformSetCacheRD",
 		"VideoStreamPlayback",
-		"VideoStreamPlayer",
 		"ViewportTexture",
 		"VisibleOnScreenNotifier2D",
 		"VisualShaderNode",
