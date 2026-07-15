@@ -108,6 +108,7 @@ func _on_line_edit_text_submitted(text: String) -> void:
 				if hledana_konstanta in konstanty:
 					var scene = konstanty[hledana_konstanta]
 					rich_text_label.append_text("Changing level into " + str(scene) + "\n")
+					SewersMusic.stop()
 					get_tree().change_scene_to_file(scene)
 				else:
 					rich_text_label.append_text("Error: This level does not exist\n")

@@ -4,4 +4,7 @@
 
 [node name="AudioStreamPlayerSewersMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_6au30")
-bus = &"Music"
+volume_db = 24.0
+pitch_scale = 0.5
+mix_target = 2
+bus = &"Sewers music"

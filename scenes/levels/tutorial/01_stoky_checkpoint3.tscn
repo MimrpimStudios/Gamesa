@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://cvt0j85wf4tu4"]
 
-[ext_resource type="Script" uid="uid://csnfutcj5lo7y" path="res://scripts/levels/tutorial/sewers_music.gd" id="1_24yq5"]
+[ext_resource type="Script" uid="uid://4psjlbuoi6gi" path="res://scenes/levels/tutorial/01_stoky_checkpoint_3.gd" id="1_24yq5"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_05tvc"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_gf7sa"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_7it7e"]

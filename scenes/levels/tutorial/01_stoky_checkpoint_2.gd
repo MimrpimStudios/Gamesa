@@ -4,8 +4,8 @@ extends Node2D
 func _ready() -> void:
 	global_var.player_movement = true
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	SewersMusic.pitch_scale = 0.75
 	if not SewersMusic.playing:
-		SewersMusic.pitch_scale = 0.5
 		SewersMusic.play()
 	global_var.level = get_tree().current_scene.scene_file_path
 	global_var.save_level()
