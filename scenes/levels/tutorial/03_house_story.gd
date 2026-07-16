@@ -70,7 +70,6 @@ func story_02():
 	animation_player.play("fade 2")
 	await animation_player.animation_finished
 	await get_tree().create_timer(0.5).timeout
-	print(str(player.position))
 	get_tree().change_scene_to_file(global_var.house_02_in_scene)
 
 
