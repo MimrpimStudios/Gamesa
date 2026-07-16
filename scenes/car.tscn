@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbcrqqtuhxedo"]
+[gd_scene load_steps=8 format=3 uid="uid://cbcrqqtuhxedo"]
 
 [ext_resource type="Texture2D" uid="uid://cp4y2pinibsae" path="res://assets/Textures/sprites/car_red.png" id="1_c35m8"]
 [ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="2_qt2eu"]
@@ -28,6 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
 size = Vector2(36, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt2eu"]
+size = Vector2(22, 1)
+
 [node name="Car" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,3 +48,11 @@ stream = ExtResource("2_qt2eu")
 autoplay = true
 max_distance = 400.0
 bus = &"SFX"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_qt2eu")
