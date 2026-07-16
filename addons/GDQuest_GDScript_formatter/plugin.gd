@@ -61,9 +61,9 @@ func _init() -> void:
 		var default_shortcut := InputEventKey.new()
 		default_shortcut.echo = false
 		default_shortcut.pressed = true
-		default_shortcut.keycode = KEY_I
-		default_shortcut.ctrl_pressed = true
-		default_shortcut.shift_pressed = false
+		default_shortcut.keycode = KEY_F
+		default_shortcut.ctrl_pressed = false
+		default_shortcut.shift_pressed = true
 		default_shortcut.alt_pressed = true
 
 		var shortcut := Shortcut.new()
