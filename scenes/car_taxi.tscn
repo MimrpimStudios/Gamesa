@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddknrr0c0g61u"]
+[gd_scene load_steps=11 format=3 uid="uid://ddknrr0c0g61u"]
 
 [ext_resource type="Script" uid="uid://bpa11yxkpjmn0" path="res://scripts/car_taxi.gd" id="1_lrgrn"]
 [ext_resource type="Texture2D" uid="uid://cochxabhq0cun" path="res://assets/Textures/sprites/car_taxi.png" id="2_67p5f"]
 [ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="3_4ivyw"]
+[ext_resource type="Script" uid="uid://6imw44t8rbis" path="res://scenes/static_body_2d_car.gd" id="4_67p5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
+size = Vector2(36, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54ci0"]
 atlas = ExtResource("2_67p5f")
@@ -26,26 +30,45 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrxu"]
-size = Vector2(36, 19)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ivyw"]
+size = Vector2(20, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llphe"]
+size = Vector2(12, 0.5)
 
 [node name="CarTaxi" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_lrgrn")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_3mrxu")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_klfnr")
 autoplay = "default"
-frame_progress = 0.59646696
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9.5)
-shape = SubResource("RectangleShape2D_3mrxu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4ivyw")
 autoplay = true
 max_distance = 400.0
 bus = &"SFX"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_67p5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_4ivyw")
+one_way_collision = true
+one_way_collision_margin = 2.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -25.25)
+shape = SubResource("RectangleShape2D_llphe")
+one_way_collision = true
+one_way_collision_margin = 2.0
