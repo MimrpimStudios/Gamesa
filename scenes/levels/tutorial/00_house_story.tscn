@@ -183,6 +183,11 @@ visible = false
 [node name="DialogPlayer" parent="Player" index="3"]
 offset_top = -67.99994
 
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="Player"]
+volume_db = 5.0
+pitch_scale = 0.87
+bus = &"Dialogs"
+
 [node name="DoorHouseOut" type="Area2D" parent="."]
 position = Vector2(56, 0)
 collision_mask = 3
