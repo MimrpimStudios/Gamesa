@@ -318,7 +318,7 @@ offset_right = 775.0
 offset_bottom = 355.0
 text = "YOU CAN PRESS \"ESC\" FOR PAUSING
 (SAVING IS AUTOMATIC, YOU CAN
-SEE SAVING... TEXT IN THE RIGHT CORNER"
+SEE SAVING... TEXT IN THE RIGHT CORNER)"
 label_settings = ExtResource("19_2mrnh")
 
 [node name="Label3" type="Label" parent="Hints"]
