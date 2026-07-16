@@ -13,6 +13,7 @@ var player_max_health = 3
 var hide_overaly = false
 const volume_set_scene = "res://scenes/volume_set.tscn"
 const house_00_story_scene = "res://scenes/levels/tutorial/00_house_story.tscn"
+const house_03_story_scene = "res://scenes/levels/tutorial/03_house_story.tscn"
 const main_scene = "res://scenes/main.tscn"
 const town_01_scene = "res://scenes/levels/tutorial/01_town.tscn"
 const house_01_scene = "res://scenes/levels/tutorial/01_house.tscn"

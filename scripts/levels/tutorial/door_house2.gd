@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+
 var repeat = false
 
 
@@ -13,4 +15,6 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("integrate") and repeat:
-		get_tree().change_scene_to_file(global_var.house_02_in_scene)
+		animation_player.play("fade")
+		await animation_player.animation_finished
+		get_tree().change_scene_to_file(global_var.house_03_story_scene)

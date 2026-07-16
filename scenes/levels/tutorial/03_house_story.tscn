@@ -1,0 +1,355 @@
+[gd_scene load_steps=21 format=4 uid="uid://sn8x4fmgxpv8"]
+
+[ext_resource type="Script" uid="uid://d1d4gfb4eiw6m" path="res://scenes/levels/tutorial/03_house_story.gd" id="1_515ih"]
+[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_kcctt"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_oo287"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_23v7a"]
+[ext_resource type="Script" uid="uid://c6ey2s4gt3xje" path="res://scenes/player_gravity_only.gd" id="5_bd341"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="6_7eh3n"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="7_ot4dm"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="8_ipl87"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="9_n58uo"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="10_515ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
+size = Vector2(15.25, 21)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
+
+[sub_resource type="Animation" id="Animation_r4t4f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/DialogPlayer:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/DialogPlayer:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mother/DialogMother:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_mvrt0"]
+resource_name = "fade 1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(5, 5), Vector2(6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_12r4h"]
+resource_name = "fade 2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kcctt"]
+resource_name = "fade 2 fake"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666, 0.6, 0.6333333, 0.6666667, 0.7, 0.73333335, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 0.96666664, 1, 1.0333333, 1.0666667, 1.1, 1.1333333, 1.1666666, 1.2, 1.2333333, 1.2666667, 1.3, 1.3333334, 1.3666667, 1.4, 1.4333333, 1.4666667, 1.5, 1.5333333, 1.5666667, 1.6, 1.6333333, 1.6666666, 1.7, 1.7333333, 1.7666667, 1.8, 1.8333334, 1.8666667, 1.9, 1.9333333, 1.9666667, 2, 2.0333333, 2.0666666, 2.1, 2.1333334, 2.1666667, 2.2, 2.2333333, 2.2666667, 2.3, 2.3333333, 2.3666666, 2.4, 2.4333334, 2.4666667, 2.5, 2.5333333, 2.5666666, 2.6, 2.6333334, 2.6666667, 2.7, 2.7333333, 2.7666667, 2.8, 2.8333333, 2.8666666, 2.9, 2.9333334, 2.9666667, 3, 3.0333333, 3.0666666, 3.1, 3.1333334, 3.1666667, 3.2, 3.2333333, 3.2666667, 3.3, 3.3333333, 3.3666666, 3.4, 3.4333334, 3.4666667, 3.5, 3.5333333, 3.5666666, 3.6, 3.6333334, 3.6666667, 3.7, 3.7333333, 3.7666667, 3.8, 3.8333333, 3.8666666, 3.9, 3.9333334, 3.9666667, 4, 4.0333333, 4.0666666, 4.1, 4.133333, 4.1666665, 4.2, 4.233333, 4.266667, 4.3, 4.3333335, 4.366667, 4.4, 4.4333334, 4.4666667, 4.5, 4.5333333, 4.5666666, 4.6, 4.633333, 4.6666665, 4.7, 4.733333, 4.766667, 4.8, 4.8333335, 4.866667, 4.9, 4.9333334, 4.9666667, 5, 5.0333333, 5.0666666, 5.1, 5.133333, 5.1666665, 5.2, 5.233333, 5.266667, 5.3, 5.3333335, 5.366667, 5.4, 5.4333334, 5.4666667, 5.5, 5.5333333, 5.5666666, 5.6, 5.633333, 5.6666665, 5.7, 5.733333, 5.766667, 5.8, 5.8333335, 5.866667, 5.9, 5.9333334, 5.9666667, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.033333335), Color(0, 0, 0, 0.06666667), Color(0, 0, 0, 0.1), Color(0, 0, 0, 0.13333334), Color(0, 0, 0, 0.16666667), Color(0, 0, 0, 0.2), Color(0, 0, 0, 0.23333333), Color(0, 0, 0, 0.26666668), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.33333334), Color(0, 0, 0, 0.36666667), Color(0, 0, 0, 0.4), Color(0, 0, 0, 0.43333334), Color(0, 0, 0, 0.46666667), Color(0, 0, 0, 0.5), Color(0, 0, 0, 0.53333336), Color(0, 0, 0, 0.56666666), Color(0, 0, 0, 0.6), Color(0, 0, 0, 0.6333333), Color(0, 0, 0, 0.6666667), Color(0, 0, 0, 0.7), Color(0, 0, 0, 0.73333335), Color(0, 0, 0, 0.76666665), Color(0, 0, 0, 0.8), Color(0, 0, 0, 0.8333333), Color(0, 0, 0, 0.8666667), Color(0, 0, 0, 0.9), Color(0, 0, 0, 0.93333334), Color(0, 0, 0, 0.96666664), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.96666664), Color(0, 0, 0, 0.93333334), Color(0, 0, 0, 0.9), Color(0, 0, 0, 0.8666667), Color(0, 0, 0, 0.8333333), Color(0, 0, 0, 0.8), Color(0, 0, 0, 0.76666665), Color(0, 0, 0, 0.73333335), Color(0, 0, 0, 0.7), Color(0, 0, 0, 0.6666666), Color(0, 0, 0, 0.6333333), Color(0, 0, 0, 0.6), Color(0, 0, 0, 0.56666666), Color(0, 0, 0, 0.5333333), Color(0, 0, 0, 0.5), Color(0, 0, 0, 0.46666664), Color(0, 0, 0, 0.43333334), Color(0, 0, 0, 0.39999998), Color(0, 0, 0, 0.36666667), Color(0, 0, 0, 0.3333333), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.26666665), Color(0, 0, 0, 0.23333335), Color(0, 0, 0, 0.19999999), Color(0, 0, 0, 0.16666669), Color(0, 0, 0, 0.13333333), Color(0, 0, 0, 0.100000024), Color(0, 0, 0, 0.06666666), Color(0, 0, 0, 0.03333336), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666, 0.6, 0.6333333, 0.6666667, 0.7, 0.73333335, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 0.96666664, 1, 1.0333333, 1.0666667, 1.1, 1.1333333, 1.1666666, 1.2, 1.2333333, 1.2666667, 1.3, 1.3333334, 1.3666667, 1.4, 1.4333333, 1.4666667, 1.5, 1.5333333, 1.5666667, 1.6, 1.6333333, 1.6666666, 1.7, 1.7333333, 1.7666667, 1.8, 1.8333334, 1.8666667, 1.9, 1.9333333, 1.9666667, 2, 2.0333333, 2.0666666, 2.1, 2.1333334, 2.1666667, 2.2, 2.2333333, 2.2666667, 2.3, 2.3333333, 2.3666666, 2.4, 2.4333334, 2.4666667, 2.5, 2.5333333, 2.5666666, 2.6, 2.6333334, 2.6666667, 2.7, 2.7333333, 2.7666667, 2.8, 2.8333333, 2.8666666, 2.9, 2.9333334, 2.9666667, 3, 3.0333333, 3.0666666, 3.1, 3.1333334, 3.1666667, 3.2, 3.2333333, 3.2666667, 3.3, 3.3333333, 3.3666666, 3.4, 3.4333334, 3.4666667, 3.5, 3.5333333, 3.5666666, 3.6, 3.6333334, 3.6666667, 3.7, 3.7333333, 3.7666667, 3.8, 3.8333333, 3.8666666, 3.9, 3.9333334, 3.9666667, 4, 4.0333333, 4.0666666, 4.1, 4.133333, 4.1666665, 4.2, 4.233333, 4.266667, 4.3, 4.3333335, 4.366667, 4.4, 4.4333334, 4.4666667, 4.5, 4.5333333, 4.5666666, 4.6, 4.633333, 4.6666665, 4.7, 4.733333, 4.766667, 4.8, 4.8333335, 4.866667, 4.9, 4.9333334, 4.9666667, 5, 5.0333333, 5.0666666, 5.1, 5.133333, 5.1666665, 5.2, 5.233333, 5.266667, 5.3, 5.3333335, 5.366667, 5.4, 5.4333334, 5.4666667, 5.5, 5.5333333, 5.5666666, 5.6, 5.633333, 5.6666665, 5.7, 5.733333, 5.766667, 5.8, 5.8333335, 5.866667, 5.9, 5.9333334, 5.9666667, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_15gjx"]
+resource_name = "story"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/DialogPlayer:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "", "", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/DialogPlayer:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mother/DialogMother:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "", "", ""]
+}
+
+[sub_resource type="Animation" id="Animation_515ih"]
+resource_name = "story 2"
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvrt0"]
+_data = {
+&"RESET": SubResource("Animation_r4t4f"),
+&"fade 1": SubResource("Animation_mvrt0"),
+&"fade 2": SubResource("Animation_12r4h"),
+&"fade 2 fake": SubResource("Animation_kcctt"),
+&"story": SubResource("Animation_15gjx"),
+&"story 2": SubResource("Animation_515ih")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo287"]
+font = ExtResource("10_515ih")
+font_size = 128
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="03HouseStory" type="Node2D"]
+script = ExtResource("1_515ih")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAASAAAACgAAAAAAAAASAAEACgAAAAAAAAASAAIACgAAAAAAAAASAAMACgAAAAAAAAASAAQACgAAAAAAAAASAAUACgAAAAAAAAASAAYACgAAAAAAAAATAAAACgAAAAAAAAATAAEACgAAAAAAAAATAAIACgAAAAAAAAATAAMACgAAAAAAAAATAAQACgAAAAAAAAATAAUACgAAAAAAAAATAAYACgAAAAAAAAAUAAAACgAAAAAAAAAUAAEACgAAAAAAAAAUAAIACgAAAAAAAAAUAAMACgAAAAAAAAAUAAQACgAAAAAAAAAUAAUACgAAAAAAAAAUAAYACgAAAAAAAAAVAAAACgAAAAAAAAAVAAEACgAAAAAAAAAVAAIACgAAAAAAAAAVAAMACgAAAAAAAAAVAAQACgAAAAAAAAAVAAUACgAAAAAAAAAVAAYACgAAAAAAAAAWAAAACgAAAAAAAAAWAAEACgAAAAAAAAAWAAIACgAAAAAAAAAWAAMACgAAAAAAAAAWAAQACgAAAAAAAAAWAAUACgAAAAAAAAAWAAYACgAAAAAAAAAXAAAACgAAAAAAAAAXAAEACgAAAAAAAAAXAAIACgAAAAAAAAAXAAMACgAAAAAAAAAXAAQACgAAAAAAAAAXAAUACgAAAAAAAAAXAAYACgAAAAAAAAAYAAAACgAAAAAAAAAYAAEACgAAAAAAAAAYAAIACgAAAAAAAAAYAAMACgAAAAAAAAAYAAQACgAAAAAAAAAYAAUACgAAAAAAAAAYAAYACgAAAAAAAAAZAAAACgAAAAAAAAAZAAEACgAAAAAAAAAZAAIACgAAAAAAAAAZAAMACgAAAAAAAAAZAAQACgAAAAAAAAAZAAUACgAAAAAAAAAZAAYACgAAAAAAAAAaAAAACgAAAAAAAAAaAAEACgAAAAAAAAAaAAIACgAAAAAAAAAaAAMACgAAAAAAAAAaAAQACgAAAAAAAAAaAAUACgAAAAAAAAAaAAYACgAAAAAAAAAbAAAACgAAAAAAAAAbAAEACgAAAAAAAAAbAAIACgAAAAAAAAAbAAMACgAAAAAAAAAbAAQACgAAAAAAAAAbAAUACgAAAAAAAAAbAAYACgAAAAAAAAAcAAAACgAAAAAAAAAcAAEACgAAAAAAAAAcAAIACgAAAAAAAAAcAAMACgAAAAAAAAAcAAQACgAAAAAAAAAcAAUACgAAAAAAAAAcAAYACgAAAAAAAAAdAAAACgAAAAAAAAAdAAEACgAAAAAAAAAdAAIACgAAAAAAAAAdAAMACgAAAAAAAAAdAAQACgAAAAAAAAAdAAUACgAAAAAAAAAdAAYACgAAAAAAAAAeAAAACgAAAAAAAAAeAAEACgAAAAAAAAAeAAIACgAAAAAAAAAeAAMACgAAAAAAAAAeAAQACgAAAAAAAAAeAAUACgAAAAAAAAAeAAYACgAAAAAAAAA=")
+tile_set = ExtResource("2_kcctt")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAAdAAYABAACAAAAAAAcAAYABAACAAAAAAAbAAYABAACAAAAAAAeAAYABAABAAAAAAAeAAUABAABAAAAAAAeAAQABAABAAAAAAAeAAMABAABAAAAAAAdAAMABAACAAAAAAAcAAMABAACAAAAAAAbAAMABAACAAAAAAAaAAYABAACAAAAAAAZAAYABAACAAAAAAAYAAYABAACAAAAAAAXAAYABAACAAAAAAAWAAYABAACAAAAAAAVAAYABAACAAAAAAAUAAYABAACAAAAAAATAAYABAACAAAAAAASAAYABAABAAAAAAASAAUABAABAAAAAAASAAQABAABAAAAAAASAAMABAABAAAAAAATAAMABAAAAAAAAAAUAAMABAAAAAAAAAAVAAMABAAAAAAAAAAaAAMABAAAAAAAAAAeAAIABAABAAAAAAAeAAEABAABAAAAAAAeAAAABAABAAAAAAASAAIABAABAAAAAAASAAEABAABAAAAAAASAAAABAABAAAAAAATAAAABAACAAAAAAAUAAAABAACAAAAAAAVAAAABAACAAAAAAAWAAAABAACAAAAAAAXAAAABAACAAAAAAAYAAAABAACAAAAAAAZAAAABAACAAAAAAAaAAAABAACAAAAAAAbAAAABAACAAAAAAAcAAAABAACAAAAAAAdAAAABAACAAAAAAATAAIACgAGAAAAAAAUAAIACgAHAAAAAAAcAAIACgAVAAUAAAAdAAIACgAWAAUAAAATAAUACgAGAAIAAAAUAAUACgAHAAIAAAAXAAUACgARAAoAAAAYAAUACgATAAoAAAA=")
+tile_set = ExtResource("3_oo287")
+
+[node name="Player" parent="." instance=ExtResource("4_23v7a")]
+position = Vector2(547, 359)
+script = ExtResource("5_bd341")
+sit = false
+move = null
+direction = 0
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+animation = &"stand"
+
+[node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
+visible = false
+
+[node name="DialogPlayer" parent="Player" index="3"]
+offset_top = -67.99994
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="Player"]
+volume_db = 5.0
+pitch_scale = 0.87
+bus = &"Dialogs"
+
+[node name="DoorHouseOut" type="Area2D" parent="."]
+position = Vector2(56, 0)
+collision_mask = 3
+
+[node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
+position = Vector2(490, 349)
+texture = ExtResource("6_7eh3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
+position = Vector2(489.625, 347.5)
+shape = SubResource("RectangleShape2D_u00iu")
+
+[node name="Killzone" parent="." instance=ExtResource("7_ot4dm")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_v3jdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(458, 319)
+zoom = Vector2(5, 5)
+limit_enabled = false
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="Mother" parent="." instance=ExtResource("8_ipl87")]
+position = Vector2(389, 355)
+anim = "sleeping"
+flip_h = true
+
+[node name="DialogMother" type="Label" parent="Mother"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -60.0
+offset_right = 65.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = ExtResource("9_n58uo")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mvrt0")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 2080.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(552, 301)
+volume_db = 5.0
+autoplay = true
+bus = &"SFX"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "One while later..."
+label_settings = SubResource("LabelSettings_oo287")
+
+[connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+
+[editable path="Player"]

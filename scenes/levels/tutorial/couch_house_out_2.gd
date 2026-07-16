@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	if repeat and Input.is_action_just_pressed("integrate") or not global_var.player_movement:
 		global_var.player_movement = false
 		player.global_position = Vector2(459.0, 357.0)
-		animated_sprite_2d.animation = "sitting"
+		animated_sprite_2d.animation = "sitting_couch"
 		credits_run()
 
 
