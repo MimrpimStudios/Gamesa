@@ -156,8 +156,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5, 6, 11),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["So it will be 
-for free...", "", "because you are 
+"values": ["So it will be free...", "", "because you are 
 my friend", ""]
 }
 tracks/1/type = "value"
