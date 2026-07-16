@@ -6,6 +6,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	global_var.level = get_tree().current_scene.scene_file_path
 	global_var.save_level()
+	global_var.player_show_speakNPC_color = Color(1, 1, 1, 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

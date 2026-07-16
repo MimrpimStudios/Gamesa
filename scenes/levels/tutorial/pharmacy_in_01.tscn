@@ -40,7 +40,7 @@ ANTIBIOTICS I CAN
 OFFER YOU", "", "WAIT A MINUTE, I WILL
 COME FOR THEM", "", "HERE IT IS", "", "NORMALLY IT COST
 999,99 EURO,
-BUT FOR YOU...", "", "IT IS FOR FREE!", "", "NOW GO HOME!", ""]
+BUT FOR YOU...", "", "IT IS FREE!", "", "NOW GO HOME!", ""]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -171,6 +171,54 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PharmacyMale/Dialog:label_settings:font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PharmacyMale/Dialog:label_settings:outline_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PharmacyMale/Dialog:label_settings:outline_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PharmacyMale/Dialog:label_settings:shadow_color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.95686275)]
 }
 
 [sub_resource type="Animation" id="Animation_gvo23"]
