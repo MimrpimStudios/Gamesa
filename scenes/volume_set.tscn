@@ -1,0 +1,329 @@
+[gd_scene load_steps=13 format=3 uid="uid://cty33y8dqa35i"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_7oexm"]
+[ext_resource type="Script" uid="uid://0qtgsq0i4ino" path="res://scenes/volume_set.gd" id="1_36h3l"]
+[ext_resource type="AudioStream" uid="uid://r6ju664kx3c6" path="res://assets/Sounds/Music/at-home.wav" id="3_gn1yi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_upwsg"]
+font = ExtResource("1_7oexm")
+font_size = 128
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_36h3l"]
+font = ExtResource("1_7oexm")
+font_size = 64
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_36h3l"]
+resource_name = "fade_in"
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gn1yi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mv6f4"]
+_data = {
+&"RESET": SubResource("Animation_gn1yi"),
+&"fade_in": SubResource("Animation_36h3l")
+}
+
+[sub_resource type="Animation" id="Animation_mv6f4"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666, 0.6, 0.6333333, 0.6666667, 0.7, 0.73333335, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 0.96666664, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.53333336), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666, 0.6, 0.6333333, 0.6666667, 0.7, 0.73333335, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 0.96666664, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.53333336), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5, 0.53333336, 0.56666666, 0.6, 0.6333333, 0.6666667, 0.7, 0.73333335, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 0.96666664, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, -1.110223e-16), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.53333336), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.6666667), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4v5dx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ButtonStop:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kx3ix"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.6666666), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.5333333), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.6666666), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.5333333), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.6666666), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.5333333), Color(1, 1, 1, 0.46666667), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.33333334), Color(1, 1, 1, 0.26666668), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.13333334), Color(1, 1, 1, 0.06666667), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ButtonPlay:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.6666666), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.5333333), Color(1, 1, 1, 0.46666664), Color(1, 1, 1, 0.39999998), Color(1, 1, 1, 0.3333333), Color(1, 1, 1, 0.26666665), Color(1, 1, 1, 0.19999999), Color(1, 1, 1, 0.13333333), Color(1, 1, 1, 0.06666666), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ButtonStop:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333334, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.93333334), Color(1, 1, 1, 0.8666667), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.73333335), Color(1, 1, 1, 0.6666666), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.5333333), Color(1, 1, 1, 0.46666664), Color(1, 1, 1, 0.39999998), Color(1, 1, 1, 0.3333333), Color(1, 1, 1, 0.26666665), Color(1, 1, 1, 0.19999999), Color(1, 1, 1, 0.13333333), Color(1, 1, 1, 0.06666666), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yu7h"]
+_data = {
+&"RESET": SubResource("Animation_4v5dx"),
+&"fade_in": SubResource("Animation_mv6f4"),
+&"fade_out": SubResource("Animation_kx3ix")
+}
+
+[node name="VolumeSet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_36h3l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_right = 384.0
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "Volume checker..."
+label_settings = SubResource("LabelSettings_upwsg")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -940.0
+offset_top = 88.0
+offset_right = 940.0
+offset_bottom = 198.0
+grow_horizontal = 2
+text = "Set your volume to the some value and click the \"Test!\" button and repeat this process until the volume is Good. 
+!DO NOT CHANGE IT DURING THE GAME PLAY!"
+label_settings = SubResource("LabelSettings_36h3l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = 16.5
+offset_right = 52.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_7oexm")
+theme_override_font_sizes/font_size = 64
+text = "Test!"
+
+[node name="ButtonPlay" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_7oexm")
+theme_override_font_sizes/font_size = 64
+text = "Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonPlay"]
+libraries = {
+&"": SubResource("AnimationLibrary_mv6f4")
+}
+
+[node name="ButtonStop" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = 80.5
+offset_right = 52.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_7oexm")
+theme_override_font_sizes/font_size = 64
+text = "Stop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3yu7h")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gn1yi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="button_down" from="ButtonStop" to="." method="_on_button_stop_button_down"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

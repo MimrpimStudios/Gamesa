@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bebwwyd1as336"]
+[gd_scene load_steps=18 format=4 uid="uid://bebwwyd1as336"]
 
 [ext_resource type="Script" uid="uid://3pcduqui1004" path="res://scenes/levels/tutorial/00_house_story.gd" id="1_15gjx"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_12r4h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c6ey2s4gt3xje" path="res://scenes/player_gravity_only.gd" id="5_r4t4f"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_of5mg"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_ljouq"]
+[ext_resource type="AudioStream" uid="uid://ddgtdflsiu5lv" path="res://assets/Sounds/gaming_pc_warcraft_start.wav" id="10_mvrt0"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="10_r4t4f"]
 [ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="11_y1cfl"]
 
@@ -52,6 +53,36 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [""]
+}
+
+[sub_resource type="Animation" id="Animation_mvrt0"]
+resource_name = "fade 1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_12r4h"]
+resource_name = "fade 2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_15gjx"]
@@ -108,80 +139,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Mother:anim")
+tracks/4/path = NodePath("Player:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["sleep_start"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Player/AnimatedSprite2D:animation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(540, 309.99994)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Player:direction")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_mvrt0"]
-resource_name = "fade 1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_12r4h"]
-resource_name = "fade 2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Vector2(540, 307)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mvrt0"]
@@ -206,7 +171,7 @@ tile_map_data = PackedByteArray("AAAdAAYABAACAAAAAAAcAAYABAACAAAAAAAbAAYABAACAAA
 tile_set = ExtResource("3_co45j")
 
 [node name="Player" parent="." instance=ExtResource("4_qyqnl")]
-position = Vector2(540, 309.99994)
+position = Vector2(540, 307)
 script = ExtResource("5_r4t4f")
 sit = true
 move = null
@@ -279,13 +244,22 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 top_level = true
 z_index = 4096
 offset_right = 2080.0
 offset_bottom = 1096.0
 color = Color(0, 0, 0, 1)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(552, 301)
+stream = ExtResource("10_mvrt0")
+volume_db = 5.0
+autoplay = true
+bus = &"SFX"
+
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 
 [editable path="Player"]

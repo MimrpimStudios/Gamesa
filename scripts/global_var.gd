@@ -11,6 +11,7 @@ var is_player_smashing_disabled = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
+const volume_set_scene = "res://scenes/volume_set.tscn"
 const house_00_story_scene = "res://scenes/levels/tutorial/00_house_story.tscn"
 const main_scene = "res://scenes/main.tscn"
 const town_01_scene = "res://scenes/levels/tutorial/01_town.tscn"
@@ -24,6 +25,7 @@ const boss_01_scene = "res://scenes/levels/tutorial/01_boss1.tscn"
 const stoky2_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint2.tscn"
 const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
+const start_scene_new_game = volume_set_scene
 const start_scene = main_menu_scene
 const version = "1.0-t2.720-pre5"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
@@ -41,6 +43,8 @@ const cicada_scene = "res://scenes/cidada.tscn"
 const menus = [
 	"res://scenes/main_menu.tscn",
 	"res://scenes/main.tscn",
+	"res://scenes/volume_set.tscn",
+	"res://scenes/intro.tscn"
 	
 ]
 
@@ -66,7 +70,7 @@ func load_level():
 	print("Loading...")
 	if not FileAccess.file_exists("user://savefile.save"):
 		print("Aborting, no savefile")
-		return start_scene_story
+		return start_scene_new_game
 	var save_file = FileAccess.open("user://savefile.save", FileAccess.READ)
 	level = save_file.get_line()
 	save_file.close()

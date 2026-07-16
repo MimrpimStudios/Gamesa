@@ -35,7 +35,7 @@ region = Rect2(96, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("2_g2els")
-region = Rect2(0, 0, 16, 17)
+region = Rect2(144, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("2_g2els")
@@ -121,7 +121,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"stand"
+animation = &"sitting"
 autoplay = "stand"
 
 [node name="Healthbar" type="Control" parent="AnimatedSprite2D"]

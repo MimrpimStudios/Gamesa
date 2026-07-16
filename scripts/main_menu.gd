@@ -11,7 +11,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str(global_var.load_level()))
 	panel_hide()
-	if global_var.load_level() == global_var.start_scene_story:
+	if global_var.load_level() == global_var.start_scene_new_game:
 		continue_game_button.set_disabled(true)
 
 
@@ -34,7 +34,7 @@ func _on_texture_button_exit_pressed() -> void:
 
 
 func _on_new_game_button_pressed() -> void:
-	global_var.level = global_var.start_scene_story
+	global_var.level = global_var.start_scene_new_game
 	print("Going to: " + str(global_var.level))
 	get_tree().change_scene_to_file(global_var.level)
 
