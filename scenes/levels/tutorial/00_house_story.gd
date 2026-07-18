@@ -52,9 +52,11 @@ func story_01():
 	dialog_mother.text = ""
 	await get_tree().create_timer(1).timeout
 	sfx_loop_end = true
+	dialog_player.text = "One second...".to_upper()
+	await get_tree().create_timer(2).timeout
+	dialog_player.text = ""
 	while audio_stream_player_2d.stream == GAMING_PC_WARCRAFT_LOOP:
 		await get_tree().create_timer(2).timeout
-		print("WATING...")
 	await audio_stream_player_2d.finished
 	global_var.player_movement = true
 	player.sit = false
