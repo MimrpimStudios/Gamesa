@@ -185,7 +185,6 @@ offset_top = -67.99994
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="Player"]
 volume_db = 5.0
-pitch_scale = 0.87
 bus = &"Dialogs"
 
 [node name="DoorHouseOut" type="Area2D" parent="."]
