@@ -17,7 +17,6 @@ const GAMING_PC_WARCRAFT_LOOP = preload("uid://id58uss8xrlv")
 const GAMING_PC_WARCRAFT_START = preload("uid://ddgtdflsiu5lv")
 
 # Player dialogs
-const PLAYER_01 = preload("uid://tr2pr4v6yw4u")
 
 var sfx_loop_end = false
 
@@ -45,8 +44,6 @@ func story_01():
 	player_anim.play("sitting")
 	await get_tree().create_timer(3).timeout
 	dialog_player.text = "Go, paladin go!".to_upper()
-	audio_player.stream = PLAYER_01
-	audio_player.play()
 	await get_tree().create_timer(3).timeout
 	dialog_player.text = ""
 	await get_tree().create_timer(1).timeout
