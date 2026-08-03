@@ -265,6 +265,9 @@ tile_set = ExtResource("3_tv45f")
 [node name="Player" parent="." instance=ExtResource("4_gvo23")]
 position = Vector2(545, 359)
 
+[node name="SpeakNPC" parent="Player/Hint" index="0"]
+label_settings = ExtResource("5_gvo23")
+
 [node name="DialogPlayer" parent="Player" index="3"]
 offset_bottom = -23.0
 text = "MY MOTHER IS SICK
@@ -272,6 +275,7 @@ AND I NEED SOME
 PILLS FOR HER"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -10)
 zoom = Vector2(5, 5)
 limit_top = 100
 limit_bottom = 430

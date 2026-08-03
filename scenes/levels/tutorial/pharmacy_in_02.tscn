@@ -40,6 +40,7 @@ tile_set = ExtResource("3_r2o2n")
 position = Vector2(545, 359)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -10)
 zoom = Vector2(5, 5)
 limit_top = 100
 limit_bottom = 430
