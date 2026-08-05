@@ -11,7 +11,7 @@ Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for m
 > see [issue #8](https://github.com/MimrpimStudios/Gamesa/issues/8) for more info
 ## What engine are you using?
 > [Godot 4.5.1 stable](https://godotengine.org/download/archive/4.5.1-stable/)
-## Why are you do not update on Godot 4.6/4.5.2?
+## Why are you do not update on Godot 4.7/4.5.2?
 > No need and when I tried on backup from 4.5.1 -> 4.5.2 some things was broken and I do not want to repair it. I do not know how it works, but it works
 ## MacOS/Web support?
 > see [issue #11](https://github.com/MimrpimStudios/Gamesa/issues/11) for MacOS or for web [issue #9](https://github.com/MimrpimStudios/Gamesa/issues/9)
