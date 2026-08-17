@@ -75,7 +75,7 @@ func story_01():
 	mother.anim = "sleep_start"
 	mother.preview()
 	await get_tree().create_timer(0.5).timeout
-	dialog_mother.text = "Okey?".to_upper()
+	dialog_mother.text = "Okay?".to_upper()
 	await get_tree().create_timer(3).timeout
 	dialog_mother.text = ""
 	await get_tree().create_timer(0.5).timeout
