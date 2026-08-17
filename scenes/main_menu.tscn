@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=40 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cyr63ut51kjck" path="res://assets/Textures/links/28pxl/round square/godot28a.png" id="16_8egab"]
 [ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
 [ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -393,6 +394,18 @@ offset_bottom = 81.0
 grow_vertical = 0
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("17_8egab")
+
+[node name="GamesaLogoAlphaBg00086400" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -433.77783
+offset_right = 433.77783
+offset_bottom = 488.0
+grow_horizontal = 2
+texture = ExtResource("20_8egab")
+expand_mode = 1
 
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
