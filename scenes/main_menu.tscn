@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=45 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
 [ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
+[ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -118,6 +119,99 @@ region = Rect2(2, 2, 90, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
 atlas = ExtResource("12_flqon")
 region = Rect2(99, 3, 90, 25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8egab"]
+font = ExtResource("5_tbmy8")
+font_size = 64
+font_color = Color(1, 1, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(20, 20)
+
+[sub_resource type="Animation" id="Animation_gw5y6"]
+resource_name = "Splashing"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5333, 0.8),
+"transitions": PackedFloat32Array(0.90125114, -2, -0.5),
+"update": 0,
+"values": [64, 32, 64]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../GamesaLogoAlphaBg00086400:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5333, 0.8),
+"transitions": PackedFloat32Array(1, -2, -0.5),
+"update": 0,
+"values": [Vector2(867.55566, 488), Vector2(593.77783, 334), Vector2(867.55566, 488)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GamesaLogoAlphaBg00086400:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5333, 0.8),
+"transitions": PackedFloat32Array(1, -2, -0.5),
+"update": 0,
+"values": [Vector2(526.22217, 0), Vector2(663.1111, 77), Vector2(526.22217, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_svtp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:label_settings:font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [64]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../GamesaLogoAlphaBg00086400:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(867.55566, 488)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GamesaLogoAlphaBg00086400:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(526.22217, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dfpl"]
+_data = {
+&"RESET": SubResource("Animation_svtp6"),
+&"Splashing": SubResource("Animation_gw5y6")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -406,6 +500,32 @@ offset_bottom = 488.0
 grow_horizontal = 2
 texture = ExtResource("20_8egab")
 expand_mode = 1
+
+[node name="SplashLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63600004
+anchor_top = 0.19100001
+anchor_right = 0.63600004
+anchor_bottom = 0.19100001
+offset_left = -67.12012
+offset_top = -129.28008
+offset_right = 320.87988
+offset_bottom = -16.280075
+grow_vertical = 2
+rotation = 0.65072757
+text = "So we have that...
+"
+label_settings = SubResource("LabelSettings_8egab")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("20_gw5y6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SplashLabel"]
+libraries = {
+&"": SubResource("AnimationLibrary_1dfpl")
+}
+autoplay = "Splashing"
 
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
