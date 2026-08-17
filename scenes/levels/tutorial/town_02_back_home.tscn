@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cq8wbak7brs34"]
+[gd_scene load_steps=33 format=4 uid="uid://cq8wbak7brs34"]
 
 [ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_aqflf"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_lpujb"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ddknrr0c0g61u" path="res://scenes/car_taxi.tscn" id="13_412yd"]
 [ext_resource type="Script" uid="uid://ba5b6har3t4hj" path="res://scripts/levels/tutorial/taxi_driver.gd" id="14_q4sk1"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="15_57qb2"]
+[ext_resource type="PackedScene" uid="uid://cnn7df56d7oml" path="res://scenes/ai_car.tscn" id="17_ioyx7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
 distance = 114.0
@@ -476,6 +477,18 @@ label_settings = SubResource("LabelSettings_ioyx7")
 position = Vector2(-5948, -317)
 tile_map_data = PackedByteArray("AACHAAUADgACAAAAAADCAPz/DgABAAAAAADNAPz/DgABAAAAAABtAvz/DgAAAAAAAADIAvz/DgACAAAAAAD+Afz/DgAAAAAAAADiAfz/DgABAAAAAADbAfz/DgABAAAAAAA=")
 tile_set = ExtResource("2_lpujb")
+
+[node name="AICar" parent="." instance=ExtResource("17_ioyx7")]
+position = Vector2(-2648, -366)
+
+[node name="AICar2" parent="." instance=ExtResource("17_ioyx7")]
+position = Vector2(4434, -366)
+
+[node name="AICar3" parent="." instance=ExtResource("17_ioyx7")]
+position = Vector2(-1981, -401)
+
+[node name="AICar4" parent="." instance=ExtResource("17_ioyx7")]
+position = Vector2(5101, -401)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

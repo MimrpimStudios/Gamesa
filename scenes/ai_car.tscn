@@ -1,5 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnn7df56d7oml"]
+[gd_scene load_steps=3 format=3 uid="uid://cnn7df56d7oml"]
 
 [ext_resource type="PackedScene" uid="uid://cbcrqqtuhxedo" path="res://scenes/car.tscn" id="1_hamik"]
+[ext_resource type="Script" uid="uid://dsyt1gutyapy5" path="res://scenes/ai_car.gd" id="2_8cye3"]
 
 [node name="AICar" instance=ExtResource("1_hamik")]
+collision_mask = 2
+script = ExtResource("2_8cye3")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+position = Vector2(0, -15)
+target_position = Vector2(29, 0)
+collision_mask = 3
+
+[node name="RayCast2D2" type="RayCast2D" parent="." index="5"]
+position = Vector2(29, -15)
+target_position = Vector2(0, 28)
+collision_mask = 3
