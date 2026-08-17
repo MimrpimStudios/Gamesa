@@ -8,13 +8,15 @@ func _ready() -> void:
 	label.hide()
 
 func _on_body_exited(_body: Node2D) -> void:
-	repeat5 = false
-	label.hide()
+	if _body.name == "Player":
+		repeat5 = false
+		label.hide()
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	repeat5 = true
-	label.show()
+	if _body.name == "Player":
+		repeat5 = true
+		label.show()
 
 
 func _process(_delta: float) -> void:
