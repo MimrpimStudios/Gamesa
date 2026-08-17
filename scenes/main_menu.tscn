@@ -498,6 +498,7 @@ offset_left = -433.77783
 offset_right = 433.77783
 offset_bottom = 488.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("20_8egab")
 expand_mode = 1
 
