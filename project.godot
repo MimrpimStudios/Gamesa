@@ -39,18 +39,17 @@ file_logging/log_path="user://logs/latest.log"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
+window/size/mode=2
 window/size/initial_position_type=5
-window/size/resizable=false
-window/size/borderless=true
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://cruhxaisj0yhn"
 mouse_cursor/tooltip_position_offset=Vector2(16, 16)
 
 [editor]
 
-movie_writer/movie_file="C:/Users/mimrp/Documents/godot/Gamesa/movies/07.avi"
+movie_writer/movie_file="E:/-=Documents=-/Godot/gamesa_movies/07.avi"
 movie_writer/disable_vsync=true
+movie_writer/fps=30
 run/main_run_args="-launcherCLI -versionCLI=0.1 -launcherGUI -versionGUI=1.0"
 
 [global_group]
