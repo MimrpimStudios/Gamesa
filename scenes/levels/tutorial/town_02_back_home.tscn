@@ -472,6 +472,11 @@ text = " |
 "
 label_settings = SubResource("LabelSettings_ioyx7")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-5948, -317)
+tile_map_data = PackedByteArray("AACHAAUADgACAAAAAADCAPz/DgABAAAAAADNAPz/DgABAAAAAABtAvz/DgAAAAAAAADIAvz/DgACAAAAAAD+Afz/DgAAAAAAAADiAfz/DgABAAAAAADbAfz/DgABAAAAAAA=")
+tile_set = ExtResource("2_lpujb")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="OutChanger" to="OutChanger" method="_on_body_entered"]
