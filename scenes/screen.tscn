@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://g8ih83bl2c2w"]
+[gd_scene load_steps=22 format=3 uid="uid://g8ih83bl2c2w"]
 
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_erqjc"]
 [ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scripts/screen.gd" id="1_gakxr"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://v3lbk1oydhka" path="res://scripts/overaly.gd" id="4_b7nko"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="7_r04ab"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="8_2oog4"]
+[ext_resource type="Script" uid="uid://s4wwi38dekrp" path="res://scenes/touch.gd" id="9_six6p"]
+[ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="9_xr627"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gakxr"]
 font = ExtResource("1_erqjc")
@@ -99,6 +101,20 @@ _data = {
 &"RESET": SubResource("Animation_xr627"),
 &"saving": SubResource("Animation_2oog4")
 }
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_six6p"]
+size = Vector2(256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2qsw"]
+atlas = ExtResource("9_xr627")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mgv7h"]
+load_path = "res://.godot/imported/buttons.png-567ff83775e0a9cfeeb08743175b147c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gapb5"]
+atlas = SubResource("CompressedTexture2D_mgv7h")
+region = Rect2(112, 32, 16, 16)
 
 [node name="Screen" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -239,3 +255,37 @@ uppercase = true
 libraries = {
 &"": SubResource("AnimationLibrary_xr627")
 }
+
+[node name="touch" type="Node" parent="."]
+script = ExtResource("9_six6p")
+
+[node name="right" type="TouchScreenButton" parent="touch"]
+position = Vector2(1660, 941)
+texture_normal = SubResource("PlaceholderTexture2D_six6p")
+
+[node name="left" type="TouchScreenButton" parent="touch"]
+position = Vector2(1351, 941)
+texture_normal = SubResource("PlaceholderTexture2D_six6p")
+
+[node name="jump" type="TouchScreenButton" parent="touch"]
+position = Vector2(12, 948)
+texture_normal = SubResource("PlaceholderTexture2D_six6p")
+
+[node name="use" type="TouchScreenButton" parent="touch"]
+position = Vector2(12, 736)
+texture_normal = SubResource("PlaceholderTexture2D_six6p")
+
+[node name="pause" type="TouchScreenButton" parent="touch"]
+position = Vector2(1789, 3)
+scale = Vector2(8.3125, 8.3125)
+texture_normal = SubResource("AtlasTexture_t2qsw")
+texture_pressed = SubResource("AtlasTexture_gapb5")
+
+[connection signal="pressed" from="touch/right" to="touch" method="_on_right_pressed"]
+[connection signal="released" from="touch/right" to="touch" method="_on_right_released"]
+[connection signal="pressed" from="touch/left" to="touch" method="_on_left_pressed"]
+[connection signal="released" from="touch/left" to="touch" method="_on_left_released"]
+[connection signal="pressed" from="touch/jump" to="touch" method="_on_jump_pressed"]
+[connection signal="released" from="touch/jump" to="touch" method="_on_jump_released"]
+[connection signal="pressed" from="touch/use" to="touch" method="_on_use_pressed"]
+[connection signal="pressed" from="touch/pause" to="touch" method="_on_pause_pressed"]
