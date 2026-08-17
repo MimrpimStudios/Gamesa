@@ -396,6 +396,10 @@ texture = ExtResource("6_jf2b0")
 position = Vector2(441, 56)
 texture = ExtResource("6_jf2b0")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
+tile_map_data = PackedByteArray("AACHAAUADgACAAAAAADCAPz/DgABAAAAAADNAPz/DgABAAAAAAA=")
+tile_set = ExtResource("2_5s6bi")
+
 [node name="Player" parent="." instance=ExtResource("7_ln4gv")]
 position = Vector2(1973, 359)
 
