@@ -47,7 +47,7 @@ func story_01():
 	await get_tree().create_timer(3).timeout
 	dialog_player.text = ""
 	await get_tree().create_timer(1).timeout
-	dialog_mother.text = "Son, can you come here, please?".to_upper()
+	dialog_mother.text = "Gam, can you come here, please?".to_upper()
 	await get_tree().create_timer(4.5).timeout
 	dialog_mother.text = ""
 	await get_tree().create_timer(1).timeout
