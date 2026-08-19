@@ -3,9 +3,10 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_unya1"]
 [ext_resource type="Script" uid="uid://c76k0pbflpu7g" path="res://scenes/post/label_1.gd" id="2_uyfra"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wwp21"]
+[sub_resource type="LabelSettings" id="LabelSettings_unya1"]
 font = ExtResource("1_unya1")
 font_size = 128
+font_color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 
 [node name="Label" type="Label"]
 anchors_preset = 8
@@ -19,7 +20,9 @@ offset_right = 13.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "THAT IS THE END OF THE STORY..."
-label_settings = SubResource("LabelSettings_wwp21")
+text = "GAM HAVE A SECRET BROTHER...
+HIS NAME IS MESS (GAM+ES+A=GAMESA)"
+label_settings = SubResource("LabelSettings_unya1")
 script = ExtResource("2_uyfra")
-time = 2.0
+time = 5.0
+scene = "res://scenes/post/label10.tscn"
