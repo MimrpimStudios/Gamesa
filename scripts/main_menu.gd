@@ -11,7 +11,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str(global_var.load_level()))
 	panel_hide()
-	if global_var.load_level() == global_var.start_scene_new_game:
+	if global_var.load_level() == global_var.start_scene_new_game or global_var.load_level() == "":
 		continue_game_button.set_disabled(true)
 
 

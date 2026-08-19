@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3vqyhxvl3ej1"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_kjj1c"]
+[ext_resource type="Script" uid="uid://c76k0pbflpu7g" path="res://scenes/post/label_1.gd" id="2_dot2e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cw6qp"]
+font = ExtResource("1_kjj1c")
+font_size = 128
+font_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+
+[node name="Label" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.5
+offset_right = 13.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "I WAS DIFERENT..."
+label_settings = SubResource("LabelSettings_cw6qp")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_dot2e")
+scene = "res://scenes/post/label5.tscn"

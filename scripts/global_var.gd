@@ -81,7 +81,7 @@ func load_level():
 
 
 func save_level():
-	print("Saving" + str(level) + "...")
+	print("Saving " + str(level) + "...")
 	var save_file = FileAccess.open("user://savefile.save", FileAccess.WRITE)
 	save_file.store_line(level)
 	save_file.close()

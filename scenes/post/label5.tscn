@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://duv6v62vrwyw6"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_b0sap"]
+[ext_resource type="Script" uid="uid://c76k0pbflpu7g" path="res://scenes/post/label_1.gd" id="2_m7byq"]
+[ext_resource type="Texture2D" uid="uid://d24xaav02ac1j" path="res://assets/Textures/sprites/player.old.png" id="3_oj8ef"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7ctc"]
+font = ExtResource("1_b0sap")
+font_size = 128
+
+[node name="Label" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.5
+offset_right = 13.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "THIS IS ME"
+label_settings = SubResource("LabelSettings_f7ctc")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_m7byq")
+time = 2.0
+scene = "res://scenes/post/label6.tscn"
+
+[node name="Player_old" type="Sprite2D" parent="."]
+position = Vector2(-229, 200)
+scale = Vector2(34.5, 34.5)
+texture = ExtResource("3_oj8ef")

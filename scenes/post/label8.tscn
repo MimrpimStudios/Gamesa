@@ -1,0 +1,182 @@
+[gd_scene load_steps=33 format=3 uid="uid://bb5gwlb4hg4t5"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_wc3r3"]
+[ext_resource type="Script" uid="uid://c76k0pbflpu7g" path="res://scenes/post/label_1.gd" id="2_dntcn"]
+[ext_resource type="Texture2D" uid="uid://d24xaav02ac1j" path="res://assets/Textures/sprites/player.old.png" id="3_4lp7h"]
+[ext_resource type="FontFile" uid="uid://j1oemrbyrdvl" path="res://assets/Gamesa.ttf" id="4_x8s8v"]
+[ext_resource type="Texture2D" uid="uid://c88lj1c7d11hn" path="res://assets/Textures/tilemap/boxes.png" id="5_5sgxy"]
+[ext_resource type="Texture2D" uid="uid://ddduyugtall4a" path="res://assets/Textures/tilemap/grass-tilemap-3.png" id="6_at4a5"]
+[ext_resource type="Texture2D" uid="uid://35lsq17j8r83" path="res://assets/Textures/tilemap/Tileset_1.png" id="7_0rr02"]
+[ext_resource type="Texture2D" uid="uid://dtfe3p6xxwcmp" path="res://assets/Textures/tilemap/Tileset_2.png" id="8_yvwfw"]
+[ext_resource type="Texture2D" uid="uid://c5avydt0jpam8" path="res://assets/Textures/tilemap/Tileset_4.png" id="9_gcuq3"]
+[ext_resource type="Texture2D" uid="uid://bcqclj5bk31ob" path="res://assets/Textures/tilemap/Tileset_5.png" id="10_mbk4p"]
+[ext_resource type="Texture2D" uid="uid://dcsr07rsijpx" path="res://assets/Textures/tilemap/Tileset_6.png" id="11_shrwv"]
+[ext_resource type="Texture2D" uid="uid://baa6gw7wlkgm5" path="res://assets/Textures/tilemap/Tileset_7.png" id="12_prapq"]
+[ext_resource type="Texture2D" uid="uid://d3loaufoyugss" path="res://assets/Textures/tilemap/Tileset_8.png" id="13_7jhds"]
+[ext_resource type="Texture2D" uid="uid://dlwsy55wsv6y1" path="res://assets/Textures/tilemap/Tileset_9.png" id="14_ns5pv"]
+[ext_resource type="Texture2D" uid="uid://dfq2tknmi3go6" path="res://assets/Textures/tilemap/Tileset_10.png" id="15_wrm51"]
+[ext_resource type="Texture2D" uid="uid://cx63ymmjes4pw" path="res://assets/Textures/tilemap/Tileset_11.png" id="16_077gv"]
+[ext_resource type="Texture2D" uid="uid://cwydr16sv6m08" path="res://assets/Textures/tilemap/Tileset_12.png" id="17_xnup8"]
+[ext_resource type="Texture2D" uid="uid://xosuu0510d2f" path="res://assets/Textures/tilemap/Tileset_13.png" id="18_ww63b"]
+[ext_resource type="Texture2D" uid="uid://b5hly3ijlcyjo" path="res://assets/Textures/tilemap/Tileset_14.png" id="19_hkc0t"]
+[ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="20_noitp"]
+[ext_resource type="Texture2D" uid="uid://bclidktytow46" path="res://assets/Textures/sprites/00-avatars.png" id="21_vp41c"]
+[ext_resource type="Texture2D" uid="uid://cmmuxsb6c17nr" path="res://assets/Textures/sprites/00-guide.png" id="22_qutnn"]
+[ext_resource type="Texture2D" uid="uid://cu550vlpy52yw" path="res://assets/Textures/sprites/01-generic.png" id="23_5prnl"]
+[ext_resource type="Texture2D" uid="uid://de4lxeii5vcci" path="res://assets/Textures/sprites/02-bard.png" id="24_plcq2"]
+[ext_resource type="Texture2D" uid="uid://deglkfwtipxgi" path="res://assets/Textures/sprites/03-soldier.png" id="25_3ulp2"]
+[ext_resource type="Texture2D" uid="uid://ben0jhfj62lce" path="res://assets/Textures/sprites/04-scout.png" id="26_72dof"]
+[ext_resource type="Texture2D" uid="uid://px31i3xjcxur" path="res://assets/Textures/sprites/05-devout.png" id="27_25rve"]
+[ext_resource type="Texture2D" uid="uid://dtx0rejcoqqa5" path="res://assets/Textures/sprites/06-conjurer.png" id="28_4wjud"]
+[ext_resource type="Texture2D" uid="uid://bk170ijewg027" path="res://assets/Textures/sprites/chibi-layered.png" id="29_bsjb7"]
+[ext_resource type="Texture2D" uid="uid://cayxloelc5y13" path="res://assets/Textures/sprites/spike.png" id="30_x0c2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_on07p"]
+font = ExtResource("1_wc3r3")
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_hl4hm"]
+font = ExtResource("4_x8s8v")
+font_size = 64
+
+[node name="Label" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.5
+offset_right = 13.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "AND OTHER ASSETS..."
+label_settings = SubResource("LabelSettings_on07p")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_dntcn")
+time = 10.0
+scene = "res://scenes/post/label9.tscn"
+
+[node name="Player_old" type="Sprite2D" parent="."]
+position = Vector2(-141, 255)
+scale = Vector2(21.3125, 21.3125)
+texture = ExtResource("3_4lp7h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 474.0
+offset_right = 1362.0
+offset_bottom = 666.0
+text = "uNUSED... "
+label_settings = SubResource("LabelSettings_hl4hm")
+
+[node name="Boxes" type="Sprite2D" parent="."]
+position = Vector2(-94.99994, -338.99994)
+scale = Vector2(14.875, 14.875)
+texture = ExtResource("5_5sgxy")
+
+[node name="GrassTilemap3" type="Sprite2D" parent="."]
+position = Vector2(566, -269)
+scale = Vector2(2.6607141, 2.6607144)
+texture = ExtResource("6_at4a5")
+
+[node name="Tileset1" type="Sprite2D" parent="."]
+position = Vector2(776, -376)
+texture = ExtResource("7_0rr02")
+
+[node name="Tileset2" type="Sprite2D" parent="."]
+position = Vector2(1018, -352)
+texture = ExtResource("8_yvwfw")
+
+[node name="Tileset4" type="Sprite2D" parent="."]
+position = Vector2(790, -180)
+texture = ExtResource("9_gcuq3")
+
+[node name="Tileset5" type="Sprite2D" parent="."]
+position = Vector2(1014, -128)
+texture = ExtResource("10_mbk4p")
+
+[node name="Tileset6" type="Sprite2D" parent="."]
+position = Vector2(1208, -342)
+texture = ExtResource("11_shrwv")
+
+[node name="Tileset7" type="Sprite2D" parent="."]
+position = Vector2(1256, -97)
+texture = ExtResource("12_prapq")
+
+[node name="Tileset8" type="Sprite2D" parent="."]
+position = Vector2(1246, 141)
+texture = ExtResource("13_7jhds")
+
+[node name="Tileset9" type="Sprite2D" parent="."]
+position = Vector2(1235, 304)
+texture = ExtResource("14_ns5pv")
+
+[node name="Tileset10" type="Sprite2D" parent="."]
+position = Vector2(1249, 466)
+texture = ExtResource("15_wrm51")
+
+[node name="Tileset11" type="Sprite2D" parent="."]
+position = Vector2(956, 245)
+texture = ExtResource("16_077gv")
+
+[node name="Tileset12" type="Sprite2D" parent="."]
+position = Vector2(928, 414)
+texture = ExtResource("17_xnup8")
+
+[node name="Tileset13" type="Sprite2D" parent="."]
+position = Vector2(710, 248)
+texture = ExtResource("18_ww63b")
+
+[node name="Tileset14" type="Sprite2D" parent="."]
+position = Vector2(659, 466)
+texture = ExtResource("19_hkc0t")
+
+[node name="Buttons" type="Sprite2D" parent="."]
+position = Vector2(193, 290)
+texture = ExtResource("20_noitp")
+
+[node name="00Avatars" type="Sprite2D" parent="."]
+position = Vector2(-284, -121)
+texture = ExtResource("21_vp41c")
+
+[node name="00Guide" type="Sprite2D" parent="."]
+position = Vector2(66.5, -167.5)
+scale = Vector2(2.90625, 1.703125)
+texture = ExtResource("22_qutnn")
+
+[node name="01Generic" type="Sprite2D" parent="."]
+position = Vector2(372, -114)
+texture = ExtResource("23_5prnl")
+
+[node name="02Bard" type="Sprite2D" parent="."]
+position = Vector2(579, -231)
+texture = ExtResource("24_plcq2")
+
+[node name="03Soldier" type="Sprite2D" parent="."]
+position = Vector2(603, -59)
+texture = ExtResource("25_3ulp2")
+
+[node name="04Scout" type="Sprite2D" parent="."]
+position = Vector2(414, 266)
+texture = ExtResource("26_72dof")
+
+[node name="05Devout" type="Sprite2D" parent="."]
+position = Vector2(44, 504)
+texture = ExtResource("27_25rve")
+
+[node name="06Conjurer" type="Sprite2D" parent="."]
+position = Vector2(-367, 69)
+texture = ExtResource("28_4wjud")
+
+[node name="ChibiLayered" type="Sprite2D" parent="."]
+position = Vector2(58, 152)
+texture = ExtResource("29_bsjb7")
+
+[node name="Spike" type="Sprite2D" parent="."]
+position = Vector2(-137.5, 186)
+scale = Vector2(11.562499, 11.375)
+texture = ExtResource("30_x0c2f")
