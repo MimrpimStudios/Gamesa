@@ -21,8 +21,10 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "GAM HAVE A SECRET BROTHER...
-HIS NAME IS MESS (GAM+ES+A=GAMESA)"
+HIS NAME IS MESS 
+(GAM+ESS-S+A=GAMESA)"
 label_settings = SubResource("LabelSettings_unya1")
+horizontal_alignment = 1
 script = ExtResource("2_uyfra")
 time = 5.0
 scene = "res://scenes/post/label10.tscn"
