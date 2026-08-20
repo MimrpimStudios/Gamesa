@@ -7,7 +7,7 @@ Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for m
 
 # Q&A
 ## Other languages?
-> Only language is English and [Czech (via patch download).](http://github.com/mimrpimstudios/gamesa-cz)
+> Only language is English and [Czech](http://github.com/mimrpimstudios/gamesa-cz) (via patch download).
 ## Multiplayer support?
 > see [issue #8](https://github.com/MimrpimStudios/Gamesa/issues/8) for more info
 ## What engine are you using?
