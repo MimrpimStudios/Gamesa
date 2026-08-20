@@ -6,7 +6,8 @@ if you want to install, here is it: [https://github.com/mimrpimstudios/Gamesa/re
 Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher)(Windows only, or via wine on Linux, but not tested)
 
 # Q&A
-
+## Other languages?
+> Only language is English and [Czech (via patch download).](http://github.com/mimrpimstudios/gamesa-cz)
 ## Multiplayer support?
 > see [issue #8](https://github.com/MimrpimStudios/Gamesa/issues/8) for more info
 ## What engine are you using?
