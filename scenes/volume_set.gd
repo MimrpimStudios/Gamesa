@@ -41,4 +41,4 @@ func _on_button_play_pressed() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_out":
 		await get_tree().create_timer(0.8).timeout
-		get_tree().change_scene_to_file(global_var.start_scene_story)
+		get_tree().change_scene_to_file(global_var.intro_scene)
