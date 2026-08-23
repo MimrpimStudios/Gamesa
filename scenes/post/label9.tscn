@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "GAM HAVE A SECRET BROTHER...
 HIS NAME IS MESS 
-(GAM+ESS-S+A=GAMESA)"
+(GAM+MESS-M-S+A=GAMESA)"
 label_settings = SubResource("LabelSettings_unya1")
 horizontal_alignment = 1
 script = ExtResource("2_uyfra")
