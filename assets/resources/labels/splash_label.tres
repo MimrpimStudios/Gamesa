@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d0k3pjdm773bv"]
+
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_1idmb"]
+
+[resource]
+font = ExtResource("1_1idmb")
+font_size = 64
+font_color = Color(1, 1, 0, 1)
+shadow_offset = Vector2(20, 20)

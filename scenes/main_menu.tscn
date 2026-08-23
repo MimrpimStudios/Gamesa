@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 [ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
+[ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_svtp6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -119,13 +120,6 @@ region = Rect2(2, 2, 90, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
 atlas = ExtResource("12_flqon")
 region = Rect2(99, 3, 90, 25)
-
-[sub_resource type="LabelSettings" id="LabelSettings_8egab"]
-font = ExtResource("5_tbmy8")
-font_size = 64
-font_color = Color(1, 1, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(20, 20)
 
 [sub_resource type="Animation" id="Animation_svtp6"]
 length = 0.001
@@ -518,7 +512,7 @@ grow_vertical = 2
 rotation = 0.65072757
 text = "So we have that...
 "
-label_settings = SubResource("LabelSettings_8egab")
+label_settings = ExtResource("21_svtp6")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("20_gw5y6")
