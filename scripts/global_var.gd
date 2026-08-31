@@ -29,7 +29,7 @@ const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
 const start_scene_new_game = start_scene_story
 const start_scene = main_menu_scene
-const version = "1.0"
+const version = "1.001"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -40,13 +40,13 @@ const out_02_scene = "res://scenes/levels/tutorial/02_out.tscn"
 const house_02_in_scene = "res://scenes/levels/tutorial/02_house_in.tscn"
 const intro_scene = "res://scenes/intro.tscn"
 const credits_scene = "res://scenes/credits.tscn"
-const cicada_scene = "res://scenes/cidada.tscn"
 
 const menus = [
 	"res://scenes/main_menu.tscn",
 	"res://scenes/main.tscn",
 	"res://scenes/volume_set.tscn",
-	"res://scenes/intro.tscn"
+	"res://scenes/intro.tscn",
+	"res://scenes/credits.tscn",
 	
 ]
 
