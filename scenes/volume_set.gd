@@ -7,6 +7,8 @@ extends Control
 @onready var color_rect: ColorRect = $ColorRect
 @onready var animation_player2: AnimationPlayer = $ButtonPlay/AnimationPlayer
 
+var first: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	color_rect.show()
@@ -15,6 +17,11 @@ func _ready() -> void:
 	animation_player.play("fade_in")
 	await get_tree().create_timer(0.05).timeout
 	color_rect.hide()
+	if not global_var.load_level() == global_var.start_scene_new_game or not global_var.load_level() == "":
+		first = false
+		button_play.show()
+		animation_player2.play("fade_in")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
