@@ -19,7 +19,10 @@ offset_right = 13.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "THAT IS THE END OF THE STORY..."
+text = "TRY USE THE ` KEY 
+(IT IS UNDER THE ESC KEY)
+FOR CHEATS (USE \"HELP\" FOR HELP)"
 label_settings = SubResource("LabelSettings_wwp21")
 script = ExtResource("2_0ekms")
-time = 2.0
+time = 10.0
+scene = "res://scenes/post/label11.tscn"
