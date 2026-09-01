@@ -14,7 +14,7 @@ var syntax = [
 	" - Clears console",
 	" <set|reset> <float> - Sets the player speed",
 	" - Enable god mode (can not turn off, only by killing itself in instakill like spikes etc.)",
-	"<level name|help> - changes level"
+	" <level name|help> - changes level"
 ]
 
 @onready var root: CanvasLayer = $"."
