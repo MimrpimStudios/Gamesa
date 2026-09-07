@@ -16,9 +16,9 @@
 [ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scripts/launcher_info_popup.gd" id="13_rcqid"]
 [ext_resource type="Script" uid="uid://dok148vk8kg6c" path="res://scenes/links.gd" id="14_a8gd2"]
 [ext_resource type="Texture2D" uid="uid://cnitwi75la8tb" path="res://assets/Textures/links/28pxl/round square/aseprite-28a.png" id="15_hstxw"]
-[ext_resource type="Texture2D" uid="uid://cyr63ut51kjck" path="res://assets/Textures/links/28pxl/round square/godot28a.png" id="16_8egab"]
 [ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
-[ext_resource type="Texture2D" uid="uid://cx4xorbnnmp23" path="res://assets/Textures/links/28pxl/round square/itch-28.png" id="17_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://cxsrjdpfnxrh2" path="res://assets/Textures/links/28pxl/round square/godot28b.png" id="17_svtp6"]
+[ext_resource type="Texture2D" uid="uid://cb1mbvp48km04" path="res://assets/Textures/links/28pxl/round square/itch28.png" id="18_1dfpl"]
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 [ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
 [ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_svtp6"]
@@ -461,7 +461,7 @@ offset_top = -32.0
 offset_right = 92.0
 offset_bottom = -4.0
 grow_vertical = 0
-texture_normal = ExtResource("16_8egab")
+texture_normal = ExtResource("17_svtp6")
 
 [node name="TextureButton3" type="TextureButton" parent="Links"]
 anchors_preset = 2
@@ -471,7 +471,7 @@ offset_top = -31.0
 offset_right = 29.0
 offset_bottom = -3.0
 grow_vertical = 0
-texture_normal = ExtResource("17_gw5y6")
+texture_normal = ExtResource("18_1dfpl")
 
 [node name="TextureButton4" type="TextureButton" parent="Links"]
 anchors_preset = 2
