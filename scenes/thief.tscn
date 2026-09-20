@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://br41crrtljd5t"]
+
+[ext_resource type="Texture2D" uid="uid://dgf8vr6tt3jy4" path="res://assets/Textures/sprites/thief.png" id="1_eeaoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jgx8"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sinav"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(48, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsfqg"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(0, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1b76"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(16, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6qpt"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(32, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5wgd"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(0, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mtmy"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(16, 34, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1qu4"]
+atlas = ExtResource("1_eeaoh")
+region = Rect2(32, 34, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b040v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jgx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jgx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jgx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sinav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sinav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsfqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1b76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6qpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1b76")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5wgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mtmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1qu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mtmy")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmadw"]
+size = Vector2(7, 15)
+
+[node name="Thief" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b040v")
+animation = &"right"
+autoplay = "default"
+frame_progress = 0.09007456
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mmadw")
