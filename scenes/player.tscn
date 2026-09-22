@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cdmijiqu81d1q"]
+[gd_scene load_steps=23 format=3 uid="uid://cdmijiqu81d1q"]
 
 [ext_resource type="Script" uid="uid://cia6u3d1l3ic3" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
@@ -40,6 +40,14 @@ region = Rect2(144, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_g2els")
 region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("2_g2els")
+region = Rect2(256, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("2_g2els")
+region = Rect2(273, 0, 17, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("2_g2els")
@@ -103,6 +111,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ur7pv")
 }, {
 "duration": 1.0,
@@ -133,8 +152,9 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"sitting_couch"
+animation = &"sleep"
 autoplay = "stand"
+frame_progress = 0.4056304
 
 [node name="Healthbar" type="Control" parent="AnimatedSprite2D"]
 layout_mode = 3

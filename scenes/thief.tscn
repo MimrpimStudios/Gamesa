@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://br41crrtljd5t"]
+[gd_scene load_steps=14 format=3 uid="uid://br41crrtljd5t"]
 
 [ext_resource type="Texture2D" uid="uid://dgf8vr6tt3jy4" path="res://assets/Textures/sprites/thief.png" id="1_eeaoh"]
+[ext_resource type="Script" uid="uid://be5j800qgjujy" path="res://scenes/thief.gd" id="1_sinav"]
+[ext_resource type="Texture2D" uid="uid://b23qkbh4hiopk" path="res://assets/Textures/flashlight.png" id="2_6jgx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jgx8"]
 atlas = ExtResource("1_eeaoh")
@@ -95,6 +97,8 @@ animations = [{
 size = Vector2(7, 15)
 
 [node name="Thief" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_sinav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b040v")
@@ -104,3 +108,11 @@ frame_progress = 0.09007456
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mmadw")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+rotation = 3.1415925
+color = Color(1, 1, 0.011764706, 1)
+energy = 0.12
+shadow_enabled = true
+texture = ExtResource("2_6jgx8")
+offset = Vector2(-18, 0)
