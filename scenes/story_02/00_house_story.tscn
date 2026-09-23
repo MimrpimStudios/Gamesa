@@ -44,8 +44,8 @@ size = Vector2(15.25, 21)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
 
-[sub_resource type="Animation" id="Animation_2qhxs"]
-resource_name = "anim"
+[sub_resource type="Animation" id="Animation_nlihu"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,8 +95,8 @@ tracks/3/keys = {
 "values": [&"left"]
 }
 
-[sub_resource type="Animation" id="Animation_nlihu"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_2qhxs"]
+resource_name = "anim"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -281,7 +281,8 @@ libraries = {
 autoplay = "anim"
 
 [node name="Thief" parent="." instance=ExtResource("11_mewbp")]
-position = Vector2(490, 348)
+position = Vector2(547, 350)
+collision_layer = 8
 
 [node name="AnimatedSprite2D" parent="Thief" index="0"]
 animation = &"left"
@@ -291,8 +292,21 @@ frame_progress = 0.0
 texture = ExtResource("10_165sn")
 offset = Vector2(18, 0)
 
+[node name="Thief2" parent="." instance=ExtResource("11_mewbp")]
+position = Vector2(547, 350)
+collision_layer = 4
+
+[node name="AnimatedSprite2D" parent="Thief2" index="0"]
+animation = &"left"
+frame_progress = 0.0
+
+[node name="PointLight2D" parent="Thief2" index="2"]
+texture = ExtResource("10_165sn")
+offset = Vector2(18, 0)
+
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
 
 [editable path="Player"]
 [editable path="Thief"]
+[editable path="Thief2"]
