@@ -152,9 +152,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"sleep"
 autoplay = "stand"
-frame_progress = 0.4056304
 
 [node name="Healthbar" type="Control" parent="AnimatedSprite2D"]
 layout_mode = 3
