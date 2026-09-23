@@ -1,7 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://dq54mkvqd01km"]
+[gd_scene load_steps=44 format=3 uid="uid://dq54mkvqd01km"]
 
 [ext_resource type="Script" uid="uid://bw7vipfxcwatg" path="res://scenes/story_02/main_menu_2.gd" id="1_3arye"]
-[ext_resource type="PackedScene" uid="uid://b7xpwofy5nujb" path="res://scenes/levels/tutorial/01_stoky_screenshoot.tscn" id="2_dvioc"]
 [ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="3_x1j38"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="4_xup2e"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="5_la5lj"]
@@ -9,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dofvb0j6jocw0" path="res://scenes/label_credits.gd" id="7_h4xja"]
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="8_olecc"]
 [ext_resource type="Texture2D" uid="uid://c7ur1guja3ix4" path="res://assets/Textures/exit.png" id="9_dds4q"]
-[ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scripts/launcher_info_popup.gd" id="10_tk8pk"]
+[ext_resource type="Script" uid="uid://chhou5uvjh6yc" path="res://scenes/story_02/launcher_info_dialog.gd" id="9_xhuod"]
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="11_hvs0l"]
 [ext_resource type="Texture2D" uid="uid://cvmijwj11au16" path="res://assets/Textures/load.png" id="12_y0p2a"]
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="13_3cbg4"]
@@ -216,10 +215,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3arye")
 
-[node name="01_stoky" parent="." instance=ExtResource("2_dvioc")]
-position = Vector2(-16240, -13307.001)
-scale = Vector2(5, 5)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x1j38")
 autoplay = true
@@ -373,7 +368,7 @@ ok_button_text = "Open website for downloading latest launcher version"
 dialog_text = "                       You are not using our launcher
                            or using outdated version!"
 dialog_close_on_escape = false
-script = ExtResource("10_tk8pk")
+script = ExtResource("9_xhuod")
 
 [node name="GameChoosePanel" type="Panel" parent="."]
 visible = false
