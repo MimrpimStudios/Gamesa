@@ -5,15 +5,40 @@ extends Control
 @onready var texture_button_play: TextureButton = $TextureButtonPlay
 @onready var texture_button_exit: TextureButton = $TextureButtonExit
 
+@onready var basement_01: Node2D = $Basement01
+@onready var player: CharacterBody2D = $Basement01/Player
+@onready var basement_01_chair: Sprite2D = $Basement01/Basement01Chair
+
+@onready var _00_house_story: Node2D = $"00HouseStory"
+
+const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_var.player_movement = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str( global_var.load_level_story_2()))
 	panel_hide()
 	if global_var.load_level_story_2() == global_var.start_scene_new_game_story_2 or global_var.load_level_story_2() == "":
 		continue_game_button.set_disabled(true)
+	if global_var.load_level_story_2() == global_var.story_2_basement_1_scene:
+		basement_01.show()
+		player.hide()
+	else:
+		basement_01.hide()
+	if global_var.load_level_story_2() == global_var.story_2_basement_1_no_chair_scene:
+		basement_01.show()
+		basement_01_chair.set_texture(PLAYER_ROPE_CHAIR_BROKEN)
 
+		player.show()
+	else:
+		player.hide()
+		basement_01.hide()
+
+	if continue_game_button.disabled:
+		_00_house_story.show()
+	else:
+		_00_house_story.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -37,13 +62,14 @@ func _on_new_game_button_pressed() -> void:
 	global_var.level = global_var.start_scene_new_game_story_2
 	print("Going to: " + str(global_var.level))
 	get_tree().change_scene_to_file(global_var.level)
+	global_var.player_movement = true
 
 
 func _on_continue_game_button_pressed() -> void:
 	global_var.level = global_var.load_level_story_2()
 	print("Going to: " + str(global_var.level))
 	get_tree().change_scene_to_file(global_var.level)
-
+	global_var.player_movement = true
 
 func _on_back_button_pressed() -> void:
 	panel_hide()

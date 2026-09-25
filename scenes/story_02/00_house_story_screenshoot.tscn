@@ -1,15 +1,13 @@
-[gd_scene load_steps=24 format=4 uid="uid://c7vvcwsrdwkpd"]
+[gd_scene load_steps=18 format=4 uid="uid://cjt5ds7618hi6"]
 
-[ext_resource type="Script" uid="uid://dtr7epib5bb60" path="res://scenes/story_02/00_house_story.gd" id="1_mewbp"]
-[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_hv5qn"]
-[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_a7w1d"]
-[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="5_0h2mi"]
-[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_m28dw"]
-[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_bkgt1"]
-[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="9_o7shw"]
-[ext_resource type="Texture2D" uid="uid://jqtcicqflvpp" path="res://assets/Textures/flashlight2.png" id="10_165sn"]
-[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="10_wxx5m"]
-[ext_resource type="PackedScene" uid="uid://br41crrtljd5t" path="res://scenes/thief.tscn" id="11_mewbp"]
+[ext_resource type="Script" uid="uid://lhealhnttdlk" path="res://scenes/story_02/00_house_story_screenshoot.gd" id="1_xvb11"]
+[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_kied4"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_dc2y6"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_8vej4"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="5_ellne"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_1mdee"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="7_qr2ax"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="8_kofde"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0x7jl"]
 cull_mode = 1
@@ -44,98 +42,19 @@ size = Vector2(15.25, 21)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
 
-[sub_resource type="Animation" id="Animation_nlihu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.21950102, 0.21950102, 0.21950102, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"sleep"]
-}
-
-[sub_resource type="Animation" id="Animation_2qhxs"]
-resource_name = "anim"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0.21950102, 0.21950102, 0.21950102, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"sleep", &"sleep"]
-}
-
-[sub_resource type="Animation" id="Animation_165sn"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasModulate:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.21950102, 0.21950102, 0.21950102, 1), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7f308"]
-_data = {
-&"RESET": SubResource("Animation_nlihu"),
-&"anim": SubResource("Animation_2qhxs"),
-&"fade": SubResource("Animation_165sn")
-}
-
-[node name="00HouseStory" type="Node2D"]
-script = ExtResource("1_mewbp")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+[node name="00HouseStoryScreenshoot" type="Node2D"]
+modulate = Color(0.21960784, 0.21960784, 0.21960784, 1)
+script = ExtResource("1_xvb11")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
 tile_map_data = PackedByteArray("AAASAAAACgAAAAAAAAASAAEACgAAAAAAAAASAAIACgAAAAAAAAASAAMACgAAAAAAAAASAAQACgAAAAAAAAASAAUACgAAAAAAAAASAAYACgAAAAAAAAATAAAACgAAAAAAAAATAAEACgAAAAAAAAATAAIACgAAAAAAAAATAAMACgAAAAAAAAATAAQACgAAAAAAAAATAAUACgAAAAAAAAATAAYACgAAAAAAAAAUAAAACgAAAAAAAAAUAAEACgAAAAAAAAAUAAIACgAAAAAAAAAUAAMACgAAAAAAAAAUAAQACgAAAAAAAAAUAAUACgAAAAAAAAAUAAYACgAAAAAAAAAVAAAACgAAAAAAAAAVAAEACgAAAAAAAAAVAAIACgAAAAAAAAAVAAMACgAAAAAAAAAVAAQACgAAAAAAAAAVAAUACgAAAAAAAAAVAAYACgAAAAAAAAAWAAAACgAAAAAAAAAWAAEACgAAAAAAAAAWAAIACgAAAAAAAAAWAAMACgAAAAAAAAAWAAQACgAAAAAAAAAWAAUACgAAAAAAAAAWAAYACgAAAAAAAAAXAAAACgAAAAAAAAAXAAEACgAAAAAAAAAXAAIACgAAAAAAAAAXAAMACgAAAAAAAAAXAAQACgAAAAAAAAAXAAUACgAAAAAAAAAXAAYACgAAAAAAAAAYAAAACgAAAAAAAAAYAAEACgAAAAAAAAAYAAIACgAAAAAAAAAYAAMACgAAAAAAAAAYAAQACgAAAAAAAAAYAAUACgAAAAAAAAAYAAYACgAAAAAAAAAZAAAACgAAAAAAAAAZAAEACgAAAAAAAAAZAAIACgAAAAAAAAAZAAMACgAAAAAAAAAZAAQACgAAAAAAAAAZAAUACgAAAAAAAAAZAAYACgAAAAAAAAAaAAAACgAAAAAAAAAaAAEACgAAAAAAAAAaAAIACgAAAAAAAAAaAAMACgAAAAAAAAAaAAQACgAAAAAAAAAaAAUACgAAAAAAAAAaAAYACgAAAAAAAAAbAAAACgAAAAAAAAAbAAEACgAAAAAAAAAbAAIACgAAAAAAAAAbAAMACgAAAAAAAAAbAAQACgAAAAAAAAAbAAUACgAAAAAAAAAbAAYACgAAAAAAAAAcAAAACgAAAAAAAAAcAAEACgAAAAAAAAAcAAIACgAAAAAAAAAcAAMACgAAAAAAAAAcAAQACgAAAAAAAAAcAAUACgAAAAAAAAAcAAYACgAAAAAAAAAdAAAACgAAAAAAAAAdAAEACgAAAAAAAAAdAAIACgAAAAAAAAAdAAMACgAAAAAAAAAdAAQACgAAAAAAAAAdAAUACgAAAAAAAAAdAAYACgAAAAAAAAAeAAAACgAAAAAAAAAeAAEACgAAAAAAAAAeAAIACgAAAAAAAAAeAAMACgAAAAAAAAAeAAQACgAAAAAAAAAeAAUACgAAAAAAAAAeAAYACgAAAAAAAAA=")
-tile_set = ExtResource("2_hv5qn")
+tile_set = ExtResource("2_kied4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
 tile_map_data = PackedByteArray("AAAdAAYADAABAAAAAAAcAAYADAABAAAAAAAbAAYADAABAAAAAAAeAAYADAADAAAAAAAeAAUADAADAAAAAAAeAAQADAADAAAAAAAeAAMADAADAAAAAAAdAAMADAABAAAAAAAcAAMADAABAAAAAAAbAAMADAABAAAAAAAaAAYADAABAAAAAAAZAAYADAABAAAAAAAYAAYADAABAAAAAAAXAAYADAABAAAAAAAWAAYADAABAAAAAAAVAAYADAABAAAAAAAUAAYADAABAAAAAAATAAYADAABAAAAAAASAAYADAADAAAAAAASAAUADAADAAAAAAASAAQADAADAAAAAAASAAMADAADAAAAAAATAAMADAABAAAAAAAUAAMADAABAAAAAAAVAAMADAABAAAAAAAaAAMADAABAAAAAAAeAAIADAADAAAAAAAeAAEADAADAAAAAAAeAAAADAADAAAAAAASAAIADAADAAAAAAASAAEADAADAAAAAAASAAAADAADAAAAAAATAAAADAADAAAAAAAUAAAADAADAAAAAAAVAAAADAADAAAAAAAWAAAADAADAAAAAAAXAAAADAADAAAAAAAYAAAADAADAAAAAAAZAAAADAADAAAAAAAaAAAADAADAAAAAAAbAAAADAADAAAAAAAcAAAADAADAAAAAAAdAAAADAADAAAAAAATAAIACgAGAAAAAAAUAAIACgAHAAAAAAAcAAIACgAVAAUAAAAdAAIACgAWAAUAAAATAAUACgAGAAIAAAAUAAUACgAHAAIAAAAXAAUACgARAAoAAAAYAAUACgATAAoAAAATAAcADAABAAEAAAAUAAcADAABAAEAAAAVAAcADAABAAEAAAAWAAcADAABAAEAAAAXAAcADAABAAEAAAAYAAcADAABAAEAAAAZAAcADAABAAEAAAAaAAcADAABAAEAAAAbAAcADAABAAEAAAAcAAcADAABAAEAAAAdAAcADAABAAEAAAASAAcADAABAAEAAAAeAAcADAABAAEAAAAfAAcADAABAAIAAAAfAAYADAAEAAEAAAAfAAUADAAEAAEAAAAfAAQADAAEAAEAAAAfAAMADAAEAAEAAAAfAAIADAAEAAEAAAAfAAEADAAEAAEAAAAfAAAADAAEAAEAAAAeAP//DAADAAEAAAAdAP//DAADAAEAAAAcAP//DAADAAEAAAAbAP//DAADAAEAAAAaAP//DAADAAEAAAAZAP//DAADAAEAAAAYAP//DAADAAEAAAAXAP//DAADAAEAAAAWAP//DAADAAEAAAAVAP//DAADAAEAAAAUAP//DAADAAEAAAATAP//DAADAAEAAAASAP//DAADAAEAAAAfAP//DAACAAIAAAARAAcADAAEAAIAAAARAAYADAACAAEAAAARAAUADAACAAEAAAARAAQADAACAAEAAAARAAMADAACAAEAAAARAAIADAACAAEAAAARAAEADAACAAEAAAARAAAADAACAAEAAAARAP//DAADAAIAAAA=")
-tile_set = ExtResource("3_a7w1d")
+tile_set = ExtResource("3_dc2y6")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileMapLayer"]
 occluder = SubResource("OccluderPolygon2D_0x7jl")
@@ -170,19 +89,15 @@ occluder = SubResource("OccluderPolygon2D_7lo6b")
 position = Vector2(-74, -263)
 occluder = SubResource("OccluderPolygon2D_o0qy0")
 
-[node name="Player" parent="." instance=ExtResource("5_0h2mi")]
-position = Vector2(389, 302)
+[node name="Player" parent="." instance=ExtResource("4_8vej4")]
+position = Vector2(389, 307)
 script = null
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
-position = Vector2(0, 0)
 animation = &"sleep"
 
 [node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
 visible = false
-
-[node name="CollisionShape2D" parent="Player" index="1"]
-position = Vector2(-0.5, 0)
 
 [node name="DialogPlayer" parent="Player" index="3"]
 offset_top = -67.99994
@@ -193,13 +108,13 @@ collision_mask = 3
 
 [node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
 position = Vector2(490, 349)
-texture = ExtResource("7_m28dw")
+texture = ExtResource("5_ellne")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
 position = Vector2(489.625, 347.5)
 shape = SubResource("RectangleShape2D_u00iu")
 
-[node name="Killzone" parent="." instance=ExtResource("8_bkgt1")]
+[node name="Killzone" parent="." instance=ExtResource("6_1mdee")]
 position = Vector2(462, 379)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -210,7 +125,6 @@ bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(458, 319)
-zoom = Vector2(5, 5)
 limit_enabled = false
 limit_bottom = 500
 limit_smoothed = true
@@ -220,7 +134,7 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="Mother" parent="." instance=ExtResource("9_o7shw")]
+[node name="Mother" parent="." instance=ExtResource("7_qr2ax")]
 position = Vector2(389, 355)
 anim = "sleeping"
 flip_h = true
@@ -237,53 +151,12 @@ offset_right = 65.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
-label_settings = ExtResource("10_wxx5m")
+label_settings = ExtResource("8_kofde")
 horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-top_level = true
-z_index = 4096
-offset_right = 2080.0
-offset_bottom = 1096.0
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_7f308")
-}
-autoplay = "anim"
-
-[node name="Thief" parent="." instance=ExtResource("11_mewbp")]
-position = Vector2(547, 350)
-collision_layer = 8
-
-[node name="AnimatedSprite2D" parent="Thief" index="0"]
-animation = &"left"
-frame_progress = 0.0
-
-[node name="PointLight2D" parent="Thief" index="2"]
-texture = ExtResource("10_165sn")
-offset = Vector2(18, 0)
-
-[node name="Thief2" parent="." instance=ExtResource("11_mewbp")]
-position = Vector2(547, 350)
-collision_layer = 4
-
-[node name="AnimatedSprite2D" parent="Thief2" index="0"]
-animation = &"left"
-frame_progress = 0.0
-
-[node name="PointLight2D" parent="Thief2" index="2"]
-texture = ExtResource("10_165sn")
-offset = Vector2(18, 0)
-
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Player"]
-[editable path="Thief"]
-[editable path="Thief2"]

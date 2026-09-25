@@ -53,10 +53,12 @@ const menus = [
 var level
 var launcher_type = ""
 var launcher_version = ""
-
 # Story 2
 
-var start_scene_new_game_story_2 = ""
+const start_scene_new_game_story_2 = story_2_house_story_00_scene
+const story_2_house_story_00_scene = "res://scenes/story_02/00_house_story.tscn"
+const story_2_basement_1_scene = "res://scenes/story_02/basement/basement_01.tscn"
+const story_2_basement_1_no_chair_scene = "res://scenes/story_02/basement/basement_01_no_chair.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

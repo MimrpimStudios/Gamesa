@@ -25,6 +25,8 @@ func _input(_event: InputEvent) -> void:
 			jump_count += 1
 	else:
 		await get_tree().process_frame
-		global_var.player_movement = true
-		player.show()
-		sprite_2d.set_texture(PLAYER_ROPE_CHAIR_BROKEN)
+		get_tree().change_scene_to_file(global_var.story_2_basement_1_no_chair_scene)
+		# old use for testing only
+		#global_var.player_movement = true
+		#player.show()
+		#sprite_2d.set_texture(PLAYER_ROPE_CHAIR_BROKEN)

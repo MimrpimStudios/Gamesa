@@ -1,7 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://dq54mkvqd01km"]
+[gd_scene load_steps=48 format=3 uid="uid://dq54mkvqd01km"]
 
 [ext_resource type="Script" uid="uid://bw7vipfxcwatg" path="res://scenes/story_02/main_menu_2.gd" id="1_3arye"]
+[ext_resource type="PackedScene" uid="uid://pu81h36gpgi4" path="res://scenes/story_02/basement/basement_01_screenshoot.tscn" id="2_dvioc"]
+[ext_resource type="PackedScene" uid="uid://cjt5ds7618hi6" path="res://scenes/story_02/00_house_story_screenshoot.tscn" id="2_xup2e"]
 [ext_resource type="AudioStream" uid="uid://dpl3g0hx1vl3q" path="res://assets/Sounds/Music/Kingdom.wav" id="3_x1j38"]
+[ext_resource type="Texture2D" uid="uid://cn71bhuxe2t33" path="res://assets/Textures/sprites/player_rope_chair.png" id="3_xup2e"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_x1j38"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="4_xup2e"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="5_la5lj"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="6_wjlw1"]
@@ -214,6 +218,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3arye")
+
+[node name="00HouseStory" parent="." instance=ExtResource("2_xup2e")]
+position = Vector2(-1330.0001, -1054)
+scale = Vector2(5, 5)
+
+[node name="Basement01" parent="." instance=ExtResource("2_dvioc")]
+visible = false
+position = Vector2(919, 733)
+scale = Vector2(5, 5)
+
+[node name="Basement01Chair" type="Sprite2D" parent="Basement01"]
+position = Vector2(8, -15)
+texture = ExtResource("3_xup2e")
+
+[node name="Player" parent="Basement01" instance=ExtResource("4_x1j38")]
+position = Vector2(29.399998, 6.198883e-06)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x1j38")
