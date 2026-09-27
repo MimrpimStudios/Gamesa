@@ -7,14 +7,18 @@ var commands = [
 	"clear",
 	"speed",
 	"god",
-	"level"
+	"level",
+	"exit",
+	"crash"
 ]
 var syntax = [
 	" - Shows all available commands",
 	" - Clears console",
 	" <set|reset> <float> - Sets the player speed",
 	" - Enable god mode (can not turn off, only by killing itself in instakill like spikes etc.)",
-	" <level name|help> - changes level"
+	" <level name|help> - changes level",
+	" - Exits the game with error code 0",
+	" <error message> - crashes the game"
 ]
 
 @onready var root: CanvasLayer = $"."
@@ -112,7 +116,14 @@ func _on_line_edit_text_submitted(text: String) -> void:
 					get_tree().change_scene_to_file(scene)
 				else:
 					rich_text_label.append_text("Error: This level does not exist\n")
-
+	elif command == "exit":
+		get_tree().quit(0)
+	elif command == "crash":
+		if arg1 == "crash":
+			OS.alert("User asked for crash!", "Error!")
+			OS.crash("User asked for crash!")
+		OS.alert(arg1, "Error!")
+		OS.crash(arg1)
 
 	line_edit.clear()
 	line_edit.release_focus()
