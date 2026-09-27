@@ -97,9 +97,6 @@ tile_set = ExtResource("3_yscle")
 unique_name_in_owner = true
 position = Vector2(412, 359)
 
-[node name="AnimatedSprite2D" parent="Player" index="0"]
-animation = &"stand"
-
 [node name="Screen" parent="." instance=ExtResource("5_33iay")]
 follow_viewport_enabled = false
 

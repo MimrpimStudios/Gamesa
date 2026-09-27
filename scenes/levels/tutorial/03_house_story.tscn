@@ -252,9 +252,6 @@ sit = false
 move = null
 direction = 0
 
-[node name="AnimatedSprite2D" parent="Player" index="0"]
-animation = &"stand"
-
 [node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
 visible = false
 

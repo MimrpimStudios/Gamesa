@@ -1,17 +1,16 @@
-[gd_scene load_steps=7 format=4 uid="uid://cg3y0xb82qokn"]
+[gd_scene load_steps=6 format=4 uid="uid://cg3y0xb82qokn"]
 
 [ext_resource type="Script" uid="uid://ckvykewi08hu4" path="res://scenes/story_02/basement/basement_02.gd" id="1_25l8r"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_skuld"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_iup3s"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_p0cw3"]
 [ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="5_nvrao"]
-[ext_resource type="PackedScene" uid="uid://b7l8tkgenh2b7" path="res://scenes/story_02/basement/basement_01_no_chair_entered.tscn" id="6_skuld"]
 
 [node name="Basement02" type="Node2D"]
 script = ExtResource("1_25l8r")
 
 [node name="Player" parent="." instance=ExtResource("2_skuld")]
-position = Vector2(-408, -8)
+position = Vector2(-408, -9)
 
 [node name="AnimatedSprite2D" parent="Player" index="0"]
 position = Vector2(0, 0)
@@ -50,6 +49,5 @@ tile_set = ExtResource("3_iup3s")
 
 [node name="Door" parent="." instance=ExtResource("5_nvrao")]
 position = Vector2(-409, 1)
-scene = ExtResource("6_skuld")
 
 [editable path="Player"]
