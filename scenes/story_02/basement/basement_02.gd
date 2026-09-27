@@ -11,6 +11,3 @@ func _ready() -> void:
 	if not SewersMusic.stream == SEWERS_LOOP or not SewersMusic.playing:
 		SewersMusic.stream = SEWERS_LOOP
 		SewersMusic.play()
-		SewersMusic.pitch_scale = 0.25
-	if not SewersMusic.pitch_scale == 0.25:
-		SewersMusic.pitch_scale = 0.25
