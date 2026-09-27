@@ -34,3 +34,4 @@ func _on_continue_pressed() -> void:
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file(global_var.main_menu_scene)
 	visible = false
+	SewersMusic.stop()
