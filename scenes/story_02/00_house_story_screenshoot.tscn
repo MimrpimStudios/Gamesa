@@ -1,0 +1,162 @@
+[gd_scene load_steps=18 format=4 uid="uid://cjt5ds7618hi6"]
+
+[ext_resource type="Script" uid="uid://lhealhnttdlk" path="res://scenes/story_02/00_house_story_screenshoot.gd" id="1_xvb11"]
+[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_kied4"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_dc2y6"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_8vej4"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="5_ellne"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_1mdee"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="7_qr2ax"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="8_kofde"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0x7jl"]
+cull_mode = 1
+polygon = PackedVector2Array(304, 16, 480, 16, 480, 48, 416, 48, 416, 64, 480, 64, 480, 96, 304, 96, 304, 64, 352, 64, 352, 48, 304, 48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yt1r6"]
+cull_mode = 2
+polygon = PackedVector2Array(534, 295, 535, 295, 535, 307, 544, 307, 544, 309, 543, 309, 543, 311, 541, 311, 541, 309, 537, 309, 537, 311, 535, 311, 535, 309, 534, 309)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ckfmk"]
+cull_mode = 2
+polygon = PackedVector2Array(547, 301, 552, 301, 552, 295, 553, 295, 553, 301, 554, 301, 554, 302, 554, 311, 553, 311, 553, 310, 548, 310, 548, 311, 547, 311, 547, 308, 545, 308, 545, 303, 547, 303)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wfwop"]
+cull_mode = 1
+polygon = PackedVector2Array(-8.675858, 0.5187607, -8.392433, 4.260544, -7.971199, 4.2091675, -7.99144, 3.9418945, -4.410919, 3.5051575, -4.3906784, 3.7724304, -3.9694366, 3.7210464, -4.212372, 0.5138016, -7.5822754, 0.92485046, -7.602524, 0.65758514, -8.234383, 0.73464966, -8.214134, 1.0019226, -8.424751, 1.0276108, -8.4652405, 0.4930725)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_81ysa"]
+cull_mode = 2
+polygon = PackedVector2Array(-7.7041016, 13.347717, -7.4934845, 13.322029, -7.4529953, 13.856567, -7.242378, 13.830872, -7.2626266, 13.563614, -6.630768, 13.486542, -6.6105194, 13.753807, -3.2406158, 13.342758, -2.9976807, 16.550003, -3.4189224, 16.601387, -3.4391632, 16.334114, -7.019684, 16.770844, -6.999443, 17.038116, -7.420677, 17.0895)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7lo6b"]
+cull_mode = 2
+polygon = PackedVector2Array(5.755249, 11.436272, 12.4950485, 10.6141815, 12.81897, 14.890495, 6.07917, 15.712585)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o0qy0"]
+cull_mode = 2
+polygon = PackedVector2Array(539, 339, 539, 359, 553, 359, 553, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
+size = Vector2(15.25, 21)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
+
+[node name="00HouseStoryScreenshoot" type="Node2D"]
+modulate = Color(0.21960784, 0.21960784, 0.21960784, 1)
+script = ExtResource("1_xvb11")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAASAAAACgAAAAAAAAASAAEACgAAAAAAAAASAAIACgAAAAAAAAASAAMACgAAAAAAAAASAAQACgAAAAAAAAASAAUACgAAAAAAAAASAAYACgAAAAAAAAATAAAACgAAAAAAAAATAAEACgAAAAAAAAATAAIACgAAAAAAAAATAAMACgAAAAAAAAATAAQACgAAAAAAAAATAAUACgAAAAAAAAATAAYACgAAAAAAAAAUAAAACgAAAAAAAAAUAAEACgAAAAAAAAAUAAIACgAAAAAAAAAUAAMACgAAAAAAAAAUAAQACgAAAAAAAAAUAAUACgAAAAAAAAAUAAYACgAAAAAAAAAVAAAACgAAAAAAAAAVAAEACgAAAAAAAAAVAAIACgAAAAAAAAAVAAMACgAAAAAAAAAVAAQACgAAAAAAAAAVAAUACgAAAAAAAAAVAAYACgAAAAAAAAAWAAAACgAAAAAAAAAWAAEACgAAAAAAAAAWAAIACgAAAAAAAAAWAAMACgAAAAAAAAAWAAQACgAAAAAAAAAWAAUACgAAAAAAAAAWAAYACgAAAAAAAAAXAAAACgAAAAAAAAAXAAEACgAAAAAAAAAXAAIACgAAAAAAAAAXAAMACgAAAAAAAAAXAAQACgAAAAAAAAAXAAUACgAAAAAAAAAXAAYACgAAAAAAAAAYAAAACgAAAAAAAAAYAAEACgAAAAAAAAAYAAIACgAAAAAAAAAYAAMACgAAAAAAAAAYAAQACgAAAAAAAAAYAAUACgAAAAAAAAAYAAYACgAAAAAAAAAZAAAACgAAAAAAAAAZAAEACgAAAAAAAAAZAAIACgAAAAAAAAAZAAMACgAAAAAAAAAZAAQACgAAAAAAAAAZAAUACgAAAAAAAAAZAAYACgAAAAAAAAAaAAAACgAAAAAAAAAaAAEACgAAAAAAAAAaAAIACgAAAAAAAAAaAAMACgAAAAAAAAAaAAQACgAAAAAAAAAaAAUACgAAAAAAAAAaAAYACgAAAAAAAAAbAAAACgAAAAAAAAAbAAEACgAAAAAAAAAbAAIACgAAAAAAAAAbAAMACgAAAAAAAAAbAAQACgAAAAAAAAAbAAUACgAAAAAAAAAbAAYACgAAAAAAAAAcAAAACgAAAAAAAAAcAAEACgAAAAAAAAAcAAIACgAAAAAAAAAcAAMACgAAAAAAAAAcAAQACgAAAAAAAAAcAAUACgAAAAAAAAAcAAYACgAAAAAAAAAdAAAACgAAAAAAAAAdAAEACgAAAAAAAAAdAAIACgAAAAAAAAAdAAMACgAAAAAAAAAdAAQACgAAAAAAAAAdAAUACgAAAAAAAAAdAAYACgAAAAAAAAAeAAAACgAAAAAAAAAeAAEACgAAAAAAAAAeAAIACgAAAAAAAAAeAAMACgAAAAAAAAAeAAQACgAAAAAAAAAeAAUACgAAAAAAAAAeAAYACgAAAAAAAAA=")
+tile_set = ExtResource("2_kied4")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAAdAAYADAABAAAAAAAcAAYADAABAAAAAAAbAAYADAABAAAAAAAeAAYADAADAAAAAAAeAAUADAADAAAAAAAeAAQADAADAAAAAAAeAAMADAADAAAAAAAdAAMADAABAAAAAAAcAAMADAABAAAAAAAbAAMADAABAAAAAAAaAAYADAABAAAAAAAZAAYADAABAAAAAAAYAAYADAABAAAAAAAXAAYADAABAAAAAAAWAAYADAABAAAAAAAVAAYADAABAAAAAAAUAAYADAABAAAAAAATAAYADAABAAAAAAASAAYADAADAAAAAAASAAUADAADAAAAAAASAAQADAADAAAAAAASAAMADAADAAAAAAATAAMADAABAAAAAAAUAAMADAABAAAAAAAVAAMADAABAAAAAAAaAAMADAABAAAAAAAeAAIADAADAAAAAAAeAAEADAADAAAAAAAeAAAADAADAAAAAAASAAIADAADAAAAAAASAAEADAADAAAAAAASAAAADAADAAAAAAATAAAADAADAAAAAAAUAAAADAADAAAAAAAVAAAADAADAAAAAAAWAAAADAADAAAAAAAXAAAADAADAAAAAAAYAAAADAADAAAAAAAZAAAADAADAAAAAAAaAAAADAADAAAAAAAbAAAADAADAAAAAAAcAAAADAADAAAAAAAdAAAADAADAAAAAAATAAIACgAGAAAAAAAUAAIACgAHAAAAAAAcAAIACgAVAAUAAAAdAAIACgAWAAUAAAATAAUACgAGAAIAAAAUAAUACgAHAAIAAAAXAAUACgARAAoAAAAYAAUACgATAAoAAAATAAcADAABAAEAAAAUAAcADAABAAEAAAAVAAcADAABAAEAAAAWAAcADAABAAEAAAAXAAcADAABAAEAAAAYAAcADAABAAEAAAAZAAcADAABAAEAAAAaAAcADAABAAEAAAAbAAcADAABAAEAAAAcAAcADAABAAEAAAAdAAcADAABAAEAAAASAAcADAABAAEAAAAeAAcADAABAAEAAAAfAAcADAABAAIAAAAfAAYADAAEAAEAAAAfAAUADAAEAAEAAAAfAAQADAAEAAEAAAAfAAMADAAEAAEAAAAfAAIADAAEAAEAAAAfAAEADAAEAAEAAAAfAAAADAAEAAEAAAAeAP//DAADAAEAAAAdAP//DAADAAEAAAAcAP//DAADAAEAAAAbAP//DAADAAEAAAAaAP//DAADAAEAAAAZAP//DAADAAEAAAAYAP//DAADAAEAAAAXAP//DAADAAEAAAAWAP//DAADAAEAAAAVAP//DAADAAEAAAAUAP//DAADAAEAAAATAP//DAADAAEAAAASAP//DAADAAEAAAAfAP//DAACAAIAAAARAAcADAAEAAIAAAARAAYADAACAAEAAAARAAUADAACAAEAAAARAAQADAACAAEAAAARAAMADAACAAEAAAARAAIADAACAAEAAAARAAEADAACAAEAAAARAAAADAACAAEAAAARAP//DAADAAIAAAA=")
+tile_set = ExtResource("3_dc2y6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMapLayer"]
+occluder = SubResource("OccluderPolygon2D_0x7jl")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_yt1r6")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_ckfmk")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_wfwop")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_81ysa")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_7lo6b")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_o0qy0")
+
+[node name="Player" parent="." instance=ExtResource("4_8vej4")]
+position = Vector2(389, 307)
+script = null
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+animation = &"sleep"
+
+[node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
+visible = false
+
+[node name="DialogPlayer" parent="Player" index="3"]
+offset_top = -67.99994
+
+[node name="DoorHouseOut" type="Area2D" parent="."]
+position = Vector2(56, 0)
+collision_mask = 3
+
+[node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
+position = Vector2(490, 349)
+texture = ExtResource("5_ellne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
+position = Vector2(489.625, 347.5)
+shape = SubResource("RectangleShape2D_u00iu")
+
+[node name="Killzone" parent="." instance=ExtResource("6_1mdee")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_v3jdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(458, 319)
+limit_enabled = false
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="Mother" parent="." instance=ExtResource("7_qr2ax")]
+position = Vector2(389, 355)
+anim = "sleeping"
+flip_h = true
+
+[node name="DialogMother" type="Label" parent="Mother"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -60.0
+offset_right = 65.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = ExtResource("8_kofde")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
+
+[editable path="Player"]

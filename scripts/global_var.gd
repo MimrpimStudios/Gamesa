@@ -29,7 +29,7 @@ const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
 const start_scene_new_game = start_scene_story
 const start_scene = main_menu_scene
-const version = "1.1"
+const version = "1.2-pre1"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -53,8 +53,12 @@ const menus = [
 var level
 var launcher_type = ""
 var launcher_version = ""
+# Story 2
 
-
+const start_scene_new_game_story_2 = story_2_house_story_00_scene
+const story_2_house_story_00_scene = "res://scenes/story_02/00_house_story.tscn"
+const story_2_basement_1_scene = "res://scenes/story_02/basement/basement_01.tscn"
+const story_2_basement_1_no_chair_scene = "res://scenes/story_02/basement/basement_01_no_chair.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -83,5 +87,23 @@ func load_level():
 func save_level():
 	print("Saving " + str(level) + "...")
 	var save_file = FileAccess.open("user://savefile.save", FileAccess.WRITE)
+	save_file.store_line(level)
+	save_file.close()
+
+func load_level_story_2():
+	print("Loading...")
+	if not FileAccess.file_exists("user://savefile_2.save"):
+		print("Aborting, no savefile")
+		return start_scene_new_game_story_2
+	var save_file = FileAccess.open("user://savefile_2.save", FileAccess.READ)
+	level = save_file.get_line()
+	save_file.close()
+	print("Loading " + str(level) + "...")
+	return level
+
+
+func save_level_story_2():
+	print("Saving " + str(level) + "...")
+	var save_file = FileAccess.open("user://savefile_2.save", FileAccess.WRITE)
 	save_file.store_line(level)
 	save_file.close()

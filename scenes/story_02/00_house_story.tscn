@@ -1,0 +1,289 @@
+[gd_scene load_steps=24 format=4 uid="uid://c7vvcwsrdwkpd"]
+
+[ext_resource type="Script" uid="uid://dtr7epib5bb60" path="res://scenes/story_02/00_house_story.gd" id="1_mewbp"]
+[ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_hv5qn"]
+[ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_a7w1d"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="5_0h2mi"]
+[ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_m28dw"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_bkgt1"]
+[ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="9_o7shw"]
+[ext_resource type="Texture2D" uid="uid://jqtcicqflvpp" path="res://assets/Textures/flashlight2.png" id="10_165sn"]
+[ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="10_wxx5m"]
+[ext_resource type="PackedScene" uid="uid://br41crrtljd5t" path="res://scenes/thief.tscn" id="11_mewbp"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0x7jl"]
+cull_mode = 1
+polygon = PackedVector2Array(304, 16, 480, 16, 480, 48, 416, 48, 416, 64, 480, 64, 480, 96, 304, 96, 304, 64, 352, 64, 352, 48, 304, 48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yt1r6"]
+cull_mode = 2
+polygon = PackedVector2Array(534, 295, 535, 295, 535, 307, 544, 307, 544, 309, 543, 309, 543, 311, 541, 311, 541, 309, 537, 309, 537, 311, 535, 311, 535, 309, 534, 309)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ckfmk"]
+cull_mode = 2
+polygon = PackedVector2Array(547, 301, 552, 301, 552, 295, 553, 295, 553, 301, 554, 301, 554, 302, 554, 311, 553, 311, 553, 310, 548, 310, 548, 311, 547, 311, 547, 308, 545, 308, 545, 303, 547, 303)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wfwop"]
+cull_mode = 1
+polygon = PackedVector2Array(-8.675858, 0.5187607, -8.392433, 4.260544, -7.971199, 4.2091675, -7.99144, 3.9418945, -4.410919, 3.5051575, -4.3906784, 3.7724304, -3.9694366, 3.7210464, -4.212372, 0.5138016, -7.5822754, 0.92485046, -7.602524, 0.65758514, -8.234383, 0.73464966, -8.214134, 1.0019226, -8.424751, 1.0276108, -8.4652405, 0.4930725)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_81ysa"]
+cull_mode = 2
+polygon = PackedVector2Array(-7.7041016, 13.347717, -7.4934845, 13.322029, -7.4529953, 13.856567, -7.242378, 13.830872, -7.2626266, 13.563614, -6.630768, 13.486542, -6.6105194, 13.753807, -3.2406158, 13.342758, -2.9976807, 16.550003, -3.4189224, 16.601387, -3.4391632, 16.334114, -7.019684, 16.770844, -6.999443, 17.038116, -7.420677, 17.0895)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7lo6b"]
+cull_mode = 2
+polygon = PackedVector2Array(5.755249, 11.436272, 12.4950485, 10.6141815, 12.81897, 14.890495, 6.07917, 15.712585)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o0qy0"]
+cull_mode = 2
+polygon = PackedVector2Array(539, 339, 539, 359, 553, 359, 553, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
+size = Vector2(15.25, 21)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v3jdr"]
+
+[sub_resource type="Animation" id="Animation_nlihu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.21950102, 0.21950102, 0.21950102, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"sleep"]
+}
+
+[sub_resource type="Animation" id="Animation_2qhxs"]
+resource_name = "anim"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.21950102, 0.21950102, 0.21950102, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"sleep", &"sleep"]
+}
+
+[sub_resource type="Animation" id="Animation_165sn"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.21950102, 0.21950102, 0.21950102, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7f308"]
+_data = {
+&"RESET": SubResource("Animation_nlihu"),
+&"anim": SubResource("Animation_2qhxs"),
+&"fade": SubResource("Animation_165sn")
+}
+
+[node name="00HouseStory" type="Node2D"]
+script = ExtResource("1_mewbp")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAASAAAACgAAAAAAAAASAAEACgAAAAAAAAASAAIACgAAAAAAAAASAAMACgAAAAAAAAASAAQACgAAAAAAAAASAAUACgAAAAAAAAASAAYACgAAAAAAAAATAAAACgAAAAAAAAATAAEACgAAAAAAAAATAAIACgAAAAAAAAATAAMACgAAAAAAAAATAAQACgAAAAAAAAATAAUACgAAAAAAAAATAAYACgAAAAAAAAAUAAAACgAAAAAAAAAUAAEACgAAAAAAAAAUAAIACgAAAAAAAAAUAAMACgAAAAAAAAAUAAQACgAAAAAAAAAUAAUACgAAAAAAAAAUAAYACgAAAAAAAAAVAAAACgAAAAAAAAAVAAEACgAAAAAAAAAVAAIACgAAAAAAAAAVAAMACgAAAAAAAAAVAAQACgAAAAAAAAAVAAUACgAAAAAAAAAVAAYACgAAAAAAAAAWAAAACgAAAAAAAAAWAAEACgAAAAAAAAAWAAIACgAAAAAAAAAWAAMACgAAAAAAAAAWAAQACgAAAAAAAAAWAAUACgAAAAAAAAAWAAYACgAAAAAAAAAXAAAACgAAAAAAAAAXAAEACgAAAAAAAAAXAAIACgAAAAAAAAAXAAMACgAAAAAAAAAXAAQACgAAAAAAAAAXAAUACgAAAAAAAAAXAAYACgAAAAAAAAAYAAAACgAAAAAAAAAYAAEACgAAAAAAAAAYAAIACgAAAAAAAAAYAAMACgAAAAAAAAAYAAQACgAAAAAAAAAYAAUACgAAAAAAAAAYAAYACgAAAAAAAAAZAAAACgAAAAAAAAAZAAEACgAAAAAAAAAZAAIACgAAAAAAAAAZAAMACgAAAAAAAAAZAAQACgAAAAAAAAAZAAUACgAAAAAAAAAZAAYACgAAAAAAAAAaAAAACgAAAAAAAAAaAAEACgAAAAAAAAAaAAIACgAAAAAAAAAaAAMACgAAAAAAAAAaAAQACgAAAAAAAAAaAAUACgAAAAAAAAAaAAYACgAAAAAAAAAbAAAACgAAAAAAAAAbAAEACgAAAAAAAAAbAAIACgAAAAAAAAAbAAMACgAAAAAAAAAbAAQACgAAAAAAAAAbAAUACgAAAAAAAAAbAAYACgAAAAAAAAAcAAAACgAAAAAAAAAcAAEACgAAAAAAAAAcAAIACgAAAAAAAAAcAAMACgAAAAAAAAAcAAQACgAAAAAAAAAcAAUACgAAAAAAAAAcAAYACgAAAAAAAAAdAAAACgAAAAAAAAAdAAEACgAAAAAAAAAdAAIACgAAAAAAAAAdAAMACgAAAAAAAAAdAAQACgAAAAAAAAAdAAUACgAAAAAAAAAdAAYACgAAAAAAAAAeAAAACgAAAAAAAAAeAAEACgAAAAAAAAAeAAIACgAAAAAAAAAeAAMACgAAAAAAAAAeAAQACgAAAAAAAAAeAAUACgAAAAAAAAAeAAYACgAAAAAAAAA=")
+tile_set = ExtResource("2_hv5qn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(74, 263)
+tile_map_data = PackedByteArray("AAAdAAYADAABAAAAAAAcAAYADAABAAAAAAAbAAYADAABAAAAAAAeAAYADAADAAAAAAAeAAUADAADAAAAAAAeAAQADAADAAAAAAAeAAMADAADAAAAAAAdAAMADAABAAAAAAAcAAMADAABAAAAAAAbAAMADAABAAAAAAAaAAYADAABAAAAAAAZAAYADAABAAAAAAAYAAYADAABAAAAAAAXAAYADAABAAAAAAAWAAYADAABAAAAAAAVAAYADAABAAAAAAAUAAYADAABAAAAAAATAAYADAABAAAAAAASAAYADAADAAAAAAASAAUADAADAAAAAAASAAQADAADAAAAAAASAAMADAADAAAAAAATAAMADAABAAAAAAAUAAMADAABAAAAAAAVAAMADAABAAAAAAAaAAMADAABAAAAAAAeAAIADAADAAAAAAAeAAEADAADAAAAAAAeAAAADAADAAAAAAASAAIADAADAAAAAAASAAEADAADAAAAAAASAAAADAADAAAAAAATAAAADAADAAAAAAAUAAAADAADAAAAAAAVAAAADAADAAAAAAAWAAAADAADAAAAAAAXAAAADAADAAAAAAAYAAAADAADAAAAAAAZAAAADAADAAAAAAAaAAAADAADAAAAAAAbAAAADAADAAAAAAAcAAAADAADAAAAAAAdAAAADAADAAAAAAATAAIACgAGAAAAAAAUAAIACgAHAAAAAAAcAAIACgAVAAUAAAAdAAIACgAWAAUAAAATAAUACgAGAAIAAAAUAAUACgAHAAIAAAAXAAUACgARAAoAAAAYAAUACgATAAoAAAATAAcADAABAAEAAAAUAAcADAABAAEAAAAVAAcADAABAAEAAAAWAAcADAABAAEAAAAXAAcADAABAAEAAAAYAAcADAABAAEAAAAZAAcADAABAAEAAAAaAAcADAABAAEAAAAbAAcADAABAAEAAAAcAAcADAABAAEAAAAdAAcADAABAAEAAAASAAcADAABAAEAAAAeAAcADAABAAEAAAAfAAcADAABAAIAAAAfAAYADAAEAAEAAAAfAAUADAAEAAEAAAAfAAQADAAEAAEAAAAfAAMADAAEAAEAAAAfAAIADAAEAAEAAAAfAAEADAAEAAEAAAAfAAAADAAEAAEAAAAeAP//DAADAAEAAAAdAP//DAADAAEAAAAcAP//DAADAAEAAAAbAP//DAADAAEAAAAaAP//DAADAAEAAAAZAP//DAADAAEAAAAYAP//DAADAAEAAAAXAP//DAADAAEAAAAWAP//DAADAAEAAAAVAP//DAADAAEAAAAUAP//DAADAAEAAAATAP//DAADAAEAAAASAP//DAADAAEAAAAfAP//DAACAAIAAAARAAcADAAEAAIAAAARAAYADAACAAEAAAARAAUADAACAAEAAAARAAQADAACAAEAAAARAAMADAACAAEAAAARAAIADAACAAEAAAARAAEADAACAAEAAAARAAAADAACAAEAAAARAP//DAADAAIAAAA=")
+tile_set = ExtResource("3_a7w1d")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMapLayer"]
+occluder = SubResource("OccluderPolygon2D_0x7jl")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_yt1r6")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_ckfmk")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_wfwop")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_81ysa")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(345, 35)
+rotation = 0.095826805
+scale = Vector2(4.7261333, 3.72437)
+occluder = SubResource("OccluderPolygon2D_7lo6b")
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="TileMapLayer"]
+position = Vector2(-74, -263)
+occluder = SubResource("OccluderPolygon2D_o0qy0")
+
+[node name="Player" parent="." instance=ExtResource("5_0h2mi")]
+position = Vector2(389, 302)
+script = null
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+position = Vector2(0, 0)
+animation = &"sleep"
+
+[node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+position = Vector2(-0.5, 0)
+
+[node name="DialogPlayer" parent="Player" index="3"]
+offset_top = -67.99994
+
+[node name="DoorHouseOut" type="Area2D" parent="."]
+position = Vector2(56, 0)
+collision_mask = 3
+
+[node name="Texture" type="Sprite2D" parent="DoorHouseOut"]
+position = Vector2(490, 349)
+texture = ExtResource("7_m28dw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHouseOut"]
+position = Vector2(489.625, 347.5)
+shape = SubResource("RectangleShape2D_u00iu")
+
+[node name="Killzone" parent="." instance=ExtResource("8_bkgt1")]
+position = Vector2(462, 379)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_v3jdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(458, 319)
+zoom = Vector2(5, 5)
+limit_enabled = false
+limit_bottom = 500
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="Mother" parent="." instance=ExtResource("9_o7shw")]
+position = Vector2(389, 355)
+anim = "sleeping"
+flip_h = true
+
+[node name="DialogMother" type="Label" parent="Mother"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -60.0
+offset_right = 65.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = ExtResource("10_wxx5m")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+top_level = true
+z_index = 4096
+offset_right = 2080.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7f308")
+}
+autoplay = "anim"
+
+[node name="Thief" parent="." instance=ExtResource("11_mewbp")]
+position = Vector2(547, 350)
+collision_layer = 8
+
+[node name="AnimatedSprite2D" parent="Thief" index="0"]
+animation = &"left"
+frame_progress = 0.0
+
+[node name="PointLight2D" parent="Thief" index="2"]
+texture = ExtResource("10_165sn")
+offset = Vector2(18, 0)
+
+[node name="Thief2" parent="." instance=ExtResource("11_mewbp")]
+position = Vector2(547, 350)
+collision_layer = 4
+
+[node name="AnimatedSprite2D" parent="Thief2" index="0"]
+animation = &"left"
+frame_progress = 0.0
+
+[node name="PointLight2D" parent="Thief2" index="2"]
+texture = ExtResource("10_165sn")
+offset = Vector2(18, 0)
+
+[connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Player"]
+[editable path="Thief"]
+[editable path="Thief2"]
