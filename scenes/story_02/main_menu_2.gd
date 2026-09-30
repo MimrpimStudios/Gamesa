@@ -33,7 +33,6 @@ func _ready() -> void:
 		player.show()
 	else:
 		player.hide()
-		basement_01.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()
