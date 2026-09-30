@@ -15,6 +15,7 @@ const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_var.story_2 = true
 	global_var.player_movement = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str( global_var.load_level_story_2()))

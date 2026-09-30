@@ -47,6 +47,8 @@ const menus = [
 	"res://scenes/volume_set.tscn",
 	"res://scenes/intro.tscn",
 	"res://scenes/credits.tscn",
+	"res://scenes/story_02/main_menu_2.tscn",
+	"res://scenes/preload.tscn"
 	
 ]
 
@@ -55,6 +57,8 @@ var launcher_type = ""
 var launcher_version = ""
 # Story 2
 
+var story_2 = false
+const story_2_main_menu_scene = "res://scenes/story_02/main_menu_2.tscn"
 const start_scene_new_game_story_2 = story_2_house_story_00_scene
 const story_2_house_story_00_scene = "res://scenes/story_02/00_house_story.tscn"
 const story_2_basement_1_scene = "res://scenes/story_02/basement/basement_01.tscn"
