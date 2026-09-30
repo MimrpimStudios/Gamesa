@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cg3y0xb82qokn"]
+[gd_scene load_steps=6 format=4 uid="uid://cg3y0xb82qokn"]
 
 [ext_resource type="Script" uid="uid://ckvykewi08hu4" path="res://scenes/story_02/basement/basement_02.gd" id="1_25l8r"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_skuld"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_iup3s"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_p0cw3"]
-[ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="5_nvrao"]
-[ext_resource type="PackedScene" uid="uid://b7l8tkgenh2b7" path="res://scenes/story_02/basement/basement_01_no_chair_entered.tscn" id="6_25l8r"]
+[ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="5_nvrao"]
 
 [node name="Basement02" type="Node2D"]
 script = ExtResource("1_25l8r")
@@ -48,8 +47,8 @@ modulate = Color(0.5211406, 0.5211406, 0.5211405, 1)
 tile_map_data = PackedByteArray("AAD0////BAABAAAAAAD1////BAABAAAAAAD2////BAABAAAAAADz////BAABAAAAAADy////BAABAAAAAADx////BAABAAAAAADw////BAABAAAAAADv////BAABAAAAAADu////BAABAAAAAADt////BAABAAAAAAD0//7/BAABAAAAAADz//7/BAABAAAAAADz//3/BAABAAAAAADy//7/BAABAAAAAADx//7/BAABAAAAAADw//7/BAABAAAAAADv//7/BAABAAAAAADs////BAABAAAAAADw//3/BAABAAAAAADx//3/BAABAAAAAADy//3/BAABAAAAAADy//z/BAABAAAAAADy//v/BAABAAAAAADx//z/BAABAAAAAAAKAP//BAABAAAAAAALAP//BAABAAAAAAALAP7/BAABAAAAAAAMAP7/BAABAAAAAAAMAP3/BAABAAAAAAANAP3/BAABAAAAAAANAPz/BAABAAAAAAAOAPz/BAABAAAAAAAPAPz/BAABAAAAAAAPAP3/BAABAAAAAAAPAP7/BAABAAAAAAAQAP7/BAABAAAAAAARAP7/BAABAAAAAAARAP//BAABAAAAAAASAP//BAABAAAAAAATAP//BAABAAAAAAAQAP//BAABAAAAAAAPAP//BAABAAAAAAAOAP//BAABAAAAAAANAP//BAABAAAAAAAMAP//BAABAAAAAAANAP7/BAABAAAAAAAOAP7/BAABAAAAAAAOAP3/BAABAAAAAAA=")
 tile_set = ExtResource("3_iup3s")
 
-[node name="Door" parent="." instance=ExtResource("5_nvrao")]
-position = Vector2(-409, 1)
-scene = ExtResource("6_25l8r")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-409, -11)
+texture = ExtResource("5_nvrao")
 
 [editable path="Player"]
