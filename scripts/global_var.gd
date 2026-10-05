@@ -56,7 +56,7 @@ var level
 var launcher_type = ""
 var launcher_version = ""
 # Story 2
-
+var enabled_story_2 = load_is_story_2()
 var story_2 = false
 const story_2_main_menu_scene = "res://scenes/story_02/main_menu_2.tscn"
 const start_scene_new_game_story_2 = story_2_house_story_00_scene
@@ -111,3 +111,19 @@ func save_level_story_2():
 	var save_file = FileAccess.open("user://savefile_2.save", FileAccess.WRITE)
 	save_file.store_line(level)
 	save_file.close()
+
+func load_is_story_2():
+	print("Loading...")
+	if not FileAccess.file_exists("user://story_2.bool"):
+		print("Aborting, no savefile for sotry_2.bool")
+		return false
+	else:
+			return true
+
+
+
+func save_is_story_2(save: bool = true):
+	if save:
+		print("Saving story_2.true...")
+		var save_file = FileAccess.open("user://story_2.true", FileAccess.WRITE)
+		save_file.store_line("https://youtube.com/@mimrpim")

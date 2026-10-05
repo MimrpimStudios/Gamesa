@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=46 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 [ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
 [ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_svtp6"]
+[ext_resource type="Script" uid="uid://c1s517mfh8j1x" path="res://scenes/story_2_arrow.gd" id="23_1dfpl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -523,6 +524,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_1dfpl")
 }
 autoplay = "Splashing"
+
+[node name="ArrowStory2" type="Node" parent="."]
+script = ExtResource("23_1dfpl")
+
+[node name="Button" type="Button" parent="ArrowStory2"]
+offset_right = 62.0
+offset_bottom = 31.0
+text = "Story 2"
 
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
