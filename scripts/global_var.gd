@@ -124,6 +124,7 @@ func load_is_story_2():
 
 func save_is_story_2(save: bool = true):
 	if save:
-		print("Saving story_2.true...")
-		var save_file = FileAccess.open("user://story_2.true", FileAccess.WRITE)
+		print("Saving story_2...")
+		var save_file = FileAccess.open("user://story_2.bool", FileAccess.WRITE)
 		save_file.store_line("https://youtube.com/@mimrpim")
+		save_file.close() # Nezapomeňte soubor také zavřít

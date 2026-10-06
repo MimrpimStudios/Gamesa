@@ -529,8 +529,12 @@ autoplay = "Splashing"
 script = ExtResource("23_1dfpl")
 
 [node name="Button" type="Button" parent="ArrowStory2"]
-offset_right = 62.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
 offset_bottom = 31.0
+grow_horizontal = 0
 text = "Story 2"
 
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
@@ -545,3 +549,4 @@ text = "Story 2"
 [connection signal="pressed" from="Links/TextureButton2" to="Links" method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Links/TextureButton3" to="Links" method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="Links/TextureButton4" to="Links" method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_pressed"]

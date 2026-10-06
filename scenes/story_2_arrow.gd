@@ -3,7 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if global_var.enabled_story_2:
+	print("hhhhhhhhhhh ", global_var.load_is_story_2())
+	if global_var.load_is_story_2():
 		for i in get_children():
 			i.show()
 	else:
@@ -11,7 +12,7 @@ func _ready() -> void:
 			i.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
