@@ -115,8 +115,11 @@ func save_level_story_2():
 func load_is_story_2():
 	print("Loading...")
 	if not FileAccess.file_exists("user://story_2.bool"):
-		print("Aborting, no savefile for sotry_2.bool")
-		return false
+		if not FileAccess.file_exists("user://savefile_2.save"):
+			print("Aborting, no savefile for sotry_2.bool")
+			return false
+		else:
+			return true
 	else:
 			return true
 
