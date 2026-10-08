@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b7l8tkgenh2b7"]
+[gd_scene load_steps=10 format=4 uid="uid://b7l8tkgenh2b7"]
 
 [ext_resource type="Script" uid="uid://btyorcjay48co" path="res://scenes/story_02/basement/basement_01.gd" id="1_buv0m"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_ol415"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cn71bhuxe2t33" path="res://assets/Textures/sprites/player_rope_chair.png" id="6_ufysn"]
 [ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="7_vtlkv"]
 [ext_resource type="PackedScene" uid="uid://cg3y0xb82qokn" path="res://scenes/story_02/basement/basement_02.tscn" id="8_el5tj"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="9_el5tj"]
 
 [node name="Basement01" type="Node2D"]
 script = ExtResource("1_buv0m")
@@ -60,5 +61,7 @@ texture = ExtResource("6_ufysn")
 [node name="Door" parent="." instance=ExtResource("7_vtlkv")]
 position = Vector2(745, -511)
 scene = ExtResource("8_el5tj")
+
+[node name="Screen" parent="." instance=ExtResource("9_el5tj")]
 
 [editable path="Player"]

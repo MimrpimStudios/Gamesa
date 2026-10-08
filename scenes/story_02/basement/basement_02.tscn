@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cg3y0xb82qokn"]
+[gd_scene load_steps=15 format=4 uid="uid://cg3y0xb82qokn"]
 
 [ext_resource type="Script" uid="uid://ckvykewi08hu4" path="res://scenes/story_02/basement/basement_02.gd" id="1_25l8r"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_skuld"]
@@ -6,7 +6,24 @@
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_p0cw3"]
 [ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="5_nvrao"]
 [ext_resource type="PackedScene" uid="uid://br41crrtljd5t" path="res://scenes/thief.tscn" id="6_25l8r"]
+[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="7_iup3s"]
 [ext_resource type="Script" uid="uid://dss32te4xel20" path="res://scenes/story_02/basement/camera_manager1.gd" id="7_skuld"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="8_p0cw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skuld"]
+size = Vector2(115, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iup3s"]
+size = Vector2(133, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0cw3"]
+size = Vector2(101, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldngy"]
+size = Vector2(445.5, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4qem"]
+size = Vector2(6, 66)
 
 [node name="Basement02" type="Node2D"]
 script = ExtResource("1_25l8r")
@@ -67,6 +84,32 @@ valid_gravity = false
 [node name="PointLight2D" parent="Thief2" index="2"]
 visible = false
 
+[node name="2Area2D" parent="Thief2" instance=ExtResource("7_iup3s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thief2/2Area2D"]
+position = Vector2(-61.5, 34)
+shape = SubResource("RectangleShape2D_skuld")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Thief2/2Area2D"]
+position = Vector2(-186.5, 58)
+shape = SubResource("RectangleShape2D_iup3s")
+
+[node name="2Area2D2" parent="Thief2" instance=ExtResource("7_iup3s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thief2/2Area2D2"]
+position = Vector2(54.5, 34)
+shape = SubResource("RectangleShape2D_p0cw3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Thief2/2Area2D2"]
+position = Vector2(329.25, 58)
+shape = SubResource("RectangleShape2D_ldngy")
+
+[node name="2Area2DALL" parent="Thief2" instance=ExtResource("7_iup3s")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Thief2/2Area2DALL"]
+position = Vector2(0, 42)
+shape = SubResource("RectangleShape2D_k4qem")
+
 [node name="CameraManager" type="Node" parent="."]
 script = ExtResource("7_skuld")
 
@@ -74,6 +117,9 @@ script = ExtResource("7_skuld")
 process_callback = 0
 wait_time = 5.0
 autostart = true
+
+[node name="Screen" parent="." instance=ExtResource("8_p0cw3")]
+follow_viewport_enabled = false
 
 [connection signal="timeout" from="CameraManager/Timer" to="CameraManager" method="_on_timer_timeout"]
 
