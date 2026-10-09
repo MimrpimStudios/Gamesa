@@ -29,7 +29,7 @@ const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
 const start_scene_new_game = start_scene_story
 const start_scene = main_menu_scene
-const version = "1.2-pre1"
+const version = "1.2-t1.0-pre1"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -63,6 +63,9 @@ const start_scene_new_game_story_2 = story_2_house_story_00_scene
 const story_2_house_story_00_scene = "res://scenes/story_02/00_house_story.tscn"
 const story_2_basement_1_scene = "res://scenes/story_02/basement/basement_01.tscn"
 const story_2_basement_1_no_chair_scene = "res://scenes/story_02/basement/basement_01_no_chair.tscn"
+const story_2_basement_2_scene = "res://scenes/story_02/basement/basement_02.tscn"
+const story_2_basement_3_scene = "res://scenes/story_02/basement/basement_03.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

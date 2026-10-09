@@ -63,5 +63,6 @@ position = Vector2(745, -511)
 scene = ExtResource("8_hocbk")
 
 [node name="Screen" parent="." instance=ExtResource("9_hocbk")]
+follow_viewport_enabled = false
 
 [editable path="Player"]

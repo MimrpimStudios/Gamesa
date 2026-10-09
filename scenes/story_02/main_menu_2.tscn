@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dq54mkvqd01km"]
+[gd_scene load_steps=50 format=3 uid="uid://dq54mkvqd01km"]
 
 [ext_resource type="Script" uid="uid://bw7vipfxcwatg" path="res://scenes/story_02/main_menu_2.gd" id="1_3arye"]
 [ext_resource type="PackedScene" uid="uid://pu81h36gpgi4" path="res://scenes/story_02/basement/basement_01_screenshoot.tscn" id="2_dvioc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_x1j38"]
 [ext_resource type="Script" uid="uid://cvmv8mnopiseh" path="res://scripts/debug.gd" id="4_xup2e"]
 [ext_resource type="LabelSettings" uid="uid://bmom6abdg5ga" path="res://assets/resources/labels/debug_label.tres" id="5_la5lj"]
+[ext_resource type="PackedScene" uid="uid://dhbkwmbdf8wtn" path="res://scenes/story_02/basement/basement_02_screenshoot.tscn" id="6_h4xja"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="6_wjlw1"]
 [ext_resource type="Script" uid="uid://dofvb0j6jocw0" path="res://scenes/label_credits.gd" id="7_h4xja"]
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="8_olecc"]
@@ -235,6 +236,11 @@ texture = ExtResource("3_xup2e")
 
 [node name="Player" parent="Basement01" instance=ExtResource("4_x1j38")]
 position = Vector2(29.399998, 6.198883e-06)
+
+[node name="Basement02" parent="." instance=ExtResource("6_h4xja")]
+visible = false
+position = Vector2(3003, 733.00006)
+scale = Vector2(5, 5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x1j38")

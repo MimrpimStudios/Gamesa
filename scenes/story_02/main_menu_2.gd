@@ -8,6 +8,7 @@ extends Control
 @onready var basement_01: Node2D = $Basement01
 @onready var player: CharacterBody2D = $Basement01/Player
 @onready var basement_01_chair: Sprite2D = $Basement01/Basement01Chair
+@onready var basement_02: Node2D = $Basement02
 
 @onready var _00_house_story: Node2D = $"00HouseStory"
 
@@ -34,6 +35,10 @@ func _ready() -> void:
 		player.show()
 	else:
 		player.hide()
+	if global_var.load_level_story_2() == global_var.story_2_basement_2_scene:
+		basement_02.show()
+	else:
+		basement_02.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()

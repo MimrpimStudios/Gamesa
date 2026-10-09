@@ -1,15 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://dhbkwmbdf8wtn"]
+[gd_scene load_steps=5 format=4 uid="uid://dhbkwmbdf8wtn"]
 
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_lqwfs"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="5_h2557"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="6_3b4yr"]
 [ext_resource type="Texture2D" uid="uid://byiq3ml1gstxt" path="res://assets/Textures/sprites/door-fake.png" id="7_mqjbp"]
-[ext_resource type="PackedScene" uid="uid://br41crrtljd5t" path="res://scenes/thief.tscn" id="8_c5qee"]
-[ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="9_u4qwi"]
-[ext_resource type="Script" uid="uid://dss32te4xel20" path="res://scenes/story_02/basement/camera_manager1.gd" id="10_u5oa1"]
-[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="11_h7cuy"]
-[ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="13_3vnnx"]
-[ext_resource type="PackedScene" uid="uid://4xfyqim4ojke" path="res://scenes/story_02/basement/basement_03.tscn" id="14_3yul0"]
 
 [node name="Basement02" type="Node2D"]
 
@@ -43,117 +37,4 @@ tile_set = ExtResource("5_h2557")
 position = Vector2(-409, -11)
 texture = ExtResource("7_mqjbp")
 
-[node name="Thief" parent="." instance=ExtResource("8_c5qee")]
-position = Vector2(-178, -125)
-valid_gravity = false
-
-[node name="AnimatedSprite2D" parent="Thief" index="0"]
-frame_progress = 0.0
-
-[node name="PointLight2D" parent="Thief" index="2"]
-visible = false
-
-[node name="1Area2D" parent="Thief" instance=ExtResource("9_u4qwi")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Thief/1Area2D"]
-polygon = PackedVector2Array(-237, 3, -5, -1, -4, 125, -60, 123, -61, 105, -87, 106, -93, 86, -107, 90, -113, 71, -151, 74, -156, 57, -238, 75)
-
-[node name="Polygon2D1" type="Polygon2D" parent="Thief/1Area2D"]
-position = Vector2(178, 125)
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(-182, -126, -182, 0, -239, 0, -239, -15, -272, -15, -272, -32, -287, -32, -288, -48, -336, -48, -336, -64, -352, -64, -416, -50, -415, -122)
-
-[node name="1Area2D2" parent="Thief" instance=ExtResource("9_u4qwi")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Thief/1Area2D2"]
-polygon = PackedVector2Array(257, 1, 2, 0, 4, 75, 63, 74, 255, 124, 257, 77)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Thief/1Area2D2"]
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(4, 0, 256, 5, 256, 125, 66, 77, 3, 77)
-
-[node name="Thief2" parent="." instance=ExtResource("8_c5qee")]
-position = Vector2(199, -125)
-valid_gravity = false
-
-[node name="AnimatedSprite2D" parent="Thief2" index="0"]
-frame_progress = 0.0
-
-[node name="PointLight2D" parent="Thief2" index="2"]
-visible = false
-
-[node name="2Area2D" parent="Thief2" instance=ExtResource("9_u4qwi")]
-
-[node name="2Polygon2D1" type="Polygon2D" parent="Thief2/2Area2D"]
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(-4, 0, -119, 0, -253, 0, -253, 125, -119, 77, -4, 7)
-
-[node name="2Polygon2D2" type="CollisionPolygon2D" parent="Thief2/2Area2D"]
-polygon = PackedVector2Array(-4, 0, -119, 0, -253, 0, -253, 125, -119, 77, -4, 7)
-
-[node name="2Area2D2" parent="Thief2" instance=ExtResource("9_u4qwi")]
-
-[node name="2Polygon2D2" type="Polygon2D" parent="Thief2/2Area2D2"]
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(4, 0, 105, 77, 140, 123, 140, -7)
-
-[node name="2Polygon2D3" type="CollisionPolygon2D" parent="Thief2/2Area2D2"]
-polygon = PackedVector2Array(4, 0, 105, 77, 140, 123, 140, -7)
-
-[node name="2Area2DALL" parent="Thief2" instance=ExtResource("9_u4qwi")]
-
-[node name="Thief3" parent="." instance=ExtResource("8_c5qee")]
-position = Vector2(461, -125)
-valid_gravity = false
-
-[node name="AnimatedSprite2D" parent="Thief3" index="0"]
-animation = &"left"
-frame_progress = 0.0
-
-[node name="PointLight2D" parent="Thief3" index="2"]
-visible = false
-
-[node name="3Area2D" parent="Thief3" instance=ExtResource("9_u4qwi")]
-
-[node name="3Polygon2D1" type="Polygon2D" parent="Thief3/3Area2D"]
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(-4, 1, -256, 2, -291, 77, -157, 77, -157, 92, -199, 125, -71, 125, -45, 77, -29, 77)
-
-[node name="3Polygon2D2" type="CollisionPolygon2D" parent="Thief3/3Area2D"]
-polygon = PackedVector2Array(-4, 1, -256, 2, -291, 77, -157, 77, -157, 92, -189, 125, -71, 125, -45, 77, -29, 77)
-
-[node name="3Area2D2" parent="Thief3" instance=ExtResource("9_u4qwi")]
-
-[node name="3Polygon2D2" type="Polygon2D" parent="Thief3/3Area2D2"]
-color = Color(1, 0, 0, 0.5529412)
-polygon = PackedVector2Array(4, 0, 291, 0, 291, 125, 119, 125, 35, 77)
-uv = PackedVector2Array(292.08527, 0.58904266)
-
-[node name="3Polygon2D3" type="CollisionPolygon2D" parent="Thief3/3Area2D2"]
-polygon = PackedVector2Array(4, 0, 291, 0, 291, 125, 119, 125, 35, 77)
-
-[node name="CameraManager" type="Node" parent="."]
-script = ExtResource("10_u5oa1")
-
-[node name="Timer" type="Timer" parent="CameraManager"]
-process_callback = 0
-wait_time = 5.0
-autostart = true
-
-[node name="Screen" parent="." instance=ExtResource("11_h7cuy")]
-follow_viewport_enabled = false
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(170, -30)
-zoom = Vector2(1.611, 1.611)
-
-[node name="Door" parent="." instance=ExtResource("13_3vnnx")]
-position = Vector2(745, 1)
-scene = ExtResource("14_3yul0")
-
-[connection signal="timeout" from="CameraManager/Timer" to="CameraManager" method="_on_timer_timeout"]
-
 [editable path="Player"]
-[editable path="Thief"]
-[editable path="Thief2"]
-[editable path="Thief3"]
