@@ -22,6 +22,7 @@ func _on_video_stream_player_finished() -> void:
 		get_tree().change_scene_to_file(global_var.main_menu_scene)
 		global_var.level = "res://scenes/post/label1.tscn"
 		global_var.save_level()
+		global_var.save_is_story_2(true)
 		
 	else:
 		get_tree().change_scene_to_file(global_var.main_menu_scene)

@@ -12,7 +12,7 @@ var healthbar_show = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
-const volume_set_scene = "res://scenes/volume_set.tscn"
+const volume_set_scene = "res://scenes/intro.tscn"
 const house_00_story_scene = "res://scenes/levels/tutorial/00_house_story.tscn"
 const house_03_story_scene = "res://scenes/levels/tutorial/03_house_story.tscn"
 const main_scene = "res://scenes/main.tscn"
@@ -29,7 +29,7 @@ const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
 const start_scene_new_game = start_scene_story
 const start_scene = main_menu_scene
-const version = "1.2-pre1"
+const version = "1.2-t1.0-pre1"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -47,6 +47,8 @@ const menus = [
 	"res://scenes/volume_set.tscn",
 	"res://scenes/intro.tscn",
 	"res://scenes/credits.tscn",
+	"res://scenes/story_02/main_menu_2.tscn",
+	"res://scenes/preload.tscn"
 	
 ]
 
@@ -54,11 +56,16 @@ var level
 var launcher_type = ""
 var launcher_version = ""
 # Story 2
-
+var enabled_story_2 = load_is_story_2()
+var story_2 = false
+const story_2_main_menu_scene = "res://scenes/story_02/main_menu_2.tscn"
 const start_scene_new_game_story_2 = story_2_house_story_00_scene
 const story_2_house_story_00_scene = "res://scenes/story_02/00_house_story.tscn"
 const story_2_basement_1_scene = "res://scenes/story_02/basement/basement_01.tscn"
 const story_2_basement_1_no_chair_scene = "res://scenes/story_02/basement/basement_01_no_chair.tscn"
+const story_2_basement_2_scene = "res://scenes/story_02/basement/basement_02.tscn"
+const story_2_basement_3_scene = "res://scenes/story_02/basement/basement_03.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -107,3 +114,23 @@ func save_level_story_2():
 	var save_file = FileAccess.open("user://savefile_2.save", FileAccess.WRITE)
 	save_file.store_line(level)
 	save_file.close()
+
+func load_is_story_2():
+	print("Loading...")
+	if not FileAccess.file_exists("user://story_2.bool"):
+		if not FileAccess.file_exists("user://savefile_2.save"):
+			print("Aborting, no savefile for sotry_2.bool")
+			return false
+		else:
+			return true
+	else:
+			return true
+
+
+
+func save_is_story_2(save: bool = true):
+	if save:
+		print("Saving story_2...")
+		var save_file = FileAccess.open("user://story_2.bool", FileAccess.WRITE)
+		save_file.store_line("https://youtube.com/@mimrpim")
+		save_file.close() # Nezapomeňte soubor také zavřít

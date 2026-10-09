@@ -8,6 +8,7 @@ extends Control
 @onready var basement_01: Node2D = $Basement01
 @onready var player: CharacterBody2D = $Basement01/Player
 @onready var basement_01_chair: Sprite2D = $Basement01/Basement01Chair
+@onready var basement_02: Node2D = $Basement02
 
 @onready var _00_house_story: Node2D = $"00HouseStory"
 
@@ -15,6 +16,7 @@ const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_var.story_2 = true
 	global_var.player_movement = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str( global_var.load_level_story_2()))
@@ -33,7 +35,10 @@ func _ready() -> void:
 		player.show()
 	else:
 		player.hide()
-		basement_01.hide()
+	if global_var.load_level_story_2() == global_var.story_2_basement_2_scene:
+		basement_02.show()
+	else:
+		basement_02.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()

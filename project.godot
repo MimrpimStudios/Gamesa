@@ -29,6 +29,7 @@ global_var="*res://scripts/global_var.gd"
 SewersMusic="*res://scenes/sewers_music.tscn"
 debug_console="*res://scenes/debug_console.tscn"
 pause_screen="*res://scenes/pause_screen.tscn"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [debug]
 
@@ -51,6 +52,10 @@ movie_writer/movie_file="E:/-=Documents=-/Godot/gamesa_movies/07.avi"
 movie_writer/disable_vsync=true
 movie_writer/fps=30
 run/main_run_args="-launcherCLI -versionCLI=0.1 -launcherGUI -versionGUI=1.0"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [global_group]
 

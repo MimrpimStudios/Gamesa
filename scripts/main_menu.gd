@@ -8,6 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_var.story_2 = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str(global_var.load_level()))
 	panel_hide()
