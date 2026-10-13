@@ -35,7 +35,7 @@ func _ready() -> void:
 		player.show()
 	else:
 		player.hide()
-	if global_var.load_level_story_2() == global_var.story_2_basement_2_scene:
+	if global_var.load_level_story_2() == global_var.story_2_basement_2_scene or global_var.load_level_story_2() == global_var.story_2_basement_3_scene or global_var.load_level_story_2() == global_var.story_2_basement_4_scene:
 		basement_02.show()
 	else:
 		basement_02.hide()
