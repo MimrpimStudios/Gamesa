@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://oa00s1ck51vh"]
+[gd_scene load_steps=11 format=4 uid="uid://oa00s1ck51vh"]
 
 [ext_resource type="Script" uid="uid://btyorcjay48co" path="res://scenes/story_02/basement/basement_01.gd" id="1_aqd7l"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_4ubfh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="7_tqsqy"]
 [ext_resource type="PackedScene" uid="uid://cg3y0xb82qokn" path="res://scenes/story_02/basement/basement_02.tscn" id="8_hocbk"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="9_hocbk"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="10_n8jqm"]
 
 [node name="Basement01" type="Node2D"]
 script = ExtResource("1_aqd7l")
@@ -64,5 +65,18 @@ scene = ExtResource("8_hocbk")
 
 [node name="Screen" parent="." instance=ExtResource("9_hocbk")]
 follow_viewport_enabled = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -75.0
+offset_right = 79.0
+offset_bottom = -27.0
+text = "You are free...
+Try to get out of here quickly."
+label_settings = ExtResource("10_n8jqm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
 
 [editable path="Player"]
