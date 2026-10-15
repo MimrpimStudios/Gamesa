@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("integrate") and entered:
-		if not null:
+		if not scene == null:
 			get_tree().change_scene_to_packed(scene)
 
 
