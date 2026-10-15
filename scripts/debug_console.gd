@@ -128,6 +128,7 @@ func _on_line_edit_text_submitted(text: String) -> void:
 		OS.crash(arg1)
 	elif command == "timescale":
 		Engine.time_scale = float(arg1)
+		rich_text_label.append_text("Timescale of engine is changet to " + arg1 + " \n")
 	line_edit.clear()
 	line_edit.release_focus()
 	await get_tree().create_timer(0.1).timeout
