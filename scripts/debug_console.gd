@@ -9,7 +9,8 @@ var commands = [
 	"god",
 	"level",
 	"exit",
-	"crash"
+	"crash",
+	"timescale"
 ]
 var syntax = [
 	" - Shows all available commands",
@@ -18,7 +19,8 @@ var syntax = [
 	" - Enable god mode (can not turn off, only by killing itself in instakill like spikes etc.)",
 	" <level name|help> - changes level",
 	" - Exits the game with error code 0",
-	" <error message> - crashes the game"
+	" <error message> - crashes the game",
+	" <scale> - changes the speed of engine to <scale>"
 ]
 
 @onready var root: CanvasLayer = $"."
@@ -124,7 +126,8 @@ func _on_line_edit_text_submitted(text: String) -> void:
 			OS.crash("User asked for crash!")
 		OS.alert(arg1, "Error!")
 		OS.crash(arg1)
-
+	elif command == "timescale":
+		Engine.time_scale = float(arg1)
 	line_edit.clear()
 	line_edit.release_focus()
 	await get_tree().create_timer(0.1).timeout
