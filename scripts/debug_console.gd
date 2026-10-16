@@ -7,14 +7,20 @@ var commands = [
 	"clear",
 	"speed",
 	"god",
-	"level"
+	"level",
+	"exit",
+	"crash",
+	"timescale"
 ]
 var syntax = [
 	" - Shows all available commands",
 	" - Clears console",
 	" <set|reset> <float> - Sets the player speed",
 	" - Enable god mode (can not turn off, only by killing itself in instakill like spikes etc.)",
-	" <level name|help> - changes level"
+	" <level name|help> - changes level",
+	" - Exits the game with error code 0",
+	" <error message> - crashes the game",
+	" <scale> - changes the speed of engine to <scale>"
 ]
 
 @onready var root: CanvasLayer = $"."
@@ -112,8 +118,17 @@ func _on_line_edit_text_submitted(text: String) -> void:
 					get_tree().change_scene_to_file(scene)
 				else:
 					rich_text_label.append_text("Error: This level does not exist\n")
-
-
+	elif command == "exit":
+		get_tree().quit(0)
+	elif command == "crash":
+		if arg1 == "crash":
+			OS.alert("User asked for crash!", "Error!")
+			OS.crash("User asked for crash!")
+		OS.alert(arg1, "Error!")
+		OS.crash(arg1)
+	elif command == "timescale":
+		Engine.time_scale = float(arg1)
+		rich_text_label.append_text("Timescale of engine is changet to " + arg1 + " \n")
 	line_edit.clear()
 	line_edit.release_focus()
 	await get_tree().create_timer(0.1).timeout

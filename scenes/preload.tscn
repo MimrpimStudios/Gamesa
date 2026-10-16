@@ -10,7 +10,7 @@ shadow_color = Color(0, 0, 0, 1)
 
 [node name="Preload" type="Node"]
 script = ExtResource("1_gmnvj")
-scene = "res://scenes/volume_set.tscn"
+scene = "res://scenes/intro.tscn"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 3
