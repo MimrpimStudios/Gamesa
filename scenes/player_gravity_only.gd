@@ -11,7 +11,8 @@ extends CharacterBody2D
 var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 ## left is -1, right is 1 and stand is 0
 @export var direction: int = 0
-
+func _ready() -> void:
+	%Label.hide()
 func _process(_delta: float) -> void:
 	if global_var.is_player_dead:
 		if is_instance_valid(collision_shape_2d):
