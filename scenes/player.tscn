@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdmijiqu81d1q"]
+[gd_scene load_steps=24 format=3 uid="uid://cdmijiqu81d1q"]
 
 [ext_resource type="Script" uid="uid://cia6u3d1l3ic3" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="6_smehm"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="7_smehm"]
 [ext_resource type="Script" uid="uid://cfgu3s3178iye" path="res://scripts/player_dialog.gd" id="8_ur7pv"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="9_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -233,5 +234,16 @@ horizontal_alignment = 1
 vertical_alignment = 2
 uppercase = true
 script = ExtResource("8_ur7pv")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -60.0
+offset_top = -51.0
+offset_right = 61.0
+offset_bottom = -3.0
+text = "PRESS \"E\" OR \"I\" FOR
+EXITING..."
+label_settings = ExtResource("9_ur7pv")
+horizontal_alignment = 1
 
 [connection signal="timeout" from="AnimatedSprite2D/Healthbar/Healthbar/Timer" to="AnimatedSprite2D/Healthbar" method="_on_timer_timeout"]

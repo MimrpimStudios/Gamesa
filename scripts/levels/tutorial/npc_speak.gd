@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var npc: CharacterBody2D = $"../PharmacyMale"
+@onready var npc: CharacterBody2D = $"../PharmacyFemale"
 @onready var animation: AnimationPlayer = $"../AnimationPlayer"
 var speak = false
 var played = false

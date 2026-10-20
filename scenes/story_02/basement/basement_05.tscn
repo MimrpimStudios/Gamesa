@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://b33s2iucybvv5"]
+[gd_scene load_steps=62 format=4 uid="uid://b33s2iucybvv5"]
 
 [ext_resource type="Script" uid="uid://e1ytbypco4he" path="res://scenes/story_02/basement/basement_05.gd" id="1_r05g0"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_lymav"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bcjm15ysuedd" path="res://assets/Textures/tilemap/cloud.png" id="18_5c3il"]
 [ext_resource type="Script" uid="uid://crtsq4axvq0vc" path="res://scenes/story_02/basement/rigid_body_2d1.gd" id="21_dxi6s"]
 [ext_resource type="PackedScene" uid="uid://djpmmtdfiuurp" path="res://scenes/door.tscn" id="22_aw8o4"]
+[ext_resource type="PackedScene" uid="uid://dfr1cwr4xes3r" path="res://scenes/story_02/town_01.tscn" id="23_0lm21"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6iuku"]
 atlas = ExtResource("16_hs4am")
@@ -1896,6 +1897,7 @@ shape = SubResource("RectangleShape2D_r05g0")
 
 [node name="Door" parent="." instance=ExtResource("22_aw8o4")]
 position = Vector2(368, -207)
+scene = ExtResource("23_0lm21")
 
 [connection signal="body_entered" from="Area2D" to="Node2D/RigidBody2D" method="_on_area_2d_body_entered"]
 
