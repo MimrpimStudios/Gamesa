@@ -2,14 +2,15 @@ extends Area2D
 
 var repeat = false
 
+@onready var label: Label = $"../Player/Label"
 
 func _on_body_exited(_body: Node2D) -> void:
 	repeat = false
-
+	label.hide()
 
 func _on_body_entered(_body: Node2D) -> void:
 	repeat = true
-
+	label.show()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("integrate") and repeat:

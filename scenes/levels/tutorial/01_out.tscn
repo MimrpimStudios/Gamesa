@@ -548,4 +548,5 @@ bus = &"Music"
 [connection signal="body_entered" from="TownChanger" to="TownChanger" method="_on_body_entered"]
 
 [editable path="Killzone"]
+[editable path="Player"]
 [editable path="ufo"]

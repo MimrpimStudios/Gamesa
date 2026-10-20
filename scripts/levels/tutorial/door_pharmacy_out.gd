@@ -2,19 +2,20 @@ extends Area2D
 
 var repeat4 = false
 @export var work: bool = false
+@onready var label: Label = $Player/Label
 
 func _ready() -> void:
-	%Label.hide()
+	label.hide()
 
 func _on_body_exited(_body: Node2D) -> void:
 	repeat4 = false
-	%Label.hide()
+	label.hide()
 
 
 func _on_body_entered(_body: Node2D) -> void:
 	repeat4 = true
 	if work:
-		%Label.show()
+		label.show()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("integrate") and repeat4 and work:
