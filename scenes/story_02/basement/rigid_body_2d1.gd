@@ -12,4 +12,5 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		freeze = false
+		await get_tree().create_timer(0.3).timeout
+		set_deferred("freeze", false)
