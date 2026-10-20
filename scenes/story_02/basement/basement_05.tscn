@@ -1055,16 +1055,16 @@ animation = &"sitting_couch"
 position = Vector2(-0.5, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(578, 9)
-offset = Vector2(-139, -30)
-zoom = Vector2(1.611, 1.611)
-limit_left = -670
-limit_top = -364
-limit_right = 1292
-limit_bottom = 294
+offset = Vector2(0, -30)
+zoom = Vector2(5, 5)
+limit_enabled = false
+limit_bottom = 500
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 0.5
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+editor_draw_limits = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -1136,7 +1136,7 @@ follow_viewport_enabled = false
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(210.5, -239)
+position = Vector2(250, -239)
 shape = SubResource("RectangleShape2D_r05g0")
 
 [connection signal="body_entered" from="Area2D" to="Node2D/RigidBody2D" method="_on_area_2d_body_entered"]
