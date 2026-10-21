@@ -34,23 +34,18 @@ animation = &"sitting_couch"
 [node name="CollisionShape2D" parent="Player" index="1"]
 position = Vector2(-0.5, 0)
 
-[node name="Camera2D" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
-top_level = true
-position = Vector2(-408, -9)
+[node name="Camera2D" type="Node2D" parent="Player"]
+position = Vector2(-1, -9)
 script = ExtResource("3_668hs")
 priority = 1
-follow_mode = 1
-follow_target = NodePath("..")
 zoom = Vector2(5, 5)
 tween_resource = SubResource("Resource_668hs")
 limit_bottom = 500
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2Dzoom" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
-top_level = true
-position = Vector2(-408, -9)
+position = Vector2(-1, -9)
 script = ExtResource("3_668hs")
-follow_mode = 1
 follow_target = NodePath("..")
 zoom = Vector2(6, 6)
 tween_resource = SubResource("Resource_668hs")
@@ -192,8 +187,9 @@ tween_resource = SubResource("Resource_ulgsc")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2D2" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
 top_level = true
-position = Vector2(-408, -9)
+position = Vector2(-409, -18)
 zoom = Vector2(5, 5)
 limit_bottom = 500
 
