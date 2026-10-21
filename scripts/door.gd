@@ -3,7 +3,7 @@ extends Area2D
 @export var scene: PackedScene
 @export var work: bool = true
 var entered: bool
-@onready var label: Label = $"../Player/Label"
+@onready var label: Label = $Player/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
