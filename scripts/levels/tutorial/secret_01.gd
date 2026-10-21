@@ -8,6 +8,7 @@ extends Area2D
 var count = false
 
 @onready var leaves: TileMapLayer = $"../TileMapLayer/TileMapLayer2"
+@onready var leaves2: TileMapLayer = $"../TileMapLayer3/TileMapLayer2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +34,7 @@ func _on_timer_timeout() -> void:
 		timer.start()
 		audio_stream_player.play()
 		leaves.hide()
+		leaves2.hide()
 		animation_player.play("secret_1")
 		audio_stream_player_2.play()
 	else:
