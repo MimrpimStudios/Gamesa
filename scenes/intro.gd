@@ -3,7 +3,7 @@ extends Node2D
 @onready var mimrpim_studios: Sprite2D = $Player/MimrpimStudios
 @onready var player: CharacterBody2D = $Player
 @onready var camera_2d: Camera2D = %Camera2D
-@onready var label: Label = $Player/Label
+@onready var label: Label = $Player/Label2
 @onready var collision_shape_2d: CollisionShape2D = $Player/CollisionShape2D
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
