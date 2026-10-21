@@ -2,7 +2,7 @@ extends Area2D
 
 var repeat5 = false
 
-@onready var label: Label = %Label
+@onready var label: Label = %Label2
 
 func _ready() -> void:
 	label.hide()
