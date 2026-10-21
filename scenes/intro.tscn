@@ -65,7 +65,7 @@ position = Vector2(-1.7523766e-05, -26.999983)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_0naf5")
 
-[node name="Label" type="Label" parent="Player"]
+[node name="Label2" type="Label" parent="Player"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -127,7 +127,13 @@ autoplay = true
 mix_target = 1
 bus = &"Music"
 
+[node name="BlockInputTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="BlockInputTimer" to="." method="_on_block_input_timer_timeout"]
 
 [editable path="Rat"]
 [editable path="Player"]
