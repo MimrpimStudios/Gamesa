@@ -328,7 +328,7 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="Label" type="Label" parent="Player"]
+[node name="Label2" type="Label" parent="Player"]
 unique_name_in_owner = true
 offset_left = -60.0
 offset_top = -51.0

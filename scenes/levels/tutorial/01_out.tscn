@@ -210,6 +210,10 @@ shape = SubResource("RectangleShape2D_qinkk")
 [node name="Player" parent="." instance=ExtResource("2_uc4g0")]
 position = Vector2(488, 359)
 
+[node name="Label" parent="Player" index="4"]
+text = "PRESS \"E\" OR \"I\" FOR
+ENTERING..."
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
 zoom = Vector2(5, 5)

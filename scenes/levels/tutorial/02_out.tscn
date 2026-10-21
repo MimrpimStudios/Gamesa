@@ -292,6 +292,10 @@ texture = ExtResource("5_k6fsb")
 [node name="Player" parent="." instance=ExtResource("7_oyi2o")]
 position = Vector2(1980, 359)
 
+[node name="Label" parent="Player" index="4"]
+text = "PRESS \"E\" OR \"I\" FOR
+ENTERING..."
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
 zoom = Vector2(5, 5)
@@ -612,4 +616,5 @@ tile_set = ExtResource("2_vcnoi")
 [connection signal="body_entered" from="TownMusicOff" to="TownMusicOff" method="_on_body_entered"]
 
 [editable path="Killzone"]
+[editable path="Player"]
 [editable path="ufo"]
