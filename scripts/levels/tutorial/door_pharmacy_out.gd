@@ -2,7 +2,7 @@ extends Area2D
 
 var repeat4 = false
 @export var work: bool = false
-@onready var label: Label = $Player/Label
+@onready var label: Label = $"../Player/Label"
 
 func _ready() -> void:
 	label.hide()
