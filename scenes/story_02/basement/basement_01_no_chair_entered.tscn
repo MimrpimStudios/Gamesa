@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://b7l8tkgenh2b7"]
 
-[ext_resource type="Script" uid="uid://btyorcjay48co" path="res://scenes/story_02/basement/basement_01.gd" id="1_buv0m"]
+[ext_resource type="Script" uid="uid://cxb3od5xvtxk3" path="res://scenes/story_02/basement/basement_01_no_chair.gd" id="1_el5tj"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_ol415"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_vtlkv"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_el5tj"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="9_el5tj"]
 
 [node name="Basement01" type="Node2D"]
-script = ExtResource("1_buv0m")
+script = ExtResource("1_el5tj")
 
 [node name="Player" parent="." instance=ExtResource("2_ol415")]
 position = Vector2(746, -520)
