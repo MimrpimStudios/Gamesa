@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dq54mkvqd01km"]
+[gd_scene load_steps=53 format=3 uid="uid://dq54mkvqd01km"]
 
 [ext_resource type="Script" uid="uid://bw7vipfxcwatg" path="res://scenes/story_02/main_menu_2.gd" id="1_3arye"]
 [ext_resource type="PackedScene" uid="uid://pu81h36gpgi4" path="res://scenes/story_02/basement/basement_01_screenshoot.tscn" id="2_dvioc"]
@@ -27,6 +27,7 @@
 [ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_d4voa"]
 [ext_resource type="Script" uid="uid://cp31gnbcyvnd2" path="res://scenes/story_02/splash_label.gd" id="22_3arye"]
 [ext_resource type="Script" uid="uid://c1jfkk7385x3k" path="res://scenes/story_02/arrow_story_1.gd" id="26_la5lj"]
+[ext_resource type="Texture2D" uid="uid://dhq46w2vm7uhi" path="res://assets/Textures/arrow_better_shadow.png" id="28_h4xja"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -211,6 +212,16 @@ _data = {
 &"RESET": SubResource("Animation_svtp6"),
 &"Splashing": SubResource("Animation_gw5y6")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olecc"]
+atlas = ExtResource("28_h4xja")
+region = Rect2(4, 2, 41, 29)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dds4q"]
+font = ExtResource("6_wjlw1")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.7411765, 0.7411765, 0.7411765, 0.49803922)
 
 [node name="MainMenu2" type="Control"]
 layout_mode = 3
@@ -549,10 +560,29 @@ autoplay = "Splashing"
 [node name="ArrowStory1" type="Node" parent="."]
 script = ExtResource("26_la5lj")
 
-[node name="Button" type="Button" parent="ArrowStory1"]
-offset_right = 62.0
-offset_bottom = 31.0
+[node name="Button" type="TextureButton" parent="ArrowStory1"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1906.0
+offset_top = 12.0
+offset_right = -1799.0
+offset_bottom = 90.0
+grow_horizontal = 0
+texture_normal = SubResource("AtlasTexture_olecc")
+stretch_mode = 4
+flip_h = true
+
+[node name="Label" type="Label" parent="ArrowStory1/Button"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 27.0
+offset_right = 99.0
+offset_bottom = 45.0
 text = "Story 1"
+label_settings = SubResource("LabelSettings_dds4q")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
@@ -566,4 +596,8 @@ text = "Story 1"
 [connection signal="pressed" from="Links/TextureButton2" to="Links" method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Links/TextureButton3" to="Links" method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="Links/TextureButton4" to="Links" method="_on_texture_button_4_pressed"]
+[connection signal="focus_entered" from="ArrowStory1/Button" to="ArrowStory1" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="ArrowStory1/Button" to="ArrowStory1" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="ArrowStory1/Button" to="ArrowStory1" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ArrowStory1/Button" to="ArrowStory1" method="_on_button_mouse_exited"]
 [connection signal="pressed" from="ArrowStory1/Button" to="ArrowStory1" method="_on_button_pressed"]
