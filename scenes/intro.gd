@@ -81,6 +81,9 @@ func _on_audio_stream_player_finished() -> void:
 	audio_stream_player.play()
 
 func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		if event.physical_keycode == KEY_ESCAPE:
+			_moje_akce()
 	if can_skip:
 		# Zkontrolujeme, jestli jde o stisk klávesy (a ne o pohyb myši apod.)
 		# event.is_pressed() zajistí, že kód proběhne jen při zmáčknutí, ne při puštění klávesy
