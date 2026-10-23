@@ -13,6 +13,8 @@ var can_skip = false
 var camera = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if FileAccess.file_exists("user://savefile.save"):
+		can_skip = true
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	mimrpim_studios.hide()
 	label.hide()
@@ -106,7 +108,3 @@ func _input(event):
 func _moje_akce():
 	# Zde bude tvůj kód, který se má spustit
 	get_tree().change_scene_to_file(global_var.main_scene)
-
-
-func _on_block_input_timer_timeout() -> void:
-	can_skip = true
