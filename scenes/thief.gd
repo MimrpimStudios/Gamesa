@@ -4,11 +4,12 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 var direction: int
-
+@export var valid_gravity: bool = true
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if valid_gravity:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
 
 	# Get the input direction and handle the movement/deceleration.

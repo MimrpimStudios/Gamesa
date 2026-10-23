@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://b7xpwofy5nujb"]
+[gd_scene load_steps=6 format=4 uid="uid://b7xpwofy5nujb"]
 
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="2_jc4m8"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_dflak"]
+[ext_resource type="Script" uid="uid://b8v05wcdtlhh3" path="res://scenes/levels/tutorial/label_help.gd" id="4_0b6jp"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_wemm2"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="11_dflak"]
 
@@ -24,6 +25,9 @@ script = null
 
 [node name="Healthbar" parent="Player/AnimatedSprite2D" index="0"]
 visible = false
+
+[node name="Label" parent="Player" index="4"]
+script = ExtResource("4_0b6jp")
 
 [node name="Rat" parent="." instance=ExtResource("11_dflak")]
 position = Vector2(3484, 2807)

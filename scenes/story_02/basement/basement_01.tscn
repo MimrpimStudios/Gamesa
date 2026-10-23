@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dlbyd1gvhopd4"]
+[gd_scene load_steps=12 format=4 uid="uid://dlbyd1gvhopd4"]
 
 [ext_resource type="Script" uid="uid://btyorcjay48co" path="res://scenes/story_02/basement/basement_01.gd" id="1_drfd7"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_aeevd"]
@@ -6,6 +6,45 @@
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="4_noh63"]
 [ext_resource type="Script" uid="uid://cmf7bemlrq1g6" path="res://scenes/story_02/basement/chair_mechanic.gd" id="5_aeevd"]
 [ext_resource type="Texture2D" uid="uid://cn71bhuxe2t33" path="res://assets/Textures/sprites/player_rope_chair.png" id="6_3ja00"]
+[ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="7_noh63"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="8_pnrrw"]
+
+[sub_resource type="Animation" id="Animation_eyyav"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pnrrw"]
+resource_name = "show"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ij4w"]
+_data = {
+&"RESET": SubResource("Animation_eyyav"),
+&"show": SubResource("Animation_pnrrw")
+}
 
 [node name="Basement01" type="Node2D"]
 script = ExtResource("1_drfd7")
@@ -54,5 +93,26 @@ script = ExtResource("5_aeevd")
 [node name="Sprite2D" type="Sprite2D" parent="ChairMechanic"]
 position = Vector2(8, -15)
 texture = ExtResource("6_3ja00")
+
+[node name="Screen" parent="." instance=ExtResource("7_noh63")]
+follow_viewport_enabled = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -56.0
+offset_right = 79.0
+offset_bottom = -25.0
+text = "Jump X times 
+to be free..."
+label_settings = ExtResource("8_pnrrw")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2ij4w")
+}
+autoplay = "show"
 
 [editable path="Player"]

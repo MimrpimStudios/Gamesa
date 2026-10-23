@@ -65,7 +65,7 @@ position = Vector2(-1.7523766e-05, -26.999983)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_0naf5")
 
-[node name="Label" type="Label" parent="Player"]
+[node name="Label2" type="Label" parent="Player"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
