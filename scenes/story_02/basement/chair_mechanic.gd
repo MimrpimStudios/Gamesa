@@ -12,6 +12,7 @@ const BASE_TEXT: String = "Jump %d times \nto be free..."
 
 var jump_count: int = 0
 var is_changing_scene: bool = false
+var can_jump = false
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -24,12 +25,14 @@ func _ready() -> void:
 	
 	# Nastavíme výchozí text na začátku (vyjde z toho "Jump 5 times \nto be free...")
 	update_label()
+	await get_tree().create_timer(4.5).timeout
+	can_jump = true
 
 func _input(event: InputEvent) -> void:
 	if is_changing_scene:
 		return
 		
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and can_jump:
 		if jump_count < 5:
 			jump_count += 1
 			update_label()
