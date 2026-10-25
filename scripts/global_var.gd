@@ -5,6 +5,7 @@ var credits_true = false
 var player_show_speakNPC = false
 var player_show_speakNPC_color: Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
+var player_gravity = true
 var is_player_dead = false
 var is_player_smashing = false
 var is_player_smashing_disabled = false
@@ -69,6 +70,7 @@ const story_2_basement_4_scene = "res://scenes/story_02/basement/basement_04.tsc
 const story_2_basement_5_scene = "res://scenes/story_02/basement/basement_05.tscn"
 const story_2_town_01_scene = "res://scenes/story_02/town_01.tscn"
 const story_2_police_01_scene = "res://scenes/story_02/police_01.tscn"
+const story_2_in_car_scene = "res://scenes/story_02/in_car.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

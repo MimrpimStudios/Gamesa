@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta):
-	if not is_on_floor() and global_var.is_player_dead == false:
+	if not is_on_floor() and global_var.is_player_dead == false and global_var.player_gravity:
 		velocity.y += gravity * delta
 		if global_var.player_movement == false:
 			move_and_slide()
