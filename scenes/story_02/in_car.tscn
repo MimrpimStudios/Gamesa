@@ -9,7 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="7_o8277"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_e278a"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="9_i2xk1"]
-[ext_resource type="Texture2D" uid="uid://cp4y2pinibsae" path="res://assets/Textures/sprites/car_red.png" id="11_ksslg"]
+[ext_resource type="Texture2D" uid="uid://n7rqbxr387wr" path="res://assets/Textures/sprites/car_police.png" id="11_ksslg"]
 [ext_resource type="AudioStream" uid="uid://b4uxe64vs33rp" path="res://assets/Sounds/car.wav" id="12_67te2"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_v2068"]
 [ext_resource type="Script" uid="uid://6imw44t8rbis" path="res://scenes/static_body_2d_car.gd" id="13_6oe6o"]
@@ -40,22 +40,22 @@ font_color = Color(1, 0.9882353, 0.2509804, 1)
 font = ExtResource("9_i2xk1")
 font_color = Color(1, 0.9882353, 0.2509804, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qt2eu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_67te2"]
 atlas = ExtResource("11_ksslg")
-region = Rect2(0, 21, 38, 21)
+region = Rect2(0, 0, 38, 31)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_50v30"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oe6o"]
 atlas = ExtResource("11_ksslg")
-region = Rect2(0, 0, 38, 21)
+region = Rect2(38, 0, 38, 31)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jtldb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vik3s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qt2eu")
+"texture": SubResource("AtlasTexture_67te2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_50v30")
+"texture": SubResource("AtlasTexture_6oe6o")
 }],
 "loop": true,
 "name": &"default",
@@ -351,11 +351,10 @@ collision_mask = 128
 script = ExtResource("18_buyrj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Car"]
-position = Vector2(0, -10)
-sprite_frames = SubResource("SpriteFrames_jtldb")
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_vik3s")
 autoplay = "default"
-frame_progress = 0.9033954
-flip_h = true
+frame_progress = 0.31621116
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 position = Vector2(0, -9.5)
