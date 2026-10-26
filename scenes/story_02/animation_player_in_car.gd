@@ -6,6 +6,7 @@ extends AnimationPlayer
 @onready var camera_2d: Camera2D = $"../Car/Player/Camera2D"
 
 @onready var player_collision_shape_2d: CollisionShape2D = $"../Car/Player/CollisionShape2D"
+@onready var animation_player_2: AnimationPlayer = $"../AnimationPlayer2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,9 +26,22 @@ func _ready() -> void:
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "intro":
-		play("car_anim")
+		if global_var.play_car:
+			play("car_anim")
+		else:
+			await get_tree().create_timer(3.5).timeout
+			animation_player_2.play("fade/fade_black")
 	if anim_name == "car_anim":
 		player_collision_shape_2d.disabled = false
 		global_var.player_gravity = true
+		play("camera_out")
 	if anim_name == "camera_out":
 		global_var.player_movement = true
+
+
+func _on_animation_player_2_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "fade/fade_black":
+			play("car_anim")
+			seek(45.5)
+			await get_tree().create_timer(1).timeout
+			animation_player_2.play("fade/fade_white")
