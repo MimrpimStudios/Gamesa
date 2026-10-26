@@ -1,16 +1,8 @@
-# Security Policy
+# Security
 
-## Supported Versions
+## Reporting security vulnerabilities
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+If you've found a security vulnerability in Godot, please do not create an issue on
+the GitHub issue tracker as it will be visible publicly.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.1   | :white_check_mark: |
-| 1.2 | :white_check_mark: |
-| < 1.0   | :x:                |
-
-## Reporting a Vulnerability
-
-W.I.P.
+Instead, reporti it [here]()
