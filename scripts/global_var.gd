@@ -5,6 +5,7 @@ var credits_true = false
 var player_show_speakNPC = false
 var player_show_speakNPC_color: Color = Color(0.0, 0.0, 0.0, 1.0)
 var player_movement = true
+var player_gravity = true
 var is_player_dead = false
 var is_player_smashing = false
 var is_player_smashing_disabled = false
@@ -12,6 +13,9 @@ var healthbar_show = false
 var player_health = 3
 var player_max_health = 3
 var hide_overaly = false
+var play_car = false
+var hw_enabled = true
+var is_hw = false
 const volume_set_scene = "res://scenes/intro.tscn"
 const house_00_story_scene = "res://scenes/levels/tutorial/00_house_story.tscn"
 const house_03_story_scene = "res://scenes/levels/tutorial/03_house_story.tscn"
@@ -29,7 +33,7 @@ const stoky3_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint3.tscn"
 const start_scene_story = house_00_story_scene
 const start_scene_new_game = start_scene_story
 const start_scene = main_menu_scene
-const version = "1.2-t1.0-pre2"
+const version = "1.2-a1.0"
 const stoky_scene = "res://scenes/levels/tutorial/01_stoky.tscn"
 const stoky_no_monolog_scene = "res://scenes/levels/tutorial/01_stoky_checkpoint_no_monolog.tscn"
 const town_02_scene = "res://scenes/levels/tutorial/02_town.tscn"
@@ -69,6 +73,8 @@ const story_2_basement_4_scene = "res://scenes/story_02/basement/basement_04.tsc
 const story_2_basement_5_scene = "res://scenes/story_02/basement/basement_05.tscn"
 const story_2_town_01_scene = "res://scenes/story_02/town_01.tscn"
 const story_2_police_01_scene = "res://scenes/story_02/police_01.tscn"
+const story_2_in_car_scene = "res://scenes/story_02/in_car.tscn"
+const story_2_house_in_02_ending_scene = "res://scenes/story_02/02_house_in_ending.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

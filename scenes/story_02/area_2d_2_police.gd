@@ -21,4 +21,4 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("integrate") and repeat5:
-		get_tree().change_scene_to_file(global_var.police_01_scene)
+		get_tree().change_scene_to_file(global_var.story_2_police_01_scene)

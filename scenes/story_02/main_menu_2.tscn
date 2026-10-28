@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dq54mkvqd01km"]
+[gd_scene load_steps=57 format=3 uid="uid://dq54mkvqd01km"]
 
 [ext_resource type="Script" uid="uid://bw7vipfxcwatg" path="res://scenes/story_02/main_menu_2.gd" id="1_3arye"]
 [ext_resource type="PackedScene" uid="uid://pu81h36gpgi4" path="res://scenes/story_02/basement/basement_01_screenshoot.tscn" id="2_dvioc"]
@@ -11,9 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://dhbkwmbdf8wtn" path="res://scenes/story_02/basement/basement_02_screenshoot.tscn" id="6_h4xja"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="6_wjlw1"]
 [ext_resource type="Script" uid="uid://dofvb0j6jocw0" path="res://scenes/label_credits.gd" id="7_h4xja"]
+[ext_resource type="PackedScene" uid="uid://byddkyx6nf7v" path="res://scenes/story_02/town_01_screenshoot.tscn" id="7_olecc"]
+[ext_resource type="PackedScene" uid="uid://ojo6o0mg2nvv" path="res://scenes/story_02/police_01_screenshoot.tscn" id="8_dds4q"]
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="8_olecc"]
 [ext_resource type="Texture2D" uid="uid://c7ur1guja3ix4" path="res://assets/Textures/exit.png" id="9_dds4q"]
+[ext_resource type="PackedScene" uid="uid://cmg8g6pr27ooc" path="res://scenes/story_02/02_house_in_ending_screenshoot.tscn" id="9_tk8pk"]
 [ext_resource type="Script" uid="uid://chhou5uvjh6yc" path="res://scenes/story_02/launcher_info_dialog.gd" id="9_xhuod"]
+[ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="10_hvs0l"]
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="11_hvs0l"]
 [ext_resource type="Texture2D" uid="uid://cvmijwj11au16" path="res://assets/Textures/load.png" id="12_y0p2a"]
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="13_3cbg4"]
@@ -233,6 +237,7 @@ grow_vertical = 2
 script = ExtResource("1_3arye")
 
 [node name="00HouseStory" parent="." instance=ExtResource("2_xup2e")]
+visible = false
 position = Vector2(-1330.0001, -1054)
 scale = Vector2(5, 5)
 
@@ -252,6 +257,32 @@ position = Vector2(29.399998, 6.198883e-06)
 visible = false
 position = Vector2(3003, 733.00006)
 scale = Vector2(5, 5)
+
+[node name="02_town" parent="." instance=ExtResource("7_olecc")]
+visible = false
+position = Vector2(-54662, 2558.0002)
+scale = Vector2(5, 5)
+
+[node name="Police01" parent="." instance=ExtResource("8_dds4q")]
+visible = false
+position = Vector2(-1762, -1142.0001)
+scale = Vector2(5, 5)
+
+[node name="01HouseInEnd" parent="." instance=ExtResource("9_tk8pk")]
+position = Vector2(-1330, -1054)
+scale = Vector2(5, 5)
+
+[node name="Label2" type="Label" parent="01HouseInEnd"]
+offset_left = 378.0
+offset_top = 278.0
+offset_right = 554.0
+offset_bottom = 343.0
+text = "CONGRATULATTIONS! YOU
+FINISHED THE STORY 2
+SIT ON THE   
+COUCH FOR THE CREDITS..."
+label_settings = ExtResource("10_hvs0l")
+horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x1j38")

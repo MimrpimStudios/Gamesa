@@ -1,13 +1,13 @@
-extends Node
+extends Node3D
 
 class_name ResourceReloader
 
-@onready var label: Label = $Label
+@onready var label: Label3D = $Label
 
 @export_file_path("*.tscn") var scene: String
 
-var rng = RandomNumberGenerator.new().randf_range(0.1, 1.0)
-var rng2 = RandomNumberGenerator.new().randf_range(0.1, 0.5)
+var rng = RandomNumberGenerator.new().randf_range(1.0, 1.5)
+var rng2 = RandomNumberGenerator.new().randf_range(0.7, 1.5)
 
 func _ready() -> void:
 	label.text = "Loading patches..."
@@ -37,8 +37,11 @@ func kontrola_data() -> void:
 
 	var je_halloween = (mesic == 10 and den in [30, 31]) or (mesic == 11 and den == 1)
 
-	if je_halloween:
+	if je_halloween and global_var.hw_enabled:
+		global_var.is_hw = true
 		spustit_udalost()
+	else:
+		global_var.is_hw = false
 
 func spustit_udalost() -> void:
 	label.text = "Loading pumpkins..."
