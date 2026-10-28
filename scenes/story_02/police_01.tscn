@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://djc626o6rndlq"]
 
-[ext_resource type="Script" uid="uid://b7le50tgsq41" path="res://scenes/story_02/police_01.gd" id="1_m2w50"]
+[ext_resource type="Script" path="res://scenes/story_02/police_01.gd" id="1_m2w50"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_3el2v"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_0jg2g"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_lu0yx"]
@@ -10,11 +10,11 @@
 [ext_resource type="Script" uid="uid://e6xwjieh42nw" path="res://scripts/levels/tutorial/door_pharmacy_out.gd" id="9_42k2y"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="10_lohv8"]
 [ext_resource type="AudioStream" uid="uid://b0ohpimgdhef2" path="res://assets/Sounds/Music/haven.wav" id="11_hpbv1"]
-[ext_resource type="Script" uid="uid://4mrkdyl8pjyd" path="res://scenes/story_02/npc_speak.gd" id="11_m2w50"]
+[ext_resource type="Script" path="res://scenes/story_02/npc_speak.gd" id="11_m2w50"]
 [ext_resource type="PackedScene" uid="uid://c8tj2b6d5p7ol" path="res://scenes/pharmacy_female.tscn" id="12_vvjk6"]
-[ext_resource type="Script" uid="uid://bgba00rkpfyv5" path="res://scenes/pharmacy_female.gd" id="13_m2w50"]
+[ext_resource type="Script" path="res://scenes/pharmacy_female.gd" id="13_m2w50"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="13_tqlm0"]
-[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="14_h2bt6"]
+[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="14_h2bt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u00iu"]
 size = Vector2(15.25, 21)
