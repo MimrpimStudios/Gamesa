@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjfd5x2ck5oh8" path="res://scenes/pause_screen.gd" id="1_gchx3"]
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="2_hr2n2"]
-[ext_resource type="Texture2D" uid="uid://ciwdrxuw3uqmx" path="res://assets/Textures/exit.png" id="3_27awe"]
-[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="4_27awe"]
+[ext_resource type="Texture2D" uid="uid://c7ur1guja3ix4" path="res://assets/Textures/exit.png" id="3_27awe"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="4_27awe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_duq8p"]
 atlas = ExtResource("2_hr2n2")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://g8ih83bl2c2w"]
 
-[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="1_erqjc"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="1_erqjc"]
 [ext_resource type="Script" uid="uid://dipwvk5bt81wg" path="res://scripts/screen.gd" id="1_gakxr"]
 [ext_resource type="Script" uid="uid://c55nt4wgcwr8l" path="res://scripts/screen_die.gd" id="2_vhdk8"]
 [ext_resource type="Script" uid="uid://d2cofyqljwmc5" path="res://scripts/healthbar.gd" id="3_nexl8"]
