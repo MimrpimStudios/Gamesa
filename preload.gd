@@ -37,8 +37,11 @@ func kontrola_data() -> void:
 
 	var je_halloween = (mesic == 10 and den in [30, 31]) or (mesic == 11 and den == 1)
 
-	if je_halloween:
+	if je_halloween and global_var.hw_enabled:
+		global_var.is_hw = true
 		spustit_udalost()
+	else:
+		global_var.is_hw = false
 
 func spustit_udalost() -> void:
 	label.text = "Loading pumpkins..."
