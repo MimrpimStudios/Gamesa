@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cw5f3uudhh61k"]
 
 [ext_resource type="Script" uid="uid://bjqmw7g21m8ls" path="res://preload.gd" id="1_gmnvj"]
-[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_akpnc"]
+[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="2_akpnc"]
 [ext_resource type="Texture2D" uid="uid://badwdoo0tuei7" path="res://assets/Textures/icons/icon.png" id="3_6183s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6183s"]
