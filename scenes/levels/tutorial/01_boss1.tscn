@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_12o0e"]
 [ext_resource type="PackedScene" uid="uid://g8ih83bl2c2w" path="res://scenes/screen.tscn" id="4_04g3x"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="6_4c1h8"]
-[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="7_04g3x"]
+[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="7_04g3x"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="7_hk6ub"]
 [ext_resource type="PackedScene" uid="uid://1owrk12137ps" path="res://scenes/rat.tscn" id="9_12o0e"]
 [ext_resource type="Texture2D" uid="uid://b871jfj1ptd3l" path="res://assets/Textures/tilemap/grass-tilemap-2.png" id="9_aftbq"]

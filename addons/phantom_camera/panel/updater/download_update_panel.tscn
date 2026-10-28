@@ -6,10 +6,19 @@
 [ext_resource type="FontFile" uid="uid://dve7mgsjik4dg" path="res://addons/phantom_camera/fonts/Nunito-Regular.ttf" id="4_gwh4i"]
 [ext_resource type="Texture2D" uid="uid://censw3w53gldn" path="res://addons/phantom_camera/assets/PhantomCameraBtnPrimaryDefault.png" id="5_bonti"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_sjwi2"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_insma"]
 bg_color = Color(0.0190018, 0.21903, 0.16997, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.572549, 0.458824, 1)
+border_blend = true
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn22d"]
+bg_color = Color(0.0117647, 0.164706, 0.12549, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -29,22 +38,13 @@ border_color = Color(0.105882, 0.619608, 0.498039, 1)
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn22d"]
-bg_color = Color(0.0117647, 0.164706, 0.12549, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.0980392, 0.572549, 0.458824, 1)
-border_blend = true
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="ImageTexture" id="ImageTexture_sjwi2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_djsbc"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtrn6"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o12j0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtrn6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_buptb"]
 
@@ -179,13 +179,13 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_h8uk3")
 theme_override_font_sizes/font_size = 18
-theme_override_icons/arrow = SubResource("ImageTexture_sjwi2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_insma")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8m63d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yn22d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8m63d")
+theme_override_icons/arrow = SubResource("ImageTexture_sjwi2")
 alignment = 1
-item_count = 2
 selected = 0
+item_count = 2
 popup/item_0/text = "Confirm choice"
 popup/item_0/id = 0
 popup/item_1/text = "Yes, I am prepared"
@@ -197,8 +197,8 @@ custom_minimum_size = Vector2(240, 90)
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_djsbc")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xtrn6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_o12j0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xtrn6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_buptb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g3tf0")
 

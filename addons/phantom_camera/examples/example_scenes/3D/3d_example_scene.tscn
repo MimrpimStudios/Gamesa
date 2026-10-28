@@ -106,6 +106,7 @@ size = Vector3(8, 6, 0.5)
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(0.999858, 0, 0, 0, 0.94884, 0.315632, 0, -0.315637, 0.948825, -2.53871, 2, 9.76232)
+top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 process_priority = 300

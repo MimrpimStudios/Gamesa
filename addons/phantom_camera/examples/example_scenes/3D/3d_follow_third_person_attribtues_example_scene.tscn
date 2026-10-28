@@ -116,6 +116,7 @@ transform = Transform3D(0.999903, 0.0139622, 0, -0.0139622, 0.999903, 0, 0, 0, 1
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(0.99990255, 0.013962194, 0, -0.013962194, 0.99990255, 0, 0, 0, 1, -0.019, 0.5, 8.769)
+top_level = true
 attributes = SubResource("CameraAttributesPractical_pst8q")
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
