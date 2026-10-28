@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=4 uid="uid://ojo6o0mg2nvv"]
+[gd_scene load_steps=9 format=4 uid="uid://ojo6o0mg2nvv"]
 
-[ext_resource type="Script" uid="uid://b7le50tgsq41" path="res://scenes/story_02/police_01.gd" id="1_b5qrd"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_bo85s"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_4kvwj"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="4_g4egp"]
@@ -13,7 +12,6 @@
 size = Vector2(15.25, 21)
 
 [node name="Police01" type="Node2D"]
-script = ExtResource("1_b5qrd")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(74, 263)
