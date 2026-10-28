@@ -72,6 +72,7 @@ const story_2_basement_5_scene = "res://scenes/story_02/basement/basement_05.tsc
 const story_2_town_01_scene = "res://scenes/story_02/town_01.tscn"
 const story_2_police_01_scene = "res://scenes/story_02/police_01.tscn"
 const story_2_in_car_scene = "res://scenes/story_02/in_car.tscn"
+const sotry_2_house_in_02_ending_scene = "res://scenes/story_02/02_house_in_ending.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
