@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=4 uid="uid://tnqkh0dnlha8"]
 
-[ext_resource type="Script" uid="uid://ddrrtrb1csr3j" path="res://scripts/levels/tutorial/level_manager.gd" id="1_6oe6o"]
+[ext_resource type="Script" uid="uid://p0mvb6ii6e3x" path="res://scenes/story_02/in_car.gd" id="1_buyrj"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_vik3s"]
 [ext_resource type="Texture2D" uid="uid://dnsp233f7ysyq" path="res://assets/Textures/tilemap/tree.png" id="3_6oe6o"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_buyrj"]
@@ -193,7 +193,7 @@ _data = {
 size = Vector2(14, 20)
 
 [node name="02_town" type="Node2D"]
-script = ExtResource("1_6oe6o")
+script = ExtResource("1_buyrj")
 
 [node name="sky" type="TileMapLayer" parent="."]
 show_behind_parent = true
