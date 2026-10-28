@@ -1,0 +1,12 @@
+Player and other NPCs textures is from opengameart.org/content/nes-style-rpg-characters by Erbalow.
+
+The grass tileset is from https://totuslotus.itch.io/small-platformer-pack
+
+The sewers and underground assets is from https://totuslotus.itch.io/free-pixel-art-tiles
+
+The UI buttons is based on this asset https://toffeecraft.itch.io/ui-user-interface-pack-fresh-and-modern
+
+The cursors is from https://gabl18.itch.io/simple-pixel-cursors
+
+The nature sounds in Out levels is from Pixabay https://pixabay.com/sound-effects/nature-birds-chirping-calm-173695/
+Special thanks for playing...
