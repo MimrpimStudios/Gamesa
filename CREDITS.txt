@@ -1,0 +1,60 @@
+Gamesa
+This game is the first complete game
+and first my game with official CD
+
+First concept:
+Tobias Elias
+
+Future concepts:
+Tobias Elias
+Vojtech Bauer
+Vincent Vesely
+Mikulas Brezina
+Maxim Krivohlavek
+Martin Kudlacek
+And other unknown people...
+
+Programming:
+Martin Kudlacek
+
+Graphics:
+Martin Kudlacek
+Krystof Pospisil (Rocks, House and Story 2)
+
+Music:
+Maxim Krivohlavek
+Martin Kudlacek (Later tracks)
+
+SFX:
+Martin Kudlacek
+
+
+Playtesters:
+Mikulas Brezina
+Krystof Pospisil
+Karel Kudlacek
+Oliver ???
+Vincent ???
+Vojtech Bauer
+and other unknown peoples...
+
+The nickname meaning:
+Mimrpim:
+Martin Kudlacek
+
+Mikz:
+Mikulas Brezina
+
+Some assets is based on other licensed assets (for more info see credits.txt in game files):
+Player and other NPCs textures is from opengameart.org/content/nes-style-rpg-characters by Erbalow.
+
+The grass tileset is from https://totuslotus.itch.io/small-platformer-pack
+
+The sewers and underground assets is from https://totuslotus.itch.io/free-pixel-art-tiles
+
+The UI buttons is based on this asset https://toffeecraft.itch.io/ui-user-interface-pack-fresh-and-modern
+
+The cursors is from https://gabl18.itch.io/simple-pixel-cursors
+
+The nature sounds in Out levels is from Pixabay https://pixabay.com/sound-effects/nature-birds-chirping-calm-173695/
+Special thanks for playing...
