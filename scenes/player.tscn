@@ -9,7 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="7_smehm"]
 [ext_resource type="Script" uid="uid://cfgu3s3178iye" path="res://scripts/player_dialog.gd" id="8_ur7pv"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="9_ur7pv"]
-[ext_resource type="Script" uid="uid://1qukuya8ppww" path="res://scenes/label_hide.gd" id="10_y4r1p"]
+[ext_resource type="Script" path="res://scenes/label_hide.gd" id="10_y4r1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")

@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="9_u240f"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="11_4tk0x"]
 [ext_resource type="Script" uid="uid://dlyrt7xu4uc2t" path="res://scenes/story_02/area_2d_2_police.gd" id="11_xqe2y"]
-[ext_resource type="Script" uid="uid://cdhkxl6f3mgdy" path="res://scenes/story_02/animation_player.gd" id="12_wjyy6"]
+[ext_resource type="Script" path="res://scenes/story_02/animation_player.gd" id="12_wjyy6"]
 [ext_resource type="PackedScene" uid="uid://cnn7df56d7oml" path="res://scenes/ai_car.tscn" id="17_4d1fb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qrwr5"]
@@ -30,6 +30,33 @@ font_color = Color(1, 0.9882353, 0.2509804, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8f6x5"]
 size = Vector2(112, 48)
+
+[sub_resource type="Animation" id="Animation_wjyy6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/DialogPlayer:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
 
 [sub_resource type="Animation" id="Animation_hy61j"]
 resource_name = "proslov"
@@ -57,33 +84,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["", "AND NOW TO THE POLICE!", ""]
-}
-
-[sub_resource type="Animation" id="Animation_wjyy6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player/Camera2D:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player/DialogPlayer:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xa1qu"]

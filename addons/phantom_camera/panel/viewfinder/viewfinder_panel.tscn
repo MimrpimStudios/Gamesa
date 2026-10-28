@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dbkr3d716wtx0"]
+[gd_scene load_steps=28 format=3 uid="uid://dbkr3d716wtx0"]
 
 [ext_resource type="Script" uid="uid://drmv3363t8amc" path="res://addons/phantom_camera/scripts/panel/viewfinder/viewfinder.gd" id="1_utvi8"]
 [ext_resource type="StyleBox" uid="uid://dpa7yvxlq043a" path="res://addons/phantom_camera/panel/viewfinder/deadzone_style_box.tres" id="2_uabt4"]
@@ -170,7 +170,7 @@ corner_radius_top_right = 6
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w002y"]
 
-[node name="ViewfinderPanel" type="Control" unique_id=522693372]
+[node name="ViewfinderPanel" type="Control"]
 clip_contents = true
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 3
@@ -184,7 +184,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_utvi8")
 
-[node name="Viewfinder" type="Control" parent="." unique_id=970426646]
+[node name="Viewfinder" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -195,7 +195,7 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Viewfinder" unique_id=337623331]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Viewfinder"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -206,21 +206,21 @@ grow_vertical = 2
 mouse_filter = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Viewfinder/SubViewportContainer" unique_id=1977889130]
+[node name="SubViewport" type="SubViewport" parent="Viewfinder/SubViewportContainer"]
 unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 gui_disable_input = true
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="Viewfinder/SubViewportContainer/SubViewport" unique_id=1921594566]
+[node name="Camera2D" type="Camera2D" parent="Viewfinder/SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
 physics_interpolation_mode = 2
 editor_draw_screen = false
 
-[node name="DeadZoneHBoxContainer" type="HBoxContainer" parent="Viewfinder" unique_id=1859896750]
+[node name="DeadZoneHBoxContainer" type="HBoxContainer" parent="Viewfinder"]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
@@ -232,32 +232,32 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="DeadZoneLeftHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer" unique_id=172011758]
+[node name="DeadZoneLeftHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="DeadZoneLeftTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer" unique_id=850199399]
+[node name="DeadZoneLeftTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneLeftCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer" unique_id=519081738]
+[node name="DeadZoneLeftCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneLeftBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer" unique_id=349855860]
+[node name="DeadZoneLeftBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneLeftHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneCenterHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer" unique_id=451457723]
+[node name="DeadZoneCenterHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer"]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
@@ -265,51 +265,51 @@ size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="DeadZoneCenterTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer" unique_id=398947288]
+[node name="DeadZoneCenterTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneCenterCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer" unique_id=496409668]
+[node name="DeadZoneCenterCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fle8t")
 
-[node name="DeadZoneCenterBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer" unique_id=660749582]
+[node name="DeadZoneCenterBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneCenterHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneRightHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer" unique_id=1036038250]
+[node name="DeadZoneRightHBoxContainer" type="VBoxContainer" parent="Viewfinder/DeadZoneHBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="DeadZoneRightTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer" unique_id=1934470798]
+[node name="DeadZoneRightTopPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneRightCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer" unique_id=518516633]
+[node name="DeadZoneRightCenterPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="DeadZoneRightBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer" unique_id=135299992]
+[node name="DeadZoneRightBottomPanel" type="Panel" parent="Viewfinder/DeadZoneHBoxContainer/DeadZoneRightHBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("2_uabt4")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Viewfinder" unique_id=336933516]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Viewfinder"]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
@@ -321,12 +321,12 @@ grow_vertical = 2
 mouse_filter = 2
 ratio = 1.7777778
 
-[node name="CameraViewportPanel" type="Panel" parent="Viewfinder/AspectRatioContainer" unique_id=2044177991]
+[node name="CameraViewportPanel" type="Panel" parent="Viewfinder/AspectRatioContainer"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xmo1t")
 
-[node name="TargetPoint" type="Panel" parent="Viewfinder/AspectRatioContainer/CameraViewportPanel" unique_id=1498856827]
+[node name="TargetPoint" type="Panel" parent="Viewfinder/AspectRatioContainer/CameraViewportPanel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -343,7 +343,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q7vs4")
 
-[node name="NoSupportMsg" type="Label" parent="." unique_id=786997236]
+[node name="NoSupportMsg" type="Label" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -362,7 +362,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="EmptyStateControl" type="Control" parent="." unique_id=1073717072]
+[node name="EmptyStateControl" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -373,7 +373,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="BGColorRect" type="ColorRect" parent="EmptyStateControl" unique_id=1927204050]
+[node name="BGColorRect" type="ColorRect" parent="EmptyStateControl"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -384,7 +384,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EmptyStateControl" unique_id=2124528054]
+[node name="VBoxContainer" type="VBoxContainer" parent="EmptyStateControl"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -399,7 +399,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="EmptyStateIcon" type="TextureRect" parent="EmptyStateControl/VBoxContainer" unique_id=103212781]
+[node name="EmptyStateIcon" type="TextureRect" parent="EmptyStateControl/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -407,7 +407,7 @@ texture = ExtResource("4_lcg1p")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="EmptyStateText" type="RichTextLabel" parent="EmptyStateControl/VBoxContainer" unique_id=839898279]
+[node name="EmptyStateText" type="RichTextLabel" parent="EmptyStateControl/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -421,7 +421,7 @@ bbcode_enabled = true
 text = "[center][b]NodeType[/b] Description [/center]"
 fit_content = true
 
-[node name="AddNodeButton" type="Button" parent="EmptyStateControl/VBoxContainer" unique_id=2086282065]
+[node name="AddNodeButton" type="Button" parent="EmptyStateControl/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 54)
 layout_mode = 2
@@ -435,7 +435,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gci88")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yh38y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4b76l")
 
-[node name="AddNodeTypeText" type="RichTextLabel" parent="EmptyStateControl/VBoxContainer/AddNodeButton" unique_id=1607907659]
+[node name="AddNodeTypeText" type="RichTextLabel" parent="EmptyStateControl/VBoxContainer/AddNodeButton"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -457,7 +457,7 @@ bbcode_enabled = true
 text = "[center]Add [img=32]res://addons/phantom_camera/icons/viewfinder/Camera3DIcon.svg[/img] [b]{NodeType}[/b][/center]"
 scroll_active = false
 
-[node name="PriorityOverrideButton" type="Button" parent="." unique_id=1712965647]
+[node name="PriorityOverrideButton" type="Button" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -472,7 +472,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ja3vm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_840sd")
 metadata/_edit_lock_ = true
 
-[node name="PriorityOverrideIcon" type="TextureRect" parent="PriorityOverrideButton" unique_id=669546588]
+[node name="PriorityOverrideIcon" type="TextureRect" parent="PriorityOverrideButton"]
 layout_mode = 1
 offset_left = 8.0
 offset_top = 4.0
@@ -481,7 +481,7 @@ offset_bottom = 28.0
 texture = ExtResource("6_ptuth")
 expand_mode = 1
 
-[node name="PriorityOverrideByLabel" type="Label" parent="PriorityOverrideButton" unique_id=870863848]
+[node name="PriorityOverrideByLabel" type="Label" parent="PriorityOverrideButton"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 1.0
@@ -492,7 +492,7 @@ theme_override_font_sizes/font_size = 14
 text = "OVERRIDDEN BY"
 vertical_alignment = 1
 
-[node name="PriorityOverrideNameLabel" type="Label" parent="PriorityOverrideButton" unique_id=217025572]
+[node name="PriorityOverrideNameLabel" type="Label" parent="PriorityOverrideButton"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 6.0
@@ -506,7 +506,7 @@ text = "PCam_Name
 vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="SizeLabel" type="Label" parent="." unique_id=1212833363]
+[node name="SizeLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
@@ -517,7 +517,7 @@ offset_right = 40.0
 offset_bottom = 11.5
 grow_vertical = 2
 
-[node name="PCamHostList" type="VBoxContainer" parent="." unique_id=1753516849]
+[node name="PCamHostList" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -531,7 +531,7 @@ theme_override_constants/separation = -2
 alignment = 2
 script = ExtResource("7_kpij0")
 
-[node name="HostListButton" type="Button" parent="PCamHostList" unique_id=1404457799]
+[node name="HostListButton" type="Button" parent="PCamHostList"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
@@ -546,19 +546,19 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_w002y")
 icon = ExtResource("4_lcg1p")
 expand_icon = true
 
-[node name="PanelContainer" type="PanelContainer" parent="PCamHostList" unique_id=1938354644]
+[node name="PanelContainer" type="PanelContainer" parent="PCamHostList"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_b4akn")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PCamHostList/PanelContainer" unique_id=675375431]
+[node name="ScrollContainer" type="ScrollContainer" parent="PCamHostList/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("8_b4akn")
 horizontal_scroll_mode = 0
 
-[node name="HostListContainer" type="VBoxContainer" parent="PCamHostList/PanelContainer/ScrollContainer" unique_id=1689348406]
+[node name="HostListContainer" type="VBoxContainer" parent="PCamHostList/PanelContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("8_b4akn")

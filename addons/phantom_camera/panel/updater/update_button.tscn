@@ -21,6 +21,8 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slf6e"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y83dj"]
 content_margin_left = 10.0
 content_margin_top = 4.0
@@ -36,8 +38,6 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slf6e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lekqh"]
 
@@ -62,8 +62,8 @@ theme_override_colors/icon_normal_color = Color(0.960784, 0.960784, 0.960784, 1)
 theme_override_fonts/font = ExtResource("1_5e5k4")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_c7fd1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_y83dj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_slf6e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y83dj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lekqh")
 text = "Update available"
 icon = ExtResource("2_c4d83")

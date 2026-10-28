@@ -85,7 +85,8 @@ align_rotation_with_view = Callable()
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.8660252, 0.5000003, 0, -0.5000003, 0.8660252, 0, 2.250001, 3.0310884)
+transform = Transform3D(1, 0, 0, 0, 0.86602527, 0.50000036, 0, -0.50000036, 0.86602527, 0, 2.250001, 3.0310884)
+top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 process_priority = 300

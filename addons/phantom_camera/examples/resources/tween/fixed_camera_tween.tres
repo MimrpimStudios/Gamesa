@@ -5,5 +5,3 @@
 [resource]
 script = ExtResource("1_ptlie")
 duration = 0.0
-transition = 0
-ease = 2
