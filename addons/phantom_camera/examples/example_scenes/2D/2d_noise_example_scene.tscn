@@ -232,6 +232,7 @@ text = "[WASD] to move
 physics_interpolation_mode = 1
 top_level = true
 position = Vector2(227, -28)
+offset = Vector2(-4.855451, -14.977226)
 ignore_rotation = false
 zoom = Vector2(1.5, 1.5)
 editor_draw_limits = true
