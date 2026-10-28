@@ -110,4 +110,4 @@ func _input(event):
 
 func _moje_akce():
 	# Zde bude tvůj kód, který se má spustit
-	get_tree().change_scene_to_file(global_var.main_scene)
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

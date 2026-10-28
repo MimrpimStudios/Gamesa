@@ -14,6 +14,7 @@ extends Control
 
 @onready var _02_town: Node2D = $"02_town"
 @onready var police_01: Node2D = $Police01
+@onready var _01_house_in_end: Node2D = $"01HouseInEnd"
 
 const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
@@ -50,6 +51,10 @@ func _ready() -> void:
 		police_01.show()
 	else:
 		police_01.hide()
+	if global_var.load_level_story_2() == global_var.story_2_house_in_02_ending_scene:
+		_01_house_in_end.show()
+	else:
+		_01_house_in_end.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()
