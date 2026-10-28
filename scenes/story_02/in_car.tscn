@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://tnqkh0dnlha8"]
+[gd_scene load_steps=41 format=4 uid="uid://tnqkh0dnlha8"]
 
 [ext_resource type="Script" uid="uid://p0mvb6ii6e3x" path="res://scenes/story_02/in_car.gd" id="1_buyrj"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_vik3s"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cnn7df56d7oml" path="res://scenes/ai_car.tscn" id="18_8anj4"]
 [ext_resource type="Script" uid="uid://dxw4e15h6mhpm" path="res://scenes/car_police.gd" id="18_buyrj"]
 [ext_resource type="Script" uid="uid://b7r3ppah6kclu" path="res://scenes/story_02/door1.gd" id="19_buyrj"]
+[ext_resource type="PackedScene" uid="uid://c67pbou7tdddg" path="res://scenes/story_02/02_house_in_ending.tscn" id="20_6c5rk"]
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="20_m6p71"]
 [ext_resource type="Script" uid="uid://bj46755hp7k43" path="res://scenes/story_02/animation_player_in_car.gd" id="21_m6p71"]
 
@@ -498,6 +499,7 @@ tile_set = ExtResource("3_buyrj")
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(-5532, -221)
 script = ExtResource("19_buyrj")
+scene = ExtResource("20_6c5rk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door"]
 position = Vector2(0, -11)
