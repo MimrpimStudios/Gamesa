@@ -1,13 +1,13 @@
-extends Node
+extends Node3D
 
 class_name ResourceReloader
 
-@onready var label: Label = $Label
+@onready var label: Label3D = $Label
 
 @export_file_path("*.tscn") var scene: String
 
-var rng = RandomNumberGenerator.new().randf_range(0.1, 1.0)
-var rng2 = RandomNumberGenerator.new().randf_range(0.1, 0.5)
+var rng = RandomNumberGenerator.new().randf_range(1.0, 1.5)
+var rng2 = RandomNumberGenerator.new().randf_range(0.7, 1.5)
 
 func _ready() -> void:
 	label.text = "Loading patches..."
