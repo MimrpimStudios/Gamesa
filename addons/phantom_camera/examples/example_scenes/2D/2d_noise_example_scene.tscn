@@ -165,11 +165,13 @@ sources/0 = SubResource("TileSetAtlasSource_lvmak")
 [sub_resource type="Resource" id="Resource_87ddr"]
 script = ExtResource("11_d6abr")
 amplitude = 30.0
+randomize_noise_seed = 1
 
 [sub_resource type="Resource" id="Resource_rmnw1"]
 script = ExtResource("11_d6abr")
 amplitude = 40.0
 frequency = 30.0
+randomize_noise_seed = 1
 noise_seed = 96
 rotational_noise = true
 
@@ -230,11 +232,11 @@ text = "[WASD] to move
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-top_level = true
 position = Vector2(227, -28)
-offset = Vector2(-2.4901736, -13.856381)
+offset = Vector2(0.9638121, 13.818371)
 ignore_rotation = false
 zoom = Vector2(1.5, 1.5)
+process_callback = 0
 editor_draw_limits = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]

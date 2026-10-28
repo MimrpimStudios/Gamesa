@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cpyb3ucwcqj8l"]
+[gd_scene load_steps=20 format=4 uid="uid://cpyb3ucwcqj8l"]
 
 [ext_resource type="Texture2D" uid="uid://c77npili4pel4" path="res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png" id="1_h1rbo"]
 [ext_resource type="PackedScene" uid="uid://dg7rhrymsrrrm" path="res://addons/phantom_camera/examples/ui/ui_inventory.tscn" id="2_1f2t2"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="7_ylx0h"]
 [ext_resource type="PackedScene" uid="uid://7kh0xydx0b1o" path="res://addons/phantom_camera/examples/example_scenes/2D/sub_scenes/playable_character_2d.tscn" id="8_ytsgf"]
 [ext_resource type="Script" uid="uid://t8wa4e5y5hcf" path="res://addons/phantom_camera/examples/scripts/2D/2d_trigger_area.gd" id="9_3r1pw"]
+[ext_resource type="Script" uid="uid://cnnaky2ns2pn4" path="res://addons/phantom_camera/examples/scripts/2D/player_character_body_2d_4.3.gd" id="9_5jy5e"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_guf2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvmao"]
@@ -231,8 +232,8 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-top_level = true
 position = Vector2(227, -28)
+process_callback = 0
 position_smoothing_speed = 10.0
 editor_draw_limits = true
 
@@ -268,6 +269,7 @@ text = "[WASD] to move
 
 [node name="CharacterBody2D" parent="Player" instance=ExtResource("8_ytsgf")]
 position = Vector2(227, -28)
+script = ExtResource("9_5jy5e")
 
 [node name="WideArea" type="Area2D" parent="." node_paths=PackedStringArray("area_pcam")]
 position = Vector2(393, -40)

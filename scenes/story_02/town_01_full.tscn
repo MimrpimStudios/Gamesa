@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="6_u61a7"]
 [ext_resource type="LabelSettings" uid="uid://b0u12c8tr0l8p" path="res://assets/resources/labels/hint_label.tres" id="7_2t3c4"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_jqkl4"]
-[ext_resource type="FontFile" path="res://assets/GamesaTestFont.ttf-389748572c6d863a8ce5036675ce0cf4.fontdata" id="9_5idjo"]
+[ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="9_5idjo"]
 [ext_resource type="Script" uid="uid://bikijxrbwo2we" path="res://scripts/levels/tutorial/area_2d2.gd" id="10_b7nfk"]
 [ext_resource type="Script" uid="uid://dlyrt7xu4uc2t" path="res://scenes/story_02/area_2d_2_police.gd" id="11_hyx6o"]
 [ext_resource type="AudioStream" uid="uid://u0xi6oxd3t57" path="res://assets/Sounds/Music/Dungeon_1.wav" id="12_xya17"]

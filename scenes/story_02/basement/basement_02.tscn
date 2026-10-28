@@ -40,16 +40,15 @@ script = ExtResource("3_668hs")
 priority = 1
 zoom = Vector2(5, 5)
 tween_resource = SubResource("Resource_668hs")
-draw_limits = true
 limit_bottom = 500
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
-[node name="Camera2Dzoom" type="Node2D" parent="Player"]
+[node name="Camera2Dzoom" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
 position = Vector2(-1, -9)
 script = ExtResource("3_668hs")
+follow_target = NodePath("..")
 zoom = Vector2(6, 6)
 tween_resource = SubResource("Resource_668hs")
-draw_limits = true
 limit_bottom = 500
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
@@ -178,7 +177,6 @@ position = Vector2(170, -30)
 script = ExtResource("3_668hs")
 zoom = Vector2(1.461, 1.461)
 tween_resource = SubResource("Resource_ulgsc")
-draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2D3" type="Node2D" parent="."]
@@ -186,7 +184,6 @@ position = Vector2(170, -30)
 script = ExtResource("3_668hs")
 zoom = Vector2(1.611, 1.611)
 tween_resource = SubResource("Resource_ulgsc")
-draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Camera2D2" type="Camera2D" parent="."]

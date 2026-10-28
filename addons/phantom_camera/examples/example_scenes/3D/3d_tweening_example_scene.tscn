@@ -70,7 +70,6 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(0.999889, 0, 0, 0, 0.707092, 0.707088, 0, -0.707092, 0.707088, 0, 2.5, 3.19136)
-top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 process_priority = 300

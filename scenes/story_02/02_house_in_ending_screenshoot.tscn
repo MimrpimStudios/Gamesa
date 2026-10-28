@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ch838dcuihf74"]
+[gd_scene load_steps=8 format=4 uid="uid://cmg8g6pr27ooc"]
 
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_ut75w"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="3_8fhtm"]

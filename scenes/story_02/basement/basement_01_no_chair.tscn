@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://oa00s1ck51vh"]
 
-[ext_resource type="Script" path="res://scenes/story_02/basement/basement_01_no_chair.gd" id="1_n8jqm"]
+[ext_resource type="Script" uid="uid://cxb3od5xvtxk3" path="res://scenes/story_02/basement/basement_01_no_chair.gd" id="1_n8jqm"]
 [ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="2_4ubfh"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="3_tqsqy"]
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="4_hocbk"]
