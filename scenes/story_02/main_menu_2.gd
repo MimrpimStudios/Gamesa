@@ -12,6 +12,8 @@ extends Control
 
 @onready var _00_house_story: Node2D = $"00HouseStory"
 
+@onready var _02_town: Node2D = $"02_town"
+
 const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
 # Called when the node enters the scene tree for the first time.
@@ -39,6 +41,10 @@ func _ready() -> void:
 		basement_02.show()
 	else:
 		basement_02.hide()
+	if global_var.load_level_story_2() == global_var.story_2_town_01_scene:
+		_02_town.show()
+	else:
+		_02_town.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()
