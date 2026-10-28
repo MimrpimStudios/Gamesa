@@ -37,16 +37,6 @@ script = null
 [node name="DialogPlayer" parent="Player" index="3"]
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.27058825)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-zoom = Vector2(5, 5)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-editor_draw_limits = true
-
 [node name="Killzone" parent="." instance=ExtResource("7_0dkd6")]
 position = Vector2(524, 271)
 
