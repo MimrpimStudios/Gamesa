@@ -35,7 +35,7 @@ func kontrola_data() -> void:
 	var mesic: int = datum["month"]
 	var den: int = datum["day"]
 
-	var je_halloween = (mesic == 10 and den in [30, 31]) or (mesic == 11 and den == 1)
+	var je_halloween = (mesic == 10 and den in [29, 30, 31]) or (mesic == 11 and den in [1, 2])
 
 	if je_halloween and global_var.hw_enabled:
 		global_var.is_hw = true
