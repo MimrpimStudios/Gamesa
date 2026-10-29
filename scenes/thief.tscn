@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgf8vr6tt3jy4" path="res://assets/Textures/sprites/thief.png" id="1_eeaoh"]
 [ext_resource type="Script" uid="uid://be5j800qgjujy" path="res://scenes/thief.gd" id="1_sinav"]
-[ext_resource type="Texture2D" uid="uid://b23qkbh4hiopk" path="res://assets/Textures/flashlight.png" id="2_6jgx8"]
+[ext_resource type="Texture2D" uid="uid://jqtcicqflvpp" path="res://assets/Textures/flashlight2.png" id="3_sinav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jgx8"]
 atlas = ExtResource("1_eeaoh")
@@ -114,5 +114,5 @@ rotation = 3.1415925
 color = Color(1, 1, 0.011764706, 1)
 energy = 0.12
 shadow_enabled = true
-texture = ExtResource("2_6jgx8")
+texture = ExtResource("3_sinav")
 offset = Vector2(-18, 0)
