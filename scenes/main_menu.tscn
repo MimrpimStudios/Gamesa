@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=45 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -13,12 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c216re1y1reo8" path="res://assets/Textures/New.png" id="9_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://b6ia11qcj26y4" path="res://assets/Textures/load_bw.png" id="10_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://crtdw180vcd5l" path="res://assets/Textures/back.png" id="12_flqon"]
-[ext_resource type="Script" uid="uid://dfr0scnh13xao" path="res://scripts/launcher_info_popup.gd" id="13_rcqid"]
-[ext_resource type="Script" uid="uid://dok148vk8kg6c" path="res://scenes/links.gd" id="14_a8gd2"]
-[ext_resource type="Texture2D" uid="uid://cnitwi75la8tb" path="res://assets/Textures/links/28pxl/round square/aseprite-28a.png" id="15_hstxw"]
-[ext_resource type="Texture2D" uid="uid://s3ab284ole2v" path="res://assets/Textures/links/github.png" id="17_8egab"]
-[ext_resource type="Texture2D" uid="uid://cxsrjdpfnxrh2" path="res://assets/Textures/links/28pxl/round square/godot28b.png" id="17_svtp6"]
-[ext_resource type="Texture2D" uid="uid://cb1mbvp48km04" path="res://assets/Textures/links/28pxl/round square/itch28.png" id="18_1dfpl"]
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 [ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
 [ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_svtp6"]
@@ -381,20 +375,6 @@ texture_normal = SubResource("AtlasTexture_wu84c")
 texture_pressed = SubResource("AtlasTexture_8ln24")
 stretch_mode = 0
 
-[node name="LauncherInfoDialog" type="AcceptDialog" parent="."]
-oversampling_override = 1.0
-title = "Warning!"
-initial_position = 2
-size = Vector2i(450, 138)
-unresizable = true
-always_on_top = true
-popup_window = true
-ok_button_text = "Open website for downloading latest launcher version"
-dialog_text = "                       You are not using our launcher
-                           or using outdated version!"
-dialog_close_on_escape = false
-script = ExtResource("13_rcqid")
-
 [node name="GameChoosePanel" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -457,53 +437,6 @@ grow_vertical = 2
 texture_normal = SubResource("AtlasTexture_j7ex8")
 texture_pressed = SubResource("AtlasTexture_a8gd2")
 stretch_mode = 0
-
-[node name="Links" type="Node" parent="."]
-script = ExtResource("14_a8gd2")
-
-[node name="TextureButton" type="TextureButton" parent="Links"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = -31.0
-offset_right = 124.0
-offset_bottom = -3.0
-grow_vertical = 0
-texture_normal = ExtResource("15_hstxw")
-
-[node name="TextureButton2" type="TextureButton" parent="Links"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 64.0
-offset_top = -32.0
-offset_right = 92.0
-offset_bottom = -4.0
-grow_vertical = 0
-texture_normal = ExtResource("17_svtp6")
-
-[node name="TextureButton3" type="TextureButton" parent="Links"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -31.0
-offset_right = 29.0
-offset_bottom = -3.0
-grow_vertical = 0
-texture_normal = ExtResource("18_1dfpl")
-
-[node name="TextureButton4" type="TextureButton" parent="Links"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -31.0
-offset_right = 144.0
-offset_bottom = 81.0
-grow_vertical = 0
-scale = Vector2(0.25, 0.25)
-texture_normal = ExtResource("17_8egab")
 
 [node name="GamesaLogoAlphaBg00086400" type="TextureRect" parent="."]
 layout_mode = 1
@@ -621,14 +554,9 @@ color = Color(0, 0, 0, 1)
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
 [connection signal="pressed" from="TextureButtonExit" to="." method="_on_texture_button_exit_pressed"]
-[connection signal="confirmed" from="LauncherInfoDialog" to="LauncherInfoDialog" method="_on_confirmed"]
 [connection signal="pressed" from="GameChoosePanel/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="GameChoosePanel/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Links/TextureButton" to="Links" method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Links/TextureButton2" to="Links" method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="Links/TextureButton3" to="Links" method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="Links/TextureButton4" to="Links" method="_on_texture_button_4_pressed"]
 [connection signal="focus_entered" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_focus_exited"]
 [connection signal="mouse_entered" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_mouse_entered"]
