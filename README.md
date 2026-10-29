@@ -1,9 +1,11 @@
 # Gamesa
 This project is my first finished game!
 if you want to install, here is it: [https://github.com/mimrpimstudios/Gamesa/releases/latest](https://github.com/mimrpimstudios/Gamesa/releases/latest)
+This game is about your mother getting sick with a new disease called Lobster Illness and you have to help her. So what? Are you up for it?
 
+More information
 # How to install?
-Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher)(Windows only, or via wine on Linux, but not tested)
+Check [releases](https://github.com/mimrpimstudios/gamesa/releases/latest) for manual install or [our official launcher](https://github.com/MimrpimStudios/gamesa-launcher) (Windows only, or via wine on Linux, but not tested)
 
 # Q&A
 ## Other languages?

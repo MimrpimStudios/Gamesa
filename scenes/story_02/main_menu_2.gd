@@ -8,13 +8,19 @@ extends Control
 @onready var basement_01: Node2D = $Basement01
 @onready var player: CharacterBody2D = $Basement01/Player
 @onready var basement_01_chair: Sprite2D = $Basement01/Basement01Chair
+@onready var basement_02: Node2D = $Basement02
 
 @onready var _00_house_story: Node2D = $"00HouseStory"
+
+@onready var _02_town: Node2D = $"02_town"
+@onready var police_01: Node2D = $Police01
+@onready var _01_house_in_end: Node2D = $"01HouseInEnd"
 
 const PLAYER_ROPE_CHAIR_BROKEN = preload("uid://c3y05odf08dpn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global_var.story_2 = true
 	global_var.player_movement = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	print(str( global_var.load_level_story_2()))
@@ -33,7 +39,22 @@ func _ready() -> void:
 		player.show()
 	else:
 		player.hide()
-		basement_01.hide()
+	if global_var.load_level_story_2() == global_var.story_2_basement_2_scene or global_var.load_level_story_2() == global_var.story_2_basement_3_scene or global_var.load_level_story_2() == global_var.story_2_basement_4_scene:
+		basement_02.show()
+	else:
+		basement_02.hide()
+	if global_var.load_level_story_2() == global_var.story_2_town_01_scene:
+		_02_town.show()
+	else:
+		_02_town.hide()
+	if global_var.load_level_story_2() == global_var.story_2_police_01_scene:
+		police_01.show()
+	else:
+		police_01.hide()
+	if global_var.load_level_story_2() == global_var.story_2_house_in_02_ending_scene:
+		_01_house_in_end.show()
+	else:
+		_01_house_in_end.hide()
 
 	if continue_game_button.disabled:
 		_00_house_story.show()

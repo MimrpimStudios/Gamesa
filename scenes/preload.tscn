@@ -1,28 +1,85 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw5f3uudhh61k"]
+[gd_scene load_steps=10 format=3 uid="uid://cw5f3uudhh61k"]
 
 [ext_resource type="Script" uid="uid://bjqmw7g21m8ls" path="res://preload.gd" id="1_gmnvj"]
 [ext_resource type="FontFile" uid="uid://bsfa8tx5aqdke" path="res://assets/GamesaTestFont.ttf" id="2_akpnc"]
+[ext_resource type="Texture2D" uid="uid://badwdoo0tuei7" path="res://assets/Textures/icons/icon.png" id="3_6183s"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6183s"]
-font = ExtResource("2_akpnc")
-font_size = 35
-shadow_color = Color(0, 0, 0, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6183s"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[node name="Preload" type="Node"]
+[sub_resource type="Sky" id="Sky_j8lpu"]
+sky_material = SubResource("ProceduralSkyMaterial_6183s")
+
+[sub_resource type="Environment" id="Environment_85env"]
+sky = SubResource("Sky_j8lpu")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.75
+
+[sub_resource type="Animation" id="Animation_j8lpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.116327, 0, -21.84147)]
+}
+
+[sub_resource type="Animation" id="Animation_6183s"]
+resource_name = "init"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 6, 7),
+"transitions": PackedFloat32Array(2, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.116, 0, -3000), Vector3(-3.116327, 0, -21.84147), Vector3(-3.116327, 0, -21.84147), Vector3(-3.116, 0, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85env"]
+_data = {
+&"RESET": SubResource("Animation_j8lpu"),
+&"init": SubResource("Animation_6183s")
+}
+
+[node name="Preload" type="Node3D"]
 script = ExtResource("1_gmnvj")
-scene = "res://scenes/volume_set.tscn"
+scene = "res://scenes/intro.tscn"
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -295.0
-offset_top = -31.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_85env")
+
+[node name="Label" type="Label3D" parent="."]
 text = "Checking for pumpkins..."
-label_settings = SubResource("LabelSettings_6183s")
+font = ExtResource("2_akpnc")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15, 1.7654614, 2.316)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, -1.1125674e-06, 0, 1, 0, 1.1125674e-06, 0, 1, -3.116327, 0, -21.84147)
+pixel_size = 1.0
+shaded = true
+texture_filter = 0
+texture = ExtResource("3_6183s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_85env")
+}
+autoplay = "init"

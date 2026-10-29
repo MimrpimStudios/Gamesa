@@ -286,17 +286,6 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="Label" type="Label" parent="Player"]
-unique_name_in_owner = true
-offset_left = -60.0
-offset_top = -51.0
-offset_right = 61.0
-offset_bottom = -3.0
-text = "PRESS \"E\" OR \"I\" FOR
-EXITING..."
-label_settings = ExtResource("5_gvo23")
-horizontal_alignment = 1
-
 [node name="Screen" parent="." instance=ExtResource("5_lqqio")]
 follow_viewport_enabled = false
 

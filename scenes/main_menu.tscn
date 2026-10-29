@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=51 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://drfhtk1dqp13v" path="res://assets/Textures/gamesa_logo_alpha_bg00086400.png" id="20_8egab"]
 [ext_resource type="Script" uid="uid://co2y3pbp0bs5o" path="res://scenes/splash_label.gd" id="20_gw5y6"]
 [ext_resource type="LabelSettings" uid="uid://d0k3pjdm773bv" path="res://assets/resources/labels/splash_label.tres" id="21_svtp6"]
+[ext_resource type="Script" uid="uid://c1s517mfh8j1x" path="res://scenes/story_2_arrow.gd" id="23_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://dhq46w2vm7uhi" path="res://assets/Textures/arrow_better_shadow.png" id="24_qywvv"]
+[ext_resource type="Script" uid="uid://cwgxl0eqls12u" path="res://scenes/label_hw.gd" id="25_3wgol"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -206,6 +209,23 @@ _data = {
 &"RESET": SubResource("Animation_svtp6"),
 &"Splashing": SubResource("Animation_gw5y6")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wgol"]
+atlas = ExtResource("24_qywvv")
+region = Rect2(4, 2, 41, 29)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qywvv"]
+font = ExtResource("5_tbmy8")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.7411765, 0.7411765, 0.7411765, 0.49803922)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1acrt"]
+font = ExtResource("5_tbmy8")
+font_size = 64
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -524,6 +544,79 @@ libraries = {
 }
 autoplay = "Splashing"
 
+[node name="ArrowStory2" type="Node" parent="."]
+script = ExtResource("23_1dfpl")
+
+[node name="Button" type="TextureButton" parent="ArrowStory2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -124.0
+offset_top = 12.0
+offset_right = -17.0
+offset_bottom = 90.0
+grow_horizontal = 0
+texture_normal = SubResource("AtlasTexture_3wgol")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="ArrowStory2/Button"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 27.0
+offset_right = 80.0
+offset_bottom = 45.0
+text = "Story 2"
+label_settings = SubResource("LabelSettings_qywvv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelHW" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -930.0
+offset_top = -155.0
+offset_right = -162.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_1dfpl")
+text = "Disable halowheen textures..."
+label_settings = SubResource("LabelSettings_1acrt")
+uppercase = true
+script = ExtResource("25_3wgol")
+
+[node name="ColorRect" type="ColorRect" parent="LabelHW"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -11.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="LabelHW/ColorRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
@@ -536,3 +629,10 @@ autoplay = "Splashing"
 [connection signal="pressed" from="Links/TextureButton2" to="Links" method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="Links/TextureButton3" to="Links" method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="Links/TextureButton4" to="Links" method="_on_texture_button_4_pressed"]
+[connection signal="focus_entered" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="LabelHW" to="LabelHW" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LabelHW" to="LabelHW" method="_on_mouse_exited"]

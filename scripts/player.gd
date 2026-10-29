@@ -14,7 +14,8 @@ var default_gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var animation = animated_sprite.animation
 
-
+func _ready() -> void:
+	%Label.hide()
 func _process(_delta: float) -> void:
 	if global_var.is_player_dead:
 		if is_instance_valid(collision_shape_2d):
@@ -23,7 +24,7 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta):
-	if not is_on_floor() and global_var.is_player_dead == false:
+	if not is_on_floor() and global_var.is_player_dead == false and global_var.player_gravity:
 		velocity.y += gravity * delta
 		if global_var.player_movement == false:
 			move_and_slide()
