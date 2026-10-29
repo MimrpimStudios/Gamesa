@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var point_light_2d: PointLight2D = $PointLight2D
+const FLASHLIGHT = preload("uid://b23qkbh4hiopk")
+const FLASHLIGHT_2 = preload("uid://jqtcicqflvpp")
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
@@ -19,6 +22,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if direction == 1:
+		point_light_2d.texture = FLASHLIGHT
+		point_light_2d.offset.x = -18
+	else:
+		point_light_2d.texture = FLASHLIGHT_2
+		point_light_2d.offset.x = 18
 
 	move_and_slide()
 

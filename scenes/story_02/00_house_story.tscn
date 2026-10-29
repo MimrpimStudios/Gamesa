@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c7vvcwsrdwkpd"]
+[gd_scene load_steps=23 format=4 uid="uid://c7vvcwsrdwkpd"]
 
 [ext_resource type="Script" uid="uid://dtr7epib5bb60" path="res://scenes/story_02/00_house_story.gd" id="1_mewbp"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_hv5qn"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cmeo2j124jyhm" path="res://assets/Textures/sprites/door.png" id="7_m28dw"]
 [ext_resource type="PackedScene" uid="uid://q0vhrhdl04p3" path="res://scenes/killzone.tscn" id="8_bkgt1"]
 [ext_resource type="PackedScene" uid="uid://c45eap3y3qje8" path="res://scenes/mother.tscn" id="9_o7shw"]
-[ext_resource type="Texture2D" uid="uid://jqtcicqflvpp" path="res://assets/Textures/flashlight2.png" id="10_165sn"]
 [ext_resource type="LabelSettings" uid="uid://ckpb64qv8t6d" path="res://assets/resources/labels/pharmacy_male.tres" id="10_wxx5m"]
 [ext_resource type="PackedScene" uid="uid://br41crrtljd5t" path="res://scenes/thief.tscn" id="11_mewbp"]
 
@@ -265,7 +264,6 @@ animation = &"left"
 frame_progress = 0.0
 
 [node name="PointLight2D" parent="Thief" index="2"]
-texture = ExtResource("10_165sn")
 offset = Vector2(18, 0)
 
 [node name="Thief2" parent="." instance=ExtResource("11_mewbp")]
@@ -277,7 +275,7 @@ animation = &"left"
 frame_progress = 0.0
 
 [node name="PointLight2D" parent="Thief2" index="2"]
-texture = ExtResource("10_165sn")
+visible = false
 offset = Vector2(18, 0)
 
 [connection signal="body_entered" from="DoorHouseOut" to="DoorHouseOut" method="_on_body_entered"]
