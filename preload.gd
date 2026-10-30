@@ -8,6 +8,7 @@ class_name ResourceReloader
 
 var rng = RandomNumberGenerator.new().randf_range(0.1, 1.0)
 var rng2 = RandomNumberGenerator.new().randf_range(0.1, 0.5)
+
 func _ready() -> void:
 	label.text = "Loading patches..."
 	load_patches()
@@ -39,7 +40,7 @@ func spustit_udalost() -> void:
 	label.text = "Loading pumpkins..."
 	var pck_path = "res://assets/pck/hw.pck"
 	if ProjectSettings.load_resource_pack(pck_path):
-		print("Sezónní PCK balíček byl úspěšně načten." + pck_path)
+		print("Sezónní PCK balíček byl úspěšně načten: " + pck_path)
 	else:
 		printerr("Chyba: Nepodařilo se načíst PCK soubor z: ", pck_path)
 
@@ -76,8 +77,8 @@ func reload_resource(res_path: String) -> Resource:
 	if res_path.ends_with(".tscn") or res_path.ends_with(".scn"):
 		push_warning("ResourceReloader: PackedScene reload neaktualizuje již existující instance. Musíš je znovu instancovat.")
 	
-	if not FileAccess.file_exists(res_path):
-		push_error("ResourceReloader: Soubor neexistuje: " + res_path)
+	if "::" in res_path or not ResourceLoader.exists(res_path):
+		push_error("ResourceReloader: Soubor/zdroj neexistuje nebo je pod-zdrojem: " + res_path)
 		return null
 
 	var new_res = ResourceLoader.load(res_path, "", ResourceLoader.CACHE_MODE_REPLACE)
@@ -121,10 +122,10 @@ func reload_all_resources() -> void:
 	var reloaded_count: int = 0
 
 	for res_path in loaded_map.keys():
-		# Přeskoč skripty a scény
-		if res_path.ends_with(".gd") or res_path.ends_with(".tscn") or res_path.ends_with(".scn") or res_path.ends_with(".cs"):
+		# Přeskoč skripty, scény a interní pod-zdroje (s "::")
+		if res_path.ends_with(".gd") or res_path.ends_with(".tscn") or res_path.ends_with(".scn") or res_path.ends_with(".cs") or "::" in res_path:
 			continue
-		if not FileAccess.file_exists(res_path):
+		if not ResourceLoader.exists(res_path):
 			continue
 
 		var new_res = ResourceLoader.load(res_path, "", ResourceLoader.CACHE_MODE_REPLACE)
@@ -296,29 +297,22 @@ func load_patches():
 	load_all_patches()
 
 func load_all_patches():
-	# Určíme cestu ke složce "patches" vedle spustitelného souboru
 	var patches_dir_path
 	if OS.has_feature("editor"):
-		patches_dir_path = "res://patches" # V editoru čte z projektu
+		patches_dir_path = "res://patches"
 	else:
 		patches_dir_path = OS.get_executable_path().get_base_dir().path_join("patches")
 	
-	# Otevřeme adresář
 	var dir = DirAccess.open(patches_dir_path)
 	
 	if dir:
-		# Začneme číst obsah složky
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		
 		while file_name != "":
-			# Ignorujeme samotný adresář a skryté soubory
 			if !dir.current_is_dir():
-				# Kontrola, zda soubor končí na .pck
 				if file_name.get_extension().to_lower() == "pck" or file_name.get_extension().to_lower() == "zip":
 					var full_path = patches_dir_path.path_join(file_name)
-					
-					# Načtení balíčku
 					var success = ProjectSettings.load_resource_pack(full_path)
 					
 					if success:
