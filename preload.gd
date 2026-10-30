@@ -22,6 +22,10 @@ func _ready() -> void:
 	label.text = "Reloading resources..."
 	await get_tree().create_timer(rng).timeout
 	reload_all_resources()
+	await get_tree().create_timer(rng).timeout
+	label.text = "Trying to make cursor diferent..."
+	update_project_settings_cursor()
+	await get_tree().create_timer(rng).timeout
 	label.text = "Finalizing..."
 	await get_tree().create_timer(rng).timeout
 	get_tree().change_scene_to_file(scene)
@@ -325,3 +329,13 @@ func load_all_patches():
 		dir.list_dir_end()
 	else:
 		print("Složka 'patches' nebyla nalezena na cestě: ", patches_dir_path)
+
+## Obnoví custom kurzor nastavený v ProjectSettings
+func update_project_settings_cursor() -> void:
+	var cursor_path: String = ProjectSettings.get_setting("display/mouse_cursor/custom_image", "")
+	
+	if not cursor_path.is_empty() and ResourceLoader.exists(cursor_path):
+		var cursor_tex = ResourceLoader.load(cursor_path, "", ResourceLoader.CACHE_MODE_REPLACE)
+		var hotspot: Vector2 = ProjectSettings.get_setting("display/mouse_cursor/custom_image_hotspot", Vector2.ZERO)
+		Input.set_custom_mouse_cursor(null)
+		Input.set_custom_mouse_cursor(cursor_tex, Input.CURSOR_ARROW, hotspot)
