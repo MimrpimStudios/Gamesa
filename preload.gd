@@ -2,11 +2,27 @@ extends Node
 
 class_name ResourceReloader
 
+@onready var label: Label = $Label
+
 @export_file_path("*.tscn") var scene: String
 
+var rng = RandomNumberGenerator.new().randf_range(0.1, 1.0)
+var rng2 = RandomNumberGenerator.new().randf_range(0.1, 0.5)
 func _ready() -> void:
+	label.text = "Loading patches..."
+	load_patches()
+	await get_tree().create_timer(rng).timeout
+	label.text = "Checking for pumpkins..."
 	kontrola_data()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(rng).timeout
+	label.text = "Printing some debug info..."
+	await get_tree().create_timer(rng2).timeout
+	print_loaded_resources()
+	label.text = "Reloading resources..."
+	await get_tree().create_timer(rng).timeout
+	reload_all_resources()
+	label.text = "Finalizing..."
+	await get_tree().create_timer(rng).timeout
 	get_tree().change_scene_to_file(scene)
 
 func kontrola_data() -> void:
@@ -14,18 +30,16 @@ func kontrola_data() -> void:
 	var mesic: int = datum["month"]
 	var den: int = datum["day"]
 
-	var je_zari = (mesic == 9 and den in [7, 8, 9])
 	var je_halloween = (mesic == 10 and den in [30, 31]) or (mesic == 11 and den == 1)
 
-	if je_zari or je_halloween:
+	if je_halloween:
 		spustit_udalost()
 
 func spustit_udalost() -> void:
+	label.text = "Loading pumpkins..."
 	var pck_path = "res://assets/pck/hw.pck"
-
 	if ProjectSettings.load_resource_pack(pck_path):
-		print("Sezónní PCK balíček byl úspěšně načten.")
-		reload_all_resources()
+		print("Sezónní PCK balíček byl úspěšně načten." + pck_path)
 	else:
 		printerr("Chyba: Nepodařilo se načíst PCK soubor z: ", pck_path)
 
@@ -276,3 +290,44 @@ func _evaluate_and_replace(val: Variant, replace_map: Dictionary, visited_res: D
 			result["changed"] = true
 
 	return result
+
+func load_patches():
+	print("loading patches...")
+	load_all_patches()
+
+func load_all_patches():
+	# Určíme cestu ke složce "patches" vedle spustitelného souboru
+	var patches_dir_path
+	if OS.has_feature("editor"):
+		patches_dir_path = "res://patches" # V editoru čte z projektu
+	else:
+		patches_dir_path = OS.get_executable_path().get_base_dir().path_join("patches")
+	
+	# Otevřeme adresář
+	var dir = DirAccess.open(patches_dir_path)
+	
+	if dir:
+		# Začneme číst obsah složky
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		
+		while file_name != "":
+			# Ignorujeme samotný adresář a skryté soubory
+			if !dir.current_is_dir():
+				# Kontrola, zda soubor končí na .pck
+				if file_name.get_extension().to_lower() == "pck" or file_name.get_extension().to_lower() == "zip":
+					var full_path = patches_dir_path.path_join(file_name)
+					
+					# Načtení balíčku
+					var success = ProjectSettings.load_resource_pack(full_path)
+					
+					if success:
+						print("Úspěšně načten patch: ", file_name)
+					else:
+						push_error("Chyba při načítání patche: " + file_name)
+						
+			file_name = dir.get_next()
+		
+		dir.list_dir_end()
+	else:
+		print("Složka 'patches' nebyla nalezena na cestě: ", patches_dir_path)
