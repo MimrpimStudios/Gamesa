@@ -1,49 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://dxe7aeytj5it5"]
+[gd_scene load_steps=12 format=4 uid="uid://dxe7aeytj5it5"]
 
 [ext_resource type="TileSet" uid="uid://chdkqd0fx6re7" path="res://assets/resources/tilesets/tileset01.res" id="1_8fwr6"]
 [ext_resource type="TileSet" uid="uid://nkiilvnqyc1g" path="res://assets/resources/tilesets/tileset01_nocolision.res" id="2_rnyyg"]
 [ext_resource type="Texture2D" uid="uid://cle0slld18cyq" path="res://assets/Textures/tilemap/znacky/prace-na-silnici.png" id="3_a1f5r"]
 [ext_resource type="Script" uid="uid://clhynfmtigvqn" path="res://scenes/anim/animation_player.gd" id="3_rnyyg"]
-
-[sub_resource type="Animation" id="Animation_ij2k4"]
-resource_name = "znacka"
-length = 9.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PraceNaSilnici:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.9667),
-"transitions": PackedFloat32Array(0.24148433, 1),
-"update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(9.44, 9.44)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PraceNaSilnici:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(8.47, 9),
-"transitions": PackedFloat32Array(0.14865099, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(281, 2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PraceNaSilnici:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
+[ext_resource type="AudioStream" uid="uid://t7mwyr3pq8ja" path="res://assets/Sounds/Music/punk.mp3" id="5_a1f5r"]
+[ext_resource type="PackedScene" uid="uid://cdmijiqu81d1q" path="res://scenes/player.tscn" id="6_ij2k4"]
+[ext_resource type="Script" uid="uid://psbyr6hj5lbn" path="res://scenes/player_gravity_anim.gd" id="7_uco78"]
+[ext_resource type="PackedScene" uid="uid://cbcrqqtuhxedo" path="res://scenes/car.tscn" id="8_uco78"]
 
 [sub_resource type="Animation" id="Animation_qgydc"]
 length = 0.001
@@ -83,6 +47,166 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Car:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Car:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ij2k4"]
+resource_name = "znacka"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PraceNaSilnici:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.9667),
+"transitions": PackedFloat32Array(0.4352757, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(9.44, 9.44)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PraceNaSilnici:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.47, 8),
+"transitions": PackedFloat32Array(0.14865099, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(281, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PraceNaSilnici:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:direction")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.97, 11.00006, 14.35006, 18.3501, 19.259926),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Car:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 18.330229, 19.384106, 21.250376),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Car:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(19.400229, 21.26023),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1699, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uco78"]
 _data = {
@@ -109,15 +233,28 @@ tile_set = ExtResource("2_rnyyg")
 libraries = {
 &"": SubResource("AnimationLibrary_uco78")
 }
+autoplay = "znacka"
 script = ExtResource("3_rnyyg")
 
 [node name="PraceNaSilnici" type="Sprite2D" parent="."]
 visible = false
+z_index = 4096
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_a1f5r")
 offset = Vector2(0, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_a1f5r")
+bus = &"Music"
+
+[node name="Player" parent="." instance=ExtResource("6_ij2k4")]
+script = ExtResource("7_uco78")
+sit = false
+move = null
+SPEED = 300.0
+direction = 0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -30)
 zoom = Vector2(5, 5)
 limit_smoothed = true
@@ -127,7 +264,8 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 10.0
 editor_draw_limits = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
-bus = &"Music"
-playback_type = 2
+[node name="Car" parent="." instance=ExtResource("8_uco78")]
+visible = false
+z_index = 4096
+collision_layer = 0
+collision_mask = 0
