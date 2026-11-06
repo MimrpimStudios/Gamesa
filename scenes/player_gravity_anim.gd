@@ -14,14 +14,11 @@ var JUMP_VELOCITY = JUMP_VELOCITY_kladna * -1
 @export var direction: int = 0
 func _ready() -> void:
 	%Label.hide()
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if global_var.is_player_dead:
 		if is_instance_valid(collision_shape_2d):
 			collision_shape_2d.queue_free()
 		global_var.player_health = 0
-
-
-func _physics_process(delta: float) -> void:
 	if global_var.player_movement:
 		# Add the gravity.
 		if not is_on_floor():
