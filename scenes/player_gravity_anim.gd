@@ -38,7 +38,11 @@ func _process(delta: float) -> void:
 			animated_sprite.play("stand")
 		if sit:
 			animated_sprite.play("sitting")
-		move_and_slide()
+		
+		position.x =+ velocity.x
+		velocity.x = 0
+		position.y =+ velocity.y
+		velocity.y = 0
 
 func jump():
 	if is_on_floor():
