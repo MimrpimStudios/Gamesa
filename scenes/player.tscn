@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdmijiqu81d1q"]
+[gd_scene load_steps=26 format=3 uid="uid://cdmijiqu81d1q"]
 
 [ext_resource type="Script" uid="uid://cia6u3d1l3ic3" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c3iwi6jnnt3gt" path="res://assets/Textures/sprites/player.png" id="2_g2els"]
@@ -146,6 +146,44 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(7, 15)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_y4r1p"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D/Healthbar/Fill:size")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Label:visible")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("DialogPlayer:text")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("DialogPlayer:visible")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("Hint/SpeakNPC:text")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath("Hint/SpeakNPC:visible")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("AnimatedSprite2D:animation")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath("AnimatedSprite2D:flip_h")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+properties/9/path = NodePath("AnimatedSprite2D:flip_v")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+properties/10/path = NodePath("AnimatedSprite2D:frame")
+properties/10/spawn = true
+properties/10/replication_mode = 1
+properties/11/path = NodePath("AnimatedSprite2D:speed_scale")
+properties/11/spawn = true
+properties/11/replication_mode = 1
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1000
 collision_mask = 3
@@ -247,5 +285,8 @@ EXITING..."
 label_settings = ExtResource("9_ur7pv")
 horizontal_alignment = 1
 script = ExtResource("10_y4r1p")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_y4r1p")
 
 [connection signal="timeout" from="AnimatedSprite2D/Healthbar/Healthbar/Timer" to="AnimatedSprite2D/Healthbar" method="_on_timer_timeout"]

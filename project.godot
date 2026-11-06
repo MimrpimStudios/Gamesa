@@ -30,6 +30,7 @@ SewersMusic="*res://scenes/sewers_music.tscn"
 debug_console="*res://scenes/debug_console.tscn"
 pause_screen="*res://scenes/pause_screen.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+MultiplayerLoader="*res://scripts/multiplayer-loader.gd"
 
 [debug]
 
@@ -40,7 +41,6 @@ file_logging/log_path="user://logs/latest.log"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/initial_position_type=5
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://cruhxaisj0yhn"

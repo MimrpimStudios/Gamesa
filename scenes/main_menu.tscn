@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ba3rh4lpjn6uy"]
+[gd_scene load_steps=52 format=3 uid="uid://ba3rh4lpjn6uy"]
 
 [ext_resource type="Texture2D" uid="uid://bl8ubvai1nb5m" path="res://assets/Textures/buttons.png" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://mq84efn1ivgx" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://c1s517mfh8j1x" path="res://scenes/story_2_arrow.gd" id="23_1dfpl"]
 [ext_resource type="Texture2D" uid="uid://dhq46w2vm7uhi" path="res://assets/Textures/arrow_better_shadow.png" id="24_qywvv"]
 [ext_resource type="Script" uid="uid://cwgxl0eqls12u" path="res://scenes/label_hw.gd" id="25_3wgol"]
+[ext_resource type="Script" uid="uid://be03tbx5vdwyd" path="res://scenes/multiplayer_menu.gd" id="26_1acrt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
 
@@ -617,6 +618,39 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
+[node name="multiplayer" type="Node" parent="."]
+script = ExtResource("26_1acrt")
+
+[node name="Host" type="Button" parent="multiplayer"]
+offset_left = 842.0
+offset_top = 602.0
+offset_right = 886.0
+offset_bottom = 633.0
+text = "Host"
+
+[node name="LineEdit" type="LineEdit" parent="multiplayer"]
+offset_left = 892.0
+offset_top = 600.0
+offset_right = 1012.0
+offset_bottom = 631.0
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="Join" type="Button" parent="multiplayer/LineEdit"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 2.0
+offset_right = 160.0
+offset_bottom = 33.0
+text = "Join"
+
+[node name="Start" type="Button" parent="multiplayer"]
+offset_left = 845.0
+offset_top = 637.0
+offset_right = 891.0
+offset_bottom = 668.0
+text = "Start"
+
 [connection signal="mouse_entered" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Debug/LabelCredits" to="Debug/LabelCredits" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButtonPlay" to="." method="_on_texture_button_play_pressed"]
@@ -636,3 +670,6 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="ArrowStory2/Button" to="ArrowStory2" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="LabelHW" to="LabelHW" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LabelHW" to="LabelHW" method="_on_mouse_exited"]
+[connection signal="pressed" from="multiplayer/Host" to="multiplayer" method="_on_host_pressed"]
+[connection signal="pressed" from="multiplayer/LineEdit/Join" to="multiplayer" method="_on_join_pressed"]
+[connection signal="pressed" from="multiplayer/Start" to="multiplayer" method="_on_start_pressed"]
