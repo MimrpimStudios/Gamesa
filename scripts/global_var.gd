@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 var intro_play = true
